@@ -59,5 +59,15 @@ namespace FLIGHT_RESERVATION.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] KantumruyPro_Bold {
+            get {
+                object obj = ResourceManager.GetObject("KantumruyPro-Bold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
