@@ -121,4 +121,13 @@
   <data name="KantumruyPro-Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KantumruyPro-Bold.ttf;System.Byte[]</value>
   </data>
+  <data name="KantumruyPro-Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KantumruyPro-Medium.ttf;System.Byte[]</value>
+  </data>
+  <data name="KantumruyPro-Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KantumruyPro-Regular.ttf;System.Byte[]</value>
+  </data>
+  <data name="KantumruyPro-SemiBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KantumruyPro-SemiBold.ttf;System.Byte[]</value>
+  </data>
 </root>
