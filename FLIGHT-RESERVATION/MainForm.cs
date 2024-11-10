@@ -122,5 +122,10 @@ namespace FLIGHT_RESERVATION
                 SetHeader("PROFILE");
             };
         }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

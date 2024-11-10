@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View Bookings\View Bookings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View Bookings\View Bookings.Designer.cs">
+      <DependentUpon>View Bookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Bookings\Bookings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View Bookings\Bookings.Designer.cs">
+      <DependentUpon>Bookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +73,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Bookings\Bookings.resx">
+      <DependentUpon>Bookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Bookings\View Bookings.resx">
+      <DependentUpon>View Bookings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
