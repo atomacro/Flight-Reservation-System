@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlBookings = new System.Windows.Forms.FlowLayoutPanel();
             this.bookings1 = new FLIGHT_RESERVATION.Bookings();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.pnlBookings.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel2
+            // pnlBookings
             // 
-            this.flowLayoutPanel2.Controls.Add(this.bookings1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(39, 146);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(744, 588);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.pnlBookings.Controls.Add(this.bookings1);
+            this.pnlBookings.Location = new System.Drawing.Point(39, 146);
+            this.pnlBookings.Name = "pnlBookings";
+            this.pnlBookings.Size = new System.Drawing.Size(744, 588);
+            this.pnlBookings.TabIndex = 1;
             // 
             // bookings1
             // 
@@ -52,17 +52,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.pnlBookings);
             this.Name = "View_Bookings";
             this.Size = new System.Drawing.Size(981, 737);
-            this.flowLayoutPanel2.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.View_Bookings_Load);
+            this.pnlBookings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel pnlBookings;
         private Bookings bookings1;
     }
 }

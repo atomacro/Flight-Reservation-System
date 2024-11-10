@@ -14,7 +14,13 @@ namespace FLIGHT_RESERVATION
     {
         public Bookings()
         {
+            Fonts fonts = new Fonts();
             InitializeComponent();
+            lblDate.Font = fonts.KantumruyProMedium();
+            lblLocation1.Font = fonts.KantumruyProBold();
+            lblLocation2.Font = fonts.KantumruyProBold();
+            lblTime1.Font = fonts.KantumruyProRegular();
+            lblTime2.Font = fonts.KantumruyProRegular();
         }
 
         public void SetDate(DateTime date) {

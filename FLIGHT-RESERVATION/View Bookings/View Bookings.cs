@@ -16,5 +16,10 @@ namespace FLIGHT_RESERVATION
         {
             InitializeComponent();
         }
+
+        private void View_Bookings_Load(object sender, EventArgs e)
+        {
+            Bookings booking = new Bookings();
+        }
     }
 }
