@@ -8,66 +8,73 @@ using System.Threading.Tasks;
 
 namespace FLIGHT_RESERVATION
 {
-    internal class Fonts
+    using System;
+    using System.Drawing;
+    using System.Drawing.Text;
+    using System.Runtime.InteropServices;
+
+    namespace FLIGHT_RESERVATION
     {
-        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
-        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
-            IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
-
-        private PrivateFontCollection fonts = new PrivateFontCollection();
-
-
-
-        public Font KantumruyProBold()
+        internal class Fonts
         {
-            byte[] fontData = Properties.Resources.KantumruyPro_Bold;
-            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
-            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.KantumruyPro_Bold.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.KantumruyPro_Bold.Length, IntPtr.Zero, ref dummy);
-            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+            [DllImport("gdi32.dll")]
+            private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
 
-            return new Font(fonts.Families[0], 35.0F);
-        }
+            public Font KantumruyProBold(float size)
+            {
+                PrivateFontCollection fonts = new PrivateFontCollection();
+                byte[] fontData = Properties.Resources.KantumruyPro_Bold;
+                IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+                Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+                uint dummy = 0;
+                fonts.AddMemoryFont(fontPtr, fontData.Length);
+                AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
+                Marshal.FreeCoTaskMem(fontPtr);
 
-        public Font KantumruyProMedium()
-        {
-            byte[] fontData = Properties.Resources.KantumruyPro_Medium;
-            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
-            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.KantumruyPro_Medium.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.KantumruyPro_Medium.Length, IntPtr.Zero, ref dummy);
-            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+                return new Font(fonts.Families[0], size);
+            }
 
-            return new Font(fonts.Families[1], 35.0F);
-        }
+            public Font KantumruyProMedium(float size)
+            {
+                PrivateFontCollection fonts = new PrivateFontCollection();
+                byte[] fontData = Properties.Resources.KantumruyPro_Medium;
+                IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+                Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+                uint dummy = 0;
+                fonts.AddMemoryFont(fontPtr, fontData.Length);
+                AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
+                Marshal.FreeCoTaskMem(fontPtr);
 
-        public Font KantumruyProRegular()
-        {
-            byte[] fontData = Properties.Resources.KantumruyPro_Regular;
-            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
-            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.KantumruyPro_Regular.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.KantumruyPro_Regular.Length, IntPtr.Zero, ref dummy);
-            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+                return new Font(fonts.Families[0], size);
+            }
 
-            return new Font(fonts.Families[2], 35.0F);
-        }
+            public Font KantumruyProRegular(float size)
+            {
+                PrivateFontCollection fonts = new PrivateFontCollection();
+                byte[] fontData = Properties.Resources.KantumruyPro_Regular;
+                IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+                Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+                uint dummy = 0;
+                fonts.AddMemoryFont(fontPtr, fontData.Length);
+                AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
+                Marshal.FreeCoTaskMem(fontPtr);
 
-        public Font KantumruyProSemiBold()
-        {
-            byte[] fontData = Properties.Resources.KantumruyPro_SemiBold;
-            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
-            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.KantumruyPro_SemiBold.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.KantumruyPro_SemiBold.Length, IntPtr.Zero, ref dummy);
-            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+                return new Font(fonts.Families[0], size);
+            }
+            public Font KantumruyProSemiBold(float size)
+            {
+                PrivateFontCollection fonts = new PrivateFontCollection();
+                byte[] fontData = Properties.Resources.KantumruyPro_SemiBold;
+                IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+                Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+                uint dummy = 0;
+                fonts.AddMemoryFont(fontPtr, fontData.Length);
+                AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
+                Marshal.FreeCoTaskMem(fontPtr);
 
-            return new Font(fonts.Families[3], 35.0F);
+                return new Font(fonts.Families[0], size);
+            }
         }
     }
+
 }

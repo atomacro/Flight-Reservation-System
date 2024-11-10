@@ -46,18 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View Bookings\View Bookings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View Bookings\View Bookings.Designer.cs">
-      <DependentUpon>View Bookings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View Bookings\Bookings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View Bookings\Bookings.Designer.cs">
-      <DependentUpon>Bookings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
