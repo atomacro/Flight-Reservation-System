@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Text;
 
 
 namespace FLIGHT_RESERVATION
@@ -44,7 +43,7 @@ namespace FLIGHT_RESERVATION
             Fonts fonts = new Fonts();
             lblPageName.Text = PageName;
             lblPageName.ForeColor = ColorTranslator.FromHtml("#5C5C5C");
-            lblPageName.Font = fonts.KantumruyProBold();
+            lblPageName.Font = fonts.KantumruyProBold(35.0F);
         }
 
         public void SetButtonBorders()
