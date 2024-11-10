@@ -152,7 +152,6 @@
             // 
             // Header
             // 
-            this.Header.Controls.Add(this.pnlMain);
             this.Header.Controls.Add(this.lblPageName);
             this.Header.Controls.Add(this.btnLogout);
             this.Header.Controls.Add(this.pictureBox1);
@@ -163,9 +162,10 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.Location = new System.Drawing.Point(316, 144);
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Location = new System.Drawing.Point(320, 142);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(986, 738);
+            this.pnlMain.Size = new System.Drawing.Size(981, 738);
             this.pnlMain.TabIndex = 10;
             // 
             // lblPageName
@@ -191,6 +191,7 @@
             this.Controls.Add(this.btnFlightBooking);
             this.Controls.Add(this.btnViewBookings);
             this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

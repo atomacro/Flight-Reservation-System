@@ -10,20 +10,19 @@ namespace FLIGHT_RESERVATION
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
 
+        private PrivateFontCollection fontCollection = new PrivateFontCollection();
+
         private Font LoadFont(byte[] fontData, float size)
         {
-            // Create a new PrivateFontCollection for each font
-            PrivateFontCollection fonts = new PrivateFontCollection();
             IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
             Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
 
             uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, fontData.Length);
+            fontCollection.AddMemoryFont(fontPtr, fontData.Length);
             AddFontMemResourceEx(fontPtr, (uint)fontData.Length, IntPtr.Zero, ref dummy);
             Marshal.FreeCoTaskMem(fontPtr);
 
-            // Return the loaded font at the desired size
-            return new Font(fonts.Families[0], size);
+            return new Font(fontCollection.Families[fontCollection.Families.Length - 1], size);
         }
 
         public Font KantumruyProBold(float size)

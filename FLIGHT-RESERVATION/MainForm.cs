@@ -87,24 +87,31 @@ namespace FLIGHT_RESERVATION
             {
                 SetIndicator(btnDashboard, pnlIndicator1);
                 SetHeader("DASHBOARD");
+                pnlMain.Controls.Clear();
             };
             btnFlightBooking.Click += (sender, e) =>
             {
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
 
+                pnlMain.Controls.Clear();
+
+                ViewBookings.ViewBookings vb = new ViewBookings.ViewBookings();
+                vb.AutoSize = true;
+                vb.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                pnlMain.Controls.Add(vb);
             };
             btnViewBookings.Click += (sender, e) =>
             {
                 SetIndicator(btnViewBookings, pnlIndicator3);
                 SetHeader("VIEW BOOKINGS");
-
+                pnlMain.Controls.Clear();
             };
             btnProfile.Click += (sender, e) =>
             {
                 SetIndicator(btnProfile, pnlIndicator4);
                 SetHeader("PROFILE");
-
+                pnlMain.Controls.Clear();
             };
         }
 
@@ -114,6 +121,11 @@ namespace FLIGHT_RESERVATION
         }
 
         private void viewBookings1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewBookings1_Load_1(object sender, EventArgs e)
         {
 
         }

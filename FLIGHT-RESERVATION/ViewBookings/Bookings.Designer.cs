@@ -49,6 +49,7 @@
             this.lblDate.Size = new System.Drawing.Size(239, 29);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "November 09, 2024";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
             // lblLocation1
             // 
@@ -61,6 +62,7 @@
             this.lblLocation1.TabIndex = 1;
             this.lblLocation1.Text = "MNL";
             this.lblLocation1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLocation1.Click += new System.EventHandler(this.lblLocation1_Click);
             // 
             // lblLocation2
             // 
@@ -85,6 +87,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblTime2
             // 
@@ -97,6 +100,7 @@
             this.lblTime2.TabIndex = 4;
             this.lblTime2.Text = "07:50";
             this.lblTime2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTime2.Click += new System.EventHandler(this.lblTime2_Click);
             // 
             // lblTime1
             // 
@@ -117,7 +121,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.59649F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.40351F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
             this.tableLayoutPanel1.Controls.Add(this.lblLocation1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTime2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTime1, 0, 1);
@@ -141,6 +145,7 @@
             this.Controls.Add(this.lblDate);
             this.Name = "Bookings";
             this.Size = new System.Drawing.Size(726, 191);
+            this.Load += new System.EventHandler(this.Bookings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -150,6 +155,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblLocation1;
         private System.Windows.Forms.Label lblLocation2;

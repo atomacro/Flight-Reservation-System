@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,9 +27,11 @@ namespace FLIGHT_RESERVATION.ViewBookings
             String[] Time2 = { "07:45", "18:40", "15:30" };
 
 
+
             for (int i = 0; i < 3; i++)
             {
                 Bookings bookings = new Bookings();
+              
                 bookings.Name = "b";
                 bookings.AutoSize = true;
                 bookings.AutoSizeMode = AutoSizeMode.GrowAndShrink;
