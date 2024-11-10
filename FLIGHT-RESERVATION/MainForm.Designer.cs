@@ -41,6 +41,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblPageName = new System.Windows.Forms.Label();
             this.Header = new System.Windows.Forms.Panel();
+            this.viewBookings1 = new FLIGHT_RESERVATION.ViewBookings.ViewBookings();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Header.SuspendLayout();
             this.SuspendLayout();
@@ -168,11 +169,20 @@
             this.Header.Size = new System.Drawing.Size(1302, 146);
             this.Header.TabIndex = 33;
             // 
+            // viewBookings1
+            // 
+            this.viewBookings1.BackColor = System.Drawing.Color.White;
+            this.viewBookings1.Location = new System.Drawing.Point(316, 140);
+            this.viewBookings1.Name = "viewBookings1";
+            this.viewBookings1.Size = new System.Drawing.Size(986, 738);
+            this.viewBookings1.TabIndex = 42;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 876);
+            this.Controls.Add(this.viewBookings1);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.pnlIndicator1);
             this.Controls.Add(this.btnDashboard);
@@ -206,6 +216,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Panel Header;
+        private ViewBookings.ViewBookings viewBookings1;
     }
 }
 

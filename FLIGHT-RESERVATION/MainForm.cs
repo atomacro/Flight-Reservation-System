@@ -108,5 +108,10 @@ namespace FLIGHT_RESERVATION
         {
 
         }
+
+        private void viewBookings1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
