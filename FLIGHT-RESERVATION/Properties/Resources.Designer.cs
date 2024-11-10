@@ -69,5 +69,35 @@ namespace FLIGHT_RESERVATION.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] KantumruyPro_Medium {
+            get {
+                object obj = ResourceManager.GetObject("KantumruyPro-Medium", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] KantumruyPro_Regular {
+            get {
+                object obj = ResourceManager.GetObject("KantumruyPro-Regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] KantumruyPro_SemiBold {
+            get {
+                object obj = ResourceManager.GetObject("KantumruyPro-SemiBold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
