@@ -16,11 +16,11 @@ namespace FLIGHT_RESERVATION
         {
             Fonts fonts = new Fonts();
             InitializeComponent();
-            lblDate.Font = fonts.KantumruyProMedium(15.0F);
-            lblLocation1.Font = fonts.KantumruyProBold(25.0F);
-            lblLocation2.Font = fonts.KantumruyProBold(25.0F);
-            lblTime1.Font = fonts.KantumruyProRegular(12.0F);
-            lblTime2.Font = fonts.KantumruyProRegular(12.0F);
+            lblDate.Font = fonts.KantumruyProMedium(20.0F);
+            lblLocation1.Font = fonts.KantumruyProBold(28.0F);
+            lblLocation2.Font = fonts.KantumruyProBold(28.0F);
+            lblTime1.Font = fonts.KantumruyProRegular(15.0F);
+            lblTime2.Font = fonts.KantumruyProRegular(15.0F);
         }
 
         public void SetDate(string date)
@@ -39,6 +39,20 @@ namespace FLIGHT_RESERVATION
             lblTime2.Text = time2;
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTime1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLocation2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

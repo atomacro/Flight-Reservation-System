@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FLIGHT_RESERVATION.ViewBookings;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -91,16 +92,19 @@ namespace FLIGHT_RESERVATION
             {
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
+
             };
             btnViewBookings.Click += (sender, e) =>
             {
                 SetIndicator(btnViewBookings, pnlIndicator3);
                 SetHeader("VIEW BOOKINGS");
+
             };
             btnProfile.Click += (sender, e) =>
             {
                 SetIndicator(btnProfile, pnlIndicator4);
                 SetHeader("PROFILE");
+
             };
         }
 

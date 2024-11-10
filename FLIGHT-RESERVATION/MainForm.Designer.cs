@@ -39,9 +39,9 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.lblPageName = new System.Windows.Forms.Label();
             this.Header = new System.Windows.Forms.Panel();
-            this.viewBookings1 = new FLIGHT_RESERVATION.ViewBookings.ViewBookings();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblPageName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Header.SuspendLayout();
             this.SuspendLayout();
@@ -150,6 +150,24 @@
             this.btnLogout.Text = " ";
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
+            // Header
+            // 
+            this.Header.Controls.Add(this.pnlMain);
+            this.Header.Controls.Add(this.lblPageName);
+            this.Header.Controls.Add(this.btnLogout);
+            this.Header.Controls.Add(this.pictureBox1);
+            this.Header.Location = new System.Drawing.Point(-1, -4);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(1302, 146);
+            this.Header.TabIndex = 33;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Location = new System.Drawing.Point(316, 144);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(986, 738);
+            this.pnlMain.TabIndex = 10;
+            // 
             // lblPageName
             // 
             this.lblPageName.Location = new System.Drawing.Point(366, 4);
@@ -159,30 +177,11 @@
             this.lblPageName.Text = "label1";
             this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Header
-            // 
-            this.Header.Controls.Add(this.lblPageName);
-            this.Header.Controls.Add(this.btnLogout);
-            this.Header.Controls.Add(this.pictureBox1);
-            this.Header.Location = new System.Drawing.Point(-1, -4);
-            this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1302, 146);
-            this.Header.TabIndex = 33;
-            // 
-            // viewBookings1
-            // 
-            this.viewBookings1.BackColor = System.Drawing.Color.White;
-            this.viewBookings1.Location = new System.Drawing.Point(316, 140);
-            this.viewBookings1.Name = "viewBookings1";
-            this.viewBookings1.Size = new System.Drawing.Size(986, 738);
-            this.viewBookings1.TabIndex = 42;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 876);
-            this.Controls.Add(this.viewBookings1);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.pnlIndicator1);
             this.Controls.Add(this.btnDashboard);
@@ -214,9 +213,9 @@
         internal System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Panel Header;
-        private ViewBookings.ViewBookings viewBookings1;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label lblPageName;
     }
 }
 

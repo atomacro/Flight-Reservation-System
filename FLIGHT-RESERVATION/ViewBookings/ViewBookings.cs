@@ -38,5 +38,10 @@ namespace FLIGHT_RESERVATION.ViewBookings
                 pnlBookings.Controls.Add(bookings);
             }
         }
+
+        private void pnlBookings_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

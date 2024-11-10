@@ -35,10 +35,11 @@
             // 
             this.pnlBookings.AutoScroll = true;
             this.pnlBookings.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlBookings.Location = new System.Drawing.Point(55, 172);
+            this.pnlBookings.Location = new System.Drawing.Point(67, 125);
             this.pnlBookings.Name = "pnlBookings";
             this.pnlBookings.Size = new System.Drawing.Size(811, 538);
             this.pnlBookings.TabIndex = 0;
+            this.pnlBookings.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBookings_Paint);
             // 
             // ViewBookings
             // 
