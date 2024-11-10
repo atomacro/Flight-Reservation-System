@@ -58,6 +58,7 @@
     <Compile Include="View Bookings\Bookings.Designer.cs">
       <DependentUpon>Bookings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fonts.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
