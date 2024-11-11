@@ -21,8 +21,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         {
             foreach (ComboBox cbo in this.Controls.OfType<ComboBox>().ToList())
             {
-                cbo.DropDownStyle = ComboBoxStyle.DropDownList
-                ComboBox currentCbo = cbo;
+                cbo.DropDownStyle = ComboBoxStyle.DropDownList;
 
             }
         }
