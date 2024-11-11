@@ -46,6 +46,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.picClassSeat = new System.Windows.Forms.PictureBox();
             this.picDepartureReturnDate = new System.Windows.Forms.PictureBox();
             this.picDepartureArrivalLocation = new System.Windows.Forms.PictureBox();
+            this.lblCompanions = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.picLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLand)).BeginInit();
@@ -72,7 +74,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(705, 88);
+            this.comboBox3.Location = new System.Drawing.Point(682, 81);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 24);
             this.comboBox3.TabIndex = 6;
@@ -211,11 +213,31 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.picDepartureArrivalLocation.TabIndex = 0;
             this.picDepartureArrivalLocation.TabStop = false;
             // 
+            // lblCompanions
+            // 
+            this.lblCompanions.AutoSize = true;
+            this.lblCompanions.BackColor = System.Drawing.Color.Transparent;
+            this.lblCompanions.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanions.Location = new System.Drawing.Point(37, 298);
+            this.lblCompanions.Name = "lblCompanions";
+            this.lblCompanions.Size = new System.Drawing.Size(130, 29);
+            this.lblCompanions.TabIndex = 17;
+            this.lblCompanions.Text = "Companions";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(103, 330);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(329, 182);
+            this.flowLayoutPanel1.TabIndex = 18;
+            // 
             // Round_Trip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.lblCompanions);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboArrivalLocation);
             this.Controls.Add(this.lblDepartureLocation);
@@ -262,5 +284,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         private PictureBox picClassSeat;
         private PictureBox picDepartureReturnDate;
         private PictureBox picDepartureArrivalLocation;
+        private Label lblCompanions;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
