@@ -173,18 +173,15 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
-            this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Location = new System.Drawing.Point(344, 159);
+            this.pnlMain.Location = new System.Drawing.Point(315, 140);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(910, 680);
+            this.pnlMain.Size = new System.Drawing.Size(985, 738);
             this.pnlMain.TabIndex = 10;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1301, 876);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.pnlIndicator1);

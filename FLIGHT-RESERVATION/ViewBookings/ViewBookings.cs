@@ -24,6 +24,8 @@ namespace FLIGHT_RESERVATION.ViewBookings
         {
             InitializeSort();
             PopulateBookings("New");
+
+
         }
 
         private void InitializeSort()

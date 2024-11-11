@@ -36,16 +36,15 @@
             // 
             this.pnlBookings.AutoScroll = true;
             this.pnlBookings.Cursor = System.Windows.Forms.Cursors.Arrow;
-    this.pnlBookings.Location = new System.Drawing.Point(56, 116);
+            this.pnlBookings.Location = new System.Drawing.Point(110, 105);
             this.pnlBookings.Name = "pnlBookings";
-            this.pnlBookings.Size = new System.Drawing.Size(787, 488);
+            this.pnlBookings.Size = new System.Drawing.Size(773, 601);
             this.pnlBookings.TabIndex = 0;
             // 
             // btnSort
             // 
             this.btnSort.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.btnSort.Location = new System.Drawing.Point(56, 41);
+            this.btnSort.Location = new System.Drawing.Point(110, 35);
             this.btnSort.Name = "btnSort";
             this.btnSort.Size = new System.Drawing.Size(155, 53);
             this.btnSort.TabIndex = 1;
@@ -60,7 +59,7 @@
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.pnlBookings);
             this.Name = "ViewBookings";
-            this.Size = new System.Drawing.Size(906, 677);
+            this.Size = new System.Drawing.Size(986, 738);
             this.Load += new System.EventHandler(this.ViewBookings_Load);
             this.ResumeLayout(false);
 

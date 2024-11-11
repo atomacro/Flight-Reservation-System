@@ -18,8 +18,6 @@ namespace FLIGHT_RESERVATION
         public MainForm()
         {
             InitializeComponent();
-            //pnlMain.BackColor = Color.Transparent;
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
