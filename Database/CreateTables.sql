@@ -5,7 +5,9 @@ USE `Airplane Ticketing System 2024`;
 CREATE TABLE Flights (
     FlightID INT PRIMARY KEY,
     AirplaneNumber VARCHAR(255) NOT NULL,
-    DepartureDate DATETIME NOT NULL,
+    DepartureDate DATE NOT NULL,
+    DepartureTime TIME NOT NUll,
+    ArrivalTime TIME NOT NULL,
     DepartureFrom VARCHAR(255) NOT NULL,
     DepartureTo VARCHAR(255) NOT NULL,
     SeatsRemaining INT NOT NULL,
