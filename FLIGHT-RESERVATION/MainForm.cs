@@ -87,32 +87,48 @@ namespace FLIGHT_RESERVATION
             {
                 SetIndicator(btnDashboard, pnlIndicator1);
                 SetHeader("DASHBOARD");
-                pnlMain.Controls.Clear();
+                ClearControls(pnlMain);
+
             };
             btnFlightBooking.Click += (sender, e) =>
             {
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
+                ClearControls(pnlMain);
 
-                pnlMain.Controls.Clear();
-
-                ViewBookings.ViewBookings vb = new ViewBookings.ViewBookings();
-                vb.AutoSize = true;
-                vb.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                pnlMain.Controls.Add(vb);
+                ViewBookings.ViewBookings View_Bookings = new ViewBookings.ViewBookings();
+                AddControl(View_Bookings, pnlMain);
             };
             btnViewBookings.Click += (sender, e) =>
             {
                 SetIndicator(btnViewBookings, pnlIndicator3);
                 SetHeader("VIEW BOOKINGS");
-                pnlMain.Controls.Clear();
+                ClearControls(pnlMain);
+
             };
             btnProfile.Click += (sender, e) =>
             {
                 SetIndicator(btnProfile, pnlIndicator4);
                 SetHeader("PROFILE");
-                pnlMain.Controls.Clear();
+                ClearControls(pnlMain);
+
             };
+        }
+
+        private void ClearControls(Panel pnl)
+        {
+            foreach (Control control in pnl.Controls)
+            {
+                control.Dispose();
+            }
+            pnl.Controls.Clear();
+        }
+
+        private void AddControl(Control control, Panel pnl)
+        {
+            pnl.AutoSize = true;
+            pnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnl.Controls.Add(control);
         }
 
         private void userControl11_Load(object sender, EventArgs e)

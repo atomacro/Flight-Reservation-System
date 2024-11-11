@@ -22,6 +22,7 @@ namespace FLIGHT_RESERVATION
             lblTime1.Font = fonts.KantumruyProRegular(15.0F);
             lblTime2.Font = fonts.KantumruyProRegular(15.0F);
 
+            fonts.fontCollection.Dispose();
         }
         public void SetDate(string date)
         {
