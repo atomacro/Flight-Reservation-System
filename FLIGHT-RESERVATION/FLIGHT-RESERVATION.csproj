@@ -98,6 +98,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails.Designer.cs">
+      <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.Designer.cs">
+      <DependentUpon>Round-Trip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -124,6 +136,12 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails.resx">
+      <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.resx">
+      <DependentUpon>Round-Trip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
