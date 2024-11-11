@@ -152,12 +152,13 @@
             // 
             // Header
             // 
+            this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Header.Controls.Add(this.lblPageName);
             this.Header.Controls.Add(this.btnLogout);
             this.Header.Controls.Add(this.pictureBox1);
-            this.Header.Location = new System.Drawing.Point(-1, -4);
+            this.Header.Location = new System.Drawing.Point(-9, -8);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1302, 146);
+            this.Header.Size = new System.Drawing.Size(1318, 150);
             this.Header.TabIndex = 33;
             // 
             // lblPageName
