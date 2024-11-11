@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Header = new System.Windows.Forms.Panel();
-            this.lblPageName = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlIndicator1 = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlIndicator4 = new System.Windows.Forms.Panel();
@@ -41,50 +37,14 @@
             this.btnFlightBooking = new System.Windows.Forms.Button();
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.Header = new System.Windows.Forms.Panel();
+            this.lblPageName = new System.Windows.Forms.Label();
+            this.pnlMain = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Header.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(24, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(341, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Header
-            // 
-            this.Header.Controls.Add(this.lblPageName);
-            this.Header.Controls.Add(this.btnLogout);
-            this.Header.Controls.Add(this.pictureBox1);
-            this.Header.Location = new System.Drawing.Point(-1, -4);
-            this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1302, 147);
-            this.Header.TabIndex = 33;
-            // 
-            // lblPageName
-            // 
-            this.lblPageName.Location = new System.Drawing.Point(366, 4);
-            this.lblPageName.Name = "lblPageName";
-            this.lblPageName.Size = new System.Drawing.Size(683, 134);
-            this.lblPageName.TabIndex = 9;
-            this.lblPageName.Text = "label1";
-            this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(1055, 44);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(207, 54);
-            this.btnLogout.TabIndex = 8;
-            this.btnLogout.Text = " ";
-            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // pnlIndicator1
             // 
@@ -109,9 +69,9 @@
             // pnlIndicator4
             // 
             this.pnlIndicator4.BackColor = System.Drawing.Color.Transparent;
-            this.pnlIndicator4.Location = new System.Drawing.Point(304, 694);
+            this.pnlIndicator4.Location = new System.Drawing.Point(304, 695);
             this.pnlIndicator4.Name = "pnlIndicator4";
-            this.pnlIndicator4.Size = new System.Drawing.Size(10, 187);
+            this.pnlIndicator4.Size = new System.Drawing.Size(10, 186);
             this.pnlIndicator4.TabIndex = 39;
             // 
             // pnlIndicator3
@@ -168,6 +128,55 @@
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProfile.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(24, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(341, 134);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.Location = new System.Drawing.Point(1055, 44);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(207, 54);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = " ";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
+            // Header
+            // 
+            this.Header.Controls.Add(this.lblPageName);
+            this.Header.Controls.Add(this.btnLogout);
+            this.Header.Controls.Add(this.pictureBox1);
+            this.Header.Location = new System.Drawing.Point(-1, -4);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(1302, 146);
+            this.Header.TabIndex = 33;
+            // 
+            // lblPageName
+            // 
+            this.lblPageName.Location = new System.Drawing.Point(366, 4);
+            this.lblPageName.Name = "lblPageName";
+            this.lblPageName.Size = new System.Drawing.Size(683, 134);
+            this.lblPageName.TabIndex = 9;
+            this.lblPageName.Text = "label1";
+            this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Location = new System.Drawing.Point(315, 140);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(985, 738);
+            this.pnlMain.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -182,6 +191,7 @@
             this.Controls.Add(this.btnFlightBooking);
             this.Controls.Add(this.btnViewBookings);
             this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -194,11 +204,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel Header;
-        private System.Windows.Forms.Label lblPageName;
-        private System.Windows.Forms.Button btnLogout;
         internal System.Windows.Forms.Panel pnlIndicator1;
         internal System.Windows.Forms.Button btnDashboard;
         internal System.Windows.Forms.Panel pnlIndicator4;
@@ -207,6 +212,11 @@
         internal System.Windows.Forms.Button btnFlightBooking;
         internal System.Windows.Forms.Button btnViewBookings;
         internal System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel Header;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label lblPageName;
     }
 }
 

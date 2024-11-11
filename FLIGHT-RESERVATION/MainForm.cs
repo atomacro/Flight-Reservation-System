@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FLIGHT_RESERVATION.ViewBookings;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Text;
 
 
 namespace FLIGHT_RESERVATION
@@ -29,6 +29,7 @@ namespace FLIGHT_RESERVATION
             InitializeSidebar();
             SetHeader("DASHBOARD");
             SetIndicator(btnDashboard, pnlIndicator1);
+
         }
 
         public void SetIndicator(Button activeButton, Panel pnlIndicator)
@@ -41,10 +42,9 @@ namespace FLIGHT_RESERVATION
 
         public void SetHeader(string PageName)
         {
-            Fonts fonts = new Fonts();
             lblPageName.Text = PageName;
             lblPageName.ForeColor = ColorTranslator.FromHtml("#5C5C5C");
-            lblPageName.Font = fonts.KantumruyProBold();
+            lblPageName.Font = new Font("Kantumruy Pro", 35.0F, FontStyle.Bold);
         }
 
         public void SetButtonBorders()
@@ -87,22 +87,61 @@ namespace FLIGHT_RESERVATION
             {
                 SetIndicator(btnDashboard, pnlIndicator1);
                 SetHeader("DASHBOARD");
+                ClearControls(pnlMain);
+
             };
             btnFlightBooking.Click += (sender, e) =>
             {
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
+                ClearControls(pnlMain);
+
             };
             btnViewBookings.Click += (sender, e) =>
             {
                 SetIndicator(btnViewBookings, pnlIndicator3);
                 SetHeader("VIEW BOOKINGS");
+                ClearControls(pnlMain);
+
             };
             btnProfile.Click += (sender, e) =>
             {
                 SetIndicator(btnProfile, pnlIndicator4);
                 SetHeader("PROFILE");
+                ClearControls(pnlMain);
+
             };
+        }
+
+        private void ClearControls(Panel pnl)
+        {
+            foreach (Control control in pnl.Controls)
+            {
+                control.Dispose();
+            }
+            pnl.Controls.Clear();
+        }
+
+        private void AddControl(Control control, Panel pnl)
+        {
+            pnl.AutoSize = true;
+            pnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnl.Controls.Add(control);
+        }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewBookings1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewBookings1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
