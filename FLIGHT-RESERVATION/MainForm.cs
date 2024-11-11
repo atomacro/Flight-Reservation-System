@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FLIGHT_RESERVATION.ViewBookings;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,6 @@ namespace FLIGHT_RESERVATION
             InitializeSidebar();
             SetHeader("DASHBOARD");
             SetIndicator(btnDashboard, pnlIndicator1);
-
         }
 
         public void SetIndicator(Button activeButton, Panel pnlIndicator)
@@ -101,7 +101,10 @@ namespace FLIGHT_RESERVATION
                 SetIndicator(btnViewBookings, pnlIndicator3);
                 SetHeader("VIEW BOOKINGS");
                 ClearControls(pnlMain);
-
+                
+                var viewBookings = new ViewBookings.ViewBookings();
+                AddControl(viewBookings, pnlMain);
+                
             };
             btnProfile.Click += (sender, e) =>
             {
