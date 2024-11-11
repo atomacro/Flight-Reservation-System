@@ -22,20 +22,59 @@ namespace FLIGHT_RESERVATION.ViewBookings
 
         private void ViewBookings_Load(object sender, EventArgs e)
         {
+            InitializeSort();
+            PopulateBookings("New");
 
 
+        }
 
-            Database_View_Bookings dv_view_bookings = new Database_View_Bookings(1); // 1 is account ID
+        private void InitializeSort()
+        {
+            String State = "New";
+            btnSort.Text = "Latest First";
+            btnSort.BackColor = Color.White;
+            btnSort.ForeColor = ColorTranslator.FromHtml("#763AEE");
+
+            btnSort.FlatStyle = FlatStyle.Flat;
+            btnSort.FlatAppearance.BorderSize = 2;
+            btnSort.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#763AEE");
+
+            btnSort.Click += (s, e) => {
+                if(State == "Old")
+                {
+                    State = "New";
+                    btnSort.Text = "Latest First";
+                    btnSort.BackColor = Color.White;
+                    btnSort.ForeColor = ColorTranslator.FromHtml("#763AEE");
+                    pnlBookings.Controls.Clear();
+
+
+                }
+                else
+                {
+                    State = "Old";
+                    btnSort.Text = "Oldest First";
+                    btnSort.ForeColor = Color.White;
+                    btnSort.BackColor = ColorTranslator.FromHtml("#763AEE");
+                    pnlBookings.Controls.Clear();
+                }
+                PopulateBookings(State);
+            };
+        }
+
+        private void PopulateBookings(String sortState)
+        {
+            Database_View_Bookings dv_view_bookings = new Database_View_Bookings(2, sortState, pnlBookings, btnSort); // 1 is account ID
             for (int i = 0; i < dv_view_bookings.DepartureDate.Count; i++)
             {
                 Bookings bookings = new Bookings();
- 
+
                 bookings.Margin = new Padding(0, 0, 0, 10);
                 bookings.SetDate(dv_view_bookings.DepartureDate[i]);
                 bookings.setLocation(dv_view_bookings.DepartureLocation[i], dv_view_bookings.ArrivalLocation[i]);
                 bookings.setTime(dv_view_bookings.DepartureTime[i], dv_view_bookings.ArrivalTime[i]);
                 pnlBookings.Controls.Add(bookings);
-                
+
             }
         }
     }
@@ -54,39 +93,59 @@ namespace FLIGHT_RESERVATION.ViewBookings
         public List<String> DepartureTime = new List<string>();
         public List<String> ArrivalTime = new List<string>();
 
-        
-        public Database_View_Bookings(int AccountId)
+
+        public Database_View_Bookings(int AccountId, String sortState, Panel pnlBookings, Button btnSort)
         {
+
+            //Clear every populate
+            this.DepartureDate.Clear();
+            this.DepartureLocation.Clear();
+            this.ArrivalLocation.Clear();
+            this.DepartureTime.Clear();
+            this.ArrivalTime.Clear();
+
             string connectionString = $"Server=localhost;Database={this.DataBaseName};User ID={this.UserName};Password={this.Password};";
             _connection = new MySqlConnection(connectionString);
             this.AccountId = AccountId;
-            query();
+            querySelect(sortState, pnlBookings, btnSort); //add pnlBookings for emptyBooking function, sortState for New or Old, Add btnSort so its not visible if the query is empty
         }
-        public void query()
+        public void querySelect(String sortState, Panel pnlBookings, Button btnSort)
         {
             _connection.Open();
             _transaction = _connection.BeginTransaction();
 
             try
             {
-                string query = "SELECT Flights.DepartureDate, Flights.ArrivalDate, " +
-                                               "ArrivalAirport.AirportCode AS ArrivalAirportCode, " +
-                                               "DepartureAirport.AirportCode AS DepartureAirportCode " +
-                                               "FROM Flights " +
-                                               "JOIN TicketDetails ON Flights.FlightID = TicketDetails.FlightID " +
-                                               "JOIN Airport AS DepartureAirport ON Flights.DepartureAirportID = DepartureAirport.AirportID " +
-                                               "JOIN Airport AS ArrivalAirport ON Flights.ArrivalAirportID = ArrivalAirport.AirportID " +
-                                               "JOIN Transactions ON Transactions.TransactionID = TicketDetails.TransactionID " +
-                                               "JOIN Accounts ON Transactions.AccountID = Accounts.AccountID " +
-                                               "WHERE Accounts.AccountID = @AccountId;"; 
+                String SortingCondition = "";
+
+                if(sortState == "Old")
+                {
+                    SortingCondition = " ORDER BY Flights.DepartureDate DESC";
+                }
+
+                    string query = "SELECT Flights.DepartureDate, Flights.ArrivalDate, " +
+                                       "ArrivalAirport.AirportCode AS ArrivalAirportCode, " +
+                                       "DepartureAirport.AirportCode AS DepartureAirportCode " +
+                                       "FROM Flights " +
+                                       "JOIN TicketDetails ON Flights.FlightID = TicketDetails.FlightID " +
+                                       "JOIN Airport AS DepartureAirport ON Flights.DepartureAirportID = DepartureAirport.AirportID " +
+                                       "JOIN Airport AS ArrivalAirport ON Flights.ArrivalAirportID = ArrivalAirport.AirportID " +
+                                       "JOIN Transactions ON Transactions.TransactionID = TicketDetails.TransactionID " +
+                                       "JOIN Accounts ON Transactions.AccountID = Accounts.AccountID " +
+                                       "WHERE Accounts.AccountID = @AccountId" + SortingCondition;
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
                 command.Parameters.AddWithValue("@AccountId", this.AccountId);
-
-
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
 
+                    if (!reader.HasRows)
+                    {
+                        EmptyBooking(pnlBookings, btnSort);
+                        return;
+                    }
+
+                    btnSort.Visible = true; //make the button visible if the query is empty
 
                     while (reader.Read()) {
                         //get Date input to DateTime 
@@ -109,7 +168,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
                         this.DepartureTime.Add(DepartureTime);
                     }
                 }
-        }
+             }
             catch(Exception ex) {
 
                 MessageBox.Show("Error retrieving data. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -118,6 +177,25 @@ namespace FLIGHT_RESERVATION.ViewBookings
             {
                 _connection.Close();
             }
+        }
+
+        public void EmptyBooking(Panel pnlBookings, Button btnSort)
+        {
+            // Create a new label
+            Label lblEmptyBookingMessage = new Label();
+            btnSort.Visible = false;
+
+            lblEmptyBookingMessage.Text = "Errr... That's Awkward. Have you booked a flight yet?";
+
+            // Set the label's appearance
+            lblEmptyBookingMessage.Font = new Font("Kantumruy Pro", 20, FontStyle.Bold);
+            lblEmptyBookingMessage.Margin = new Padding(0, 50, 0, 0);
+            lblEmptyBookingMessage.ForeColor = ColorTranslator.FromHtml("#5C5C5C");
+            lblEmptyBookingMessage.TextAlign = ContentAlignment.MiddleCenter;  
+
+            lblEmptyBookingMessage.AutoSize = true;
+
+            pnlBookings.Controls.Add(lblEmptyBookingMessage);
         }
     }
 }
