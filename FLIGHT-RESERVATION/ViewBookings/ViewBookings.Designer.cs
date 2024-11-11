@@ -44,7 +44,7 @@
             // btnSort
             // 
             this.btnSort.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort.Location = new System.Drawing.Point(110, 19);
+            this.btnSort.Location = new System.Drawing.Point(110, 35);
             this.btnSort.Name = "btnSort";
             this.btnSort.Size = new System.Drawing.Size(155, 53);
             this.btnSort.TabIndex = 1;
