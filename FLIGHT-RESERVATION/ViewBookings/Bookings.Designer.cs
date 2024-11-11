@@ -43,10 +43,10 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Font = new System.Drawing.Font("Kantumruy Pro Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(2, 12);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(239, 29);
+            this.lblDate.Size = new System.Drawing.Size(245, 34);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "November 09, 2024";
             this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
@@ -55,7 +55,7 @@
             // 
             this.lblLocation1.AutoSize = true;
             this.lblLocation1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLocation1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocation1.Location = new System.Drawing.Point(3, 0);
             this.lblLocation1.Name = "lblLocation1";
             this.lblLocation1.Size = new System.Drawing.Size(157, 75);
@@ -66,9 +66,10 @@
             // 
             // lblLocation2
             // 
+            this.lblLocation2.AutoEllipsis = true;
             this.lblLocation2.AutoSize = true;
             this.lblLocation2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLocation2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation2.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocation2.Location = new System.Drawing.Point(573, 0);
             this.lblLocation2.Name = "lblLocation2";
             this.lblLocation2.Size = new System.Drawing.Size(150, 75);
@@ -93,7 +94,7 @@
             // 
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime2.Font = new System.Drawing.Font("Kantumruy Pro", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime2.Location = new System.Drawing.Point(573, 75);
             this.lblTime2.Name = "lblTime2";
             this.lblTime2.Size = new System.Drawing.Size(150, 38);
@@ -106,7 +107,7 @@
             // 
             this.lblTime1.AutoSize = true;
             this.lblTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime1.Font = new System.Drawing.Font("Kantumruy Pro", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime1.Location = new System.Drawing.Point(3, 75);
             this.lblTime1.Name = "lblTime1";
             this.lblTime1.Size = new System.Drawing.Size(157, 38);

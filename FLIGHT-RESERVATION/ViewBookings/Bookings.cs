@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace FLIGHT_RESERVATION
 {
@@ -15,14 +16,6 @@ namespace FLIGHT_RESERVATION
         public Bookings()
         {
             InitializeComponent();
-            Fonts fonts = new Fonts();
-            lblDate.Font = fonts.KantumruyProMedium(20.0F);
-            lblLocation1.Font = fonts.KantumruyProBold(28.0F);
-            lblLocation2.Font = fonts.KantumruyProBold(28.0F);
-            lblTime1.Font = fonts.KantumruyProRegular(15.0F);
-            lblTime2.Font = fonts.KantumruyProRegular(15.0F);
-
-            fonts.fontCollection.Dispose();
         }
         public void SetDate(string date)
         {

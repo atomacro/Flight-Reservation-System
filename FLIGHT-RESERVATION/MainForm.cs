@@ -29,6 +29,7 @@ namespace FLIGHT_RESERVATION
             InitializeSidebar();
             SetHeader("DASHBOARD");
             SetIndicator(btnDashboard, pnlIndicator1);
+            
         }
 
         public void SetIndicator(Button activeButton, Panel pnlIndicator)
@@ -41,10 +42,9 @@ namespace FLIGHT_RESERVATION
 
         public void SetHeader(string PageName)
         {
-            Fonts fonts = new Fonts();
             lblPageName.Text = PageName;
             lblPageName.ForeColor = ColorTranslator.FromHtml("#5C5C5C");
-            lblPageName.Font = fonts.KantumruyProBold(35.0F);
+            lblPageName.Font = new Font("Kantumruy Pro", 35.0F, FontStyle.Bold);
         }
 
         public void SetButtonBorders()
@@ -96,8 +96,8 @@ namespace FLIGHT_RESERVATION
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
 
-                ViewBookings.ViewBookings View_Bookings = new ViewBookings.ViewBookings();
-                AddControl(View_Bookings, pnlMain);
+                var viewBookings = new ViewBookings.ViewBookings();
+                AddControl(viewBookings, pnlMain);
             };
             btnViewBookings.Click += (sender, e) =>
             {

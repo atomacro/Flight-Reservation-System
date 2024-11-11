@@ -40,8 +40,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Panel();
-            this.pnlMain = new System.Windows.Forms.Panel();
             this.lblPageName = new System.Windows.Forms.Label();
+            this.pnlMain = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Header.SuspendLayout();
             this.SuspendLayout();
@@ -160,14 +160,6 @@
             this.Header.Size = new System.Drawing.Size(1302, 146);
             this.Header.TabIndex = 33;
             // 
-            // pnlMain
-            // 
-            this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.Location = new System.Drawing.Point(320, 142);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(981, 738);
-            this.pnlMain.TabIndex = 10;
-            // 
             // lblPageName
             // 
             this.lblPageName.Location = new System.Drawing.Point(366, 4);
@@ -176,6 +168,14 @@
             this.lblPageName.TabIndex = 9;
             this.lblPageName.Text = "label1";
             this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Location = new System.Drawing.Point(315, 140);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(985, 738);
+            this.pnlMain.TabIndex = 10;
             // 
             // MainForm
             // 

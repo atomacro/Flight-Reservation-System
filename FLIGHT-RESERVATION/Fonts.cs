@@ -12,7 +12,7 @@ namespace FLIGHT_RESERVATION
 
         public PrivateFontCollection fontCollection = new PrivateFontCollection();
 
-        private Font LoadFont(byte[] fontData, float size)
+        private Font LoadFont(byte[] fontData, int size)
         {
 
                 IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
@@ -26,22 +26,22 @@ namespace FLIGHT_RESERVATION
             return new Font(fontCollection.Families[fontCollection.Families.Length - 1], size);        
         }
 
-        public Font KantumruyProBold(float size)
+        public Font KantumruyProBold(int size)
         {
             return LoadFont(Properties.Resources.KantumruyPro_SemiBold, size);
         }
 
-        public Font KantumruyProMedium(float size)
+        public Font KantumruyProMedium(int size)
         {
             return LoadFont(Properties.Resources.KantumruyPro_Medium, size);
         }
 
-        public Font KantumruyProRegular(float size)
+        public Font KantumruyProRegular(int size)
         {
             return LoadFont(Properties.Resources.KantumruyPro_Regular, size);
         }
 
-        public Font KantumruyProSemiBold(float size)
+        public Font KantumruyProSemiBold(int size)
         {
             return LoadFont(Properties.Resources.KantumruyPro_SemiBold, size);
         }
