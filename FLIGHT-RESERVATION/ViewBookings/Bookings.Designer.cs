@@ -36,6 +36,7 @@
             this.lblTime2 = new System.Windows.Forms.Label();
             this.lblTime1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblAirplaneNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +95,7 @@
             // 
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime2.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime2.Location = new System.Drawing.Point(507, 47);
             this.lblTime2.Name = "lblTime2";
             this.lblTime2.Size = new System.Drawing.Size(109, 38);
@@ -107,7 +108,7 @@
             // 
             this.lblTime1.AutoSize = true;
             this.lblTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime1.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime1.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime1.Location = new System.Drawing.Point(3, 47);
             this.lblTime1.Name = "lblTime1";
             this.lblTime1.Size = new System.Drawing.Size(112, 38);
@@ -122,7 +123,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.4127F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.5873F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.Controls.Add(this.lblLocation1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTime2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTime1, 0, 1);
@@ -138,12 +139,23 @@
             this.tableLayoutPanel1.TabIndex = 6;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // lblAirplaneNumber
+            // 
+            this.lblAirplaneNumber.AutoSize = true;
+            this.lblAirplaneNumber.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAirplaneNumber.Location = new System.Drawing.Point(518, 25);
+            this.lblAirplaneNumber.Name = "lblAirplaneNumber";
+            this.lblAirplaneNumber.Size = new System.Drawing.Size(127, 25);
+            this.lblAirplaneNumber.TabIndex = 7;
+            this.lblAirplaneNumber.Text = "Flight: ABC123";
+            // 
             // Bookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lblAirplaneNumber);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblDate);
             this.DoubleBuffered = true;
@@ -167,5 +179,6 @@
         private System.Windows.Forms.Label lblTime2;
         private System.Windows.Forms.Label lblTime1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblAirplaneNumber;
     }
 }

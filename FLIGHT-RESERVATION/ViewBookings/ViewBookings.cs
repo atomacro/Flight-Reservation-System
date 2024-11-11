@@ -64,7 +64,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
 
         private void PopulateBookings(String sortState)
         {
-            Database_View_Bookings dv_view_bookings = new Database_View_Bookings(2, sortState, pnlBookings, btnSort); // 1 is account ID
+            Database_View_Bookings dv_view_bookings = new Database_View_Bookings(1, sortState, pnlBookings, btnSort); // 1 is account ID
             for (int i = 0; i < dv_view_bookings.DepartureDate.Count; i++)
             {
                 Bookings bookings = new Bookings();
@@ -73,6 +73,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
                 bookings.SetDate(dv_view_bookings.DepartureDate[i]);
                 bookings.setLocation(dv_view_bookings.DepartureLocation[i], dv_view_bookings.ArrivalLocation[i]);
                 bookings.setTime(dv_view_bookings.DepartureTime[i], dv_view_bookings.ArrivalTime[i]);
+                bookings.setAirplaneNumber(dv_view_bookings.AirplaneNumber[i]);
                 pnlBookings.Controls.Add(bookings);
 
             }
@@ -92,6 +93,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
         public List<String> ArrivalLocation = new List<String>();
         public List<String> DepartureTime = new List<string>();
         public List<String> ArrivalTime = new List<string>();
+        public List<String> AirplaneNumber = new List<string>();
 
 
         public Database_View_Bookings(int AccountId, String sortState, Panel pnlBookings, Button btnSort)
@@ -103,6 +105,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
             this.ArrivalLocation.Clear();
             this.DepartureTime.Clear();
             this.ArrivalTime.Clear();
+            this.AirplaneNumber.Clear();
 
             string connectionString = $"Server=localhost;Database={this.DataBaseName};User ID={this.UserName};Password={this.Password};";
             _connection = new MySqlConnection(connectionString);
@@ -123,7 +126,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
                     SortingCondition = " ORDER BY Flights.DepartureDate DESC";
                 }
 
-                    string query = "SELECT Flights.DepartureDate, Flights.ArrivalDate, " +
+                    string query = "SELECT Flights.DepartureDate, Flights.ArrivalDate, Flights.AirplaneNumber," +
                                        "ArrivalAirport.AirportCode AS ArrivalAirportCode, " +
                                        "DepartureAirport.AirportCode AS DepartureAirportCode " +
                                        "FROM Flights " +
@@ -160,12 +163,16 @@ namespace FLIGHT_RESERVATION.ViewBookings
                         string DepartureLocation = reader.GetString("DepartureAirportCode");
                         string ArrivalLocation = reader.GetString("ArrivalAirportCode");
 
+                        //get AirplaneNumber
+                        string AirplaneNumber = reader.GetString("AirplaneNumber");
+
                         //populate list
                         this.ArrivalLocation.Add(ArrivalLocation);
                         this.DepartureLocation.Add(DepartureLocation);
                         this.DepartureDate.Add(Date);
                         this.ArrivalTime.Add(ArrivalTime);
                         this.DepartureTime.Add(DepartureTime);
+                        this.AirplaneNumber.Add(AirplaneNumber);
                     }
                 }
              }
@@ -188,8 +195,8 @@ namespace FLIGHT_RESERVATION.ViewBookings
             lblEmptyBookingMessage.Text = "Errr... That's Awkward. Have you booked a flight yet?";
 
             // Set the label's appearance
-            lblEmptyBookingMessage.Font = new Font("Kantumruy Pro", 20, FontStyle.Bold);
-            lblEmptyBookingMessage.Margin = new Padding(0, 50, 0, 0);
+            lblEmptyBookingMessage.Font = new Font("Kantumruy Pro", 25, FontStyle.Bold);
+            lblEmptyBookingMessage.Margin = new Padding(0, 60, 0, 0);
             lblEmptyBookingMessage.ForeColor = ColorTranslator.FromHtml("#5C5C5C");
             lblEmptyBookingMessage.TextAlign = ContentAlignment.MiddleCenter;  
 

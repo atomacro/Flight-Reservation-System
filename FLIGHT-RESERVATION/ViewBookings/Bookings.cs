@@ -36,6 +36,10 @@ namespace FLIGHT_RESERVATION
             lblTime2.Text = time2;
         }
 
+        public void setAirplaneNumber(String airplaneNumber) { 
+            lblAirplaneNumber.Text = "Flight: " + airplaneNumber;
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
