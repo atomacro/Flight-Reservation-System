@@ -9,7 +9,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace FLIGHT_RESERVATION.LoginSignUp
+namespace FLIGHT_RESERVATION
 {
     internal class CustomControls
     {
