@@ -117,17 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="KantumruyPro-Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-Bold.ttf;System.Byte[]</value>
-  </data>
-  <data name="KantumruyPro-Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-Regular.ttf;System.Byte[]</value>
-  </data>
-  <data name="KantumruyPro-SemiBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-SemiBold.ttf;System.Byte[]</value>
-  </data>
-  <data name="KantumruyPro-Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-Medium.ttf;System.Byte[]</value>
-  </data>
 </root>
