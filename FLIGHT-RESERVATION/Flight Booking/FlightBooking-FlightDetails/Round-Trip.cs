@@ -19,6 +19,16 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 
         private void Round_Trip_Load(object sender, EventArgs e)
         {
+            foreach (ComboBox cbo in this.Controls.OfType<ComboBox>().ToList())
+            {
+                cbo.DropDownStyle = ComboBoxStyle.DropDownList
+                ComboBox currentCbo = cbo;
+
+            }
+        }
+
+        private void picLine_Click(object sender, EventArgs e)
+        {
 
         }
     }
