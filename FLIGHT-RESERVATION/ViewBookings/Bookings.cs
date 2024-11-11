@@ -16,6 +16,9 @@ namespace FLIGHT_RESERVATION
         public Bookings()
         {
             InitializeComponent();
+            lblTime1.ForeColor = ColorTranslator.FromHtml("#9F8FFF");
+            lblTime2.ForeColor = ColorTranslator.FromHtml("#9F8FFF");
+
         }
         public void SetDate(string date)
         {

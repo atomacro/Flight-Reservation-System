@@ -96,14 +96,15 @@ namespace FLIGHT_RESERVATION
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
 
-                var viewBookings = new ViewBookings.ViewBookings();
-                AddControl(viewBookings, pnlMain);
             };
             btnViewBookings.Click += (sender, e) =>
             {
                 SetIndicator(btnViewBookings, pnlIndicator3);
                 SetHeader("VIEW BOOKINGS");
                 ClearControls(pnlMain);
+
+                var viewBookings = new ViewBookings.ViewBookings();
+                AddControl(viewBookings, pnlMain);
 
             };
             btnProfile.Click += (sender, e) =>

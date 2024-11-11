@@ -33,8 +33,9 @@ namespace FLIGHT_RESERVATION.ViewBookings
             for (int i = 0; i < 4; i++)
             {
                 Bookings bookings = new Bookings();
-
-                bookings.AutoSize = true;
+                //bookings.BackgroundImageLayout = ImageLayout.Stretch;
+                //bookings.Size = new System.Drawing.Size(699, 180);
+                bookings.Margin = new Padding(0, 0, 0, 10);
                 bookings.SetDate(Date[i]);
                 bookings.setLocation(Location1[i], Location2[i]);
                 bookings.setTime(Time1[i], Time2[i]);

@@ -36,7 +36,7 @@
             this.pnlBookings.AutoScroll = true;
             this.pnlBookings.Location = new System.Drawing.Point(63, 141);
             this.pnlBookings.Name = "pnlBookings";
-            this.pnlBookings.Size = new System.Drawing.Size(756, 538);
+            this.pnlBookings.Size = new System.Drawing.Size(730, 538);
             this.pnlBookings.TabIndex = 0;
             // 
             // ViewBookings
