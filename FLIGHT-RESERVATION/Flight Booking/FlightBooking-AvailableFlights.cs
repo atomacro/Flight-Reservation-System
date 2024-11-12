@@ -37,8 +37,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             int selectedIndex = 0;
             for (int i = 0; i < 5; i++)
             {
-                var AvailableFlight = new AvailableFlights();
-                AvailableFlight.Click += (s, e) =>
+                AvailableFlights AvailableFlight = new AvailableFlights();
+                AvailableFlight.btnBook.Click += (s, e) =>
                 {
                     selectedIndex = availableFlights.IndexOf(AvailableFlight); // get index of the selected Flight
                     setSelected(availableFlights, selectedIndex); // set the border of the AvailableFlight
@@ -55,11 +55,13 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             {
                 if(i != index)
                 {
+                    availableFlights[i].btnBook.Text = "Select";
                     availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border); //reset the borders of unselected
                     continue;
                 }
 
                 availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border); //set border to selected
+                availableFlights[i].btnBook.Text = "Selected";
 
             }
         }

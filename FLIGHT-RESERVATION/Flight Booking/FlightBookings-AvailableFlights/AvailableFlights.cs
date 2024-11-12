@@ -26,7 +26,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
             lblLocation2.Text = location2;
         }
 
-        public void setTime(String time1, String time2) { 
+        public void setTime(String time1, String time2)
+        {
             lblTime1.Text = time1;
             lblTime2.Text = time2;
         }
@@ -41,12 +42,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
             this.BackgroundImage = img;
         }
 
-        private void lblTime2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void AvailableFlights_Load(object sender, EventArgs e)
+        private void lblTime2_Click(object sender, EventArgs e)
         {
 
         }
