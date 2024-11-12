@@ -29,15 +29,25 @@
         private void InitializeComponent()
         {
             this.pnlFlightBooking = new System.Windows.Forms.FlowLayoutPanel();
+            this.round_Trip1 = new FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails.Round_Trip();
             this.pnlFlightBooking.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlFlightBooking
             // 
+            this.pnlFlightBooking.Controls.Add(this.round_Trip1);
             this.pnlFlightBooking.Location = new System.Drawing.Point(15, 106);
             this.pnlFlightBooking.Name = "pnlFlightBooking";
             this.pnlFlightBooking.Size = new System.Drawing.Size(871, 571);
             this.pnlFlightBooking.TabIndex = 0;
+            // 
+            // round_Trip1
+            // 
+            this.round_Trip1.BackColor = System.Drawing.Color.White;
+            this.round_Trip1.Location = new System.Drawing.Point(3, 3);
+            this.round_Trip1.Name = "round_Trip1";
+            this.round_Trip1.Size = new System.Drawing.Size(871, 571);
+            this.round_Trip1.TabIndex = 0;
             // 
             // FlightBooking_TwoWay
             // 
@@ -54,5 +64,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel pnlFlightBooking;
+        private Flight_Booking.FlightBooking_FlightDetails.Round_Trip round_Trip1;
     }
 }

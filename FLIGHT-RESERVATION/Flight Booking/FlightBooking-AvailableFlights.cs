@@ -72,6 +72,11 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         }
 
+        private void pnlAvailableFlights_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         // this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border;
         // this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border;
 
