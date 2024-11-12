@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
 {
-    public partial class AvailableFlights : UserControl
+    public partial class FlightsAvailable : UserControl
     {
-        public AvailableFlights()
+        public FlightsAvailable()
         {
             InitializeComponent();
             lblTime1.ForeColor = ColorTranslator.FromHtml("#9C9C9C");

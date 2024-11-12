@@ -30,20 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlIndicator1 = new System.Windows.Forms.Panel();
-            this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlIndicator4 = new System.Windows.Forms.Panel();
             this.pnlIndicator3 = new System.Windows.Forms.Panel();
             this.pnlIndicator2 = new System.Windows.Forms.Panel();
+            this.Header = new System.Windows.Forms.Panel();
+            this.lblPageName = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.btnFlightBooking = new System.Windows.Forms.Button();
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.Header = new System.Windows.Forms.Panel();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.lblPageName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.Header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlIndicator1
@@ -53,18 +54,6 @@
             this.pnlIndicator1.Name = "pnlIndicator1";
             this.pnlIndicator1.Size = new System.Drawing.Size(10, 187);
             this.pnlIndicator1.TabIndex = 41;
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
-            this.btnDashboard.Location = new System.Drawing.Point(-1, 140);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(315, 187);
-            this.btnDashboard.TabIndex = 40;
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDashboard.UseVisualStyleBackColor = true;
             // 
             // pnlIndicator4
             // 
@@ -89,6 +78,74 @@
             this.pnlIndicator2.Name = "pnlIndicator2";
             this.pnlIndicator2.Size = new System.Drawing.Size(10, 187);
             this.pnlIndicator2.TabIndex = 34;
+            // 
+            // Header
+            // 
+            this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Header.Controls.Add(this.btnLogin);
+            this.Header.Controls.Add(this.lblPageName);
+            this.Header.Controls.Add(this.btnLogout);
+            this.Header.Controls.Add(this.picLogo);
+            this.Header.Location = new System.Drawing.Point(-9, -8);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(1318, 150);
+            this.Header.TabIndex = 33;
+            // 
+            // lblPageName
+            // 
+            this.lblPageName.Location = new System.Drawing.Point(366, 4);
+            this.lblPageName.Name = "lblPageName";
+            this.lblPageName.Size = new System.Drawing.Size(683, 134);
+            this.lblPageName.TabIndex = 9;
+            this.lblPageName.Text = "label1";
+            this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.Location = new System.Drawing.Point(1055, 44);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(207, 54);
+            this.btnLogin.TabIndex = 10;
+            this.btnLogin.Text = " ";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.Location = new System.Drawing.Point(1055, 44);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(207, 54);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = " ";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
+            this.picLogo.Location = new System.Drawing.Point(24, 4);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(341, 134);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 7;
+            this.picLogo.TabStop = false;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
+            this.btnDashboard.Location = new System.Drawing.Point(-1, 140);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(315, 187);
+            this.btnDashboard.TabIndex = 40;
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDashboard.UseVisualStyleBackColor = true;
             // 
             // btnFlightBooking
             // 
@@ -128,62 +185,6 @@
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProfile.UseVisualStyleBackColor = true;
             // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
-            this.picLogo.Location = new System.Drawing.Point(24, 4);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(341, 134);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 7;
-            this.picLogo.TabStop = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(1055, 44);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(207, 54);
-            this.btnLogout.TabIndex = 8;
-            this.btnLogout.Text = " ";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // Header
-            // 
-            this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Header.Controls.Add(this.btnLogin);
-            this.Header.Controls.Add(this.lblPageName);
-            this.Header.Controls.Add(this.btnLogout);
-            this.Header.Controls.Add(this.picLogo);
-            this.Header.Location = new System.Drawing.Point(-9, -8);
-            this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1318, 150);
-            this.Header.TabIndex = 33;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(1055, 44);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(207, 54);
-            this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = " ";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // lblPageName
-            // 
-            this.lblPageName.Location = new System.Drawing.Point(366, 4);
-            this.lblPageName.Name = "lblPageName";
-            this.lblPageName.Size = new System.Drawing.Size(683, 134);
-            this.lblPageName.TabIndex = 9;
-            this.lblPageName.Text = "label1";
-            this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
@@ -216,6 +217,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
