@@ -23,14 +23,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             PopulateAvailableBookings();
             btnBack.FlatAppearance.BorderSize = 0;
         }
-
-
-
-
-
-
-
-
         public void PopulateAvailableBookings()
         {
             List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
@@ -41,6 +33,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 FlightsAvailable AvailableFlight = new FlightsAvailable();
                 AvailableFlight.btnBook.Click += (s, e) =>
                 {
+
                     selectedIndex = availableFlights.IndexOf(AvailableFlight); // get index of the selected Flight
                     setSelected(availableFlights, selectedIndex); // set the border of the AvailableFlight
                 };
@@ -49,21 +42,18 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 pnlAvailableFlights.Controls.Add(AvailableFlight);
             }
         }
-
         public void setSelected(List<FlightsAvailable> availableFlights, int index)
         {
-            for (int  i = 0;  i < availableFlights.Count;  i++)
+            for (int i = 0; i < availableFlights.Count; i++)
             {
-                if(i != index)
+                if (i != index || availableFlights[i].btnBook.Text == "Unselect")
                 {
                     availableFlights[i].btnBook.Text = "Select";
                     availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border); //reset the borders of unselected
                     continue;
                 }
-
                 availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border); //set border to selected
-                availableFlights[i].btnBook.Text = "Selected";
-
+                availableFlights[i].btnBook.Text = "Unselect";
             }
         }
 
