@@ -43,7 +43,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblPageName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Header.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,7 +215,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Header.ResumeLayout(false);
             this.ResumeLayout(false);
 
