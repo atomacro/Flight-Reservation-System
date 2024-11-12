@@ -46,7 +46,7 @@
             this.round_Trip1.BackColor = System.Drawing.Color.White;
             this.round_Trip1.Location = new System.Drawing.Point(3, 3);
             this.round_Trip1.Name = "round_Trip1";
-            this.round_Trip1.Size = new System.Drawing.Size(871, 566);
+            this.round_Trip1.Size = new System.Drawing.Size(871, 571);
             this.round_Trip1.TabIndex = 0;
             // 
             // FlightBooking_TwoWay

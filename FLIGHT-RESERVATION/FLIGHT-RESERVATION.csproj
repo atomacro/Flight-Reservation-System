@@ -98,17 +98,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Flight Booking\FlightBooking-AvailableFlights.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-AvailableFlights.Designer.cs">
+      <DependentUpon>FlightBooking-AvailableFlights.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails.Designer.cs">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.cs">
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\FlightDetails-RoundTrip.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.Designer.cs">
-      <DependentUpon>Round-Trip.cs</DependentUpon>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\FlightDetails-RoundTrip.Designer.cs">
+      <DependentUpon>FlightDetails-RoundTrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-AvailableFlights\AvailableFlights.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-AvailableFlights\AvailableFlights.Designer.cs">
+      <DependentUpon>AvailableFlights.cs</DependentUpon>
     </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="MainForm.cs">
@@ -136,11 +148,17 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-AvailableFlights.resx">
+      <DependentUpon>FlightBooking-AvailableFlights.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails.resx">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.resx">
-      <DependentUpon>Round-Trip.cs</DependentUpon>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\FlightDetails-RoundTrip.resx">
+      <DependentUpon>FlightDetails-RoundTrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBookings-AvailableFlights\AvailableFlights.resx">
+      <DependentUpon>AvailableFlights.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -170,9 +188,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Available Flights\Unselected Border.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Public\View Bookings\AirplaneLines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Available Flights\Selected Border.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

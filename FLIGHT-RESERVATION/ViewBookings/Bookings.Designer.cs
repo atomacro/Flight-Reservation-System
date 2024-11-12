@@ -29,28 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bookings));
-            this.lblDate = new System.Windows.Forms.Label();
             this.lblLocation1 = new System.Windows.Forms.Label();
             this.lblLocation2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTime2 = new System.Windows.Forms.Label();
             this.lblTime1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblAirplaneNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(29, 25);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(173, 25);
-            this.lblDate.TabIndex = 0;
-            this.lblDate.Text = "November 09, 2024";
-            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
             // lblLocation1
             // 
@@ -139,6 +128,17 @@
             this.tableLayoutPanel1.TabIndex = 6;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(29, 25);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(173, 25);
+            this.lblDate.TabIndex = 0;
+            this.lblDate.Text = "November 09, 2024";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
+            // 
             // lblAirplaneNumber
             // 
             this.lblAirplaneNumber.AutoSize = true;
@@ -171,14 +171,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblLocation1;
         private System.Windows.Forms.Label lblLocation2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTime2;
         private System.Windows.Forms.Label lblTime1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblAirplaneNumber;
     }
 }
