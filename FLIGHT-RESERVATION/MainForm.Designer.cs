@@ -37,7 +37,7 @@
             this.btnFlightBooking = new System.Windows.Forms.Button();
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -129,16 +129,16 @@
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProfile.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // picLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(24, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(341, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
+            this.picLogo.Location = new System.Drawing.Point(24, 4);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(341, 134);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 7;
+            this.picLogo.TabStop = false;
             // 
             // btnLogout
             // 
@@ -158,7 +158,7 @@
             this.Header.Controls.Add(this.btnLogin);
             this.Header.Controls.Add(this.lblPageName);
             this.Header.Controls.Add(this.btnLogout);
-            this.Header.Controls.Add(this.pictureBox1);
+            this.Header.Controls.Add(this.picLogo);
             this.Header.Location = new System.Drawing.Point(-9, -8);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(1318, 150);
@@ -231,7 +231,7 @@
         internal System.Windows.Forms.Button btnFlightBooking;
         internal System.Windows.Forms.Button btnViewBookings;
         internal System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Panel pnlMain;

@@ -47,10 +47,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblCompanions = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblAdult = new System.Windows.Forms.Label();
-            this.lblChildren = new System.Windows.Forms.Label();
-            this.lblInfant = new System.Windows.Forms.Label();
             this.numAdult = new System.Windows.Forms.NumericUpDown();
+            this.lblChildren = new System.Windows.Forms.Label();
             this.numChildren = new System.Windows.Forms.NumericUpDown();
+            this.lblInfant = new System.Windows.Forms.Label();
             this.numInfant = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -263,6 +263,14 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblAdult.TabIndex = 0;
             this.lblAdult.Text = "Adult";
             // 
+            // numAdult
+            // 
+            this.numAdult.Location = new System.Drawing.Point(10, 32);
+            this.numAdult.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.numAdult.Name = "numAdult";
+            this.numAdult.Size = new System.Drawing.Size(64, 22);
+            this.numAdult.TabIndex = 3;
+            // 
             // lblChildren
             // 
             this.lblChildren.AutoSize = true;
@@ -273,6 +281,14 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblChildren.TabIndex = 1;
             this.lblChildren.Text = "Children (2-11 years old)";
             // 
+            // numChildren
+            // 
+            this.numChildren.Location = new System.Drawing.Point(10, 89);
+            this.numChildren.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.numChildren.Name = "numChildren";
+            this.numChildren.Size = new System.Drawing.Size(64, 22);
+            this.numChildren.TabIndex = 4;
+            // 
             // lblInfant
             // 
             this.lblInfant.AutoSize = true;
@@ -282,27 +298,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblInfant.Size = new System.Drawing.Size(70, 29);
             this.lblInfant.TabIndex = 2;
             this.lblInfant.Text = "Infant";
-            // 
-            // numAdult
-            // 
-            this.numAdult.Location = new System.Drawing.Point(10, 32);
-            this.numAdult.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.numAdult.Name = "numAdult";
-            this.numAdult.Size = new System.Drawing.Size(64, 22);
-            this.numAdult.TabIndex = 3;
-            this.numAdult.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numChildren
-            // 
-            this.numChildren.Location = new System.Drawing.Point(10, 89);
-            this.numChildren.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.numChildren.Name = "numChildren";
-            this.numChildren.Size = new System.Drawing.Size(64, 22);
-            this.numChildren.TabIndex = 4;
             // 
             // numInfant
             // 
