@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Google.Protobuf.WellKnownTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace FLIGHT_RESERVATION.LoginSignUp
+namespace FLIGHT_RESERVATION
 {
     public class Session
     {

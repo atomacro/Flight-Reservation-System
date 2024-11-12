@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -156,14 +156,17 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LoginSignUp\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails.resx">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\FlightDetails-RoundTrip.resx">
-      <DependentUpon>FlightDetails-RoundTrip.cs</DependentUpon>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.resx">
+      <DependentUpon>Round-Trip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flight Booking\FlightBookings-AvailableFlights\AvailableFlights.resx">
-      <DependentUpon>AvailableFlights.cs</DependentUpon>
+    <EmbeddedResource Include="LoginSignUp\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
