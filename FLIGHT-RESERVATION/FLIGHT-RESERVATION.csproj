@@ -99,17 +99,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls.cs" />
+    <Compile Include="Flight Booking\FlightBooking-AvailableFlights.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-AvailableFlights.Designer.cs">
+      <DependentUpon>FlightBooking-AvailableFlights.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails.Designer.cs">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.cs">
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\FlightDetails-RoundTrip.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.Designer.cs">
-      <DependentUpon>Round-Trip.cs</DependentUpon>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\FlightDetails-RoundTrip.Designer.cs">
+      <DependentUpon>FlightDetails-RoundTrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-AvailableFlights\AvailableFlights.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-AvailableFlights\AvailableFlights.Designer.cs">
+      <DependentUpon>AvailableFlights.cs</DependentUpon>
     </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="LoginSignUp\Login.cs">
@@ -181,9 +193,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Available Flights\Unselected Border.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Public\View Bookings\AirplaneLines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Available Flights\Selected Border.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
