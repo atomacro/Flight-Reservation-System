@@ -98,7 +98,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls.cs" />
     <Compile Include="Fonts.cs" />
+    <Compile Include="LoginSignUp\Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginSignUp\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginSignUp\Session.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +132,9 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LoginSignUp\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
