@@ -33,12 +33,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         public void PopulateAvailableBookings()
         {
-            List<AvailableFlights> availableFlights = new List<AvailableFlights>();
+            List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
 
             int selectedIndex = 0;
             for (int i = 0; i < 5; i++)
             {
-                AvailableFlights AvailableFlight = new AvailableFlights();
+                FlightsAvailable AvailableFlight = new FlightsAvailable();
                 AvailableFlight.btnBook.Click += (s, e) =>
                 {
                     selectedIndex = availableFlights.IndexOf(AvailableFlight); // get index of the selected Flight
@@ -50,7 +50,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             }
         }
 
-        public void setSelected(List<AvailableFlights> availableFlights, int index)
+        public void setSelected(List<FlightsAvailable> availableFlights, int index)
         {
             for (int  i = 0;  i < availableFlights.Count;  i++)
             {
