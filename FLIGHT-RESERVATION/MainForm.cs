@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FLIGHT_RESERVATION.LoginSignUp;
 
 
 namespace FLIGHT_RESERVATION
@@ -31,8 +32,13 @@ namespace FLIGHT_RESERVATION
             InitializeSidebar();
             SetHeader("DASHBOARD");
             SetIndicator(btnDashboard, pnlIndicator1);
+
+            UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
         }
 
+
+
+        // UI Related Methods
         public void SetIndicator(Button activeButton, Panel pnlIndicator)
         {
             ResetButtonColors();
@@ -50,7 +56,7 @@ namespace FLIGHT_RESERVATION
 
         public void SetButtonBorders()
         {
-            Button[] btns = { btnDashboard, btnFlightBooking, btnViewBookings, btnProfile, btnLogout };
+            Button[] btns = { btnDashboard, btnFlightBooking, btnViewBookings, btnProfile, btnLogout, btnLogin };
 
             foreach (Button btn in btns)
             {
@@ -133,19 +139,24 @@ namespace FLIGHT_RESERVATION
             pnl.Controls.Add(control);
         }
 
-        private void userControl11_Load(object sender, EventArgs e)
+        public void UpdateUIBasedOnLoginStatus(bool isLoggedIn)
         {
-
+            btnLogin.Visible = !isLoggedIn;
+            btnLogout.Visible = isLoggedIn;
         }
 
-        private void viewBookings1_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            ClearControls(pnlMain);
 
+            var login = new Login();
+            AddControl(login, pnlMain);
         }
 
-        private void viewBookings1_Load_1(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-
+            Session.IsLoggedIn = false;
+            Session.CurrentUser = string.Empty;
         }
     }
 }

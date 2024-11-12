@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lblPageName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,10 +150,12 @@
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = " ";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Header
             // 
             this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Header.Controls.Add(this.btnLogin);
             this.Header.Controls.Add(this.lblPageName);
             this.Header.Controls.Add(this.btnLogout);
             this.Header.Controls.Add(this.pictureBox1);
@@ -160,6 +163,18 @@
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(1318, 150);
             this.Header.TabIndex = 33;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.Location = new System.Drawing.Point(1055, 44);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(207, 54);
+            this.btnLogin.TabIndex = 10;
+            this.btnLogin.Text = " ";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblPageName
             // 
@@ -221,6 +236,7 @@
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 

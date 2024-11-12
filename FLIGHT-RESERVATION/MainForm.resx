@@ -1037,6 +1037,33 @@
         iVg1nwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIwAAAAoCAYAAAAsTRLGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAABDtJREFUeF7tWu1xGjEQpYSUkBJSAiXwk+Fjch3EHZgOQgdxB7gD04FLIB1QQvKe
+        ZqXsCnEf2Djy3b6ZN3C7WrGSHvqCmcPhcDgcDofD4RiIzWbzZyjX6/Wvpmm+SBWOKaEkiJ58kSocUwIG
+        /jiQZzCIRqpwOK4DQnlxwTh6wwXzD6vVquF+Dn1xWC6XX8Xs0LinYNjpkYvFoupNNdq/iP0gPIvLoYGO
+        uZtgUOfvWDd4FHM1oIijkLfbbaNyDRzlyZENRuN+yONgIHaSgoFAfjIvLEEnPlMcsJ1UvvtQcEygWNDg
+        V2ngo5gHAXGTEwxyeVR5mXbHJVQex4XCNDpYNIipXjD8YmBD+g11zPkq5l7g4DNOx3JWkZz27MO3LD0y
+        w4f64/JWNZDoThofOUg0KF+tYGSwmV+6K4rkaaZtJoD/IVtiDLkkSdEE7Wf9Yg6ALfUTuJPZ/UnZUlz1
+        ex82IEu8t2hQtkrBoDy/tRdC0cTgnEozDsTAo7EpC5upi7G54DJ/m2D28MetQIkHCasXSPIm0aBcdYLh
+        QHJAY6wMdlg+8Gq+1Synv9G8S9F+cB/9eM+jsxaO+TlE2bsEE+vgTTnF8yzPmnMJvT/YMbcQSeaq7xQN
+        ylQnGAyAEQUG3Mwi0tbkB3fi4mfulf3iLiXzmzZre4dgKOLcb+pF/IO47g/9we/AVtHAX6Ng9N6jGAe7
+        rjvNFHivxVYSjJmJxRyg7V2CgYjNcsZn7QeTiO+O7IPfytbE4a9KMFw+VAxZvA+BvSgMfrOVnQP/XVwX
+        Sx34Kq4AZW8VDOsQc8J/FYxeZoYQSeZLUmfSKFObYHp1POxm2RJz6QKOZBsPoNn4ss8kLED7PpVgbgES
+        NJdRfRNGuU85w2DQzEZTzAEyeEYcmhAKfQspnqDLjFowSO4msRAoW5VgiCyu+McuDpoqk5YWuUiLbeLJ
+        iksU9y07eT+nKKW4gcQEjlYwSOxmsRAoX6NgzIkDNEdUDJjZp+ilRR+rxdQbus5RCgZJ5T/JD04SMR8l
+        GA7sqY0UAuMKS8qZA4gyDQRhxMQ4lg8fCMCW/IzBa5hdNKUec1Qn4Ev1jlIwBBKLm7+bEkTchwmmB1Mb
+        OKB4vroPITHwZy0WAnbeEBfL56QoEJ+Wp9wn5gDYxiEYAsldbOD6ArFVCoaQQTCnIZJCATnYxd+SMKBm
+        yepg+kxtH7Vg3gI07G6CeS9wFkB+6RdnPovrAigT9nQUFV7D8pMT9iTC0uA7WoBOq14wfSG/bkchPIu5
+        iFgONJd3jg6gw0YjGNn3RCGc8Wwu5ggeuzHLhH/bkXhvlh5HB9BpoxEMAQHkt7zc76STmPbx+do+aDJA
+        R1AAQ5hOIlLFp4ZsPvm3gySMKzxOXixEoWN6Ed+2UU3NXJ7QpnDLi/3ME8n3sDVt/9SbHLQIBpDftqsn
+        D4fD4XA4HA6Hw+H4IMxmfwHQEuf3TXYIMwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="pnlMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pnlMain.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA4oAAAKlCAYAAACNABKvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
