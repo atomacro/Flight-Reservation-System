@@ -250,10 +250,6 @@
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
-<<<<<<< Updated upstream
-=======
-        private System.Windows.Forms.PictureBox pictureBox1;
->>>>>>> Stashed changes
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
