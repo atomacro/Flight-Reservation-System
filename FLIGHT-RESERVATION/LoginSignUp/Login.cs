@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FLIGHT_RESERVATION.LoginSignUp
+
+namespace FLIGHT_RESERVATION
 {
     public partial class Login : UserControl
     {

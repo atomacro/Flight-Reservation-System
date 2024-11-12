@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using System.ComponentModel;
 
 namespace FLIGHT_RESERVATION
 {
@@ -127,7 +126,7 @@ namespace FLIGHT_RESERVATION
 
             private TextBox textBox1;
 
-            public event EventHandler TextChanged;
+            public new event EventHandler TextChanged;
 
             public RoundedTextBox()
             {
@@ -302,7 +301,7 @@ namespace FLIGHT_RESERVATION
                 }
             }
 
-            public string Text
+            public new string Text
             {
                 get
                 {

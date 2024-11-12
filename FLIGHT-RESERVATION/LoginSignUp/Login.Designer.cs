@@ -1,4 +1,4 @@
-﻿namespace FLIGHT_RESERVATION.LoginSignUp
+﻿namespace FLIGHT_RESERVATION
 {
     partial class Login
     {
