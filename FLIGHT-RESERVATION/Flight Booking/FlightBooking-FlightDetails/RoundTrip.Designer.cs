@@ -188,7 +188,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // 
             // picCompanions
             // 
-            this.picCompanions.Image = ((System.Drawing.Image)(resources.GetObject("picCompanions.Image")));
             this.picCompanions.Location = new System.Drawing.Point(22, 294);
             this.picCompanions.Margin = new System.Windows.Forms.Padding(0);
             this.picCompanions.Name = "picCompanions";
@@ -199,7 +198,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // 
             // picClassSeat
             // 
-            this.picClassSeat.Image = ((System.Drawing.Image)(resources.GetObject("picClassSeat.Image")));
             this.picClassSeat.Location = new System.Drawing.Point(548, 294);
             this.picClassSeat.Name = "picClassSeat";
             this.picClassSeat.Size = new System.Drawing.Size(304, 120);
@@ -209,7 +207,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // 
             // picDepartureReturnDate
             // 
-            this.picDepartureReturnDate.Image = ((System.Drawing.Image)(resources.GetObject("picDepartureReturnDate.Image")));
             this.picDepartureReturnDate.Location = new System.Drawing.Point(537, 19);
             this.picDepartureReturnDate.Name = "picDepartureReturnDate";
             this.picDepartureReturnDate.Size = new System.Drawing.Size(315, 255);
@@ -219,7 +216,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // 
             // picDepartureArrivalLocation
             // 
-            this.picDepartureArrivalLocation.Image = ((System.Drawing.Image)(resources.GetObject("picDepartureArrivalLocation.Image")));
             this.picDepartureArrivalLocation.Location = new System.Drawing.Point(22, 19);
             this.picDepartureArrivalLocation.Name = "picDepartureArrivalLocation";
             this.picDepartureArrivalLocation.Size = new System.Drawing.Size(497, 255);
@@ -455,11 +451,11 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // 
             // btnSearchFlight
             // 
-            this.btnSearchFlight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchFlight.BackgroundImage")));
             this.btnSearchFlight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSearchFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchFlight.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.btnSearchFlight.ForeColor = System.Drawing.Color.White;
+            this.btnSearchFlight.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFlight.Image")));
             this.btnSearchFlight.Location = new System.Drawing.Point(548, 435);
             this.btnSearchFlight.Name = "btnSearchFlight";
             this.btnSearchFlight.Size = new System.Drawing.Size(298, 93);
