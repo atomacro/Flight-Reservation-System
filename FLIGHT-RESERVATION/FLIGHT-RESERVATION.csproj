@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -99,6 +99,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls.cs" />
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails.Designer.cs">
+      <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.Designer.cs">
+      <DependentUpon>Round-Trip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="LoginSignUp\Login.cs">
       <SubType>UserControl</SubType>
@@ -134,6 +146,11 @@
     </Compile>
     <EmbeddedResource Include="LoginSignUp\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails.resx">
+      <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.resx">
+      <DependentUpon>Round-Trip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -53,3 +53,11 @@ INSERT INTO Payment (PaymentID, TransactionID, ModeOfPayment, ReferenceNo) VALUE
 (4, 4, 'Credit Card', 'REF654321987'),
 (5, 5, 'Bank Transfer', 'REF321654987'),
 (6, 6, 'Credit Card', 'REF789123654');
+
+
+UPDATE `airport` SET `AirportLocation` = 'New York, USA' WHERE `airport`.`AirportID` = 1;
+UPDATE `airport` SET `AirportLocation` = 'Los Angeles, California' WHERE `airport`.`AirportID` = 2;
+UPDATE `airport` SET `AirportLocation` = 'Chicago, USA' WHERE `airport`.`AirportID` = 3;
+UPDATE `airport` SET `AirportLocation` = 'San Francisco, California, USA' WHERE `airport`.`AirportID` = 4;
+UPDATE `airport` SET `AirportLocation` = 'Miami, Florida, USA' WHERE `airport`.`AirportID` = 5;
+UPDATE `airport` SET `AirportLocation` = 'Atlantis' WHERE `airport`.`AirportID` = 6 ;

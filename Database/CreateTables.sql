@@ -78,3 +78,5 @@ CREATE TABLE Payment (
     ReferenceNo VARCHAR(255) NOT NULL,
     FOREIGN KEY (TransactionID) REFERENCES Transactions(TransactionID) ON UPDATE CASCADE
 );
+
+ALTER TABLE `airport` ADD `AirportLocation` VARCHAR(255) NOT NULL AFTER  `AirportFullName`
