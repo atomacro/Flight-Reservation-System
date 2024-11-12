@@ -42,10 +42,8 @@
             this.Header = new System.Windows.Forms.Panel();
             this.lblPageName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.flightBooking_TwoWay1 = new FLIGHT_RESERVATION.FlightBooking_TwoWay();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Header.SuspendLayout();
-            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlIndicator1
@@ -177,18 +175,10 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Controls.Add(this.flightBooking_TwoWay1);
             this.pnlMain.Location = new System.Drawing.Point(344, 159);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(910, 680);
             this.pnlMain.TabIndex = 10;
-            // 
-            // flightBooking_TwoWay1
-            // 
-            this.flightBooking_TwoWay1.Location = new System.Drawing.Point(0, 0);
-            this.flightBooking_TwoWay1.Name = "flightBooking_TwoWay1";
-            this.flightBooking_TwoWay1.Size = new System.Drawing.Size(906, 677);
-            this.flightBooking_TwoWay1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -213,7 +203,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Header.ResumeLayout(false);
-            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -232,7 +221,6 @@
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
-        private FlightBooking_TwoWay flightBooking_TwoWay1;
     }
 }
 
