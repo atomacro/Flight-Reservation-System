@@ -43,6 +43,13 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblPageName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+<<<<<<< Updated upstream
+=======
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.Header.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Header.SuspendLayout();
             this.SuspendLayout();
@@ -190,11 +197,28 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+<<<<<<< Updated upstream
             this.pnlMain.Location = new System.Drawing.Point(344, 159);
+=======
+            this.pnlMain.Location = new System.Drawing.Point(351, 173);
+>>>>>>> Stashed changes
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(910, 680);
             this.pnlMain.TabIndex = 10;
             // 
+<<<<<<< Updated upstream
+=======
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(341, 159);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(930, 707);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+>>>>>>> Stashed changes
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,6 +260,10 @@
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.PictureBox pictureBox1;
+>>>>>>> Stashed changes
         private System.Windows.Forms.Button btnLogin;
     }
 }
