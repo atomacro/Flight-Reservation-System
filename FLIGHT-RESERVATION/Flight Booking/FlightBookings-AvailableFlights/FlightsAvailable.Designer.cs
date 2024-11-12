@@ -51,7 +51,7 @@
             this.lblLocation1.Font = new System.Drawing.Font("Kantumruy Pro", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocation1.Location = new System.Drawing.Point(3, 0);
             this.lblLocation1.Name = "lblLocation1";
-            this.lblLocation1.Size = new System.Drawing.Size(124, 47);
+            this.lblLocation1.Size = new System.Drawing.Size(136, 47);
             this.lblLocation1.TabIndex = 1;
             this.lblLocation1.Text = "MNL";
             this.lblLocation1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,7 +61,7 @@
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime2.Location = new System.Drawing.Point(342, 47);
+            this.lblTime2.Location = new System.Drawing.Point(375, 47);
             this.lblTime2.Name = "lblTime2";
             this.lblTime2.Size = new System.Drawing.Size(115, 38);
             this.lblTime2.TabIndex = 4;
@@ -75,7 +75,7 @@
             this.lblTime1.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime1.Location = new System.Drawing.Point(3, 47);
             this.lblTime1.Name = "lblTime1";
-            this.lblTime1.Size = new System.Drawing.Size(124, 38);
+            this.lblTime1.Size = new System.Drawing.Size(136, 38);
             this.lblTime1.TabIndex = 5;
             this.lblTime1.Text = "13:34";
             this.lblTime1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -86,7 +86,7 @@
             this.lblLocation2.AutoSize = true;
             this.lblLocation2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLocation2.Font = new System.Drawing.Font("Kantumruy Pro", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation2.Location = new System.Drawing.Point(342, 0);
+            this.lblLocation2.Location = new System.Drawing.Point(375, 0);
             this.lblLocation2.Name = "lblLocation2";
             this.lblLocation2.Size = new System.Drawing.Size(115, 47);
             this.lblLocation2.TabIndex = 2;
@@ -99,12 +99,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnBook, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblSeatsAvailable, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(503, 19);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(527, 19);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(163, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(206, 100);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // btnBook
@@ -117,7 +117,7 @@
             this.btnBook.ForeColor = System.Drawing.Color.White;
             this.btnBook.Location = new System.Drawing.Point(3, 53);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(157, 44);
+            this.btnBook.Size = new System.Drawing.Size(200, 44);
             this.btnBook.TabIndex = 14;
             this.btnBook.Text = "Select";
             this.btnBook.UseVisualStyleBackColor = false;
@@ -126,10 +126,10 @@
             // 
             this.lblSeatsAvailable.AutoSize = true;
             this.lblSeatsAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSeatsAvailable.Font = new System.Drawing.Font("Kantumruy Pro Medium", 8F, System.Drawing.FontStyle.Bold);
+            this.lblSeatsAvailable.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
             this.lblSeatsAvailable.Location = new System.Drawing.Point(3, 0);
             this.lblSeatsAvailable.Name = "lblSeatsAvailable";
-            this.lblSeatsAvailable.Size = new System.Drawing.Size(157, 50);
+            this.lblSeatsAvailable.Size = new System.Drawing.Size(200, 50);
             this.lblSeatsAvailable.TabIndex = 13;
             this.lblSeatsAvailable.Text = "3 Seats Available";
             this.lblSeatsAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,23 +157,23 @@
             this.tableLayoutPanel1.Controls.Add(this.lblTime1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblLocation2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 27);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 34);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(460, 85);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(493, 85);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(133, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(145, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(203, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(224, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Name = "FlightsAvailable";
-            this.Size = new System.Drawing.Size(698, 138);
+            this.Size = new System.Drawing.Size(759, 138);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

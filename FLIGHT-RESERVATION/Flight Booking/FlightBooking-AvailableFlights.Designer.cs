@@ -30,8 +30,8 @@
         {
             this.lblAvailableFlights = new System.Windows.Forms.Label();
             this.pnlAvailableFlights = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnBack = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,29 +49,16 @@
             // pnlAvailableFlights
             // 
             this.pnlAvailableFlights.AutoScroll = true;
-            this.pnlAvailableFlights.Location = new System.Drawing.Point(79, 107);
+            this.pnlAvailableFlights.Location = new System.Drawing.Point(50, 107);
             this.pnlAvailableFlights.Name = "pnlAvailableFlights";
-            this.pnlAvailableFlights.Size = new System.Drawing.Size(746, 420);
+            this.pnlAvailableFlights.Size = new System.Drawing.Size(806, 420);
             this.pnlAvailableFlights.TabIndex = 2;
             this.pnlAvailableFlights.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAvailableFlights_Paint);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnBack.Location = new System.Drawing.Point(253, 589);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(173, 64);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
             // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
             this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,11 +70,27 @@
             this.btnContinue.Text = "Continue";
             this.btnContinue.UseVisualStyleBackColor = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON2;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnBack.Location = new System.Drawing.Point(243, 589);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(173, 64);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(49, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(26, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(807, 550);
+            this.pictureBox1.Size = new System.Drawing.Size(855, 550);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;

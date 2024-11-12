@@ -208,5 +208,11 @@
   <ItemGroup>
     <None Include="Public\Flight Bookings - Available Flights\Selected Border.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Assets\BUTTON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Assets\BUTTON2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
