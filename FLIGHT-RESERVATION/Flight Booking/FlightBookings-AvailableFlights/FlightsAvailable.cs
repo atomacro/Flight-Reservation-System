@@ -51,6 +51,11 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
         {
 
         }
+
+        private void lblSeatsAvailable_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -61,9 +61,9 @@
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime2.Location = new System.Drawing.Point(344, 47);
+            this.lblTime2.Location = new System.Drawing.Point(342, 47);
             this.lblTime2.Name = "lblTime2";
-            this.lblTime2.Size = new System.Drawing.Size(113, 38);
+            this.lblTime2.Size = new System.Drawing.Size(115, 38);
             this.lblTime2.TabIndex = 4;
             this.lblTime2.Text = "07:50";
             this.lblTime2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -86,9 +86,9 @@
             this.lblLocation2.AutoSize = true;
             this.lblLocation2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLocation2.Font = new System.Drawing.Font("Kantumruy Pro", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation2.Location = new System.Drawing.Point(344, 0);
+            this.lblLocation2.Location = new System.Drawing.Point(342, 0);
             this.lblLocation2.Name = "lblLocation2";
-            this.lblLocation2.Size = new System.Drawing.Size(113, 47);
+            this.lblLocation2.Size = new System.Drawing.Size(115, 47);
             this.lblLocation2.TabIndex = 2;
             this.lblLocation2.Text = "SIN";
             this.lblLocation2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,12 +99,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnBook, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblSeatsAvailable, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(481, 30);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(503, 19);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(163, 100);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // btnBook
@@ -117,7 +117,7 @@
             this.btnBook.ForeColor = System.Drawing.Color.White;
             this.btnBook.Location = new System.Drawing.Point(3, 53);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(194, 44);
+            this.btnBook.Size = new System.Drawing.Size(157, 44);
             this.btnBook.TabIndex = 14;
             this.btnBook.Text = "Select";
             this.btnBook.UseVisualStyleBackColor = false;
@@ -126,13 +126,14 @@
             // 
             this.lblSeatsAvailable.AutoSize = true;
             this.lblSeatsAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSeatsAvailable.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.lblSeatsAvailable.Font = new System.Drawing.Font("Kantumruy Pro Medium", 8F, System.Drawing.FontStyle.Bold);
             this.lblSeatsAvailable.Location = new System.Drawing.Point(3, 0);
             this.lblSeatsAvailable.Name = "lblSeatsAvailable";
-            this.lblSeatsAvailable.Size = new System.Drawing.Size(194, 50);
+            this.lblSeatsAvailable.Size = new System.Drawing.Size(157, 50);
             this.lblSeatsAvailable.TabIndex = 13;
             this.lblSeatsAvailable.Text = "3 Seats Available";
             this.lblSeatsAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSeatsAvailable.Click += new System.EventHandler(this.lblSeatsAvailable_Click);
             // 
             // lblAirplaneNumber
             // 
@@ -150,13 +151,13 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.29114F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.70886F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.Controls.Add(this.lblLocation1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTime2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTime1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblLocation2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 42);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 27);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 2;
@@ -172,7 +173,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(133, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(205, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(203, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -181,9 +182,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.lblAirplaneNumber);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.DoubleBuffered = true;
             this.Name = "FlightsAvailable";
             this.Size = new System.Drawing.Size(698, 138);
             this.tableLayoutPanel2.ResumeLayout(false);
