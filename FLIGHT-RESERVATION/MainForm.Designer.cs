@@ -37,15 +37,17 @@
             this.btnFlightBooking = new System.Windows.Forms.Button();
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Panel();
             this.lblPageName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.flightBooking_TwoWay1 = new FLIGHT_RESERVATION.FlightBooking_TwoWay();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flightBooking_AvailableFlights1 = new FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AvailableFlights();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.Header.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlIndicator1
@@ -130,16 +132,16 @@
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProfile.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // picLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(24, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(341, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
+            this.picLogo.Location = new System.Drawing.Point(24, 4);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(341, 134);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 7;
+            this.picLogo.TabStop = false;
             // 
             // btnLogout
             // 
@@ -157,7 +159,7 @@
             this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Header.Controls.Add(this.lblPageName);
             this.Header.Controls.Add(this.btnLogout);
-            this.Header.Controls.Add(this.pictureBox1);
+            this.Header.Controls.Add(this.picLogo);
             this.Header.Location = new System.Drawing.Point(-9, -8);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(1318, 150);
@@ -177,24 +179,35 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Controls.Add(this.flightBooking_TwoWay1);
-            this.pnlMain.Location = new System.Drawing.Point(344, 159);
+            this.pnlMain.Controls.Add(this.flightBooking_AvailableFlights1);
+            this.pnlMain.Location = new System.Drawing.Point(351, 173);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(910, 680);
             this.pnlMain.TabIndex = 10;
             // 
-            // flightBooking_TwoWay1
+            // flightBooking_AvailableFlights1
             // 
-            this.flightBooking_TwoWay1.Location = new System.Drawing.Point(0, 0);
-            this.flightBooking_TwoWay1.Name = "flightBooking_TwoWay1";
-            this.flightBooking_TwoWay1.Size = new System.Drawing.Size(906, 677);
-            this.flightBooking_TwoWay1.TabIndex = 0;
+            this.flightBooking_AvailableFlights1.BackColor = System.Drawing.Color.White;
+            this.flightBooking_AvailableFlights1.Location = new System.Drawing.Point(1, 0);
+            this.flightBooking_AvailableFlights1.Name = "flightBooking_AvailableFlights1";
+            this.flightBooking_AvailableFlights1.Size = new System.Drawing.Size(906, 677);
+            this.flightBooking_AvailableFlights1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(341, 159);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(930, 707);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1301, 876);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.pnlIndicator1);
@@ -206,14 +219,16 @@
             this.Controls.Add(this.btnViewBookings);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.Header.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,12 +242,13 @@
         internal System.Windows.Forms.Button btnFlightBooking;
         internal System.Windows.Forms.Button btnViewBookings;
         internal System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
-        private FlightBooking_TwoWay flightBooking_TwoWay1;
+        private Flight_Booking.FlightBooking_AvailableFlights flightBooking_AvailableFlights1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

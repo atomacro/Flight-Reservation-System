@@ -21,6 +21,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         private void FlightBooking_AvailableFlights_Load(object sender, EventArgs e)
         {
             PopulateAvailableBookings();
+            btnBack.FlatAppearance.BorderSize = 0;
         }
 
 
@@ -64,6 +65,11 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 availableFlights[i].btnBook.Text = "Selected";
 
             }
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+
         }
 
         // this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border;
