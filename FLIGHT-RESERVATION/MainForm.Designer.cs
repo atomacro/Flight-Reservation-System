@@ -44,10 +44,7 @@
             this.lblPageName = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.Header.SuspendLayout();
@@ -201,11 +198,8 @@
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
             this.pnlMain.Location = new System.Drawing.Point(344, 159);
 =======
-=======
->>>>>>> Stashed changes
             this.pnlMain.Location = new System.Drawing.Point(351, 173);
 >>>>>>> Stashed changes
             this.pnlMain.Name = "pnlMain";
@@ -213,10 +207,7 @@
             this.pnlMain.TabIndex = 10;
             // 
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -270,10 +261,6 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-        private System.Windows.Forms.PictureBox pictureBox1;
->>>>>>> Stashed changes
 =======
         private System.Windows.Forms.PictureBox pictureBox1;
 >>>>>>> Stashed changes
