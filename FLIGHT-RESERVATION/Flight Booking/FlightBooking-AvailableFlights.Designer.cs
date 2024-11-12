@@ -49,11 +49,10 @@
             // pnlAvailableFlights
             // 
             this.pnlAvailableFlights.AutoScroll = true;
-            this.pnlAvailableFlights.Location = new System.Drawing.Point(50, 107);
+            this.pnlAvailableFlights.Location = new System.Drawing.Point(50, 133);
             this.pnlAvailableFlights.Name = "pnlAvailableFlights";
-            this.pnlAvailableFlights.Size = new System.Drawing.Size(806, 420);
+            this.pnlAvailableFlights.Size = new System.Drawing.Size(806, 394);
             this.pnlAvailableFlights.TabIndex = 2;
-            this.pnlAvailableFlights.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAvailableFlights_Paint);
             // 
             // btnContinue
             // 

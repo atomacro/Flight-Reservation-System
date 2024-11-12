@@ -26,13 +26,18 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
             lblLocation2.Text = location2;
         }
 
+        public void setAirplaneNumber(String airplaneNumber) { 
+        
+            lblAirplaneNumber.Text = airplaneNumber;
+        }
+
         public void setTime(String time1, String time2)
         {
             lblTime1.Text = time1;
             lblTime2.Text = time2;
         }
 
-        public void setSeatsAvailable(int SeatsAvailable)
+        public void setSeatsAvailable(String SeatsAvailable)
         {
             lblSeatsAvailable.Text = $"{SeatsAvailable} Seats Available";
         }
