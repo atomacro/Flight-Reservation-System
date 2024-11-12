@@ -15,7 +15,7 @@ using System.ComponentModel;
 
 namespace FLIGHT_RESERVATION
 {
-    internal class CustomControls
+    public class CustomControls
     {
         public class RoundedButton : Button
         {
