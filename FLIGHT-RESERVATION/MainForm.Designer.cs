@@ -34,8 +34,8 @@
             this.pnlIndicator3 = new System.Windows.Forms.Panel();
             this.pnlIndicator2 = new System.Windows.Forms.Panel();
             this.Header = new System.Windows.Forms.Panel();
-            this.lblPageName = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.lblPageName = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -93,15 +93,6 @@
             this.Header.Size = new System.Drawing.Size(1318, 150);
             this.Header.TabIndex = 33;
             // 
-            // lblPageName
-            // 
-            this.lblPageName.Location = new System.Drawing.Point(366, 4);
-            this.lblPageName.Name = "lblPageName";
-            this.lblPageName.Size = new System.Drawing.Size(683, 134);
-            this.lblPageName.TabIndex = 9;
-            this.lblPageName.Text = "label1";
-            this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnLogin
             // 
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,6 +104,15 @@
             this.btnLogin.Text = " ";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // lblPageName
+            // 
+            this.lblPageName.Location = new System.Drawing.Point(366, 4);
+            this.lblPageName.Name = "lblPageName";
+            this.lblPageName.Size = new System.Drawing.Size(683, 134);
+            this.lblPageName.TabIndex = 9;
+            this.lblPageName.Text = "label1";
+            this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 
@@ -201,7 +201,7 @@
             // flightBooking_AvailableFlights1
             // 
             this.flightBooking_AvailableFlights1.BackColor = System.Drawing.Color.White;
-            this.flightBooking_AvailableFlights1.Location = new System.Drawing.Point(1, 0);
+            this.flightBooking_AvailableFlights1.Location = new System.Drawing.Point(1, 3);
             this.flightBooking_AvailableFlights1.Name = "flightBooking_AvailableFlights1";
             this.flightBooking_AvailableFlights1.Size = new System.Drawing.Size(906, 677);
             this.flightBooking_AvailableFlights1.TabIndex = 0;
