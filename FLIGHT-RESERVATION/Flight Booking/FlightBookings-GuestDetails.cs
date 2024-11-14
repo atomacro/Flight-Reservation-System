@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FLIGHT_RESERVATION.Flight_Booking
+namespace FLIGHT_RESERVATION
 {
     public partial class FlightBookings_GuestDetails : UserControl
     {
