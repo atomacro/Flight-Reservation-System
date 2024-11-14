@@ -186,6 +186,12 @@
     <EmbeddedResource Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.resx">
       <DependentUpon>FlightsAvailable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails.resx">
+      <DependentUpon>FlightBookings-GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.resx">
+      <DependentUpon>GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginSignUp\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

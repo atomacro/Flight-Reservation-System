@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
 {
-    public partial class FlightBookings_GuestDetails : UserControl
+    public partial class GuestDetails : UserControl
     {
-        public FlightBookings_GuestDetails()
+        public GuestDetails()
         {
             InitializeComponent();
         }
