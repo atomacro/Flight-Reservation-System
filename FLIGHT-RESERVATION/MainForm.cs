@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FLIGHT_RESERVATION.Flight_Booking;
 
 
 namespace FLIGHT_RESERVATION
@@ -96,11 +97,26 @@ namespace FLIGHT_RESERVATION
                 ClearControls(pnlMain);
 
             };
-            btnFlightBooking.Click += (sender, e) =>
+            btnFlightBooking.Click += (sender, EventArgs) =>
             {
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
+
+
+                //var FlightBookingsTwoWay = new FlightBooking_TwoWay();
+                //AddControl(FlightBookingsTwoWay, pnlMain);
+                //FlightBookingsTwoWay.round_Trip1.btnSearchFlight.Click += (s, e) => 
+                //{FlightBookingsTwoWay.Visible = false;
+                //    var FlightBookingsAvailableFlights = new FlightBooking_AvailableFlights();
+                //    AddControl(FlightBookingsAvailableFlights, pnlMain);
+
+                //    FlightBookingsAvailableFlights.btnBack.Click += (h, q) =>
+                //    {
+                //        FlightBookingsAvailableFlights.Visible = false;
+                //        FlightBookingsTwoWay.Visible = true;
+                //    };
+                //};
 
             };
             btnViewBookings.Click += (sender, e) =>

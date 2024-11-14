@@ -25,16 +25,16 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         {
             PopulateAvailableBookings();
             btnBack.FlatAppearance.BorderSize = 0;
-            btnContinue.Enabled = false;
+            btnContinueAvailableFlights.Enabled = false;
         }
         public void PopulateAvailableBookings()
         {
-
+            
             List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
 
 
             //set Arrival Location and Departure Location, panel and button if no flights are seen
-            Database_Available_Flights AvailableFlightsData = new Database_Available_Flights("John F. Kennedy International Airport", "Los Angeles International Airport", pnlAvailableFlights, btnContinue, lblAvailableFlights);
+            Database_Available_Flights AvailableFlightsData = new Database_Available_Flights("John F. Kennedy International Airport", "Los Angeles International Airport", pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
 
 
             int selectedIndex = 0;
@@ -69,12 +69,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 {
                     availableFlights[i].btnBook.Text = "Select";
                     availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border); //reset the borders of unselected
-                    btnContinue.Enabled = false;
+                    btnContinueAvailableFlights.Enabled = false;
                     continue;
                 }
                 availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border); //set border to selected
                 availableFlights[i].btnBook.Text = "Unselect";
-                btnContinue.Enabled = true;
+                btnContinueAvailableFlights.Enabled = true;
 
             }
         }
@@ -97,8 +97,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         private String DataBaseName = "airplaneticketingsystem2024";
         private String UserName = "root";
         private String Password = "";
-        public List<String> DepartureLocation = new List<String>();
-        public List<String> ArrivalLocation = new List<String>();
+        public List<String> DepartureLocation = new List<string>();
+        public List<String> ArrivalLocation = new List<string>();
         public List<String> DepartureTime = new List<string>();
         public List<String> ArrivalTime = new List<string>();
         public List<String> AirplaneNumber = new List<string>();
