@@ -1,6 +1,6 @@
 ﻿namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
 {
-    partial class FlightBookings_GuestDetails
+    partial class GuestDetails
     {
         /// <summary> 
         /// Required designer variable.
