@@ -1,5 +1,4 @@
-﻿namespace FLIGHT_RESERVATION.Flight_Booking
-{
+﻿namespace FLIGHT_RESERVATION { 
     partial class FlightBooking_AvailableFlights
     {
         /// <summary> 
@@ -40,7 +39,7 @@
             // 
             this.lblAvailableFlights.AutoSize = true;
             this.lblAvailableFlights.Font = new System.Drawing.Font("Kantumruy Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailableFlights.Location = new System.Drawing.Point(267, 44);
+            this.lblAvailableFlights.Location = new System.Drawing.Point(267, 30);
             this.lblAvailableFlights.Name = "lblAvailableFlights";
             this.lblAvailableFlights.Size = new System.Drawing.Size(350, 60);
             this.lblAvailableFlights.TabIndex = 1;
