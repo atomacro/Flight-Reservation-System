@@ -111,6 +111,12 @@
     <Compile Include="Flight Booking\FlightBooking-FlightDetails.Designer.cs">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\One-way.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\One-way.Designer.cs">
+      <DependentUpon>One-way.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.cs">
       <SubType>UserControl</SubType>
     </Compile>
