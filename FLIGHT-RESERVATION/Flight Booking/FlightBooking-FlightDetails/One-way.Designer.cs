@@ -62,7 +62,7 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundedButton1 = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
+            this.btnSearchFlight = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -424,27 +424,27 @@
             this.flowLayoutPanel5.Size = new System.Drawing.Size(97, 66);
             this.flowLayoutPanel5.TabIndex = 64;
             // 
-            // roundedButton1
+            // btnSearchFlight
             // 
-            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.roundedButton1.BorderRadius = 20;
-            this.roundedButton1.FlatAppearance.BorderSize = 0;
-            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.roundedButton1.ForeColor = System.Drawing.Color.White;
-            this.roundedButton1.Location = new System.Drawing.Point(318, 477);
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.roundedButton1.Size = new System.Drawing.Size(256, 56);
-            this.roundedButton1.TabIndex = 65;
-            this.roundedButton1.Text = "Search Flight";
-            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.btnSearchFlight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.btnSearchFlight.BorderRadius = 20;
+            this.btnSearchFlight.FlatAppearance.BorderSize = 0;
+            this.btnSearchFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchFlight.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSearchFlight.ForeColor = System.Drawing.Color.White;
+            this.btnSearchFlight.Location = new System.Drawing.Point(318, 477);
+            this.btnSearchFlight.Name = "btnSearchFlight";
+            this.btnSearchFlight.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSearchFlight.Size = new System.Drawing.Size(256, 56);
+            this.btnSearchFlight.TabIndex = 65;
+            this.btnSearchFlight.Text = "Search Flight";
+            this.btnSearchFlight.UseVisualStyleBackColor = false;
             // 
             // One_way
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.roundedButton1);
+            this.Controls.Add(this.btnSearchFlight);
             this.Controls.Add(this.flowLayoutPanel5);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.comboBox1);
@@ -534,6 +534,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private CustomControls.RoundedButton roundedButton1;
+        private CustomControls.RoundedButton btnSearchFlight;
     }
 }
