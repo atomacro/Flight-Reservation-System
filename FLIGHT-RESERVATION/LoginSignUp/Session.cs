@@ -18,13 +18,13 @@ namespace FLIGHT_RESERVATION
 
         private MySqlConnection _connection;
         private MySqlTransaction _transaction;
-        private String _DataBaseName = "airplaneticketingsystem2024";
-        private String _UserName = "root";
-        private String _Password = "";
+        private readonly String _databaseName = "airplaneticketingsystem2024";
+        private readonly String _userName = "root";
+        private readonly String _password = "";
 
         public Session()
         {
-            string connectionString = $"Server=localhost;Database={this._DataBaseName};User ID={this._UserName};Password={this._Password};";
+            string connectionString = $"Server=localhost;Database={this._databaseName};User ID={this._userName};Password={this._password};";
             _connection = new MySqlConnection(connectionString);
         }
 
@@ -33,7 +33,7 @@ namespace FLIGHT_RESERVATION
             try
             {
                 _connection.Open();
-                string query = $"SELECT * FROM accounts WHERE Email=@Email AND Password=@Password";
+                string query = $"SELECT * FROM accounts WHERE Email = @Email AND Password = SHA2(@Password, 256)";
                 MySqlCommand command = new MySqlCommand(query, _connection);
 
                 command.Parameters.AddWithValue("@Email", email);
@@ -61,7 +61,7 @@ namespace FLIGHT_RESERVATION
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An Error has Occured{ex.Message}");
+                Console.WriteLine($"An Error has Occured: {ex.Message}");
                 return false;
             }
             finally

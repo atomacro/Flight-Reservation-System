@@ -15,26 +15,25 @@ namespace FLIGHT_RESERVATION
     {
         private string _email;
         private string _password;
+        Session Session = new Session();
 
         public Login()
         {
             InitializeComponent();
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Session session = new Session();
-            bool isAuthenticated = session.AuthenticateUser(txtEmail.Text, txtPassword.Text);
+            bool isAuthenticated = Session.AuthenticateUser(txtEmail.Text, txtPassword.Text);
 
             if (isAuthenticated)
             {
                 Session.IsLoggedIn = true;
-                Session.CurrentUser = txtEmail.Text;
             }
             else
             {
-                MessageBox.Show("Invalid username or password!", "Login Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Text = "";
                 txtPassword.Focus();
             }
