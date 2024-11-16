@@ -20,7 +20,6 @@ namespace FLIGHT_RESERVATION
         {
             InitializeComponent();
             //pnlMain.BackColor = Color.Transparent;
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -36,9 +35,7 @@ namespace FLIGHT_RESERVATION
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
         }
 
-
-
-        // UI Related Methods
+        // ------ UI Related Methods ------
         public void SetIndicator(Button activeButton, Panel pnlIndicator)
         {
             ResetButtonColors();
@@ -136,6 +133,21 @@ namespace FLIGHT_RESERVATION
                 ClearControls(pnlMain);
 
             };
+            btnLogin.Click += (sender, eventArgs) =>
+            {
+                SetHeader("LOGIN");
+                ClearControls(pnlMain);
+
+                var login = new Login();
+                AddControl(login, pnlMain);
+                login.LoginSuccessful += LoginControl_LoginSuccessful;
+            };
+            btnLogout.Click += (sender, e) =>
+            {
+                Session.IsLoggedIn = false;
+                Session.CurrentUser = string.Empty;
+                UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+            };
         }
 
         private void ClearControls(Panel pnl)
@@ -160,18 +172,17 @@ namespace FLIGHT_RESERVATION
             btnLogout.Visible = isLoggedIn;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        // ------ NAVIGATION ------
+        private void LoginControl_LoginSuccessful(object sender, EventArgs e)
         {
+            UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+            SetIndicator(btnDashboard, pnlIndicator1);
+            SetHeader("DASHBOARD");
             ClearControls(pnlMain);
 
-            var login = new Login();
-            AddControl(login, pnlMain);
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            Session.IsLoggedIn = false;
-            Session.CurrentUser = string.Empty;
+            // ---- NOTE: only for example. CHANGE TO DASHBOARD USER CONTROL
+            //var viewBookings = new ViewBookings.ViewBookings();
+            //AddControl(viewBookings, pnlMain);
         }
     }
 }

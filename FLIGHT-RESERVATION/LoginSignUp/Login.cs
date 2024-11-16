@@ -13,6 +13,7 @@ namespace FLIGHT_RESERVATION
 {
     public partial class Login : UserControl
     {
+        public event EventHandler LoginSuccessful;
         private string _email;
         private string _password;
         Session Session = new Session();
@@ -20,7 +21,6 @@ namespace FLIGHT_RESERVATION
         public Login()
         {
             InitializeComponent();
-            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -39,6 +39,8 @@ namespace FLIGHT_RESERVATION
             if (userIsAuthenticated)
             {
                 Session.IsLoggedIn = true;
+                MessageBox.Show("Login Successful!");
+                LoginSuccessful?.Invoke(this, EventArgs.Empty);
             }
             else
             {
