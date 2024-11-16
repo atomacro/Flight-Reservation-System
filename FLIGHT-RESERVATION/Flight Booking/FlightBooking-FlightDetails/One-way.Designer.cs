@@ -155,9 +155,19 @@
             // 
             this.numAdult.Location = new System.Drawing.Point(10, 32);
             this.numAdult.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.numAdult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numAdult.Name = "numAdult";
             this.numAdult.Size = new System.Drawing.Size(64, 22);
             this.numAdult.TabIndex = 3;
+            this.numAdult.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblChildren
             // 
@@ -202,9 +212,9 @@
             this.lblCompanions.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompanions.Location = new System.Drawing.Point(35, 311);
             this.lblCompanions.Name = "lblCompanions";
-            this.lblCompanions.Size = new System.Drawing.Size(130, 29);
+            this.lblCompanions.Size = new System.Drawing.Size(117, 29);
             this.lblCompanions.TabIndex = 47;
-            this.lblCompanions.Text = "Companions";
+            this.lblCompanions.Text = "Passengers";
             // 
             // lblArrivalLocation
             // 
@@ -409,7 +419,7 @@
             this.picCompanions.Location = new System.Drawing.Point(20, 293);
             this.picCompanions.Margin = new System.Windows.Forms.Padding(0);
             this.picCompanions.Name = "picCompanions";
-            this.picCompanions.Size = new System.Drawing.Size(819, 144);
+            this.picCompanions.Size = new System.Drawing.Size(819, 160);
             this.picCompanions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCompanions.TabIndex = 35;
             this.picCompanions.TabStop = false;
