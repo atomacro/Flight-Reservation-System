@@ -28,16 +28,18 @@ namespace FLIGHT_RESERVATION
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             User user = new User();
-            string userValidationMessage =
+            
+            bool validUserInfo =
                 user.ValidateRegistration(txtFName.Text, txtLName.Text, txtEmail.Text, txtPassword.Text);
+            if (validUserInfo)
+            {
+                Session session = new Session();
+                bool registrationSuccess = session.RegisterUser(user);
 
-            if (string.IsNullOrWhiteSpace(userValidationMessage))
-            {
-                SignUpSuccessful?.Invoke(this, EventArgs.Empty);
-            }
-            else
-            {
-                MessageBox.Show(userValidationMessage, "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (registrationSuccess)
+                {
+                    SignUpSuccessful?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
     }
