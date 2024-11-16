@@ -38,34 +38,5 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 
         }
 
-        private void picLine_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblReturnDate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picDepartureArrivalLocation_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

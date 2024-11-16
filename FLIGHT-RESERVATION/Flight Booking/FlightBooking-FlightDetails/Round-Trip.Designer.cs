@@ -109,7 +109,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.picLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLine.TabIndex = 8;
             this.picLine.TabStop = false;
-            this.picLine.Click += new System.EventHandler(this.picLine_Click);
             // 
             // picAirplaneLift
             // 
@@ -226,7 +225,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.picDepartureArrivalLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDepartureArrivalLocation.TabIndex = 0;
             this.picDepartureArrivalLocation.TabStop = false;
-            this.picDepartureArrivalLocation.Click += new System.EventHandler(this.picDepartureArrivalLocation_Click);
             // 
             // lblCompanions
             // 
@@ -326,7 +324,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -337,7 +334,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -348,7 +344,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 21;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // lblDepartureDate
             // 
@@ -394,7 +389,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblReturnDate.Size = new System.Drawing.Size(127, 29);
             this.lblReturnDate.TabIndex = 25;
             this.lblReturnDate.Text = "Return Date";
-            this.lblReturnDate.Click += new System.EventHandler(this.lblReturnDate_Click);
             // 
             // pictureBox5
             // 
