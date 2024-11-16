@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Google.Protobuf.WellKnownTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Globalization;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace FLIGHT_RESERVATION
@@ -71,6 +72,48 @@ namespace FLIGHT_RESERVATION
             {
                 _connection.Close();
             }
+        }
+    }
+
+    public class User
+    {
+        public string FirstName { get; set; } = String.Empty;
+        public string LastName { get; set; } = String.Empty;
+        public string Email { get; set; } = String.Empty;
+        public string Password { get; set; } = String.Empty;
+
+        public User()
+        {
+
+        }
+
+        public string ValidateRegistration(string firstName, string lastName, string email, string password)
+        {
+            using (StringWriter writer = new StringWriter())
+            {
+                if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+                {
+                    writer.WriteLine("Fields cannot be empty.");
+                }
+
+                if (!IsValidEmail(email))
+                {
+                    writer.WriteLine("Please enter a valid email.");
+                }
+
+                if (!IsValidPassword(password))
+                {
+                    writer.WriteLine("Password must be at least 8 characters.");
+                }
+
+                string message = writer.ToString();
+                return message;
+            }
+        }
+
+        private bool IsValidPassword(string password)
+        {
+            return password.Length >= 8;
         }
 
         public static bool IsValidEmail(string email)

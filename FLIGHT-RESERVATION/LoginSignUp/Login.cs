@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace FLIGHT_RESERVATION
 {
     public partial class Login : UserControl
@@ -28,7 +27,7 @@ namespace FLIGHT_RESERVATION
         {
             _email = txtEmail.Text;
             _password = txtPassword.Text;
-            if (!Session.IsValidEmail(_email))
+            if (!User.IsValidEmail(_email))
             {
                 MessageBox.Show("Please enter a valid email.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Text = "";
@@ -70,6 +69,11 @@ namespace FLIGHT_RESERVATION
         private void lblSignup_Click(object sender, EventArgs e)
         {
             OpenSignUpForm?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtEmail.Focus();
         }
     }
 }

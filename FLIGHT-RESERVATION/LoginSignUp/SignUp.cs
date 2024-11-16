@@ -24,5 +24,21 @@ namespace FLIGHT_RESERVATION
         {
             OpenLoginForm?.Invoke(this, EventArgs.Empty);
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            string userValidationMessage =
+                user.ValidateRegistration(txtFName.Text, txtLName.Text, txtEmail.Text, txtPassword.Text);
+
+            if (string.IsNullOrWhiteSpace(userValidationMessage))
+            {
+                SignUpSuccessful?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                MessageBox.Show(userValidationMessage, "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
