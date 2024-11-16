@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(One_way));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboClassSeat = new System.Windows.Forms.ComboBox();
             this.lblClassSeat = new System.Windows.Forms.Label();
             this.cboDepartureDate = new System.Windows.Forms.ComboBox();
             this.lblDepartureDate = new System.Windows.Forms.Label();
@@ -83,18 +83,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDepartureArrivalLocation)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cboClassSeat
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Business",
-            "Economy",
-            "Nigga Exlclusive"});
-            this.comboBox1.Location = new System.Drawing.Point(610, 210);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 24);
-            this.comboBox1.TabIndex = 61;
+            this.cboClassSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboClassSeat.FormattingEnabled = true;
+            this.cboClassSeat.Location = new System.Drawing.Point(610, 210);
+            this.cboClassSeat.Name = "cboClassSeat";
+            this.cboClassSeat.Size = new System.Drawing.Size(205, 24);
+            this.cboClassSeat.TabIndex = 61;
             // 
             // lblClassSeat
             // 
@@ -111,10 +107,6 @@
             // 
             this.cboDepartureDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDepartureDate.FormattingEnabled = true;
-            this.cboDepartureDate.Items.AddRange(new object[] {
-            "Sample",
-            "Sample",
-            "Sample"});
             this.cboDepartureDate.Location = new System.Drawing.Point(610, 80);
             this.cboDepartureDate.Name = "cboDepartureDate";
             this.cboDepartureDate.Size = new System.Drawing.Size(205, 24);
@@ -231,10 +223,6 @@
             this.cboArrivalLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboArrivalLocation.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboArrivalLocation.FormattingEnabled = true;
-            this.cboArrivalLocation.Items.AddRange(new object[] {
-            "Manila",
-            "Singapore",
-            "Mexico"});
             this.cboArrivalLocation.Location = new System.Drawing.Point(91, 170);
             this.cboArrivalLocation.Name = "cboArrivalLocation";
             this.cboArrivalLocation.Size = new System.Drawing.Size(183, 37);
@@ -276,10 +264,6 @@
             this.cboDepartureLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDepartureLocation.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDepartureLocation.FormattingEnabled = true;
-            this.cboDepartureLocation.Items.AddRange(new object[] {
-            "Manila",
-            "Singapore",
-            "Mexico"});
             this.cboDepartureLocation.Location = new System.Drawing.Point(91, 73);
             this.cboDepartureLocation.Name = "cboDepartureLocation";
             this.cboDepartureLocation.Size = new System.Drawing.Size(183, 37);
@@ -457,7 +441,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel5);
             this.Controls.Add(this.flowLayoutPanel3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboClassSeat);
             this.Controls.Add(this.lblClassSeat);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox5);
@@ -512,7 +496,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboClassSeat;
         private System.Windows.Forms.Label lblClassSeat;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox5;

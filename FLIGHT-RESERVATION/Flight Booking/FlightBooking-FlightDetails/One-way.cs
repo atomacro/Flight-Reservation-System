@@ -21,5 +21,17 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         {
 
         }
+
+        public void setDepartureLocation(Dictionary<String, String> departure) {
+            cboDepartureLocation.Items.Clear();
+            cboDepartureLocation.Items.AddRange(departure.Keys.ToArray());
+            cboDepartureLocation.Click += (s, e) =>
+            {
+                if (cboDepartureLocation.SelectedItem != null)
+                {
+                    lblDepartureLocation.Text = departure[cboDepartureLocation.SelectedItem.ToString()];
+                }
+            };
+        }
     }
 }
