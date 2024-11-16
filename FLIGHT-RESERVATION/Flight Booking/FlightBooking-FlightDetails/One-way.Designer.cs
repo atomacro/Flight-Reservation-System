@@ -31,13 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(One_way));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblClassSeat = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.cboDepartureDate = new System.Windows.Forms.ComboBox();
             this.lblDepartureDate = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblAdult = new System.Windows.Forms.Label();
             this.numAdult = new System.Windows.Forms.NumericUpDown();
@@ -51,27 +46,34 @@
             this.lblDepartureLocation = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
+            this.cboDepartureLocation = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picAirplaneLand = new System.Windows.Forms.PictureBox();
             this.picAirplaneLift = new System.Windows.Forms.PictureBox();
             this.picLine = new System.Windows.Forms.PictureBox();
-            this.cboDepartureLocation = new System.Windows.Forms.ComboBox();
             this.picDepartureReturnDate = new System.Windows.Forms.PictureBox();
             this.picClassSeat = new System.Windows.Forms.PictureBox();
             this.picCompanions = new System.Windows.Forms.PictureBox();
             this.picDepartureArrivalLocation = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSearchFlight = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChildren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInfant)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numChildren)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numInfant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLine)).BeginInit();
@@ -79,8 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picClassSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompanions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartureArrivalLocation)).BeginInit();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -107,26 +107,6 @@
             this.lblClassSeat.TabIndex = 60;
             this.lblClassSeat.Text = "Class Seat";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(554, 199);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 59;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(554, 67);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 56;
-            this.pictureBox5.TabStop = false;
-            // 
             // cboDepartureDate
             // 
             this.cboDepartureDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -150,36 +130,6 @@
             this.lblDepartureDate.Size = new System.Drawing.Size(156, 29);
             this.lblDepartureDate.TabIndex = 52;
             this.lblDepartureDate.Text = "Departure Date";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(233, 345);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 51;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(593, 345);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 50;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(40, 349);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 49;
-            this.pictureBox1.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
@@ -311,6 +261,98 @@
             this.lblFrom.TabIndex = 42;
             this.lblFrom.Text = "From";
             // 
+            // cboDepartureLocation
+            // 
+            this.cboDepartureLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDepartureLocation.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDepartureLocation.FormattingEnabled = true;
+            this.cboDepartureLocation.Items.AddRange(new object[] {
+            "Manila",
+            "Singapore",
+            "Mexico"});
+            this.cboDepartureLocation.Location = new System.Drawing.Point(91, 73);
+            this.cboDepartureLocation.Name = "cboDepartureLocation";
+            this.cboDepartureLocation.Size = new System.Drawing.Size(183, 37);
+            this.cboDepartureLocation.TabIndex = 38;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.lblChildren);
+            this.flowLayoutPanel3.Controls.Add(this.numChildren);
+            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(289, 345);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(258, 66);
+            this.flowLayoutPanel3.TabIndex = 63;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(252, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel4.TabIndex = 5;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.lblInfant);
+            this.flowLayoutPanel5.Controls.Add(this.numInfant);
+            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(649, 345);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(97, 66);
+            this.flowLayoutPanel5.TabIndex = 64;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(554, 199);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 59;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(554, 67);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 56;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(233, 345);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 51;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(593, 345);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(40, 349);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
             // picAirplaneLand
             // 
             this.picAirplaneLand.Image = ((System.Drawing.Image)(resources.GetObject("picAirplaneLand.Image")));
@@ -340,20 +382,6 @@
             this.picLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLine.TabIndex = 39;
             this.picLine.TabStop = false;
-            // 
-            // cboDepartureLocation
-            // 
-            this.cboDepartureLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboDepartureLocation.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDepartureLocation.FormattingEnabled = true;
-            this.cboDepartureLocation.Items.AddRange(new object[] {
-            "Manila",
-            "Singapore",
-            "Mexico"});
-            this.cboDepartureLocation.Location = new System.Drawing.Point(91, 73);
-            this.cboDepartureLocation.Name = "cboDepartureLocation";
-            this.cboDepartureLocation.Size = new System.Drawing.Size(183, 37);
-            this.cboDepartureLocation.TabIndex = 38;
             // 
             // picDepartureReturnDate
             // 
@@ -385,6 +413,7 @@
             this.picCompanions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCompanions.TabIndex = 35;
             this.picCompanions.TabStop = false;
+            this.picCompanions.Click += new System.EventHandler(this.picCompanions_Click);
             // 
             // picDepartureArrivalLocation
             // 
@@ -396,55 +425,26 @@
             this.picDepartureArrivalLocation.TabIndex = 34;
             this.picDepartureArrivalLocation.TabStop = false;
             // 
-            // flowLayoutPanel3
+            // button1
             // 
-            this.flowLayoutPanel3.Controls.Add(this.lblChildren);
-            this.flowLayoutPanel3.Controls.Add(this.numChildren);
-            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel4);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(289, 345);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(258, 66);
-            this.flowLayoutPanel3.TabIndex = 63;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(252, 3);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel4.TabIndex = 5;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.lblInfant);
-            this.flowLayoutPanel5.Controls.Add(this.numInfant);
-            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(649, 345);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(97, 66);
-            this.flowLayoutPanel5.TabIndex = 64;
-            // 
-            // btnSearchFlight
-            // 
-            this.btnSearchFlight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.btnSearchFlight.BorderRadius = 20;
-            this.btnSearchFlight.FlatAppearance.BorderSize = 0;
-            this.btnSearchFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchFlight.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.btnSearchFlight.ForeColor = System.Drawing.Color.White;
-            this.btnSearchFlight.Location = new System.Drawing.Point(318, 477);
-            this.btnSearchFlight.Name = "btnSearchFlight";
-            this.btnSearchFlight.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSearchFlight.Size = new System.Drawing.Size(256, 56);
-            this.btnSearchFlight.TabIndex = 65;
-            this.btnSearchFlight.Text = "Search Flight";
-            this.btnSearchFlight.UseVisualStyleBackColor = false;
+            this.button1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(353, 478);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 60);
+            this.button1.TabIndex = 65;
+            this.button1.Text = "SEARCH FLIGHT";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // One_way
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnSearchFlight);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel5);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.comboBox1);
@@ -471,18 +471,23 @@
             this.Controls.Add(this.picClassSeat);
             this.Controls.Add(this.picCompanions);
             this.Controls.Add(this.picDepartureArrivalLocation);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "One_way";
             this.Size = new System.Drawing.Size(871, 571);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAdult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numChildren)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInfant)).EndInit();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLine)).EndInit();
@@ -490,10 +495,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picClassSeat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompanions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartureArrivalLocation)).EndInit();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,6 +535,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private CustomControls.RoundedButton btnSearchFlight;
+        private System.Windows.Forms.Button button1;
     }
 }

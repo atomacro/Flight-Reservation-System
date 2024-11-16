@@ -16,5 +16,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         {
             InitializeComponent();
         }
+
+        private void picCompanions_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
