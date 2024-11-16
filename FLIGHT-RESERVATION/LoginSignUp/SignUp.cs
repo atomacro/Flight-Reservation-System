@@ -8,13 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FLIGHT_RESERVATION.LoginSignUp
+namespace FLIGHT_RESERVATION
 {
     public partial class SignUp : UserControl
     {
+        public event EventHandler SignUpSuccessful;
+        public event EventHandler OpenLoginForm;
+
         public SignUp()
         {
             InitializeComponent();
+        }
+
+        private void lblLogin_Click(object sender, EventArgs e)
+        {
+            OpenLoginForm?.Invoke(this, EventArgs.Empty);
         }
     }
 }

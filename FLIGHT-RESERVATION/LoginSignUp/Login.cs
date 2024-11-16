@@ -14,6 +14,7 @@ namespace FLIGHT_RESERVATION
     public partial class Login : UserControl
     {
         public event EventHandler LoginSuccessful;
+        public event EventHandler OpenSignUpForm;
         private string _email;
         private string _password;
         Session Session = new Session();
@@ -64,6 +65,11 @@ namespace FLIGHT_RESERVATION
             btnHidePassword.Visible = true;
             btnShowPassword.Visible = false;
             txtPassword.Focus();
+        }
+
+        private void lblSignup_Click(object sender, EventArgs e)
+        {
+            OpenSignUpForm?.Invoke(this, EventArgs.Empty);
         }
     }
 }

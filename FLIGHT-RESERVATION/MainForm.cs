@@ -133,15 +133,7 @@ namespace FLIGHT_RESERVATION
                 ClearControls(pnlMain);
 
             };
-            btnLogin.Click += (sender, eventArgs) =>
-            {
-                SetHeader("LOGIN");
-                ClearControls(pnlMain);
-
-                var login = new Login();
-                AddControl(login, pnlMain);
-                login.LoginSuccessful += LoginControl_LoginSuccessful;
-            };
+            btnLogin.Click += LoginControl_OpenLoginForm;
             btnLogout.Click += (sender, e) =>
             {
                 Session.IsLoggedIn = false;
@@ -172,8 +164,8 @@ namespace FLIGHT_RESERVATION
             btnLogout.Visible = isLoggedIn;
         }
 
-        // ------ NAVIGATION ------
-        private void LoginControl_LoginSuccessful(object sender, EventArgs e)
+        // ------ LOGIN NAVIGATION ------
+        private void LoginControl_LoginSuccessful(object sender, EventArgs e) // Goes to dashboard after successful login
         {
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
             SetIndicator(btnDashboard, pnlIndicator1);
@@ -183,6 +175,29 @@ namespace FLIGHT_RESERVATION
             // ---- NOTE: only for example. CHANGE TO DASHBOARD USER CONTROL
             //var viewBookings = new ViewBookings.ViewBookings();
             //AddControl(viewBookings, pnlMain);
+        }
+
+        private void LoginControl_OpenSignUpForm(object sender, EventArgs e) // From login form => sign up form
+        {
+            SetIndicator(btnDashboard, pnlIndicator1);
+            SetHeader("SIGN UP");
+            ClearControls(pnlMain);
+            var signup = new SignUp();
+            AddControl(signup, pnlMain);
+
+            signup.SignUpSuccessful += LoginControl_LoginSuccessful;
+            signup.OpenLoginForm += LoginControl_OpenLoginForm;
+        }
+
+        private void LoginControl_OpenLoginForm(object sender, EventArgs e) // From signup form => login form
+        {
+            SetHeader("LOGIN");
+            ClearControls(pnlMain);
+            var login = new Login();
+            AddControl(login, pnlMain);
+
+            login.LoginSuccessful += LoginControl_LoginSuccessful;
+            login.OpenSignUpForm += LoginControl_OpenSignUpForm;
         }
     }
 }

@@ -88,6 +88,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(154, 297);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
@@ -108,6 +109,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(154, 200);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
@@ -121,6 +123,7 @@
             // lblForgotPassword
             // 
             this.lblForgotPassword.AutoSize = true;
+            this.lblForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblForgotPassword.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
             this.lblForgotPassword.Location = new System.Drawing.Point(454, 267);
@@ -135,12 +138,13 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
             this.btnLogin.BorderRadius = 20;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(154, 412);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(371, 46);
             this.btnLogin.TabIndex = 2;
@@ -151,6 +155,7 @@
             // lblSignup
             // 
             this.lblSignup.AutoSize = true;
+            this.lblSignup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSignup.Font = new System.Drawing.Font("Kantumruy Pro Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
             this.lblSignup.Location = new System.Drawing.Point(155, 357);
@@ -160,16 +165,18 @@
             this.lblSignup.TabIndex = 5;
             this.lblSignup.Text = "Don\'t have an account?";
             this.lblSignup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSignup.Click += new System.EventHandler(this.lblSignup_Click);
             // 
             // btnHidePassword
             // 
             this.btnHidePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.btnHidePassword.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility_off;
             this.btnHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHidePassword.FlatAppearance.BorderSize = 0;
             this.btnHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHidePassword.Location = new System.Drawing.Point(487, 305);
-            this.btnHidePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHidePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnHidePassword.Name = "btnHidePassword";
             this.btnHidePassword.Size = new System.Drawing.Size(30, 24);
             this.btnHidePassword.TabIndex = 10;
@@ -184,7 +191,7 @@
             this.btnShowPassword.FlatAppearance.BorderSize = 0;
             this.btnShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowPassword.Location = new System.Drawing.Point(487, 305);
-            this.btnShowPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowPassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowPassword.Name = "btnShowPassword";
             this.btnShowPassword.Size = new System.Drawing.Size(30, 24);
             this.btnShowPassword.TabIndex = 11;
@@ -206,7 +213,7 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.txtPassword);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Size = new System.Drawing.Size(680, 550);
             this.ResumeLayout(false);
