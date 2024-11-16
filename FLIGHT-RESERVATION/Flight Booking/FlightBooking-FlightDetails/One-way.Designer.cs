@@ -1,6 +1,6 @@
 ﻿namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 {
-    partial class One_way
+    partial class One_Way
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(One_way));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(One_Way));
             this.cboClassSeat = new System.Windows.Forms.ComboBox();
             this.lblClassSeat = new System.Windows.Forms.Label();
             this.cboDepartureDate = new System.Windows.Forms.ComboBox();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 {
-    public partial class One_way : UserControl
+    public partial class One_Way : UserControl
     {
-        public One_way()
+        public One_Way()
         {
             InitializeComponent();
         }

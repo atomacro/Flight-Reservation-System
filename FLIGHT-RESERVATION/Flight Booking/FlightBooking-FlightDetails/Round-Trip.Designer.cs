@@ -192,7 +192,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.picCompanions.Location = new System.Drawing.Point(22, 294);
             this.picCompanions.Margin = new System.Windows.Forms.Padding(0);
             this.picCompanions.Name = "picCompanions";
-            this.picCompanions.Size = new System.Drawing.Size(497, 259);
+            this.picCompanions.Size = new System.Drawing.Size(498, 262);
             this.picCompanions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCompanions.TabIndex = 1;
             this.picCompanions.TabStop = false;
@@ -472,7 +472,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.btnSearchFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchFlight.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.btnSearchFlight.ForeColor = System.Drawing.Color.White;
-            this.btnSearchFlight.Location = new System.Drawing.Point(548, 435);
+            this.btnSearchFlight.Location = new System.Drawing.Point(550, 455);
             this.btnSearchFlight.Name = "btnSearchFlight";
             this.btnSearchFlight.Size = new System.Drawing.Size(298, 93);
             this.btnSearchFlight.TabIndex = 33;
