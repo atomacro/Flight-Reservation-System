@@ -150,6 +150,12 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginSignUp\Session.cs" />
+    <Compile Include="LoginSignUp\SignUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginSignUp\SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     <EmbeddedResource Include="LoginSignUp\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginSignUp\SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +256,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Public\Flight Bookings - Flight Details\TwoWayButton.png" />
+    <None Include="Public\Assets\visibility_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Assets\visibility.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

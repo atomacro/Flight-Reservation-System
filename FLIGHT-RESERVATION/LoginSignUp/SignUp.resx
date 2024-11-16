@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="visibility_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Assets\visibility_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KantumruyPro-Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-Medium.ttf;System.Byte[]</value>
-  </data>
-  <data name="Unselected Border1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Flight Bookings - Available Flights\Unselected Border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Selected Border" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Flight Bookings - Available Flights\Selected Border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BUTTON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Assets\BUTTON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KantumruyPro-Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-Bold.ttf;System.Byte[]</value>
-  </data>
-  <data name="BUTTON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Assets\BUTTON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KantumruyPro-SemiBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-SemiBold.ttf;System.Byte[]</value>
-  </data>
-  <data name="KantumruyPro-Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-Regular.ttf;System.Byte[]</value>
-  </data>
-  <data name="visibility" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Assets\visibility.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KantumruyPro-Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KantumruyPro-Medium.ttf;System.Byte[]</value>
-  </data>
-  <data name="Unselected Border" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Flight Bookings - Available Flights\Unselected Border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OneWayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Flight Bookings - Flight Details\OneWayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TwoWayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Flight Bookings - Flight Details\TwoWayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
