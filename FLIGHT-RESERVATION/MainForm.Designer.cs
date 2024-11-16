@@ -201,7 +201,7 @@
             // flightBooking_FlightDetails1
             // 
             this.flightBooking_FlightDetails1.BackColor = System.Drawing.Color.White;
-            this.flightBooking_FlightDetails1.Location = new System.Drawing.Point(0, 4);
+            this.flightBooking_FlightDetails1.Location = new System.Drawing.Point(4, 3);
             this.flightBooking_FlightDetails1.Name = "flightBooking_FlightDetails1";
             this.flightBooking_FlightDetails1.Size = new System.Drawing.Size(906, 677);
             this.flightBooking_FlightDetails1.TabIndex = 0;

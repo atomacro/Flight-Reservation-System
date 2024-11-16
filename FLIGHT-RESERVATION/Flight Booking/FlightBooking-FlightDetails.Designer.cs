@@ -61,6 +61,7 @@
             this.Controls.Add(this.btnChangeType);
             this.Name = "FlightBooking_FlightDetails";
             this.Size = new System.Drawing.Size(906, 677);
+            this.Load += new System.EventHandler(this.FlightBooking_FlightDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

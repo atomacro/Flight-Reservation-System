@@ -124,6 +124,7 @@
     <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.Designer.cs">
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Trips.cs" />
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.cs">
       <SubType>UserControl</SubType>
     </Compile>

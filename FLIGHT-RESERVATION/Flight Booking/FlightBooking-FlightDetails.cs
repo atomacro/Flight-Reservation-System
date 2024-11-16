@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 
 namespace FLIGHT_RESERVATION
 {
@@ -24,10 +23,21 @@ namespace FLIGHT_RESERVATION
         String state = "One Way";
         Round_Trip RoundTrip = new Round_Trip();
         One_Way OneWay = new One_Way();
+        private Trips CurrentTrip;  
+
+
+        private void FlightBooking_FlightDetails_Load(object sender, EventArgs e)
+        {
+            SetComboBoxItems(RoundTrip, state);
+            OneWay.AutoSize = true;
+            OneWay.Location = new Point(0, 0);
+            pnlFlightBooking.Controls.Add(OneWay);
+
+        }
         private void btnChangeType_Click(object sender, EventArgs e)
         {
 
-
+                
             if (state == null) state = "One Way";
 
             if (!pnlFlightBooking.Controls.Contains(OneWay))
@@ -50,6 +60,8 @@ namespace FLIGHT_RESERVATION
                 state = "Two Way";
                 OneWay.Hide();
                 RoundTrip.Show();
+                SetComboBoxItems(RoundTrip, state);
+
             }
             else
             {
@@ -57,19 +69,37 @@ namespace FLIGHT_RESERVATION
                 state = "One Way";
                 RoundTrip.Hide();
                 OneWay.Show();
+                SetComboBoxItems(OneWay, state);
             }
         }
 
-        private void setComboBoxItems()
+
+        //trips is an Interface class under FlightBooking-FlightDetails
+        private void SetComboBoxItems(Trips trip, String Type)
         {
-            //RoundTrip.setDepartureLocation() hashmap <String, String> location, airportname
-            //RoundTrip.setArrivalLocation(); hashmap <String, String> location, airportname
-            //RoundTrip.setDates(); hashmap <String, List<String>> ArrivalDate, ReturnDates suited for twoway
-            //OneWay.setArrivalLocation()
-            //OneWay.setDepartureDate();
-            //OneWay.setDepartureDate(); List <String>
+
+            var db_FlightDetails = new Database_FlightDetails();
+            
+
+            trip.cboArrivalLocationControl.SelectedIndexChanged -= HandleLocationChange;
+            trip.cboDepartureLocationControl.SelectedIndexChanged -= HandleLocationChange; //remove existing Event Handlers
+            trip.SetDepartureLocation(db_FlightDetails.DepartureLocations);
+            trip.SetArrivalLocation(db_FlightDetails.ArrivalLocations);
+            trip.cboArrivalLocationControl.SelectedIndexChanged += HandleLocationChange; //add new Event Handler
+            trip.cboDepartureLocationControl.SelectedIndexChanged += HandleLocationChange;
+
+
+            void HandleLocationChange(object sender, EventArgs e)
+            {
+                if(trip.cboDepartureLocationControl.SelectedItem != null && trip.cboArrivalLocationControl.SelectedItem != null)
+                {
+                    db_FlightDetails.selectDates(trip.cboDepartureLocationControl.Text, trip.cboArrivalLocationControl.Text, Type);
+                    trip.SetDates(db_FlightDetails.DepartureDates, db_FlightDetails.ReturnDates);
+                }
+            }
         }
     }
+
 
     public class Database_FlightDetails
     {
@@ -82,13 +112,18 @@ namespace FLIGHT_RESERVATION
         private String Password = "";
         public Dictionary<String, String> ArrivalLocations;
         public Dictionary<String, String> DepartureLocations;
-        public Dictionary<String, List<String>> TwoWayDates;
-        public List<String> OneWayDates;
+        public List<String> ReturnDates;
+        public List<String> DepartureDates;
         public Database_FlightDetails()
         {
+            this.ArrivalLocations = new Dictionary<String, String>();
+            this.DepartureLocations = new Dictionary<String, String>();
+            this.ReturnDates = new List<String>();
+            this.DepartureDates = new List<String>();
 
             string connectionString = $"Server=localhost;Database={this.DataBaseName};User ID={this.UserName};Password={this.Password};";
             _connection = new MySqlConnection(connectionString);
+            selectLocations();
         }
 
         public void selectLocations()
@@ -99,12 +134,12 @@ namespace FLIGHT_RESERVATION
            
                 _connection.Open();
 
-                String query = "SELECT DepartureLocation.AirportFullName AS DepartureLocation,  " +
-                "DepartureLocation.AirportLocation AS DepartureAirportLocation," +
+                String query = "SELECT DepartureLocation.AirportFullName AS DepartureLocation, " +
+                "DepartureLocation.AirportLocation AS DepartureAirportLocation, " +
                 "ArrivalLocation.AirportFullName AS ArrivalLocation, " +
-                "ArrivalLocation.AirportLocation AS ArrivalAirportLocation" +
+                "ArrivalLocation.AirportLocation AS ArrivalAirportLocation " +
                 "FROM airport AS DepartureLocation " +
-                "JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID" +
+                "JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID " +
                 "JOIN airport AS ArrivalLocation " +
                 "ON flights.ArrivalAirportID = ArrivalLocation.AirportID";
 
@@ -113,10 +148,23 @@ namespace FLIGHT_RESERVATION
                 {
                     while (reader.Read())
                     {
-                        this.ArrivalLocations.Add(reader.GetString("ArrivalLocation"), reader.GetString("ArrivalAirportLocation"));
-                        this.DepartureLocations.Add(reader.GetString("DepartureLocation"), reader.GetString("DepartureAirportLocation"));
-                    }
+                        
+                            string arrivalLocation = reader.GetString("ArrivalLocation");
+                            string arrivalAirportLocation = reader.GetString("ArrivalAirportLocation");
+                            string departureLocation = reader.GetString("DepartureLocation");
+                            string departureAirportLocation = reader.GetString("DepartureAirportLocation");
 
+                            if (!this.ArrivalLocations.ContainsKey(arrivalAirportLocation))
+                            {
+                                this.ArrivalLocations.Add(arrivalAirportLocation, arrivalLocation);
+                            }
+
+                            if (!this.DepartureLocations.ContainsKey(departureAirportLocation))
+                            {
+                                this.DepartureLocations.Add(departureAirportLocation, departureLocation);
+                            }
+                        
+                    }
                 }
             }
             catch (Exception e)
@@ -131,7 +179,7 @@ namespace FLIGHT_RESERVATION
 
         }
 
-        public void selectOneWayDates(String From, String To)
+        public void selectDates(String Departure, String Arrival, String Type)
         {
             try
             {
@@ -140,18 +188,46 @@ namespace FLIGHT_RESERVATION
                     "FROM flights JOIN airport AS Departure ON " +
                     "flights.DepartureAirportID = Departure.AirportID " +
                     "JOIN airport AS Arrival ON flights.ArrivalAirportID = Arrival.AirportID " +
-                    "WHERE Departure.AirportLocation = @Departure" +
-                    "AND Arrival.AirportLocation = @Arrival";
+                    "WHERE Departure.AirportLocation = @DepartureLocation " +
+                    "AND Arrival.AirportLocation = @ArrivalLocation";
 
-                MySqlCommand command = new MySqlCommand(query, _connection);
-                command.Parameters.AddWithValue("@DepartureLocation", From);
-                command.Parameters.AddWithValue("@ArrivalLocation", To); 
+                MySqlCommand commandDeparture = new MySqlCommand(query, _connection);
+                commandDeparture.Parameters.AddWithValue("@DepartureLocation", Departure);
+                commandDeparture.Parameters.AddWithValue("@ArrivalLocation", Arrival);
                 
-                using (MySqlDataReader reader = command.ExecuteReader())
+
+                using (MySqlDataReader readerDeparture = commandDeparture.ExecuteReader())
                 {
-                    while (reader.Read())
+                    if (!readerDeparture.HasRows) {
+                        MessageBox.Show("Sorry, No available flights for departure");
+                        return; 
+                    }
+
+                    while (readerDeparture.Read())
                     {
-                        this.OneWayDates.Add(reader.GetDateTime("DepartureDate").ToString("MMMM-dd-yyyy"));
+                        this.DepartureDates.Add(readerDeparture.GetDateTime("DepartureDate").ToString("MMMM dd, yyyy"));
+                    }
+                }
+
+                if (Type == "Two Way")
+                {
+
+                    MySqlCommand commandReturn = new MySqlCommand(query, _connection);
+                    commandReturn.Parameters.AddWithValue("@DepartureLocation", Arrival);
+                    commandReturn.Parameters.AddWithValue("@ArrivalLocation", Departure);
+
+                    using (MySqlDataReader readerReturn = commandReturn.ExecuteReader())
+                    {
+                        if (!readerReturn.HasRows)
+                        {
+                            MessageBox.Show("Sorry, No available flights for return");
+                            return;
+                        }
+
+                        while (readerReturn.Read())
+                        {
+                            this.ReturnDates.Add(readerReturn.GetDateTime("DepartureDate").ToString("MMMM dd, yyyy"));
+                        }
                     }
                 }
             }
@@ -167,3 +243,4 @@ namespace FLIGHT_RESERVATION
         }
     }
 }
+

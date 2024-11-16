@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 {
-    public partial class One_Way : UserControl
+    public partial class One_Way : UserControl, Trips
     {
+
+        public ComboBox cboArrivalLocationControl => this.cboArrivalLocation;
+        public ComboBox cboDepartureLocationControl => this.cboDepartureLocation;
         public One_Way()
         {
             InitializeComponent();
@@ -22,7 +25,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             foreach (ComboBox cbo in this.Controls.OfType<ComboBox>().ToList())
             {
                 cbo.DropDownStyle = ComboBoxStyle.DropDownList;
-                cbo.Font = new Font("Kantumruy Pro", 12.0f, FontStyle.Bold);
+                cbo.Font = new Font("Kantumruy Pro Medium", 12.0f);
 
             }
 
@@ -36,36 +39,30 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             }
         }
 
-        public void setDepartureLocation(Dictionary<String, String> departure)
+        public void SetArrivalLocation(Dictionary<string, string> locations)
+        {
+
+            cboArrivalLocation.Items.Clear();
+            cboArrivalLocation.Items.AddRange(locations.Keys.ToArray());
+            cboArrivalLocation.SelectedIndexChanged += (s, e) =>
+            {
+                lblArrivalLocation.Text = locations[cboArrivalLocation.Text];
+            };
+        }
+        public void SetDepartureLocation(Dictionary<string, string> locations)
         {
             cboDepartureLocation.Items.Clear();
-            cboDepartureLocation.Items.AddRange(departure.Keys.ToArray());
-            cboDepartureLocation.Click += (s, e) =>
+            cboDepartureLocation.Items.AddRange(locations.Keys.ToArray());
+            cboDepartureLocation.SelectedIndexChanged += (s, e) =>
             {
-                if (cboDepartureLocation.SelectedItem != null)
-                {
-                    lblDepartureLocation.Text = departure[cboDepartureLocation.SelectedItem.ToString()];
-                }
+                lblDepartureLocation.Text = locations[cboDepartureLocation.Text];
             };
         }
 
-        public void setArrivalLocation(Dictionary<String, String> arrival)
+        public void SetDates(List<string> departureDates, List<string> returnDates = null)
         {
-            cboArrivalLocation.Items.Clear();
-            cboArrivalLocation.Items.AddRange(arrival.Keys.ToArray());
-            cboArrivalLocation.Click += (s, e) =>
-            {
-                if (cboArrivalLocation.SelectedItem != null)
-                {
-                    lblArrivalLocation.Text = arrival[cboDepartureLocation.SelectedItem.ToString()];
-                }
-            };
-        }
-
-        public void setDepartureDate(List<String> departureDate) {
             cboDepartureDate.Items.Clear();
-            cboDepartureDate.Items.AddRange(departureDate.ToArray());
-            
+            cboDepartureDate.Items.AddRange(departureDates.ToArray());
         }
     }
 }
