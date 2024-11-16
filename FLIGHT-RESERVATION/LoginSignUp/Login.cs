@@ -35,8 +35,8 @@ namespace FLIGHT_RESERVATION
                 return;
             }
 
-            bool UserIsAuthenticated = Session.AuthenticateUser(_email, _password);
-            if (UserIsAuthenticated)
+            bool userIsAuthenticated = Session.AuthenticateUser(_email, _password);
+            if (userIsAuthenticated)
             {
                 Session.IsLoggedIn = true;
             }
@@ -48,14 +48,20 @@ namespace FLIGHT_RESERVATION
             }
         }
 
-        private void lblForgotPassword_Click(object sender, EventArgs e)
+        private void btnHidePassword_Click(object sender, EventArgs e)
         {
-
+            txtPassword.PasswordChar = true;
+            btnShowPassword.Visible = true;
+            btnHidePassword.Visible = false;
+            txtPassword.Focus();
         }
 
-        private void lblSignup_Click(object sender, EventArgs e)
+        private void btnShowPassword_Click(object sender, EventArgs e)
         {
-
+            txtPassword.PasswordChar = false;
+            btnHidePassword.Visible = true;
+            btnShowPassword.Visible = false;
+            txtPassword.Focus();
         }
     }
 }
