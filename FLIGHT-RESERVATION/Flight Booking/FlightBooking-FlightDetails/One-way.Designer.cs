@@ -344,7 +344,6 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(319, 66);
             this.flowLayoutPanel3.TabIndex = 63;
-            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
             // pictureBox2
             // 
@@ -394,7 +393,6 @@
             this.picCompanions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCompanions.TabIndex = 35;
             this.picCompanions.TabStop = false;
-            this.picCompanions.Click += new System.EventHandler(this.picCompanions_Click);
             // 
             // lblArrivalLocation
             // 
@@ -460,6 +458,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "One_Way";
             this.Size = new System.Drawing.Size(871, 571);
+            this.Load += new System.EventHandler(this.One_Way_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLift)).EndInit();

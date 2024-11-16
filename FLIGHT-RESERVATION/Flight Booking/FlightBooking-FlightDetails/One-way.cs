@@ -17,12 +17,27 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             InitializeComponent();
         }
 
-        private void picCompanions_Click(object sender, EventArgs e)
+        private void One_Way_Load(object sender, EventArgs e)
         {
+            foreach (ComboBox cbo in this.Controls.OfType<ComboBox>().ToList())
+            {
+                cbo.DropDownStyle = ComboBoxStyle.DropDownList;
+                cbo.Font = new Font("Kantumruy Pro", 12.0f, FontStyle.Bold);
 
+            }
+
+            foreach (Label label in this.Controls.OfType<Label>().ToList())
+            {
+                if (label == lblAdult || label == lblChildren || label == lblInfant)
+                {
+                    continue;
+                }
+                label.ForeColor = ColorTranslator.FromHtml("#9C9C9C");
+            }
         }
 
-        public void setDepartureLocation(Dictionary<String, String> departure) {
+        public void setDepartureLocation(Dictionary<String, String> departure)
+        {
             cboDepartureLocation.Items.Clear();
             cboDepartureLocation.Items.AddRange(departure.Keys.ToArray());
             cboDepartureLocation.Click += (s, e) =>
@@ -34,9 +49,23 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             };
         }
 
-        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        public void setArrivalLocation(Dictionary<String, String> arrival)
         {
+            cboArrivalLocation.Items.Clear();
+            cboArrivalLocation.Items.AddRange(arrival.Keys.ToArray());
+            cboArrivalLocation.Click += (s, e) =>
+            {
+                if (cboArrivalLocation.SelectedItem != null)
+                {
+                    lblArrivalLocation.Text = arrival[cboDepartureLocation.SelectedItem.ToString()];
+                }
+            };
+        }
 
+        public void setDepartureDate(List<String> departureDate) {
+            cboDepartureDate.Items.Clear();
+            cboDepartureDate.Items.AddRange(departureDate.ToArray());
+            
         }
     }
 }

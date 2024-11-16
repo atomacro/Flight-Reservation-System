@@ -34,9 +34,52 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
                 }
                 label.ForeColor = ColorTranslator.FromHtml("#9C9C9C");
             }
-
-
         }
+
+        public void setDepartureLocation(Dictionary<String, String> departure)
+        {
+            cboDepartureLocation.Items.Clear();
+            cboDepartureLocation.Items.AddRange(departure.Keys.ToArray());
+            cboDepartureLocation.Click += (s, e) =>
+            {
+                if (cboDepartureLocation.SelectedItem != null)
+                {
+                    lblDepartureLocation.Text = departure[cboDepartureLocation.SelectedItem.ToString()];
+                }
+            };
+        }
+
+        public void setArrivalLocation(Dictionary<String, String> arrival)
+        {
+            cboArrivalLocation.Items.Clear();
+            cboArrivalLocation.Items.AddRange(arrival.Keys.ToArray());
+            cboArrivalLocation.Click += (s, e) =>
+            {
+                if (cboArrivalLocation.SelectedItem != null)
+                {
+                    lblArrivalLocation.Text = arrival[cboDepartureLocation.SelectedItem.ToString()];
+                }
+            };
+        }
+        public void setDates(Dictionary<string, List<string>> departureDates)
+        {
+            cboDepartureDate.Items.Clear();
+            cboDepartureDate.Items.AddRange(departureDates.Keys.ToArray());
+            cboDepartureDate.SelectedIndexChanged -= OnDepartureDateChanged;
+            cboDepartureDate.SelectedIndexChanged += OnDepartureDateChanged;
+            void OnDepartureDateChanged(object sender, EventArgs e)
+            {
+                if (cboDepartureDate.SelectedItem != null)
+                {
+                    cboReturnDate.Items.Clear();
+                    foreach (string returnDate in departureDates[cboDepartureDate.SelectedItem.ToString()])
+                    {
+                        cboReturnDate.Items.Add(returnDate);
+                    }
+                }
+            }
+        }
+
 
     }
 }
