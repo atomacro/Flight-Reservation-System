@@ -33,54 +33,53 @@
             this.lblClassSeat = new System.Windows.Forms.Label();
             this.cboDepartureDate = new System.Windows.Forms.ComboBox();
             this.lblDepartureDate = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblAdult = new System.Windows.Forms.Label();
-            this.numAdult = new System.Windows.Forms.NumericUpDown();
-            this.lblChildren = new System.Windows.Forms.Label();
-            this.numChildren = new System.Windows.Forms.NumericUpDown();
-            this.lblInfant = new System.Windows.Forms.Label();
-            this.numInfant = new System.Windows.Forms.NumericUpDown();
-            this.lblCompanions = new System.Windows.Forms.Label();
-            this.lblArrivalLocation = new System.Windows.Forms.Label();
-            this.cboArrivalLocation = new System.Windows.Forms.ComboBox();
             this.lblDepartureLocation = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.cboDepartureLocation = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picAirplaneLand = new System.Windows.Forms.PictureBox();
             this.picAirplaneLift = new System.Windows.Forms.PictureBox();
             this.picLine = new System.Windows.Forms.PictureBox();
             this.picDepartureReturnDate = new System.Windows.Forms.PictureBox();
             this.picClassSeat = new System.Windows.Forms.PictureBox();
-            this.picCompanions = new System.Windows.Forms.PictureBox();
             this.picDepartureArrivalLocation = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numChildren)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numInfant)).BeginInit();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
+            this.lblCompanions = new System.Windows.Forms.Label();
+            this.numAdult = new System.Windows.Forms.NumericUpDown();
+            this.lblAdult = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.numChildren = new System.Windows.Forms.NumericUpDown();
+            this.lblChildren = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.numInfant = new System.Windows.Forms.NumericUpDown();
+            this.lblInfant = new System.Windows.Forms.Label();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.picCompanions = new System.Windows.Forms.PictureBox();
+            this.lblArrivalLocation = new System.Windows.Forms.Label();
+            this.picAirplaneLand = new System.Windows.Forms.PictureBox();
+            this.cboArrivalLocation = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartureReturnDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClassSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompanions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartureArrivalLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChildren)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInfant)).BeginInit();
+            this.flowLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompanions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLand)).BeginInit();
             this.SuspendLayout();
             // 
             // cboClassSeat
@@ -123,111 +122,6 @@
             this.lblDepartureDate.TabIndex = 52;
             this.lblDepartureDate.Text = "Departure Date";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.lblAdult);
-            this.flowLayoutPanel1.Controls.Add(this.numAdult);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(96, 349);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(96, 62);
-            this.flowLayoutPanel1.TabIndex = 48;
-            // 
-            // lblAdult
-            // 
-            this.lblAdult.AutoSize = true;
-            this.lblAdult.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdult.Location = new System.Drawing.Point(3, 0);
-            this.lblAdult.Name = "lblAdult";
-            this.lblAdult.Size = new System.Drawing.Size(64, 29);
-            this.lblAdult.TabIndex = 0;
-            this.lblAdult.Text = "Adult";
-            // 
-            // numAdult
-            // 
-            this.numAdult.Location = new System.Drawing.Point(10, 32);
-            this.numAdult.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.numAdult.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numAdult.Name = "numAdult";
-            this.numAdult.Size = new System.Drawing.Size(64, 22);
-            this.numAdult.TabIndex = 3;
-            this.numAdult.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lblChildren
-            // 
-            this.lblChildren.AutoSize = true;
-            this.lblChildren.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChildren.Location = new System.Drawing.Point(3, 0);
-            this.lblChildren.Name = "lblChildren";
-            this.lblChildren.Size = new System.Drawing.Size(243, 29);
-            this.lblChildren.TabIndex = 1;
-            this.lblChildren.Text = "Children (2-11 years old)";
-            // 
-            // numChildren
-            // 
-            this.numChildren.Location = new System.Drawing.Point(10, 32);
-            this.numChildren.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.numChildren.Name = "numChildren";
-            this.numChildren.Size = new System.Drawing.Size(64, 22);
-            this.numChildren.TabIndex = 4;
-            // 
-            // lblInfant
-            // 
-            this.lblInfant.AutoSize = true;
-            this.lblInfant.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfant.Location = new System.Drawing.Point(3, 0);
-            this.lblInfant.Name = "lblInfant";
-            this.lblInfant.Size = new System.Drawing.Size(70, 29);
-            this.lblInfant.TabIndex = 2;
-            this.lblInfant.Text = "Infant";
-            // 
-            // numInfant
-            // 
-            this.numInfant.Location = new System.Drawing.Point(10, 32);
-            this.numInfant.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.numInfant.Name = "numInfant";
-            this.numInfant.Size = new System.Drawing.Size(64, 22);
-            this.numInfant.TabIndex = 5;
-            // 
-            // lblCompanions
-            // 
-            this.lblCompanions.AutoSize = true;
-            this.lblCompanions.BackColor = System.Drawing.Color.Transparent;
-            this.lblCompanions.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanions.Location = new System.Drawing.Point(35, 311);
-            this.lblCompanions.Name = "lblCompanions";
-            this.lblCompanions.Size = new System.Drawing.Size(117, 29);
-            this.lblCompanions.TabIndex = 47;
-            this.lblCompanions.Text = "Passengers";
-            // 
-            // lblArrivalLocation
-            // 
-            this.lblArrivalLocation.AutoSize = true;
-            this.lblArrivalLocation.Font = new System.Drawing.Font("Kantumruy Pro", 12F);
-            this.lblArrivalLocation.Location = new System.Drawing.Point(91, 210);
-            this.lblArrivalLocation.Name = "lblArrivalLocation";
-            this.lblArrivalLocation.Size = new System.Drawing.Size(398, 29);
-            this.lblArrivalLocation.TabIndex = 46;
-            this.lblArrivalLocation.Text = "Ninoy Aquino International Airport (MNL)";
-            // 
-            // cboArrivalLocation
-            // 
-            this.cboArrivalLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboArrivalLocation.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboArrivalLocation.FormattingEnabled = true;
-            this.cboArrivalLocation.Location = new System.Drawing.Point(91, 170);
-            this.cboArrivalLocation.Name = "cboArrivalLocation";
-            this.cboArrivalLocation.Size = new System.Drawing.Size(183, 37);
-            this.cboArrivalLocation.TabIndex = 45;
-            // 
             // lblDepartureLocation
             // 
             this.lblDepartureLocation.AutoSize = true;
@@ -269,34 +163,6 @@
             this.cboDepartureLocation.Size = new System.Drawing.Size(183, 37);
             this.cboDepartureLocation.TabIndex = 38;
             // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.lblChildren);
-            this.flowLayoutPanel3.Controls.Add(this.numChildren);
-            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel4);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(289, 345);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(258, 66);
-            this.flowLayoutPanel3.TabIndex = 63;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(252, 3);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel4.TabIndex = 5;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.lblInfant);
-            this.flowLayoutPanel5.Controls.Add(this.numInfant);
-            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(649, 345);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(97, 66);
-            this.flowLayoutPanel5.TabIndex = 64;
-            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
@@ -316,46 +182,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 56;
             this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(233, 345);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 51;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(593, 345);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 50;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(40, 349);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 49;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picAirplaneLand
-            // 
-            this.picAirplaneLand.Image = ((System.Drawing.Image)(resources.GetObject("picAirplaneLand.Image")));
-            this.picAirplaneLand.Location = new System.Drawing.Point(35, 185);
-            this.picAirplaneLand.Name = "picAirplaneLand";
-            this.picAirplaneLand.Size = new System.Drawing.Size(50, 50);
-            this.picAirplaneLand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAirplaneLand.TabIndex = 41;
-            this.picAirplaneLand.TabStop = false;
             // 
             // picAirplaneLift
             // 
@@ -397,18 +223,6 @@
             this.picClassSeat.TabIndex = 36;
             this.picClassSeat.TabStop = false;
             // 
-            // picCompanions
-            // 
-            this.picCompanions.Image = ((System.Drawing.Image)(resources.GetObject("picCompanions.Image")));
-            this.picCompanions.Location = new System.Drawing.Point(20, 293);
-            this.picCompanions.Margin = new System.Windows.Forms.Padding(0);
-            this.picCompanions.Name = "picCompanions";
-            this.picCompanions.Size = new System.Drawing.Size(819, 160);
-            this.picCompanions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCompanions.TabIndex = 35;
-            this.picCompanions.TabStop = false;
-            this.picCompanions.Click += new System.EventHandler(this.picCompanions_Click);
-            // 
             // picDepartureArrivalLocation
             // 
             this.picDepartureArrivalLocation.Image = ((System.Drawing.Image)(resources.GetObject("picDepartureArrivalLocation.Image")));
@@ -434,7 +248,185 @@
             this.button1.Text = "SEARCH FLIGHT";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // One_way
+            // lblCompanions
+            // 
+            this.lblCompanions.AutoSize = true;
+            this.lblCompanions.BackColor = System.Drawing.Color.Transparent;
+            this.lblCompanions.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanions.Location = new System.Drawing.Point(35, 311);
+            this.lblCompanions.Name = "lblCompanions";
+            this.lblCompanions.Size = new System.Drawing.Size(117, 29);
+            this.lblCompanions.TabIndex = 47;
+            this.lblCompanions.Text = "Passengers";
+            // 
+            // numAdult
+            // 
+            this.numAdult.Location = new System.Drawing.Point(10, 32);
+            this.numAdult.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.numAdult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numAdult.Name = "numAdult";
+            this.numAdult.Size = new System.Drawing.Size(64, 22);
+            this.numAdult.TabIndex = 3;
+            this.numAdult.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblAdult
+            // 
+            this.lblAdult.AutoSize = true;
+            this.lblAdult.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdult.Location = new System.Drawing.Point(3, 0);
+            this.lblAdult.Name = "lblAdult";
+            this.lblAdult.Size = new System.Drawing.Size(64, 29);
+            this.lblAdult.TabIndex = 0;
+            this.lblAdult.Text = "Adult";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.lblAdult);
+            this.flowLayoutPanel1.Controls.Add(this.numAdult);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(96, 349);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(96, 62);
+            this.flowLayoutPanel1.TabIndex = 48;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(40, 349);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(229, 345);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 51;
+            this.pictureBox3.TabStop = false;
+            // 
+            // numChildren
+            // 
+            this.numChildren.Location = new System.Drawing.Point(10, 32);
+            this.numChildren.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.numChildren.Name = "numChildren";
+            this.numChildren.Size = new System.Drawing.Size(64, 22);
+            this.numChildren.TabIndex = 4;
+            // 
+            // lblChildren
+            // 
+            this.lblChildren.AutoSize = true;
+            this.lblChildren.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChildren.Location = new System.Drawing.Point(3, 0);
+            this.lblChildren.Name = "lblChildren";
+            this.lblChildren.Size = new System.Drawing.Size(243, 29);
+            this.lblChildren.TabIndex = 1;
+            this.lblChildren.Text = "Children (2-11 years old)";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.lblChildren);
+            this.flowLayoutPanel3.Controls.Add(this.numChildren);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 349);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(319, 66);
+            this.flowLayoutPanel3.TabIndex = 63;
+            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(640, 349);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            // 
+            // numInfant
+            // 
+            this.numInfant.Location = new System.Drawing.Point(10, 32);
+            this.numInfant.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.numInfant.Name = "numInfant";
+            this.numInfant.Size = new System.Drawing.Size(64, 22);
+            this.numInfant.TabIndex = 5;
+            // 
+            // lblInfant
+            // 
+            this.lblInfant.AutoSize = true;
+            this.lblInfant.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfant.Location = new System.Drawing.Point(3, 0);
+            this.lblInfant.Name = "lblInfant";
+            this.lblInfant.Size = new System.Drawing.Size(70, 29);
+            this.lblInfant.TabIndex = 2;
+            this.lblInfant.Text = "Infant";
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.lblInfant);
+            this.flowLayoutPanel5.Controls.Add(this.numInfant);
+            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(696, 349);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(97, 66);
+            this.flowLayoutPanel5.TabIndex = 64;
+            // 
+            // picCompanions
+            // 
+            this.picCompanions.Image = ((System.Drawing.Image)(resources.GetObject("picCompanions.Image")));
+            this.picCompanions.Location = new System.Drawing.Point(20, 293);
+            this.picCompanions.Margin = new System.Windows.Forms.Padding(0);
+            this.picCompanions.Name = "picCompanions";
+            this.picCompanions.Size = new System.Drawing.Size(819, 160);
+            this.picCompanions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCompanions.TabIndex = 35;
+            this.picCompanions.TabStop = false;
+            this.picCompanions.Click += new System.EventHandler(this.picCompanions_Click);
+            // 
+            // lblArrivalLocation
+            // 
+            this.lblArrivalLocation.AutoSize = true;
+            this.lblArrivalLocation.Font = new System.Drawing.Font("Kantumruy Pro", 12F);
+            this.lblArrivalLocation.Location = new System.Drawing.Point(91, 210);
+            this.lblArrivalLocation.Name = "lblArrivalLocation";
+            this.lblArrivalLocation.Size = new System.Drawing.Size(398, 29);
+            this.lblArrivalLocation.TabIndex = 46;
+            this.lblArrivalLocation.Text = "Ninoy Aquino International Airport (MNL)";
+            // 
+            // picAirplaneLand
+            // 
+            this.picAirplaneLand.Image = ((System.Drawing.Image)(resources.GetObject("picAirplaneLand.Image")));
+            this.picAirplaneLand.Location = new System.Drawing.Point(35, 185);
+            this.picAirplaneLand.Name = "picAirplaneLand";
+            this.picAirplaneLand.Size = new System.Drawing.Size(50, 50);
+            this.picAirplaneLand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAirplaneLand.TabIndex = 41;
+            this.picAirplaneLand.TabStop = false;
+            // 
+            // cboArrivalLocation
+            // 
+            this.cboArrivalLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboArrivalLocation.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboArrivalLocation.FormattingEnabled = true;
+            this.cboArrivalLocation.Location = new System.Drawing.Point(91, 170);
+            this.cboArrivalLocation.Name = "cboArrivalLocation";
+            this.cboArrivalLocation.Size = new System.Drawing.Size(183, 37);
+            this.cboArrivalLocation.TabIndex = 45;
+            // 
+            // One_Way
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -466,29 +458,29 @@
             this.Controls.Add(this.picCompanions);
             this.Controls.Add(this.picDepartureArrivalLocation);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Name = "One_way";
+            this.Name = "One_Way";
             this.Size = new System.Drawing.Size(871, 571);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numChildren)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numInfant)).EndInit();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartureReturnDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClassSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompanions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartureArrivalLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChildren)).EndInit();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numInfant)).EndInit();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompanions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,33 +494,32 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.ComboBox cboDepartureDate;
         private System.Windows.Forms.Label lblDepartureDate;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label lblAdult;
-        private System.Windows.Forms.NumericUpDown numAdult;
-        private System.Windows.Forms.Label lblChildren;
-        private System.Windows.Forms.NumericUpDown numChildren;
-        private System.Windows.Forms.Label lblInfant;
-        private System.Windows.Forms.NumericUpDown numInfant;
-        private System.Windows.Forms.Label lblCompanions;
-        private System.Windows.Forms.Label lblArrivalLocation;
-        private System.Windows.Forms.ComboBox cboArrivalLocation;
         private System.Windows.Forms.Label lblDepartureLocation;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;
-        private System.Windows.Forms.PictureBox picAirplaneLand;
         private System.Windows.Forms.PictureBox picAirplaneLift;
         private System.Windows.Forms.PictureBox picLine;
         private System.Windows.Forms.ComboBox cboDepartureLocation;
         private System.Windows.Forms.PictureBox picDepartureReturnDate;
         private System.Windows.Forms.PictureBox picClassSeat;
-        private System.Windows.Forms.PictureBox picCompanions;
         private System.Windows.Forms.PictureBox picDepartureArrivalLocation;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblCompanions;
+        private System.Windows.Forms.NumericUpDown numAdult;
+        private System.Windows.Forms.Label lblAdult;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.NumericUpDown numChildren;
+        private System.Windows.Forms.Label lblChildren;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.NumericUpDown numInfant;
+        private System.Windows.Forms.Label lblInfant;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.PictureBox picCompanions;
+        private System.Windows.Forms.Label lblArrivalLocation;
+        private System.Windows.Forms.PictureBox picAirplaneLand;
+        private System.Windows.Forms.ComboBox cboArrivalLocation;
     }
 }

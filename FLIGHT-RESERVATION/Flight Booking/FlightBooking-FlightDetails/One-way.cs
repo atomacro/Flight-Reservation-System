@@ -33,5 +33,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
                 }
             };
         }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

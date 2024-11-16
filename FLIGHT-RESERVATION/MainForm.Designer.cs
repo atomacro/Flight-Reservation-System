@@ -43,10 +43,8 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.round_Trip1 = new FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails.Round_Trip();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlIndicator1
@@ -192,19 +190,10 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Controls.Add(this.round_Trip1);
             this.pnlMain.Location = new System.Drawing.Point(351, 161);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(910, 680);
             this.pnlMain.TabIndex = 10;
-            // 
-            // round_Trip1
-            // 
-            this.round_Trip1.BackColor = System.Drawing.Color.White;
-            this.round_Trip1.Location = new System.Drawing.Point(10, 78);
-            this.round_Trip1.Name = "round_Trip1";
-            this.round_Trip1.Size = new System.Drawing.Size(871, 571);
-            this.round_Trip1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -229,7 +218,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -249,7 +237,6 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
-        private Flight_Booking.FlightBooking_FlightDetails.Round_Trip round_Trip1;
     }
 }
 

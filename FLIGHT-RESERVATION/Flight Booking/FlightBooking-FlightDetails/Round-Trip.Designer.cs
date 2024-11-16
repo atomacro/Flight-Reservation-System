@@ -189,7 +189,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // picCompanions
             // 
             this.picCompanions.Image = ((System.Drawing.Image)(resources.GetObject("picCompanions.Image")));
-            this.picCompanions.Location = new System.Drawing.Point(22, 294);
+            this.picCompanions.Location = new System.Drawing.Point(22, 277);
             this.picCompanions.Margin = new System.Windows.Forms.Padding(0);
             this.picCompanions.Name = "picCompanions";
             this.picCompanions.Size = new System.Drawing.Size(498, 262);
@@ -200,9 +200,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // picClassSeat
             // 
             this.picClassSeat.Image = ((System.Drawing.Image)(resources.GetObject("picClassSeat.Image")));
-            this.picClassSeat.Location = new System.Drawing.Point(548, 294);
+            this.picClassSeat.Location = new System.Drawing.Point(535, 280);
             this.picClassSeat.Name = "picClassSeat";
-            this.picClassSeat.Size = new System.Drawing.Size(304, 120);
+            this.picClassSeat.Size = new System.Drawing.Size(315, 120);
             this.picClassSeat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picClassSeat.TabIndex = 2;
             this.picClassSeat.TabStop = false;
@@ -210,7 +210,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // picDepartureReturnDate
             // 
             this.picDepartureReturnDate.Image = ((System.Drawing.Image)(resources.GetObject("picDepartureReturnDate.Image")));
-            this.picDepartureReturnDate.Location = new System.Drawing.Point(537, 19);
+            this.picDepartureReturnDate.Location = new System.Drawing.Point(535, 19);
             this.picDepartureReturnDate.Name = "picDepartureReturnDate";
             this.picDepartureReturnDate.Size = new System.Drawing.Size(315, 255);
             this.picDepartureReturnDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,7 +233,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblCompanions.AutoSize = true;
             this.lblCompanions.BackColor = System.Drawing.Color.Transparent;
             this.lblCompanions.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanions.Location = new System.Drawing.Point(37, 312);
+            this.lblCompanions.Location = new System.Drawing.Point(37, 295);
             this.lblCompanions.Name = "lblCompanions";
             this.lblCompanions.Size = new System.Drawing.Size(117, 29);
             this.lblCompanions.TabIndex = 17;
@@ -248,7 +248,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.flowLayoutPanel1.Controls.Add(this.lblInfant);
             this.flowLayoutPanel1.Controls.Add(this.numInfant);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(103, 346);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(103, 329);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(329, 182);
             this.flowLayoutPanel1.TabIndex = 18;
@@ -320,7 +320,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(42, 350);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 333);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -331,7 +331,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(42, 464);
+            this.pictureBox2.Location = new System.Drawing.Point(42, 447);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -342,7 +342,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(42, 406);
+            this.pictureBox3.Location = new System.Drawing.Point(42, 389);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -355,7 +355,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblDepartureDate.AutoSize = true;
             this.lblDepartureDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartureDate.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartureDate.Location = new System.Drawing.Point(562, 47);
+            this.lblDepartureDate.Location = new System.Drawing.Point(553, 50);
             this.lblDepartureDate.Name = "lblDepartureDate";
             this.lblDepartureDate.Size = new System.Drawing.Size(156, 29);
             this.lblDepartureDate.TabIndex = 22;
@@ -369,7 +369,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             "Sample",
             "Sample",
             "Sample"});
-            this.cboDepartureDate.Location = new System.Drawing.Point(623, 92);
+            this.cboDepartureDate.Location = new System.Drawing.Point(614, 95);
             this.cboDepartureDate.Name = "cboDepartureDate";
             this.cboDepartureDate.Size = new System.Drawing.Size(205, 24);
             this.cboDepartureDate.TabIndex = 23;
@@ -377,7 +377,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(566, 141);
+            this.pictureBox4.Location = new System.Drawing.Point(557, 144);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(280, 10);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -389,7 +389,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblReturnDate.AutoSize = true;
             this.lblReturnDate.BackColor = System.Drawing.Color.Transparent;
             this.lblReturnDate.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturnDate.Location = new System.Drawing.Point(562, 154);
+            this.lblReturnDate.Location = new System.Drawing.Point(553, 157);
             this.lblReturnDate.Name = "lblReturnDate";
             this.lblReturnDate.Size = new System.Drawing.Size(127, 29);
             this.lblReturnDate.TabIndex = 25;
@@ -399,7 +399,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(567, 79);
+            this.pictureBox5.Location = new System.Drawing.Point(558, 82);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -409,7 +409,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(567, 186);
+            this.pictureBox6.Location = new System.Drawing.Point(558, 189);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(50, 50);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -424,7 +424,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             "Sample",
             "Sample",
             "Sample"});
-            this.cboReturnDate.Location = new System.Drawing.Point(623, 199);
+            this.cboReturnDate.Location = new System.Drawing.Point(614, 202);
             this.cboReturnDate.Name = "cboReturnDate";
             this.cboReturnDate.Size = new System.Drawing.Size(205, 24);
             this.cboReturnDate.TabIndex = 29;
@@ -432,7 +432,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(567, 340);
+            this.pictureBox7.Location = new System.Drawing.Point(557, 330);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(50, 50);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -444,7 +444,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblClassSeat.AutoSize = true;
             this.lblClassSeat.BackColor = System.Drawing.Color.Transparent;
             this.lblClassSeat.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClassSeat.Location = new System.Drawing.Point(562, 312);
+            this.lblClassSeat.Location = new System.Drawing.Point(553, 298);
             this.lblClassSeat.Name = "lblClassSeat";
             this.lblClassSeat.Size = new System.Drawing.Size(110, 29);
             this.lblClassSeat.TabIndex = 31;
@@ -458,7 +458,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             "Sample",
             "Sample",
             "Sample"});
-            this.comboBox1.Location = new System.Drawing.Point(623, 351);
+            this.comboBox1.Location = new System.Drawing.Point(613, 337);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(205, 24);
             this.comboBox1.TabIndex = 32;
@@ -472,7 +472,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.btnSearchFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchFlight.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.btnSearchFlight.ForeColor = System.Drawing.Color.White;
-            this.btnSearchFlight.Location = new System.Drawing.Point(550, 455);
+            this.btnSearchFlight.Location = new System.Drawing.Point(552, 437);
             this.btnSearchFlight.Name = "btnSearchFlight";
             this.btnSearchFlight.Size = new System.Drawing.Size(298, 93);
             this.btnSearchFlight.TabIndex = 33;
