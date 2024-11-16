@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Protobuf.WellKnownTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace FLIGHT_RESERVATION
 {
@@ -18,13 +20,14 @@ namespace FLIGHT_RESERVATION
 
         private MySqlConnection _connection;
         private MySqlTransaction _transaction;
-        private String _DataBaseName = "airplaneticketingsystem2024";
-        private String _UserName = "root";
-        private String _Password = "";
+        private readonly String _databaseName = "airplaneticketingsystem2024";
+        private readonly String _userName = "root";
+        private readonly String _password = "";
 
         public Session()
         {
-            string connectionString = $"Server=localhost;Database={this._DataBaseName};User ID={this._UserName};Password={this._Password};";
+            string connectionString =
+                $"Server=localhost;Database={this._databaseName};User ID={this._userName};Password={this._password};";
             _connection = new MySqlConnection(connectionString);
         }
 
@@ -33,7 +36,7 @@ namespace FLIGHT_RESERVATION
             try
             {
                 _connection.Open();
-                string query = $"SELECT * FROM accounts WHERE Email=@Email AND Password=@Password";
+                string query = $"SELECT * FROM accounts WHERE Email = @Email AND Password = SHA2(@Password, 256)";
                 MySqlCommand command = new MySqlCommand(query, _connection);
 
                 command.Parameters.AddWithValue("@Email", email);
@@ -61,7 +64,7 @@ namespace FLIGHT_RESERVATION
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An Error has Occured{ex.Message}");
+                Console.WriteLine($"An Error has Occured: {ex.Message}");
                 return false;
             }
             finally
@@ -70,6 +73,48 @@ namespace FLIGHT_RESERVATION
             }
         }
 
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
 
+            try
+            {
+                // Normalize the domain
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                    RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+                // Examines the domain part of the email and normalizes it.
+                string DomainMapper(Match match)
+                {
+                    // Use IdnMapping class to convert Unicode domain names.
+                    var idn = new IdnMapping();
+
+                    // Pull out and process domain name (throws ArgumentException on invalid)
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
+            }
+            catch (RegexMatchTimeoutException e)
+            {
+                return false;
+            }
+            catch (ArgumentException e)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
+        }
     }
 }
