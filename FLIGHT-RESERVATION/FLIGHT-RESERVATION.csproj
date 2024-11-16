@@ -123,6 +123,12 @@
     <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.Designer.cs">
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\AddOns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\AddOns.Designer.cs">
+      <DependentUpon>AddOns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails.resx">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\AddOns.resx">
+      <DependentUpon>AddOns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\One-way.resx">
       <DependentUpon>One-way.cs</DependentUpon>
