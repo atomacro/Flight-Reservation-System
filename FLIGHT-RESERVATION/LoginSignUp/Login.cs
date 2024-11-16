@@ -25,9 +25,18 @@ namespace FLIGHT_RESERVATION
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool isAuthenticated = Session.AuthenticateUser(txtEmail.Text, txtPassword.Text);
+            _email = txtEmail.Text;
+            _password = txtPassword.Text;
+            if (!Session.IsValidEmail(_email))
+            {
+                MessageBox.Show("Please enter a valid email.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Text = "";
+                txtEmail.Focus();
+                return;
+            }
 
-            if (isAuthenticated)
+            bool UserIsAuthenticated = Session.AuthenticateUser(_email, _password);
+            if (UserIsAuthenticated)
             {
                 Session.IsLoggedIn = true;
             }
