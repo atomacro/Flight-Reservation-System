@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace FLIGHT_RESERVATION
 {
     public partial class Login : UserControl
     {
+        public event EventHandler LoginSuccessful;
+        public event EventHandler OpenSignUpForm;
         private string _email;
         private string _password;
         Session Session = new Session();
@@ -20,14 +21,13 @@ namespace FLIGHT_RESERVATION
         public Login()
         {
             InitializeComponent();
-            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             _email = txtEmail.Text;
             _password = txtPassword.Text;
-            if (!Session.IsValidEmail(_email))
+            if (!User.IsValidEmail(_email))
             {
                 MessageBox.Show("Please enter a valid email.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Text = "";
@@ -39,6 +39,8 @@ namespace FLIGHT_RESERVATION
             if (userIsAuthenticated)
             {
                 Session.IsLoggedIn = true;
+                MessageBox.Show("Login Successful!");
+                LoginSuccessful?.Invoke(this, EventArgs.Empty);
             }
             else
             {
@@ -62,6 +64,16 @@ namespace FLIGHT_RESERVATION
             btnHidePassword.Visible = true;
             btnShowPassword.Visible = false;
             txtPassword.Focus();
+        }
+
+        private void lblSignup_Click(object sender, EventArgs e)
+        {
+            OpenSignUpForm?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtEmail.Focus();
         }
     }
 }

@@ -20,7 +20,6 @@ namespace FLIGHT_RESERVATION
         {
             InitializeComponent();
             //pnlMain.BackColor = Color.Transparent;
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -36,9 +35,7 @@ namespace FLIGHT_RESERVATION
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
         }
 
-
-
-        // UI Related Methods
+        // ------ UI Related Methods ------
         public void SetIndicator(Button activeButton, Panel pnlIndicator)
         {
             ResetButtonColors();
@@ -136,6 +133,13 @@ namespace FLIGHT_RESERVATION
                 ClearControls(pnlMain);
 
             };
+            btnLogin.Click += LoginControl_OpenLoginForm;
+            btnLogout.Click += (sender, e) =>
+            {
+                Session.IsLoggedIn = false;
+                Session.CurrentUser = string.Empty;
+                UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+            };
         }
 
         private void ClearControls(Panel pnl)
@@ -160,18 +164,40 @@ namespace FLIGHT_RESERVATION
             btnLogout.Visible = isLoggedIn;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        // ------ LOGIN NAVIGATION ------
+        private void LoginControl_LoginSuccessful(object sender, EventArgs e) // Goes to dashboard after successful login
         {
+            UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+            SetIndicator(btnDashboard, pnlIndicator1);
+            SetHeader("DASHBOARD");
             ClearControls(pnlMain);
 
-            var login = new Login();
-            AddControl(login, pnlMain);
+            // ---- NOTE: only for example. CHANGE TO DASHBOARD USER CONTROL
+            //var viewBookings = new ViewBookings.ViewBookings();
+            //AddControl(viewBookings, pnlMain);
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void LoginControl_OpenSignUpForm(object sender, EventArgs e) // From login form => sign up form
         {
-            Session.IsLoggedIn = false;
-            Session.CurrentUser = string.Empty;
+            SetIndicator(btnDashboard, pnlIndicator1);
+            SetHeader("SIGN UP");
+            ClearControls(pnlMain);
+            var signup = new SignUp();
+            AddControl(signup, pnlMain);
+
+            signup.SignUpSuccessful += LoginControl_LoginSuccessful;
+            signup.OpenLoginForm += LoginControl_OpenLoginForm;
+        }
+
+        private void LoginControl_OpenLoginForm(object sender, EventArgs e) // From signup form => login form
+        {
+            SetHeader("LOGIN");
+            ClearControls(pnlMain);
+            var login = new Login();
+            AddControl(login, pnlMain);
+
+            login.LoginSuccessful += LoginControl_LoginSuccessful;
+            login.OpenSignUpForm += LoginControl_OpenSignUpForm;
         }
     }
 }
