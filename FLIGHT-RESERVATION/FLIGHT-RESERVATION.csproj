@@ -112,11 +112,11 @@
     <Compile Include="Flight Booking\FlightBooking-FlightDetails.Designer.cs">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-FlightDetails\One-way.cs">
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\One-Way.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-FlightDetails\One-way.Designer.cs">
-      <DependentUpon>One-way.cs</DependentUpon>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\One-Way.Designer.cs">
+      <DependentUpon>One-Way.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.cs">
       <SubType>UserControl</SubType>
@@ -124,6 +124,7 @@
     <Compile Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.Designer.cs">
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\FlightBooking-FlightDetails\Trips.cs" />
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +151,12 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginSignUp\Session.cs" />
+    <Compile Include="LoginSignUp\SignUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginSignUp\SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +188,9 @@
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails.resx">
       <DependentUpon>FlightBooking-FlightDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\One-Way.resx">
+      <DependentUpon>One-Way.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.resx">
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +205,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginSignUp\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginSignUp\SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -238,6 +252,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Public\Assets\BUTTON2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Flight Details\OneWayButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Flight Details\TwoWayButton.png" />
+    <None Include="Public\Assets\visibility_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Assets\visibility.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
