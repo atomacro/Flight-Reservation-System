@@ -37,7 +37,7 @@
             // 
             this.btnChangeType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.OneWayButton;
-            this.btnChangeType.Location = new System.Drawing.Point(261, 14);
+            this.btnChangeType.Location = new System.Drawing.Point(289, 16);
             this.btnChangeType.Name = "btnChangeType";
             this.btnChangeType.Size = new System.Drawing.Size(328, 76);
             this.btnChangeType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

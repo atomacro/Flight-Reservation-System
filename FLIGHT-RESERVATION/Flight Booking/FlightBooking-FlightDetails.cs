@@ -2,6 +2,7 @@
 using Google.Protobuf;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace FLIGHT_RESERVATION
 {
     public partial class FlightBooking_FlightDetails : UserControl
     {
+
         public FlightBooking_FlightDetails()
         {
             InitializeComponent();
@@ -24,10 +27,11 @@ namespace FLIGHT_RESERVATION
         String state = "One Way";
         Round_Trip RoundTrip = new Round_Trip();
         One_Way OneWay = new One_Way();
+        FlightDetails_Session session = new FlightDetails_Session();
         private Trips CurrentTrip;  
 
 
-        private void FlightBooking_FlightDetails_Load(object sender, EventArgs e)
+        private void FlightBooking_FlightDetails_Load(object sender, EventArgs @event)
         {
             SetComboBoxItems(RoundTrip, "Two Way");
             SetComboBoxItems(OneWay, "Round Trip");
@@ -39,11 +43,37 @@ namespace FLIGHT_RESERVATION
             pnlFlightBooking.Controls.Add(RoundTrip);
             pnlFlightBooking.Controls.Add(OneWay);
             OneWay.BringToFront();
+
+            OneWay.btnSearchFlight.Click += (s, e) => HandleSubmit(OneWay, "One Way");
+            RoundTrip.btnSearchFlight.Click += (s, e) => HandleSubmit(RoundTrip, "Two Way");
         }
-        private void btnChangeType_Click(object sender, EventArgs e)
+
+        private void HandleSubmit(Trips Trip, String Type)
         {
 
-                
+
+            var properties = Trip.GetType().GetProperties();
+            foreach (var property in properties)
+            {
+                if (property.PropertyType == typeof(ComboBox))
+                {
+                    var control = property.GetValue(Trip) as ComboBox;
+                    if (control == Trip.cboReturnDateControl)
+                    {
+                        continue;
+                    }
+                    if (control == null || string.IsNullOrWhiteSpace(control.Text))
+                    {
+                        MessageBox.Show("Please fill up all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+            }
+
+            session.setFlightDetails(Trip, Type);
+        }
+        private void btnChangeType_Click(object sender, EventArgs e)
+        {    
             if (state == null) state = "One Way";
 
             if (state == "One Way")
@@ -78,7 +108,7 @@ namespace FLIGHT_RESERVATION
             trip.cboArrivalLocationControl.SelectedIndexChanged += HandleLocationChange; //add new Event Handler
             trip.cboDepartureLocationControl.SelectedIndexChanged += HandleLocationChange;
 
-            if(trip.cboReturnDateControl != null)
+            if (trip.cboReturnDateControl != null)
             {
                 trip.cboReturnDateControl.SelectedIndexChanged += HandleDateChange;
                 trip.cboDepartureDateControl.SelectedIndexChanged += HandleDateChange;
@@ -94,17 +124,15 @@ namespace FLIGHT_RESERVATION
 
             void HandleDateChange(Object sender, EventArgs e)
             {
-                    if (trip.cboReturnDateControl.SelectedItem != null && trip.cboDepartureDateControl.SelectedItem != null && DateTime.Parse(trip.cboDepartureDateControl.Text) > DateTime.Parse(trip.cboReturnDateControl.Text))
-                    {
-                        trip.cboReturnDateControl.Items.Clear();
-                        MessageBox.Show("Return Date must be later than Departure Date");
-                        trip.cboReturnDateControl.SelectedItem = null;
-                    }
-                };
-            }
+                if (trip.cboReturnDateControl.SelectedItem != null && trip.cboDepartureDateControl.SelectedItem != null && DateTime.Parse(trip.cboDepartureDateControl.Text) > DateTime.Parse(trip.cboReturnDateControl.Text))
+                {
+                    trip.cboReturnDateControl.Items.Clear();
+                    MessageBox.Show("Return Date must be later than Departure Date");
+                    trip.cboReturnDateControl.SelectedItem = null;
+                }
+            };
         }
-    
-
+        }
 
     public class Database_FlightDetails
     {
@@ -133,20 +161,20 @@ namespace FLIGHT_RESERVATION
 
         public void selectLocations()
         {
-
             try
             {
            
                 _connection.Open();
 
-                String query = "SELECT DepartureLocation.AirportFullName AS DepartureLocation, " +
+                String query = "SELECT DISTINCT DepartureLocation.AirportFullName AS DepartureLocation, " +
                 "DepartureLocation.AirportLocation AS DepartureAirportLocation, " +
                 "ArrivalLocation.AirportFullName AS ArrivalLocation, " +
                 "ArrivalLocation.AirportLocation AS ArrivalAirportLocation " +
                 "FROM airport AS DepartureLocation " +
                 "JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID " +
                 "JOIN airport AS ArrivalLocation " +
-                "ON flights.ArrivalAirportID = ArrivalLocation.AirportID";
+                "ON flights.ArrivalAirportID = ArrivalLocation.AirportID " +
+                "ORDER BY DepartureLocation.AirportLocation ASC, ArrivalLocation.AirportLocation ASC;";
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
                 using (MySqlDataReader reader = command.ExecuteReader())
@@ -167,8 +195,7 @@ namespace FLIGHT_RESERVATION
                             if (!this.DepartureLocations.ContainsKey(departureAirportLocation))
                             {
                                 this.DepartureLocations.Add(departureAirportLocation, departureLocation);
-                            }
-                        
+                            }   
                     }
                 }
             }
@@ -182,6 +209,19 @@ namespace FLIGHT_RESERVATION
                 _connection.Close();
             }
 
+        }
+
+        public void selectSpecificLocations(String DepartureLocation)
+        {
+            string query = "SELECT DISTINCT DepartureLocation.AirportFullName AS DepartureLocation, " +
+                "DepartureLocation.AirportLocation AS DepartureAirportLocation, " +
+                "ArrivalLocation.AirportFullName AS ArrivalLocation, " +
+                "ArrivalLocation.AirportLocation AS ArrivalAirportLocation " +
+                "FROM airport AS DepartureLocation " +
+                "JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID " +
+                "JOIN airport AS ArrivalLocation " +
+                "ON flights.ArrivalAirportID = ArrivalLocation.AirportID " +
+                "ORDER BY DepartureLocation.AirportLocation ASC, ArrivalLocation.AirportLocation ASC; "
         }
 
         public void selectDates(String Departure, String Arrival, String Type, Trips trip)
