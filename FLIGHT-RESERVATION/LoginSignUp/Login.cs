@@ -14,6 +14,7 @@ namespace FLIGHT_RESERVATION
     {
         public event EventHandler LoginSuccessful;
         public event EventHandler OpenSignUpForm;
+        public EventHandler OpenForgotPasswordForm;
         private string _email;
         private string _password;
         Session Session = new Session();
@@ -27,10 +28,9 @@ namespace FLIGHT_RESERVATION
         {
             _email = txtEmail.Text;
             _password = txtPassword.Text;
-            if (!User.IsValidEmail(_email))
+            if (!Validation.IsValidEmail(_email))
             {
                 MessageBox.Show("Please enter a valid email.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmail.Text = "";
                 txtEmail.Focus();
                 return;
             }
@@ -38,15 +38,12 @@ namespace FLIGHT_RESERVATION
             bool userIsAuthenticated = Session.AuthenticateUser(_email, _password);
             if (userIsAuthenticated)
             {
-                Session.IsLoggedIn = true;
                 MessageBox.Show("Login Successful!");
                 LoginSuccessful?.Invoke(this, EventArgs.Empty);
             }
             else
             {
                 MessageBox.Show("Invalid username or password!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Text = "";
-                txtPassword.Focus();
             }
         }
 
@@ -75,6 +72,11 @@ namespace FLIGHT_RESERVATION
         private void Login_Load(object sender, EventArgs e)
         {
             txtEmail.Focus();
+        }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            OpenForgotPasswordForm?.Invoke(this,EventArgs.Empty);
         }
     }
 }
