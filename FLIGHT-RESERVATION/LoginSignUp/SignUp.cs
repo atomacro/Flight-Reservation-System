@@ -26,6 +26,7 @@ namespace FLIGHT_RESERVATION
             
             bool validUserInfo =
                 user.ValidateRegistration(txtFName.Text, txtLName.Text, txtEmail.Text, txtPassword.Text);
+
             if (validUserInfo)
             {
                 Session session = new Session();
@@ -34,6 +35,11 @@ namespace FLIGHT_RESERVATION
                 if (registrationSuccess)
                 {
                     SignUpSuccessful?.Invoke(this, EventArgs.Empty);
+                }
+                else
+                {
+                    MessageBox.Show($"This email address is already registered.",
+                        "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

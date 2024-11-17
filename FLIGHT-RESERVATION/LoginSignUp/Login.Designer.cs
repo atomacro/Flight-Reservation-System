@@ -55,7 +55,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(146)))), ((int)(((byte)(161)))));
+            this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
             this.lblUsername.Location = new System.Drawing.Point(205, 201);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(91, 41);
@@ -67,7 +67,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(146)))), ((int)(((byte)(161)))));
+            this.lblPassword.ForeColor = System.Drawing.Color.DimGray;
             this.lblPassword.Location = new System.Drawing.Point(205, 321);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(144, 41);
@@ -129,6 +129,7 @@
             this.lblForgotPassword.TabIndex = 4;
             this.lblForgotPassword.Text = "Forgot?";
             this.lblForgotPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
             // 
             // btnLogin
             // 
