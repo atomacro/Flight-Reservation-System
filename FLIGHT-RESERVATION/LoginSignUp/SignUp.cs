@@ -20,11 +20,6 @@ namespace FLIGHT_RESERVATION
             InitializeComponent();
         }
 
-        private void lblLogin_Click(object sender, EventArgs e)
-        {
-            OpenLoginForm?.Invoke(this, EventArgs.Empty);
-        }
-
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             User user = new User();
@@ -41,6 +36,28 @@ namespace FLIGHT_RESERVATION
                     SignUpSuccessful?.Invoke(this, EventArgs.Empty);
                 }
             }
+        }
+
+        // ----- UI and Navigation Related
+        private void lblLogin_Click(object sender, EventArgs e)
+        {
+            OpenLoginForm?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnHidePassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = true;
+            btnShowPassword.Visible = true;
+            btnHidePassword.Visible = false;
+            txtPassword.Focus();
+        }
+
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = false;
+            btnHidePassword.Visible = true;
+            btnShowPassword.Visible = false;
+            txtPassword.Focus();
         }
     }
 }
