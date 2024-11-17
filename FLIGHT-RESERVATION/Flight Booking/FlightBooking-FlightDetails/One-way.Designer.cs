@@ -93,7 +93,7 @@
             "First Class"});
             this.cboClassSeat.Location = new System.Drawing.Point(590, 212);
             this.cboClassSeat.Name = "cboClassSeat";
-            this.cboClassSeat.Size = new System.Drawing.Size(265, 24);
+            this.cboClassSeat.Size = new System.Drawing.Size(247, 24);
             this.cboClassSeat.TabIndex = 61;
             // 
             // lblClassSeat
@@ -113,7 +113,7 @@
             this.cboDepartureDate.FormattingEnabled = true;
             this.cboDepartureDate.Location = new System.Drawing.Point(590, 82);
             this.cboDepartureDate.Name = "cboDepartureDate";
-            this.cboDepartureDate.Size = new System.Drawing.Size(265, 24);
+            this.cboDepartureDate.Size = new System.Drawing.Size(247, 24);
             this.cboDepartureDate.TabIndex = 53;
             // 
             // lblDepartureDate
@@ -213,7 +213,7 @@
             this.picDepartureReturnDate.Image = ((System.Drawing.Image)(resources.GetObject("picDepartureReturnDate.Image")));
             this.picDepartureReturnDate.Location = new System.Drawing.Point(515, 20);
             this.picDepartureReturnDate.Name = "picDepartureReturnDate";
-            this.picDepartureReturnDate.Size = new System.Drawing.Size(353, 120);
+            this.picDepartureReturnDate.Size = new System.Drawing.Size(353, 132);
             this.picDepartureReturnDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDepartureReturnDate.TabIndex = 37;
             this.picDepartureReturnDate.TabStop = false;

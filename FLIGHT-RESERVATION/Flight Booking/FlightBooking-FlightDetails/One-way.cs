@@ -15,6 +15,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 
         public ComboBox cboArrivalLocationControl => this.cboArrivalLocation;
         public ComboBox cboDepartureLocationControl => this.cboDepartureLocation;
+        public ComboBox cboDepartureDateControl => this.cboDepartureDate;
+        public ComboBox cboReturnDateControl => null;
+
+
         public One_Way()
         {
             InitializeComponent();

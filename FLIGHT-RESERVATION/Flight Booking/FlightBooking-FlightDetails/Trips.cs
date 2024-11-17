@@ -13,6 +13,8 @@ namespace FLIGHT_RESERVATION
         //set Name to be accessed by main control
         ComboBox cboArrivalLocationControl { get; }
         ComboBox cboDepartureLocationControl { get; }
+        ComboBox cboDepartureDateControl { get; }
+        ComboBox cboReturnDateControl { get; }
 
         
         //methods under this interface

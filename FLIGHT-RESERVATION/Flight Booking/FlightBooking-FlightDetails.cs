@@ -1,4 +1,5 @@
 ﻿using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails;
+using Google.Protobuf;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,16 @@ namespace FLIGHT_RESERVATION
 
         private void FlightBooking_FlightDetails_Load(object sender, EventArgs e)
         {
-            SetComboBoxItems(RoundTrip, state);
+            SetComboBoxItems(RoundTrip, "Two Way");
+            SetComboBoxItems(OneWay, "Round Trip");
+
             OneWay.AutoSize = true;
             OneWay.Location = new Point(0, 0);
+            RoundTrip.AutoSize = true;
+            RoundTrip.Location = new Point(0, 0);
+            pnlFlightBooking.Controls.Add(RoundTrip);
             pnlFlightBooking.Controls.Add(OneWay);
-
+            OneWay.BringToFront();
         }
         private void btnChangeType_Click(object sender, EventArgs e)
         {
@@ -40,27 +46,12 @@ namespace FLIGHT_RESERVATION
                 
             if (state == null) state = "One Way";
 
-            if (!pnlFlightBooking.Controls.Contains(OneWay))
-            {
-                OneWay.AutoSize = true;
-                OneWay.Location = new Point(0, 0);
-                pnlFlightBooking.Controls.Add(OneWay);
-            }
-
-            if (!pnlFlightBooking.Controls.Contains(RoundTrip))
-            {
-                RoundTrip.AutoSize = true;
-                RoundTrip.Location = new Point(0, 0);
-                pnlFlightBooking.Controls.Add(RoundTrip);
-            }
-
             if (state == "One Way")
             {
                 btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.TwoWayButton;
                 state = "Two Way";
                 OneWay.Hide();
                 RoundTrip.Show();
-                SetComboBoxItems(RoundTrip, state);
 
             }
             else
@@ -69,7 +60,7 @@ namespace FLIGHT_RESERVATION
                 state = "One Way";
                 RoundTrip.Hide();
                 OneWay.Show();
-                SetComboBoxItems(OneWay, state);
+
             }
         }
 
@@ -79,7 +70,6 @@ namespace FLIGHT_RESERVATION
         {
 
             var db_FlightDetails = new Database_FlightDetails();
-            
 
             trip.cboArrivalLocationControl.SelectedIndexChanged -= HandleLocationChange;
             trip.cboDepartureLocationControl.SelectedIndexChanged -= HandleLocationChange; //remove existing Event Handlers
@@ -88,17 +78,32 @@ namespace FLIGHT_RESERVATION
             trip.cboArrivalLocationControl.SelectedIndexChanged += HandleLocationChange; //add new Event Handler
             trip.cboDepartureLocationControl.SelectedIndexChanged += HandleLocationChange;
 
-
+            if(trip.cboReturnDateControl != null)
+            {
+                trip.cboReturnDateControl.SelectedIndexChanged += HandleDateChange;
+                trip.cboDepartureDateControl.SelectedIndexChanged += HandleDateChange;
+            }
             void HandleLocationChange(object sender, EventArgs e)
             {
-                if(trip.cboDepartureLocationControl.SelectedItem != null && trip.cboArrivalLocationControl.SelectedItem != null)
+                if (trip.cboDepartureLocationControl.SelectedItem != null && trip.cboArrivalLocationControl.SelectedItem != null)
                 {
-                    db_FlightDetails.selectDates(trip.cboDepartureLocationControl.Text, trip.cboArrivalLocationControl.Text, Type);
+                    db_FlightDetails.selectDates(trip.cboDepartureLocationControl.Text, trip.cboArrivalLocationControl.Text, Type, trip);
                     trip.SetDates(db_FlightDetails.DepartureDates, db_FlightDetails.ReturnDates);
                 }
             }
+
+            void HandleDateChange(Object sender, EventArgs e)
+            {
+                    if (trip.cboReturnDateControl.SelectedItem != null && trip.cboDepartureDateControl.SelectedItem != null && DateTime.Parse(trip.cboDepartureDateControl.Text) > DateTime.Parse(trip.cboReturnDateControl.Text))
+                    {
+                        trip.cboReturnDateControl.Items.Clear();
+                        MessageBox.Show("Return Date must be later than Departure Date");
+                        trip.cboReturnDateControl.SelectedItem = null;
+                    }
+                };
+            }
         }
-    }
+    
 
 
     public class Database_FlightDetails
@@ -179,7 +184,7 @@ namespace FLIGHT_RESERVATION
 
         }
 
-        public void selectDates(String Departure, String Arrival, String Type)
+        public void selectDates(String Departure, String Arrival, String Type, Trips trip)
         {
             try
             {
@@ -199,7 +204,9 @@ namespace FLIGHT_RESERVATION
                 using (MySqlDataReader readerDeparture = commandDeparture.ExecuteReader())
                 {
                     if (!readerDeparture.HasRows) {
-                        MessageBox.Show("Sorry, No available flights for departure");
+                        MessageBox.Show("Sorry, No available flights");
+                        this.ReturnDates.Clear();
+                        this.DepartureDates.Clear();
                         return; 
                     }
 
@@ -218,11 +225,6 @@ namespace FLIGHT_RESERVATION
 
                     using (MySqlDataReader readerReturn = commandReturn.ExecuteReader())
                     {
-                        if (!readerReturn.HasRows)
-                        {
-                            MessageBox.Show("Sorry, No available flights for return");
-                            return;
-                        }
 
                         while (readerReturn.Read())
                         {

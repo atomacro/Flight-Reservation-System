@@ -15,6 +15,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 
         public ComboBox cboArrivalLocationControl => this.cboArrivalLocation;
         public ComboBox cboDepartureLocationControl => this.cboDepartureLocation;
+        public ComboBox cboDepartureDateControl => this.cboDepartureDate;
+        public ComboBox cboReturnDateControl => this.cboReturnDate;
 
         public Round_Trip()
         {
@@ -67,7 +69,20 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 
             cboDepartureDate.Items.AddRange(departureDates.ToArray());
             cboReturnDate.Items.AddRange(returnDates.ToArray());
-        }
+            cboDepartureDate.SelectedIndexChanged += HandleReturnDates;
 
+            void HandleReturnDates(Object sender, EventArgs e)
+            {
+                cboReturnDate.Items.Clear();
+
+                foreach (string date in returnDates)
+                {
+                    if (DateTime.Parse(cboDepartureDate.Text) < DateTime.Parse(date))
+                    {
+                        cboReturnDate.Items.Add(date);
+                    }
+                }
+            }
+        }
     }
 }
