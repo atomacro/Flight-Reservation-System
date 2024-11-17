@@ -100,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls.cs" />
+    <Compile Include="Flight Booking\FlightBooking-AddOns\AddOns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-AddOns\AddOns.Designer.cs">
+      <DependentUpon>AddOns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBooking-AvailableFlights.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-AddOns\AddOns.resx">
+      <DependentUpon>AddOns.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-AvailableFlights.resx">
       <DependentUpon>FlightBooking-AvailableFlights.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +263,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Public\Assets\visibility.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Assets\ADD-ONS-BORDER.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
