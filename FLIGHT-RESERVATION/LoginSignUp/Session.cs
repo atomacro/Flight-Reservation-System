@@ -32,12 +32,25 @@ namespace FLIGHT_RESERVATION
             _connection = new MySqlConnection(connectionString);
         }
 
-        public bool AuthenticateUser(string email, string password)
+        public void OpenConnection()
         {
             if (_connection.State != System.Data.ConnectionState.Open)
             {
                 _connection.Open();
             }
+        }
+
+        public void CloseConnection()
+        {
+            if (_connection.State == System.Data.ConnectionState.Open)
+            {
+                _connection.Close();
+            }
+        }
+
+        public bool AuthenticateUser(string email, string password)
+        {
+            OpenConnection();
 
             try
             {
@@ -81,19 +94,13 @@ namespace FLIGHT_RESERVATION
             }
             finally
             {
-                if (_connection.State == System.Data.ConnectionState.Open)
-                {
-                    _connection.Close();
-                }
+                CloseConnection();
             }
         }
 
         public bool RegisterUser (User user)
         {
-            if (_connection.State != System.Data.ConnectionState.Open)
-            {
-                _connection.Open();
-            }
+            OpenConnection();
 
             try
             {
@@ -112,7 +119,6 @@ namespace FLIGHT_RESERVATION
                         {
                             while (reader.Read())
                             {
-                                string foundEmail = reader.GetString("Email");
                                 MessageBox.Show($"This email address is already registered.",
                                     "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
@@ -156,10 +162,7 @@ namespace FLIGHT_RESERVATION
             }
             finally
             {
-                if (_connection.State == System.Data.ConnectionState.Open)
-                {
-                    _connection.Close();
-                }
+                CloseConnection();
             }
         }
     }
