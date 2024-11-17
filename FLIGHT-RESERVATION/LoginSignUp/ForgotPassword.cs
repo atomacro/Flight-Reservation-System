@@ -46,6 +46,7 @@ namespace FLIGHT_RESERVATION
                 if (errorMessage.Length > 0)
                 {
                     MessageBox.Show(errorMessage, "Change Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
 
