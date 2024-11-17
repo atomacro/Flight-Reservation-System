@@ -123,9 +123,29 @@ namespace FLIGHT_RESERVATION.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OneWayButton {
+            get {
+                object obj = ResourceManager.GetObject("OneWayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Selected_Border {
             get {
                 object obj = ResourceManager.GetObject("Selected Border", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TwoWayButton {
+            get {
+                object obj = ResourceManager.GetObject("TwoWayButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
