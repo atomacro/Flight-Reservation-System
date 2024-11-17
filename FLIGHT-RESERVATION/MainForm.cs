@@ -179,7 +179,6 @@ namespace FLIGHT_RESERVATION
 
         private void LoginControl_OpenSignUpForm(object sender, EventArgs e) // From login form => sign up form
         {
-            SetIndicator(btnDashboard, pnlIndicator1);
             SetHeader("SIGN UP");
             ClearControls(pnlMain);
             var signup = new SignUp();
@@ -191,6 +190,7 @@ namespace FLIGHT_RESERVATION
 
         private void LoginControl_OpenLoginForm(object sender, EventArgs e) // From signup form => login form
         {
+            ResetButtonColors();
             SetHeader("LOGIN");
             ClearControls(pnlMain);
             var login = new Login();

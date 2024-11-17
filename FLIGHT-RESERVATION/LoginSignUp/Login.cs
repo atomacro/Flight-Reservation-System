@@ -50,6 +50,7 @@ namespace FLIGHT_RESERVATION
             }
         }
 
+        // ----- UI and Navigation Related
         private void btnHidePassword_Click(object sender, EventArgs e)
         {
             txtPassword.PasswordChar = true;
