@@ -3,14 +3,15 @@ USE `AirplaneTicketingSystem2024`;
 
 -- Create Airport table
 CREATE TABLE Airport (
-    AirportID INT PRIMARY KEY,
+    AirportID INT AUTO_INCREMENT PRIMARY KEY,
     AirportCode VARCHAR(10) NOT NULL UNIQUE,
-    AirportFullName VARCHAR(255) NOT NULL
+    AirportFullName VARCHAR(255) NOT NULL,
+    AirportLocation VARCHAR(255) NOT NULL
 );
 
--- Create Flights table with foreign keys referencing Airport table
+-- Create Flights table
 CREATE TABLE Flights (
-    FlightID INT PRIMARY KEY,
+    FlightID INT AUTO_INCREMENT PRIMARY KEY,
     AirplaneNumber VARCHAR(255) NOT NULL,
     DepartureDate DATETIME NOT NULL,
     ArrivalDate DATETIME NOT NULL,
@@ -25,17 +26,16 @@ CREATE TABLE Flights (
 
 -- Create Accounts table
 CREATE TABLE Accounts (
-    AccountID INT PRIMARY KEY,
+    AccountID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL UNIQUE,
-    Password CHAR(64) NOT NULL,  -- Assuming a hashed password
-    PhoneNumber VARCHAR(255) NOT NULL
+    Password CHAR(64) NOT NULL
 );
 
--- Create Transactions table with added ReferenceNo column
+-- Create Transactions table
 CREATE TABLE Transactions (
-    TransactionID INT PRIMARY KEY,
+    TransactionID INT AUTO_INCREMENT PRIMARY KEY,
     AccountID INT,
     BookingDate DATETIME NOT NULL,
     ReferenceNo VARCHAR(255) NOT NULL UNIQUE,
@@ -44,7 +44,7 @@ CREATE TABLE Transactions (
 
 -- Create Passengers table
 CREATE TABLE Passengers (
-    PassengerID INT PRIMARY KEY,
+    PassengerID INT AUTO_INCREMENT PRIMARY KEY,
     TransactionID INT,
     Type ENUM('Adult', 'Infant', 'Kid') NOT NULL,
     FirstName VARCHAR(255) NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE Passengers (
 
 -- Create TicketDetails table
 CREATE TABLE TicketDetails (
-    TicketID INT PRIMARY KEY,
+    TicketID INT AUTO_INCREMENT PRIMARY KEY,
     TransactionID INT,
     FlightID INT,
     NumberOfTickets INT NOT NULL DEFAULT 1,
@@ -72,11 +72,9 @@ CREATE TABLE TicketDetails (
 
 -- Create Payment table
 CREATE TABLE Payment (
-    PaymentID INT PRIMARY KEY,
+    PaymentID INT AUTO_INCREMENT PRIMARY KEY,
     TransactionID INT,
     ModeOfPayment VARCHAR(255) NOT NULL,
     ReferenceNo VARCHAR(255) NOT NULL,
     FOREIGN KEY (TransactionID) REFERENCES Transactions(TransactionID) ON UPDATE CASCADE
 );
-
-ALTER TABLE `airport` ADD `AirportLocation` VARCHAR(255) NOT NULL AFTER  `AirportFullName`
