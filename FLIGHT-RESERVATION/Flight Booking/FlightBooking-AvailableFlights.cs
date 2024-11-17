@@ -27,10 +27,11 @@ namespace FLIGHT_RESERVATION
             btnBack.FlatAppearance.BorderSize = 0;
             btnContinueAvailableFlights.Enabled = false;
         }
+        List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
+        FlightDetails_Session session = new FlightDetails_Session();
         public void PopulateAvailableBookings()
         {
             
-            List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
 
 
             //set Arrival Location and Departure Location, panel and button if no flights are seen
@@ -59,6 +60,7 @@ namespace FLIGHT_RESERVATION
                 pnlAvailableFlights.Controls.Add(AvailableFlight);
             }
         }
+
         public void setSelected(List<FlightsAvailable> availableFlights, int index)
         {
 
@@ -79,16 +81,10 @@ namespace FLIGHT_RESERVATION
             }
         }
 
-        private void btnContinue_Click(object sender, EventArgs e)
+        private void btnContinueAvailableFlights_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void pnlAvailableFlights_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
     }
     public class Database_Available_Flights
     {

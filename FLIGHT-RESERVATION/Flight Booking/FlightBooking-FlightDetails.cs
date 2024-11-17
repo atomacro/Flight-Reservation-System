@@ -71,6 +71,11 @@ namespace FLIGHT_RESERVATION
             }
 
             session.setFlightDetails(Trip, Type);
+
+            foreach(KeyValuePair<string, string> k in session.FlightDetails)
+            {
+                Console.WriteLine($"{k.Key}: {k.Value}");
+            }
         }
         private void btnChangeType_Click(object sender, EventArgs e)
         {    
@@ -221,7 +226,7 @@ namespace FLIGHT_RESERVATION
                 "JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID " +
                 "JOIN airport AS ArrivalLocation " +
                 "ON flights.ArrivalAirportID = ArrivalLocation.AirportID " +
-                "ORDER BY DepartureLocation.AirportLocation ASC, ArrivalLocation.AirportLocation ASC; "
+                "ORDER BY DepartureLocation.AirportLocation ASC, ArrivalLocation.AirportLocation ASC; ";
         }
 
         public void selectDates(String Departure, String Arrival, String Type, Trips trip)

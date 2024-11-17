@@ -245,7 +245,7 @@
             this.btnSearchFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchFlight.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchFlight.ForeColor = System.Drawing.Color.White;
-            this.btnSearchFlight.Location = new System.Drawing.Point(355, 472);
+            this.btnSearchFlight.Location = new System.Drawing.Point(338, 472);
             this.btnSearchFlight.Name = "btnSearchFlight";
             this.btnSearchFlight.Size = new System.Drawing.Size(194, 60);
             this.btnSearchFlight.TabIndex = 65;

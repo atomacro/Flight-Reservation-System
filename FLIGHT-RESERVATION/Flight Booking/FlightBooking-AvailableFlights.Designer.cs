@@ -67,6 +67,7 @@
             this.btnContinueAvailableFlights.TabIndex = 4;
             this.btnContinueAvailableFlights.Text = "Continue";
             this.btnContinueAvailableFlights.UseVisualStyleBackColor = false;
+            this.btnContinueAvailableFlights.Click += new System.EventHandler(this.btnContinueAvailableFlights_Click);
             // 
             // btnBack
             // 

@@ -37,10 +37,10 @@
             // 
             this.btnChangeType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.OneWayButton;
-            this.btnChangeType.Location = new System.Drawing.Point(289, 16);
+            this.btnChangeType.Location = new System.Drawing.Point(289, 27);
             this.btnChangeType.Name = "btnChangeType";
             this.btnChangeType.Size = new System.Drawing.Size(328, 76);
-            this.btnChangeType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnChangeType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnChangeType.TabIndex = 1;
             this.btnChangeType.TabStop = false;
             this.btnChangeType.Click += new System.EventHandler(this.btnChangeType_Click);
@@ -64,7 +64,6 @@
             this.Load += new System.EventHandler(this.FlightBooking_FlightDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeType)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

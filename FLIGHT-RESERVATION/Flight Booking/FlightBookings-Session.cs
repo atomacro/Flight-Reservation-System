@@ -14,6 +14,7 @@ namespace FLIGHT_RESERVATION
         public float TotalPrice;
         public String PaymentMode;
         public String GcashReferenceNumber;
+        public int AirplaneNumber;
         public Dictionary<string, string> FlightDetails { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, string> ChosenFlight { get; set; } = new Dictionary<string, string>();
 
