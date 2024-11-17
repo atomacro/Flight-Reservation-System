@@ -143,7 +143,14 @@
     <Compile Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.Designer.cs">
       <DependentUpon>GuestDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\FlightBookings-Session.cs" />
     <Compile Include="Fonts.cs" />
+    <Compile Include="LoginSignUp\ForgotPassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginSignUp\ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginSignUp\Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.resx">
       <DependentUpon>GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginSignUp\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginSignUp\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

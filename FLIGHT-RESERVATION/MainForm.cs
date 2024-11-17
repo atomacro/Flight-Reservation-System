@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FLIGHT_RESERVATION.Flight_Booking;
 
-
 namespace FLIGHT_RESERVATION
 {
     public partial class MainForm : Form
@@ -167,6 +166,7 @@ namespace FLIGHT_RESERVATION
         // ------ LOGIN NAVIGATION ------
         private void LoginControl_LoginSuccessful(object sender, EventArgs e) // Goes to dashboard after successful login
         {
+            Session.IsLoggedIn = true;
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
             SetIndicator(btnDashboard, pnlIndicator1);
             SetHeader("DASHBOARD");
@@ -198,6 +198,18 @@ namespace FLIGHT_RESERVATION
 
             login.LoginSuccessful += LoginControl_LoginSuccessful;
             login.OpenSignUpForm += LoginControl_OpenSignUpForm;
+            login.OpenForgotPasswordForm += LoginControl_OpenForgotPasswordForm;
+        }
+
+        private void LoginControl_OpenForgotPasswordForm(object sender, EventArgs e) // From signup form => login form
+        {
+            ResetButtonColors();
+            SetHeader("LOGIN");
+            ClearControls(pnlMain);
+            var forgotPassword = new ForgotPassword();
+            AddControl(forgotPassword, pnlMain);
+
+            forgotPassword.OpenLoginForm += LoginControl_OpenLoginForm;
         }
     }
 }
