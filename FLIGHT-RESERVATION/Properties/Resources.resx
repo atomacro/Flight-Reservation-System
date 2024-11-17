@@ -154,4 +154,16 @@
   <data name="ADD-ONS-BORDER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Public\Assets\ADD-ONS-BORDER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="KantumruyPro-Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KantumruyPro-Medium.ttf;System.Byte[]</value>
+  </data>
+  <data name="Unselected Border" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Public\Flight Bookings - Available Flights\Unselected Border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OneWayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Public\Flight Bookings - Flight Details\OneWayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TwoWayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Public\Flight Bookings - Flight Details\TwoWayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

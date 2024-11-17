@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 {
-    public partial class Round_Trip : UserControl
+    public partial class Round_Trip : UserControl, Trips
     {
+
+        public ComboBox cboArrivalLocationControl => this.cboArrivalLocation;
+        public ComboBox cboDepartureLocationControl => this.cboDepartureLocation;
+        public ComboBox cboDepartureDateControl => this.cboDepartureDate;
+        public ComboBox cboReturnDateControl => this.cboReturnDate;
+
         public Round_Trip()
         {
             InitializeComponent();
@@ -22,7 +28,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             foreach (ComboBox cbo in this.Controls.OfType<ComboBox>().ToList())
             {
                 cbo.DropDownStyle = ComboBoxStyle.DropDownList;
-                cbo.Font = new Font("Kantumruy Pro", 12.0f, FontStyle.Bold);
+                cbo.Font = new Font("Kantumruy Pro Medium", 12.0f);
 
             }
 
@@ -34,38 +40,49 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
                 }
                 label.ForeColor = ColorTranslator.FromHtml("#9C9C9C");
             }
-
-
         }
 
-        private void picLine_Click(object sender, EventArgs e)
+        public void SetArrivalLocation(Dictionary<string, string> locations)
         {
+            cboArrivalLocation.Items.Clear();
+            cboArrivalLocation.Items.AddRange(locations.Keys.ToArray());
+            cboArrivalLocation.SelectedIndexChanged += (s, e) =>
+            {
+                lblArrivalLocation.Text = locations[cboArrivalLocation.Text];
+            };
+        }
+        public void SetDepartureLocation(Dictionary<string, string> locations)
+        {
+            cboDepartureLocation.Items.Clear();
 
+            cboDepartureLocation.Items.AddRange(locations.Keys.ToArray());
+            cboDepartureLocation.SelectedIndexChanged += (s, e) =>
+            {
+                lblDepartureLocation.Text = locations[cboDepartureLocation.Text];
+            };
         }
 
-        private void lblReturnDate_Click(object sender, EventArgs e)
+        public void SetDates(List<string> departureDates, List<string> returnDates)
         {
+            cboDepartureDate.Items.Clear();
+            cboReturnDate.Items.Clear();
 
-        }
+            cboDepartureDate.Items.AddRange(departureDates.ToArray());
+            cboReturnDate.Items.AddRange(returnDates.ToArray());
+            cboDepartureDate.SelectedIndexChanged += HandleReturnDates;
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
+            void HandleReturnDates(Object sender, EventArgs e)
+            {
+                cboReturnDate.Items.Clear();
 
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picDepartureArrivalLocation_Click(object sender, EventArgs e)
-        {
-
+                foreach (string date in returnDates)
+                {
+                    if (DateTime.Parse(cboDepartureDate.Text) < DateTime.Parse(date))
+                    {
+                        cboReturnDate.Items.Add(date);
+                    }
+                }
+            }
         }
     }
 }
