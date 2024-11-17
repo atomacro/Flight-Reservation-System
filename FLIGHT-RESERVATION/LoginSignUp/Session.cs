@@ -234,8 +234,7 @@ namespace FLIGHT_RESERVATION
                 MessageBox.Show($"General Error: {ex.Message}\nStack Trace: {ex.StackTrace}",
                     "General Error");
                 return false;
-            }
-           
+            }     
         }
     }
 
