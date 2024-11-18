@@ -27,6 +27,7 @@ namespace FLIGHT_RESERVATION
         {
             PopulateAvailableBookings();
             btnBack.FlatAppearance.BorderSize = 0;
+            lblFlightType.Text = $"Select {TripType} Flight";
         }
         List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
         public void PopulateAvailableBookings()
