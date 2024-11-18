@@ -43,7 +43,6 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.flightBooking_FlightDetails1 = new FLIGHT_RESERVATION.FlightBooking_FlightDetails();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlMain.SuspendLayout();
@@ -208,14 +207,6 @@
             this.pnlMain.Size = new System.Drawing.Size(909, 679);
             this.pnlMain.TabIndex = 10;
             // 
-            // flightBooking_FlightDetails1
-            // 
-            this.flightBooking_FlightDetails1.BackColor = System.Drawing.Color.White;
-            this.flightBooking_FlightDetails1.Location = new System.Drawing.Point(3, 2);
-            this.flightBooking_FlightDetails1.Name = "flightBooking_FlightDetails1";
-            this.flightBooking_FlightDetails1.Size = new System.Drawing.Size(906, 677);
-            this.flightBooking_FlightDetails1.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,7 +251,6 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
-        private FlightBooking_FlightDetails flightBooking_FlightDetails1;
     }
 }
 

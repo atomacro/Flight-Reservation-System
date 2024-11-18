@@ -15,6 +15,16 @@ namespace FLIGHT_RESERVATION
         ComboBox cboDepartureLocationControl { get; }
         ComboBox cboDepartureDateControl { get; }
         ComboBox cboReturnDateControl { get; }
+        
+        ComboBox cboClassSeatControl { get; }
+        NumericUpDown numAdultControl { get; }
+        NumericUpDown numChildrenControl { get; }
+        NumericUpDown numInfantsControl { get; }
+
+        Label lblDepartureAirportNameControl { get; }
+        Label lblArrivalAirportNameControl { get; }
+
+
 
         
         //methods under this interface

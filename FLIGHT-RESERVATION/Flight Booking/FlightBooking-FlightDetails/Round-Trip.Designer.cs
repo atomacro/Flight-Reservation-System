@@ -64,7 +64,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.cboReturnDate = new System.Windows.Forms.ComboBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblClassSeat = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboClassSeat = new System.Windows.Forms.ComboBox();
             this.btnSearchFlight = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAirplaneLift)).BeginInit();
@@ -153,9 +153,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblDepartureLocation.Font = new System.Drawing.Font("Kantumruy Pro", 12F);
             this.lblDepartureLocation.Location = new System.Drawing.Point(71, 106);
             this.lblDepartureLocation.Name = "lblDepartureLocation";
-            this.lblDepartureLocation.Size = new System.Drawing.Size(398, 29);
+            this.lblDepartureLocation.Size = new System.Drawing.Size(0, 29);
             this.lblDepartureLocation.TabIndex = 13;
-            this.lblDepartureLocation.Text = "Ninoy Aquino International Airport (MNL)";
             // 
             // cboArrivalLocation
             // 
@@ -173,9 +172,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblArrivalLocation.Font = new System.Drawing.Font("Kantumruy Pro", 12F);
             this.lblArrivalLocation.Location = new System.Drawing.Point(71, 209);
             this.lblArrivalLocation.Name = "lblArrivalLocation";
-            this.lblArrivalLocation.Size = new System.Drawing.Size(398, 29);
+            this.lblArrivalLocation.Size = new System.Drawing.Size(0, 29);
             this.lblArrivalLocation.TabIndex = 16;
-            this.lblArrivalLocation.Text = "Ninoy Aquino International Airport (MNL)";
             // 
             // picCompanions
             // 
@@ -428,19 +426,19 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.lblClassSeat.TabIndex = 31;
             this.lblClassSeat.Text = "Class Seat";
             // 
-            // comboBox1
+            // cboClassSeat
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboClassSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboClassSeat.FormattingEnabled = true;
+            this.cboClassSeat.Items.AddRange(new object[] {
             "Economy",
             "Premium Economy",
             "Business",
             "First Class"});
-            this.comboBox1.Location = new System.Drawing.Point(591, 335);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(261, 24);
-            this.comboBox1.TabIndex = 32;
+            this.cboClassSeat.Location = new System.Drawing.Point(591, 335);
+            this.cboClassSeat.Name = "cboClassSeat";
+            this.cboClassSeat.Size = new System.Drawing.Size(261, 24);
+            this.cboClassSeat.TabIndex = 32;
             // 
             // btnSearchFlight
             // 
@@ -464,7 +462,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnSearchFlight);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboClassSeat);
             this.Controls.Add(this.lblClassSeat);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.cboReturnDate);
@@ -551,7 +549,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         private ComboBox cboReturnDate;
         private PictureBox pictureBox7;
         private Label lblClassSeat;
-        private ComboBox comboBox1;
+        private ComboBox cboClassSeat;
         public Button btnSearchFlight;
         public ComboBox cboDepartureLocation;
         public ComboBox cboArrivalLocation;
