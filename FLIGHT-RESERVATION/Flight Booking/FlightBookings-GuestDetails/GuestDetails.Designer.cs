@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.lblDetails = new System.Windows.Forms.Label();
-            this.lblFirstname2 = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtLastName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtAge = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
-            this.lblLastName2 = new System.Windows.Forms.Label();
-            this.lblAge2 = new System.Windows.Forms.Label();
-            this.lblBirthdate2 = new System.Windows.Forms.Label();
-            this.roundedTextBox1 = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.lblBirthdate = new System.Windows.Forms.Label();
+            this.txtBirthDate = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.SuspendLayout();
             // 
             // lblDetails
@@ -50,18 +50,18 @@
             this.lblDetails.TabIndex = 7;
             this.lblDetails.Text = "Guest 2 Details";
             // 
-            // lblFirstname2
+            // lblFirstName
             // 
-            this.lblFirstname2.AutoSize = true;
-            this.lblFirstname2.BackColor = System.Drawing.Color.Transparent;
-            this.lblFirstname2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.lblFirstname2.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblFirstname2.Location = new System.Drawing.Point(24, 56);
-            this.lblFirstname2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFirstname2.Name = "lblFirstname2";
-            this.lblFirstname2.Size = new System.Drawing.Size(99, 22);
-            this.lblFirstname2.TabIndex = 11;
-            this.lblFirstname2.Text = "First Name";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
+            this.lblFirstName.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.lblFirstName.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblFirstName.Location = new System.Drawing.Point(24, 56);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(99, 22);
+            this.lblFirstName.TabIndex = 11;
+            this.lblFirstName.Text = "First Name";
             // 
             // txtFirstName
             // 
@@ -127,65 +127,65 @@
             this.txtAge.TabIndex = 9;
             this.txtAge.UnderlinedStyle = false;
             // 
-            // lblLastName2
+            // lblLastName
             // 
-            this.lblLastName2.AutoSize = true;
-            this.lblLastName2.BackColor = System.Drawing.Color.Transparent;
-            this.lblLastName2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.lblLastName2.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblLastName2.Location = new System.Drawing.Point(24, 125);
-            this.lblLastName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLastName2.Name = "lblLastName2";
-            this.lblLastName2.Size = new System.Drawing.Size(96, 22);
-            this.lblLastName2.TabIndex = 14;
-            this.lblLastName2.Text = "Last Name";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
+            this.lblLastName.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.lblLastName.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblLastName.Location = new System.Drawing.Point(24, 125);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(96, 22);
+            this.lblLastName.TabIndex = 14;
+            this.lblLastName.Text = "Last Name";
             // 
-            // lblAge2
+            // lblAge
             // 
-            this.lblAge2.AutoSize = true;
-            this.lblAge2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAge2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.lblAge2.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblAge2.Location = new System.Drawing.Point(24, 201);
-            this.lblAge2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAge2.Name = "lblAge2";
-            this.lblAge2.Size = new System.Drawing.Size(39, 22);
-            this.lblAge2.TabIndex = 14;
-            this.lblAge2.Text = "Age";
+            this.lblAge.AutoSize = true;
+            this.lblAge.BackColor = System.Drawing.Color.Transparent;
+            this.lblAge.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.lblAge.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblAge.Location = new System.Drawing.Point(24, 201);
+            this.lblAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(39, 22);
+            this.lblAge.TabIndex = 14;
+            this.lblAge.Text = "Age";
             // 
-            // lblBirthdate2
+            // lblBirthdate
             // 
-            this.lblBirthdate2.AutoSize = true;
-            this.lblBirthdate2.BackColor = System.Drawing.Color.Transparent;
-            this.lblBirthdate2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.lblBirthdate2.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblBirthdate2.Location = new System.Drawing.Point(24, 270);
-            this.lblBirthdate2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBirthdate2.Name = "lblBirthdate2";
-            this.lblBirthdate2.Size = new System.Drawing.Size(85, 22);
-            this.lblBirthdate2.TabIndex = 14;
-            this.lblBirthdate2.Text = "Birthdate";
+            this.lblBirthdate.AutoSize = true;
+            this.lblBirthdate.BackColor = System.Drawing.Color.Transparent;
+            this.lblBirthdate.Font = new System.Drawing.Font("Kantumruy Pro Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.lblBirthdate.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblBirthdate.Location = new System.Drawing.Point(24, 270);
+            this.lblBirthdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBirthdate.Name = "lblBirthdate";
+            this.lblBirthdate.Size = new System.Drawing.Size(85, 22);
+            this.lblBirthdate.TabIndex = 14;
+            this.lblBirthdate.Text = "Birthdate";
             // 
-            // roundedTextBox1
+            // txtBirthDate
             // 
-            this.roundedTextBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.roundedTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.roundedTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.roundedTextBox1.BorderRadius = 10;
-            this.roundedTextBox1.BorderSize = 1;
-            this.roundedTextBox1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.roundedTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.roundedTextBox1.Location = new System.Drawing.Point(25, 299);
-            this.roundedTextBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextBox1.Multiline = false;
-            this.roundedTextBox1.Name = "roundedTextBox1";
-            this.roundedTextBox1.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
-            this.roundedTextBox1.PasswordChar = false;
-            this.roundedTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.roundedTextBox1.PlaceholderText = "";
-            this.roundedTextBox1.Size = new System.Drawing.Size(256, 33);
-            this.roundedTextBox1.TabIndex = 15;
-            this.roundedTextBox1.UnderlinedStyle = false;
+            this.txtBirthDate.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtBirthDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtBirthDate.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.txtBirthDate.BorderRadius = 10;
+            this.txtBirthDate.BorderSize = 1;
+            this.txtBirthDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.txtBirthDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBirthDate.Location = new System.Drawing.Point(25, 299);
+            this.txtBirthDate.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBirthDate.Multiline = false;
+            this.txtBirthDate.Name = "txtBirthDate";
+            this.txtBirthDate.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.txtBirthDate.PasswordChar = false;
+            this.txtBirthDate.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBirthDate.PlaceholderText = "";
+            this.txtBirthDate.Size = new System.Drawing.Size(256, 33);
+            this.txtBirthDate.TabIndex = 15;
+            this.txtBirthDate.UnderlinedStyle = false;
             // 
             // GuestDetails
             // 
@@ -194,13 +194,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.border;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.roundedTextBox1);
-            this.Controls.Add(this.lblBirthdate2);
+            this.Controls.Add(this.txtBirthDate);
+            this.Controls.Add(this.lblBirthdate);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.txtAge);
-            this.Controls.Add(this.lblAge2);
-            this.Controls.Add(this.lblFirstname2);
-            this.Controls.Add(this.lblLastName2);
+            this.Controls.Add(this.lblAge);
+            this.Controls.Add(this.lblFirstName);
+            this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
             this.DoubleBuffered = true;
@@ -208,21 +208,20 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GuestDetails";
             this.Size = new System.Drawing.Size(308, 374);
-            this.Load += new System.EventHandler(this.GuestDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblFirstname2;
-        private System.Windows.Forms.Label lblLastName2;
-        private System.Windows.Forms.Label lblAge2;
-        private System.Windows.Forms.Label lblBirthdate2;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblBirthdate;
         public System.Windows.Forms.Label lblDetails;
         public CustomControls.RoundedTextBox txtFirstName;
         public CustomControls.RoundedTextBox txtLastName;
         public CustomControls.RoundedTextBox txtAge;
-        public CustomControls.RoundedTextBox roundedTextBox1;
+        public CustomControls.RoundedTextBox txtBirthDate;
     }
 }
