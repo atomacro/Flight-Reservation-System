@@ -15,27 +15,42 @@ namespace FLIGHT_RESERVATION
 {
     public partial class FlightBooking_AvailableFlights : UserControl
     {
-        //public bool isTwoWay true;
-        public FlightBooking_AvailableFlights()
+        public String TripType = "";
+
+        public FlightBooking_AvailableFlights(string tripType) //set Departure or Return
         {
             InitializeComponent();
+            TripType = tripType;
         }
 
         private void FlightBooking_AvailableFlights_Load(object sender, EventArgs e)
         {
             PopulateAvailableBookings();
             btnBack.FlatAppearance.BorderSize = 0;
-            btnContinueAvailableFlights.Enabled = false;
         }
         List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
-        FlightDetails_Session session = new FlightDetails_Session();
         public void PopulateAvailableBookings()
         {
-            
+
+
+
+            String DepartureLocation = "";
+            String ArrivalLocation = "";
+
+            if (this.TripType == "Departure")
+            {
+                DepartureLocation = FlightDetails_Session.Instance.FlightDetails["Departure Location"];
+                ArrivalLocation = FlightDetails_Session.Instance.FlightDetails["Arrival Location"];
+            }
+            else
+            {
+                DepartureLocation = FlightDetails_Session.Instance.FlightDetails["Arrival Location"];
+                ArrivalLocation = FlightDetails_Session.Instance.FlightDetails["Departure Location"];
+            }
 
 
             //set Arrival Location and Departure Location, panel and button if no flights are seen
-            Database_Available_Flights AvailableFlightsData = new Database_Available_Flights("John F. Kennedy International Airport", "Los Angeles International Airport", pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
+            Database_Available_Flights AvailableFlightsData = new Database_Available_Flights(DepartureLocation, ArrivalLocation, pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
 
 
             int selectedIndex = 0;
@@ -47,7 +62,7 @@ namespace FLIGHT_RESERVATION
                 AvailableFlight.setLocations(AvailableFlightsData.DepartureLocation[i], AvailableFlightsData.ArrivalLocation[i]);
                 AvailableFlight.setTime(AvailableFlightsData.DepartureTime[i], AvailableFlightsData.ArrivalTime[i]);
                 AvailableFlight.setSeatsAvailable(AvailableFlightsData.AvailableSeats[i]);
-
+                AvailableFlight.setAirplaneNumber(AvailableFlightsData.AirplaneNumber[i]);
 
                 //lamda function to add event listener for selecting
                 AvailableFlight.btnBook.Click += (s, e) =>
@@ -61,6 +76,7 @@ namespace FLIGHT_RESERVATION
             }
         }
 
+        public String SelectedAirplane = "";
         public void setSelected(List<FlightsAvailable> availableFlights, int index)
         {
 
@@ -69,20 +85,39 @@ namespace FLIGHT_RESERVATION
             {
                 if (i != index || availableFlights[i].btnBook.Text == "Unselect")
                 {
+                    SelectedAirplane = "";
                     availableFlights[i].btnBook.Text = "Select";
                     availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border); //reset the borders of unselected
-                    btnContinueAvailableFlights.Enabled = false;
                     continue;
                 }
                 availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border); //set border to selected
                 availableFlights[i].btnBook.Text = "Unselect";
-                btnContinueAvailableFlights.Enabled = true;
-
+                SelectedAirplane = availableFlights[i].lblAirplaneNumber.Text;
             }
         }
 
-        private void btnContinueAvailableFlights_Click(object sender, EventArgs e)
+        public bool SubmitSelectedAirplane()
         {
+            if (string.IsNullOrWhiteSpace(this.SelectedAirplane))
+            {
+                MessageBox.Show("Please Select a Flight", "Select a Flight", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (this.TripType == "Departure")
+            {
+                FlightDetails_Session.Instance.DepartureAirplaneNumber = this.SelectedAirplane;
+                Console.WriteLine(FlightDetails_Session.Instance.DepartureAirplaneNumber);
+                return true;
+            }
+            if (this.TripType == "Return")
+            {
+                FlightDetails_Session.Instance.ReturnAirplaneNumber = this.SelectedAirplane;
+                Console.WriteLine(FlightDetails_Session.Instance.ReturnAirplaneNumber);
+                return true;
+            }
+
+            MessageBox.Show("Illegal Action");
+            return false;
 
         }
     }
@@ -128,8 +163,8 @@ namespace FLIGHT_RESERVATION
                "FROM flights " +
                "JOIN airport AS DepartureLocation ON flights.DepartureAirportID = DepartureLocation.AirportID " +
                "JOIN airport AS ArrivalLocation ON ArrivalLocation.AirportID = flights.ArrivalAirportID " +
-               "WHERE DepartureLocation.AirportFullName = @DepartureLocation " +
-               "AND ArrivalLocation.AirportFullName = @ArrivalLocation";
+               "WHERE DepartureLocation.AirportLocation = @DepartureLocation " +
+               "AND ArrivalLocation.AirportLocation = @ArrivalLocation";
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
 

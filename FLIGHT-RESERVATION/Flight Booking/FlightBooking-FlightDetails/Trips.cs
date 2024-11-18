@@ -21,6 +21,9 @@ namespace FLIGHT_RESERVATION
         NumericUpDown numChildrenControl { get; }
         NumericUpDown numInfantsControl { get; }
 
+        Label lblDepartureAirportNameControl { get; }
+        Label lblArrivalAirportNameControl { get; }
+
 
 
         

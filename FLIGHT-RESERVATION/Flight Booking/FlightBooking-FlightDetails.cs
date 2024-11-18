@@ -25,16 +25,13 @@ namespace FLIGHT_RESERVATION
         }
 
         String state = "One Way";
-        Round_Trip RoundTrip = new Round_Trip();
-        One_Way OneWay = new One_Way();
-        FlightDetails_Session session = new FlightDetails_Session();
-        private Trips CurrentTrip;  
-
+        public Round_Trip RoundTrip = new Round_Trip();
+        public One_Way OneWay = new One_Way();
 
         private void FlightBooking_FlightDetails_Load(object sender, EventArgs @event)
         {
-            SetComboBoxItems(RoundTrip, "Two Way");
-            SetComboBoxItems(OneWay, "Round Trip");
+            SetComboBoxItems(RoundTrip, "Round Trip");
+            SetComboBoxItems(OneWay, "One Way");
 
             OneWay.AutoSize = true;
             OneWay.Location = new Point(0, 0);
@@ -43,15 +40,10 @@ namespace FLIGHT_RESERVATION
             pnlFlightBooking.Controls.Add(RoundTrip);
             pnlFlightBooking.Controls.Add(OneWay);
             OneWay.BringToFront();
-
-            OneWay.btnSearchFlight.Click += (s, e) => HandleSubmit(OneWay, "One Way");
-            RoundTrip.btnSearchFlight.Click += (s, e) => HandleSubmit(RoundTrip, "Two Way");
         }
 
-        private void HandleSubmit(Trips Trip, String Type)
-        {
-
-
+        public bool HandleSubmit(Trips Trip, String Type)
+        { 
             var properties = Trip.GetType().GetProperties();
             foreach (var property in properties)
             {
@@ -65,17 +57,12 @@ namespace FLIGHT_RESERVATION
                     if (control == null || string.IsNullOrWhiteSpace(control.Text))
                     {
                         MessageBox.Show("Please fill up all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                        return false;
                     }
                 }
             }
-
-            session.setFlightDetails(Trip, Type);
-
-            foreach(KeyValuePair<string, string> k in session.FlightDetails)
-            {
-                Console.WriteLine($"{k.Key}: {k.Value}");
-            }
+            FlightDetails_Session.Instance.setFlightDetails(Trip, Type);
+            return true;
         }
         private void btnChangeType_Click(object sender, EventArgs e)
         {    
@@ -84,7 +71,7 @@ namespace FLIGHT_RESERVATION
             if (state == "One Way")
             {
                 btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.TwoWayButton;
-                state = "Two Way";
+                state = "Round Trip";
                 OneWay.Hide();
                 RoundTrip.Show();
 
@@ -194,13 +181,13 @@ namespace FLIGHT_RESERVATION
 
                             if (!this.ArrivalLocations.ContainsKey(arrivalAirportLocation))
                             {
-                                this.ArrivalLocations.Add(arrivalAirportLocation, arrivalLocation);
+                                this.ArrivalLocations[arrivalAirportLocation] = arrivalLocation;
                             }
 
                             if (!this.DepartureLocations.ContainsKey(departureAirportLocation))
                             {
-                                this.DepartureLocations.Add(departureAirportLocation, departureLocation);
-                            }   
+                            this.DepartureLocations[departureAirportLocation] = departureLocation;
+                        }   
                     }
                 }
             }
@@ -214,19 +201,6 @@ namespace FLIGHT_RESERVATION
                 _connection.Close();
             }
 
-        }
-
-        public void selectSpecificLocations(String DepartureLocation)
-        {
-            string query = "SELECT DISTINCT DepartureLocation.AirportFullName AS DepartureLocation, " +
-                "DepartureLocation.AirportLocation AS DepartureAirportLocation, " +
-                "ArrivalLocation.AirportFullName AS ArrivalLocation, " +
-                "ArrivalLocation.AirportLocation AS ArrivalAirportLocation " +
-                "FROM airport AS DepartureLocation " +
-                "JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID " +
-                "JOIN airport AS ArrivalLocation " +
-                "ON flights.ArrivalAirportID = ArrivalLocation.AirportID " +
-                "ORDER BY DepartureLocation.AirportLocation ASC, ArrivalLocation.AirportLocation ASC; ";
         }
 
         public void selectDates(String Departure, String Arrival, String Type, Trips trip)
@@ -261,7 +235,7 @@ namespace FLIGHT_RESERVATION
                     }
                 }
 
-                if (Type == "Two Way")
+                if (Type == "Round Trip")
                 {
 
                     MySqlCommand commandReturn = new MySqlCommand(query, _connection);
@@ -270,6 +244,13 @@ namespace FLIGHT_RESERVATION
 
                     using (MySqlDataReader readerReturn = commandReturn.ExecuteReader())
                     {
+                        if (!readerReturn.HasRows)
+                        {
+                            MessageBox.Show("Sorry, No available flights");
+                            this.ReturnDates.Clear();
+                            this.DepartureDates.Clear();
+                            return;
+                        }
 
                         while (readerReturn.Read())
                         {
@@ -278,7 +259,7 @@ namespace FLIGHT_RESERVATION
                     }
                 }
             }
-            catch(Exception e) 
+            catch (Exception e)
             {
                 MessageBox.Show($"An error has occured while selecting Dates {e.Message} ");
 

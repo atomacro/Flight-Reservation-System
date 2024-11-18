@@ -20,6 +20,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         public NumericUpDown numAdultControl => this.numAdult;
         public NumericUpDown numChildrenControl => this.numChildren;
         public NumericUpDown numInfantsControl => this.numInfant;
+        public Label lblDepartureAirportNameControl => this.lblDepartureLocation;
+        public Label lblArrivalAirportNameControl => this.lblArrivalLocation;
 
         public Round_Trip()
         {
