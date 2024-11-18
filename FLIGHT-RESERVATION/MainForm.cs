@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FLIGHT_RESERVATION.Flight_Booking;
-
+using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails;
 
 namespace FLIGHT_RESERVATION
 {
@@ -33,6 +33,7 @@ namespace FLIGHT_RESERVATION
             SetIndicator(btnDashboard, pnlIndicator1);
 
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+
         }
 
         // ------ UI Related Methods ------
@@ -85,6 +86,72 @@ namespace FLIGHT_RESERVATION
             }
         }
 
+
+        private void ViewBookings()
+        {
+            var FlightDetails = new FlightBooking_FlightDetails();
+
+            FlightDetails.OneWay.btnSearchFlight.Click += (s, e) =>
+            {
+                SetupFlightSearch(FlightDetails.OneWay, "One Way");
+            };
+
+            FlightDetails.RoundTrip.btnSearchFlight.Click += (s, e) =>
+            {
+                SetupFlightSearch(FlightDetails.RoundTrip, "Round Trip");
+            };
+
+            AddControl(FlightDetails, pnlMain);
+
+            void SetupFlightSearch(Trips segment, string tripType)
+            {
+                if (!FlightDetails.HandleSubmit(segment, tripType))
+                {
+                    return;
+                }
+
+                FlightDetails.Hide();
+
+                var AvailableFlightsDeparture = new FlightBooking_AvailableFlights("Departure");
+                var AvailableFlightsReturn = new FlightBooking_AvailableFlights("Return");
+
+                AvailableFlightsDeparture.btnBack.Click += (sender, @event) =>
+                {
+
+                    FlightDetails.Show();
+                    AvailableFlightsDeparture.Hide();
+                };
+
+                AvailableFlightsDeparture.btnContinueAvailableFlights.Click += (sender, @event) =>
+                {
+                    if (!AvailableFlightsDeparture.SubmitSelectedAirplane()) return;
+                    AvailableFlightsDeparture.Hide();
+                    if (tripType == "Round Trip") AvailableFlightsReturn.Show();
+                    //show next form pwede diff methods
+                };
+
+                AddControl(AvailableFlightsDeparture, pnlMain);
+
+                if (tripType == "Round Trip")
+                {
+                    AvailableFlightsReturn.btnBack.Click += (sender, @event) =>
+                    {
+                        AvailableFlightsDeparture.Show();
+                        AvailableFlightsReturn.Hide();
+                    };
+                    AvailableFlightsReturn.btnContinueAvailableFlights.Click += (sender, @event) =>
+                    {
+
+                        if (!AvailableFlightsReturn.SubmitSelectedAirplane()) return;
+                        //AvailableFlightsReturn.Hide();
+                        //show next form pwede diff methods
+                    };
+
+                    AddControl(AvailableFlightsReturn, pnlMain);
+                    AvailableFlightsReturn.Hide();
+                }
+            }
+        }
         private void InitializeSidebar()
         {
             btnDashboard.Click += (sender, e) =>
@@ -100,21 +167,7 @@ namespace FLIGHT_RESERVATION
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
 
-
-                //var FlightBookingsTwoWay = new FlightBooking_TwoWay();
-                //AddControl(FlightBookingsTwoWay, pnlMain);
-                //FlightBookingsTwoWay.round_Trip1.btnSearchFlight.Click += (s, e) => 
-                //{FlightBookingsTwoWay.Visible = false;
-                //    var FlightBookingsAvailableFlights = new FlightBooking_AvailableFlights();
-                //    AddControl(FlightBookingsAvailableFlights, pnlMain);
-
-                //    FlightBookingsAvailableFlights.btnBack.Click += (h, q) =>
-                //    {
-                //        FlightBookingsAvailableFlights.Visible = false;
-                //        FlightBookingsTwoWay.Visible = true;
-                //    };
-                //};
-
+                ViewBookings();
             };
             btnViewBookings.Click += (sender, e) =>
             {
@@ -156,6 +209,7 @@ namespace FLIGHT_RESERVATION
             pnl.AutoSize = true;
             pnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnl.Controls.Add(control);
+            control.BringToFront();
         }
 
         public void UpdateUIBasedOnLoginStatus(bool isLoggedIn)
@@ -167,6 +221,7 @@ namespace FLIGHT_RESERVATION
         // ------ LOGIN NAVIGATION ------
         private void LoginControl_LoginSuccessful(object sender, EventArgs e) // Goes to dashboard after successful login
         {
+            Session.IsLoggedIn = true;
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
             SetIndicator(btnDashboard, pnlIndicator1);
             SetHeader("DASHBOARD");
@@ -179,7 +234,6 @@ namespace FLIGHT_RESERVATION
 
         private void LoginControl_OpenSignUpForm(object sender, EventArgs e) // From login form => sign up form
         {
-            SetIndicator(btnDashboard, pnlIndicator1);
             SetHeader("SIGN UP");
             ClearControls(pnlMain);
             var signup = new SignUp();
@@ -191,6 +245,7 @@ namespace FLIGHT_RESERVATION
 
         private void LoginControl_OpenLoginForm(object sender, EventArgs e) // From signup form => login form
         {
+            ResetButtonColors();
             SetHeader("LOGIN");
             ClearControls(pnlMain);
             var login = new Login();
@@ -198,6 +253,18 @@ namespace FLIGHT_RESERVATION
 
             login.LoginSuccessful += LoginControl_LoginSuccessful;
             login.OpenSignUpForm += LoginControl_OpenSignUpForm;
+            login.OpenForgotPasswordForm += LoginControl_OpenForgotPasswordForm;
+        }
+
+        private void LoginControl_OpenForgotPasswordForm(object sender, EventArgs e) // From signup form => login form
+        {
+            ResetButtonColors();
+            SetHeader("LOGIN");
+            ClearControls(pnlMain);
+            var forgotPassword = new ForgotPassword();
+            AddControl(forgotPassword, pnlMain);
+
+            forgotPassword.OpenLoginForm += LoginControl_OpenLoginForm;
         }
     }
 }

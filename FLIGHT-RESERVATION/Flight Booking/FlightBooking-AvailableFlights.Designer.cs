@@ -32,6 +32,7 @@
             this.btnContinueAvailableFlights = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblFlightType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             this.lblAvailableFlights.AutoSize = true;
             this.lblAvailableFlights.Font = new System.Drawing.Font("Kantumruy Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailableFlights.Location = new System.Drawing.Point(267, 30);
+            this.lblAvailableFlights.Location = new System.Drawing.Point(273, 30);
             this.lblAvailableFlights.Name = "lblAvailableFlights";
             this.lblAvailableFlights.Size = new System.Drawing.Size(350, 60);
             this.lblAvailableFlights.TabIndex = 1;
@@ -95,11 +96,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblFlightType
+            // 
+            this.lblFlightType.AutoSize = true;
+            this.lblFlightType.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lblFlightType.ForeColor = System.Drawing.Color.DimGray;
+            this.lblFlightType.Location = new System.Drawing.Point(312, 90);
+            this.lblFlightType.Name = "lblFlightType";
+            this.lblFlightType.Size = new System.Drawing.Size(272, 34);
+            this.lblFlightType.TabIndex = 5;
+            this.lblFlightType.Text = "Select Departure Flight";
+            // 
             // FlightBooking_AvailableFlights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblFlightType);
             this.Controls.Add(this.btnContinueAvailableFlights);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pnlAvailableFlights);
@@ -121,5 +134,6 @@
         private System.Windows.Forms.FlowLayoutPanel pnlAvailableFlights;
         public System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.Button btnContinueAvailableFlights;
+        private System.Windows.Forms.Label lblFlightType;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace FLIGHT_RESERVATION
 {
-    partial class FlightBooking_TwoWay
+    partial class FlightBooking_FlightDetails
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlFlightBooking = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnChangeType = new System.Windows.Forms.PictureBox();
+            this.pnlFlightBooking = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.btnChangeType)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnChangeType
+            // 
+            this.btnChangeType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.OneWayButton;
+            this.btnChangeType.Location = new System.Drawing.Point(289, 27);
+            this.btnChangeType.Name = "btnChangeType";
+            this.btnChangeType.Size = new System.Drawing.Size(328, 76);
+            this.btnChangeType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnChangeType.TabIndex = 1;
+            this.btnChangeType.TabStop = false;
+            this.btnChangeType.Click += new System.EventHandler(this.btnChangeType_Click);
             // 
             // pnlFlightBooking
             // 
-            this.pnlFlightBooking.Location = new System.Drawing.Point(15, 106);
+            this.pnlFlightBooking.Location = new System.Drawing.Point(20, 128);
             this.pnlFlightBooking.Name = "pnlFlightBooking";
-            this.pnlFlightBooking.Size = new System.Drawing.Size(871, 571);
-            this.pnlFlightBooking.TabIndex = 0;
+            this.pnlFlightBooking.Size = new System.Drawing.Size(871, 549);
+            this.pnlFlightBooking.TabIndex = 2;
             // 
-            // FlightBooking_TwoWay
+            // FlightBooking_FlightDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnlFlightBooking);
-            this.Name = "FlightBooking_TwoWay";
+            this.Controls.Add(this.btnChangeType);
+            this.Name = "FlightBooking_FlightDetails";
             this.Size = new System.Drawing.Size(906, 677);
+            this.Load += new System.EventHandler(this.FlightBooking_FlightDetails_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnChangeType)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel pnlFlightBooking;
+        private System.Windows.Forms.PictureBox btnChangeType;
+        private System.Windows.Forms.Panel pnlFlightBooking;
     }
 }
