@@ -32,12 +32,25 @@ namespace FLIGHT_RESERVATION
             _connection = new MySqlConnection(connectionString);
         }
 
-        public bool AuthenticateUser(string email, string password)
+        public void OpenConnection()
         {
             if (_connection.State != System.Data.ConnectionState.Open)
             {
                 _connection.Open();
             }
+        }
+
+        public void CloseConnection()
+        {
+            if (_connection.State == System.Data.ConnectionState.Open)
+            {
+                _connection.Close();
+            }
+        }
+
+        public bool AuthenticateUser(string email, string password)
+        {
+            OpenConnection();
 
             try
             {
@@ -67,13 +80,13 @@ namespace FLIGHT_RESERVATION
                     return false;
                 }
             }
-            catch (MySqlException ex)
-            {
-                _transaction?.Rollback();
-                MessageBox.Show($"MySQL Error:\nNumber: {ex.Number}\nMessage: {ex.Message}\nSQL State: {ex.SqlState}",
-                    "MySQL Error");
-                return false;
-            }
+            // Uncomment if debugging
+            //catch (MySqlException ex)
+            //{
+            //    _transaction?.Rollback();
+            //    MessageBox.Show($"Database Error: {ex.Message}", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return false;
+            //}
             catch (Exception ex)
             {
                 Console.WriteLine($"An Error has Occured: {ex.Message}");
@@ -81,51 +94,77 @@ namespace FLIGHT_RESERVATION
             }
             finally
             {
-                if (_connection.State == System.Data.ConnectionState.Open)
+                CloseConnection();
+            }
+        }
+
+        public bool ChangePassword(string email, string password)
+        {
+            OpenConnection();
+
+            try
+            {
+                _transaction = _connection.BeginTransaction();
+                string updateQuery = @"
+                    UPDATE accounts 
+                    SET Password = SHA2(@Password, 256) 
+                    WHERE Email = @Email";
+
+                using (var command = new MySqlCommand(updateQuery, _connection, _transaction))
                 {
-                    _connection.Close();
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        _transaction.Commit();
+                        return true;
+                    }
+                    else
+                    {
+                        _transaction.Rollback();
+                        return false;
+                    }
                 }
+            }
+            catch (MySqlException ex)
+            {
+                _transaction?.Rollback();
+                MessageBox.Show($"Database Error: {ex.Message}",
+                    "Password Change Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _transaction?.Rollback();
+                MessageBox.Show($"An error occurred: {ex.Message}",
+                    "Password Change Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                CloseConnection();
             }
         }
 
         public bool RegisterUser (User user)
         {
-            if (_connection.State != System.Data.ConnectionState.Open)
-            {
-                _connection.Open();
-            }
+            OpenConnection();
 
             try
             {
-                // ------ Check if email is already in use
-                string checkEmailQuery = @"
-                    SELECT Email 
-                    FROM accounts 
-                    WHERE Email = @Email";
-
-                using (var checkCommand = new MySqlCommand(checkEmailQuery, _connection))
+                if (IsEmailInDatabase(user.Email))
                 {
-                    checkCommand.Parameters.AddWithValue("@Email", user.Email);
-                    using (var reader = checkCommand.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                string foundEmail = reader.GetString("Email");
-                                MessageBox.Show($"This email address is already registered.",
-                                    "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            return false;
-                        }
-                    }
+                    return false;
                 }
 
                 // ------ Insert into the accounts table
                 _transaction = _connection.BeginTransaction();
                 string insertQuery = @"
-                    INSERT INTO accounts(FirstName, LastName, Email, Password, PhoneNumber) 
-                    VALUES (@FirstName, @LastName, @Email, SHA2(@Password, 256), @PhoneNumber)";
+                    INSERT INTO accounts(FirstName, LastName, Email, Password) 
+                    VALUES (@FirstName, @LastName, @Email, SHA2(@Password, 256))";
 
                 using (var command = new MySqlCommand(insertQuery, _connection, _transaction))
                 {
@@ -133,34 +172,69 @@ namespace FLIGHT_RESERVATION
                     command.Parameters.AddWithValue("@LastName", user.LastName);
                     command.Parameters.AddWithValue("@Email", user.Email);
                     command.Parameters.AddWithValue("@Password", user.Password);
-                    command.Parameters.AddWithValue("@PhoneNumber", "123");
 
                     command.ExecuteNonQuery();
                     _transaction.Commit();
                     return true;
                 }
             }
-            catch (MySqlException ex)
+            // Uncomment if debugging
+            //catch (MySqlException ex)
+            //{
+            //    _transaction?.Rollback();
+            //MessageBox.Show($"Database Error: {ex.Message}",
+                    //"Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return false;
+            //}
+            catch (Exception ex)
             {
                 _transaction?.Rollback();
+                Console.WriteLine($"An Error has Occured: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public bool IsEmailInDatabase(string email)
+        {
+            OpenConnection();
+
+            try
+            {
+                string checkEmailQuery = @"
+                    SELECT Email 
+                    FROM accounts 
+                    WHERE Email = @Email";
+
+                using (var checkCommand = new MySqlCommand(checkEmailQuery, _connection))
+                {
+                    checkCommand.Parameters.AddWithValue("@Email", email);
+                    using (var reader = checkCommand.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            return true;
+                        }
+
+                        return false;
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
                 MessageBox.Show($"MySQL Error:\nNumber: {ex.Number}\nMessage: {ex.Message}\nSQL State: {ex.SqlState}",
                     "MySQL Error");
                 return false;
             }
             catch (Exception ex)
             {
-                _transaction?.Rollback();
                 MessageBox.Show($"General Error: {ex.Message}\nStack Trace: {ex.StackTrace}",
                     "General Error");
                 return false;
-            }
-            finally
-            {
-                if (_connection.State == System.Data.ConnectionState.Open)
-                {
-                    _connection.Close();
-                }
-            }
+            }     
         }
     }
 
@@ -185,12 +259,12 @@ namespace FLIGHT_RESERVATION
                     writer.WriteLine("Fields cannot be empty.");
                 }
 
-                if (!IsValidEmail(email))
+                if (!Validation.IsValidEmail(email))
                 {
                     writer.WriteLine("Please enter a valid email.");
                 }
 
-                if (!IsValidPassword(password))
+                if (!Validation.IsValidPassword(password))
                 {
                     writer.WriteLine("Password must be at least 8 characters.");
                 }
@@ -210,8 +284,11 @@ namespace FLIGHT_RESERVATION
                 return true;
             }
         }
+    }
 
-        private bool IsValidPassword(string password)
+    public class Validation
+    {
+        public static bool IsValidPassword(string password)
         {
             return password.Length >= 8;
         }
