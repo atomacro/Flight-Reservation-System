@@ -46,5 +46,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
         {
 
         }
+
+        private void GuestDetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

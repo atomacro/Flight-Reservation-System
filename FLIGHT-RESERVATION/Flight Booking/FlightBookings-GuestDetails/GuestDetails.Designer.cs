@@ -29,267 +29,212 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestDetails));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtBirthdate = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblAge = new System.Windows.Forms.Label();
-            this.lblBirthdate = new System.Windows.Forms.Label();
-            this.lblGuestDetails = new System.Windows.Forms.Label();
-            this.btnContinue = new System.Windows.Forms.Button();
-            this.txtLastName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
-            this.txtFirstName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
-            this.txtAge = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblGuest2 = new System.Windows.Forms.Label();
+            this.lblBirthdate2 = new System.Windows.Forms.Label();
+            this.lblAge2 = new System.Windows.Forms.Label();
+            this.lblLastName2 = new System.Windows.Forms.Label();
+            this.lblFirstname2 = new System.Windows.Forms.Label();
+            this.roundedTextBox8 = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.roundedTextBox7 = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.roundedTextBox6 = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.roundedTextBox5 = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // panel2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(17, 57);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(266, 312);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.lblGuest2);
+            this.panel2.Controls.Add(this.lblBirthdate2);
+            this.panel2.Controls.Add(this.lblAge2);
+            this.panel2.Controls.Add(this.lblLastName2);
+            this.panel2.Controls.Add(this.lblFirstname2);
+            this.panel2.Controls.Add(this.roundedTextBox8);
+            this.panel2.Controls.Add(this.roundedTextBox7);
+            this.panel2.Controls.Add(this.roundedTextBox6);
+            this.panel2.Controls.Add(this.roundedTextBox5);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(449, 432);
+            this.panel2.TabIndex = 5;
             // 
-            // txtBirthdate
+            // lblGuest2
             // 
-            this.txtBirthdate.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtBirthdate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.txtBirthdate.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.txtBirthdate.BorderRadius = 10;
-            this.txtBirthdate.BorderSize = 1;
-            this.txtBirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.txtBirthdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBirthdate.Location = new System.Drawing.Point(38, 309);
-            this.txtBirthdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBirthdate.Multiline = false;
-            this.txtBirthdate.Name = "txtBirthdate";
-            this.txtBirthdate.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.txtBirthdate.PasswordChar = false;
-            this.txtBirthdate.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBirthdate.PlaceholderText = "";
-            this.txtBirthdate.Size = new System.Drawing.Size(223, 32);
-            this.txtBirthdate.TabIndex = 5;
-            this.txtBirthdate.UnderlinedStyle = false;
+            this.lblGuest2.AutoSize = true;
+            this.lblGuest2.BackColor = System.Drawing.Color.Transparent;
+            this.lblGuest2.Font = new System.Drawing.Font("Kantumruy Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuest2.Location = new System.Drawing.Point(105, 15);
+            this.lblGuest2.Name = "lblGuest2";
+            this.lblGuest2.Size = new System.Drawing.Size(244, 45);
+            this.lblGuest2.TabIndex = 7;
+            this.lblGuest2.Text = "Guest 2 Details";
             // 
-            // lblFirstName
+            // lblBirthdate2
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFirstName.Font = new System.Drawing.Font("Kantumruy Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblFirstName.Location = new System.Drawing.Point(34, 108);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(89, 22);
-            this.lblFirstName.TabIndex = 6;
-            this.lblFirstName.Text = "First Name";
+            this.lblBirthdate2.AutoSize = true;
+            this.lblBirthdate2.BackColor = System.Drawing.Color.Transparent;
+            this.lblBirthdate2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthdate2.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblBirthdate2.Location = new System.Drawing.Point(31, 305);
+            this.lblBirthdate2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBirthdate2.Name = "lblBirthdate2";
+            this.lblBirthdate2.Size = new System.Drawing.Size(109, 29);
+            this.lblBirthdate2.TabIndex = 14;
+            this.lblBirthdate2.Text = "Birthdate";
             // 
-            // lblLastName
+            // lblAge2
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLastName.Font = new System.Drawing.Font("Kantumruy Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblLastName.Location = new System.Drawing.Point(34, 172);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(87, 22);
-            this.lblLastName.TabIndex = 7;
-            this.lblLastName.Text = "Last Name";
-            this.lblLastName.Click += new System.EventHandler(this.label2_Click);
+            this.lblAge2.AutoSize = true;
+            this.lblAge2.BackColor = System.Drawing.Color.Transparent;
+            this.lblAge2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAge2.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblAge2.Location = new System.Drawing.Point(31, 218);
+            this.lblAge2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAge2.Name = "lblAge2";
+            this.lblAge2.Size = new System.Drawing.Size(51, 29);
+            this.lblAge2.TabIndex = 14;
+            this.lblAge2.Text = "Age";
             // 
-            // lblAge
+            // lblLastName2
             // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAge.Font = new System.Drawing.Font("Kantumruy Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblAge.Location = new System.Drawing.Point(34, 230);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(35, 22);
-            this.lblAge.TabIndex = 8;
-            this.lblAge.Text = "Age";
+            this.lblLastName2.AutoSize = true;
+            this.lblLastName2.BackColor = System.Drawing.Color.Transparent;
+            this.lblLastName2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName2.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblLastName2.Location = new System.Drawing.Point(31, 133);
+            this.lblLastName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLastName2.Name = "lblLastName2";
+            this.lblLastName2.Size = new System.Drawing.Size(124, 29);
+            this.lblLastName2.TabIndex = 14;
+            this.lblLastName2.Text = "Last Name";
             // 
-            // lblBirthdate
+            // lblFirstname2
             // 
-            this.lblBirthdate.AutoSize = true;
-            this.lblBirthdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBirthdate.Font = new System.Drawing.Font("Kantumruy Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthdate.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblBirthdate.Location = new System.Drawing.Point(34, 288);
-            this.lblBirthdate.Name = "lblBirthdate";
-            this.lblBirthdate.Size = new System.Drawing.Size(75, 22);
-            this.lblBirthdate.TabIndex = 9;
-            this.lblBirthdate.Text = "Birthdate";
+            this.lblFirstname2.AutoSize = true;
+            this.lblFirstname2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFirstname2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstname2.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblFirstname2.Location = new System.Drawing.Point(31, 54);
+            this.lblFirstname2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFirstname2.Name = "lblFirstname2";
+            this.lblFirstname2.Size = new System.Drawing.Size(127, 29);
+            this.lblFirstname2.TabIndex = 11;
+            this.lblFirstname2.Text = "First Name";
             // 
-            // lblGuestDetails
+            // roundedTextBox8
             // 
-            this.lblGuestDetails.AutoSize = true;
-            this.lblGuestDetails.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblGuestDetails.Font = new System.Drawing.Font("Kantumruy Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuestDetails.Location = new System.Drawing.Point(73, 70);
-            this.lblGuestDetails.Name = "lblGuestDetails";
-            this.lblGuestDetails.Size = new System.Drawing.Size(150, 28);
-            this.lblGuestDetails.TabIndex = 10;
-            this.lblGuestDetails.Text = "Guest 1 Details";
-            this.lblGuestDetails.Click += new System.EventHandler(this.label5_Click);
+            this.roundedTextBox8.BackColor = System.Drawing.SystemColors.Menu;
+            this.roundedTextBox8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.roundedTextBox8.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.roundedTextBox8.BorderRadius = 10;
+            this.roundedTextBox8.BorderSize = 1;
+            this.roundedTextBox8.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.roundedTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.roundedTextBox8.Location = new System.Drawing.Point(36, 338);
+            this.roundedTextBox8.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextBox8.Multiline = false;
+            this.roundedTextBox8.Name = "roundedTextBox8";
+            this.roundedTextBox8.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.roundedTextBox8.PasswordChar = false;
+            this.roundedTextBox8.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.roundedTextBox8.PlaceholderText = "";
+            this.roundedTextBox8.Size = new System.Drawing.Size(381, 37);
+            this.roundedTextBox8.TabIndex = 10;
+            this.roundedTextBox8.UnderlinedStyle = false;
             // 
-            // btnContinue
+            // roundedTextBox7
             // 
-            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
-            this.btnContinue.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
-            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnContinue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(149, 377);
-            this.btnContinue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(112, 46);
-            this.btnContinue.TabIndex = 11;
-            this.btnContinue.Text = "Continue";
-            this.btnContinue.UseVisualStyleBackColor = false;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            this.roundedTextBox7.BackColor = System.Drawing.SystemColors.Menu;
+            this.roundedTextBox7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.roundedTextBox7.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.roundedTextBox7.BorderRadius = 10;
+            this.roundedTextBox7.BorderSize = 1;
+            this.roundedTextBox7.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.roundedTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.roundedTextBox7.Location = new System.Drawing.Point(36, 251);
+            this.roundedTextBox7.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextBox7.Multiline = false;
+            this.roundedTextBox7.Name = "roundedTextBox7";
+            this.roundedTextBox7.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.roundedTextBox7.PasswordChar = false;
+            this.roundedTextBox7.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.roundedTextBox7.PlaceholderText = "";
+            this.roundedTextBox7.Size = new System.Drawing.Size(381, 37);
+            this.roundedTextBox7.TabIndex = 9;
+            this.roundedTextBox7.UnderlinedStyle = false;
             // 
-            // txtLastName
+            // roundedTextBox6
             // 
-            this.txtLastName.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtLastName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.txtLastName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.txtLastName.BorderRadius = 10;
-            this.txtLastName.BorderSize = 1;
-            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLastName.Location = new System.Drawing.Point(38, 193);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtLastName.Multiline = false;
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.txtLastName.PasswordChar = false;
-            this.txtLastName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtLastName.PlaceholderText = "";
-            this.txtLastName.Size = new System.Drawing.Size(223, 32);
-            this.txtLastName.TabIndex = 12;
-            this.txtLastName.UnderlinedStyle = false;
+            this.roundedTextBox6.BackColor = System.Drawing.SystemColors.Menu;
+            this.roundedTextBox6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.roundedTextBox6.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.roundedTextBox6.BorderRadius = 10;
+            this.roundedTextBox6.BorderSize = 1;
+            this.roundedTextBox6.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.roundedTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.roundedTextBox6.Location = new System.Drawing.Point(36, 166);
+            this.roundedTextBox6.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextBox6.Multiline = false;
+            this.roundedTextBox6.Name = "roundedTextBox6";
+            this.roundedTextBox6.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.roundedTextBox6.PasswordChar = false;
+            this.roundedTextBox6.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.roundedTextBox6.PlaceholderText = "";
+            this.roundedTextBox6.Size = new System.Drawing.Size(381, 37);
+            this.roundedTextBox6.TabIndex = 8;
+            this.roundedTextBox6.UnderlinedStyle = false;
             // 
-            // txtFirstName
+            // roundedTextBox5
             // 
-            this.txtFirstName.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtFirstName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.txtFirstName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.txtFirstName.BorderRadius = 10;
-            this.txtFirstName.BorderSize = 1;
-            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFirstName.Location = new System.Drawing.Point(38, 135);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtFirstName.Multiline = false;
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.txtFirstName.PasswordChar = false;
-            this.txtFirstName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtFirstName.PlaceholderText = "";
-            this.txtFirstName.Size = new System.Drawing.Size(223, 32);
-            this.txtFirstName.TabIndex = 13;
-            this.txtFirstName.UnderlinedStyle = false;
-            // 
-            // txtAge
-            // 
-            this.txtAge.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtAge.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.txtAge.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.txtAge.BorderRadius = 10;
-            this.txtAge.BorderSize = 1;
-            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAge.Location = new System.Drawing.Point(38, 251);
-            this.txtAge.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAge.Multiline = false;
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.txtAge.PasswordChar = false;
-            this.txtAge.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtAge.PlaceholderText = "";
-            this.txtAge.Size = new System.Drawing.Size(223, 32);
-            this.txtAge.TabIndex = 14;
-            this.txtAge.UnderlinedStyle = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Kantumruy Pro", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(49, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 31);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Passenger Details";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON2;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.ForeColor = System.Drawing.Color.BlueViolet;
-            this.btnBack.Location = new System.Drawing.Point(38, 376);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(105, 42);
-            this.btnBack.TabIndex = 17;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.button1_Click);
+            this.roundedTextBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.roundedTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.roundedTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.roundedTextBox5.BorderRadius = 10;
+            this.roundedTextBox5.BorderSize = 1;
+            this.roundedTextBox5.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.roundedTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.roundedTextBox5.Location = new System.Drawing.Point(36, 87);
+            this.roundedTextBox5.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextBox5.Multiline = false;
+            this.roundedTextBox5.Name = "roundedTextBox5";
+            this.roundedTextBox5.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.roundedTextBox5.PasswordChar = false;
+            this.roundedTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.roundedTextBox5.PlaceholderText = "";
+            this.roundedTextBox5.Size = new System.Drawing.Size(381, 37);
+            this.roundedTextBox5.TabIndex = 7;
+            this.roundedTextBox5.UnderlinedStyle = false;
             // 
             // GuestDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtAge);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.btnContinue);
-            this.Controls.Add(this.lblGuestDetails);
-            this.Controls.Add(this.lblBirthdate);
-            this.Controls.Add(this.lblAge);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.txtBirthdate);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Kantumruy Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GuestDetails";
-            this.Size = new System.Drawing.Size(298, 437);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Size = new System.Drawing.Size(449, 432);
+            this.Load += new System.EventHandler(this.GuestDetails_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private CustomControls.RoundedTextBox txtBirthdate;
-        private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.Label lblBirthdate;
-        private System.Windows.Forms.Label lblGuestDetails;
-        private System.Windows.Forms.Button btnContinue;
-        private CustomControls.RoundedTextBox txtLastName;
-        private CustomControls.RoundedTextBox txtFirstName;
-        private CustomControls.RoundedTextBox txtAge;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblGuest2;
+        private System.Windows.Forms.Label lblBirthdate2;
+        private System.Windows.Forms.Label lblAge2;
+        private System.Windows.Forms.Label lblLastName2;
+        private System.Windows.Forms.Label lblFirstname2;
+        private CustomControls.RoundedTextBox roundedTextBox8;
+        private CustomControls.RoundedTextBox roundedTextBox7;
+        private CustomControls.RoundedTextBox roundedTextBox6;
+        private CustomControls.RoundedTextBox roundedTextBox5;
     }
 }
