@@ -43,6 +43,7 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.flightBookings_GuestDetails1 = new FLIGHT_RESERVATION.FlightBookings_GuestDetails();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlMain.SuspendLayout();
@@ -201,11 +202,20 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlMain.Controls.Add(this.flightBookings_GuestDetails1);
             this.pnlMain.Location = new System.Drawing.Point(348, 167);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(909, 679);
             this.pnlMain.TabIndex = 10;
+            // 
+            // flightBookings_GuestDetails1
+            // 
+            this.flightBookings_GuestDetails1.Location = new System.Drawing.Point(3, 0);
+            this.flightBookings_GuestDetails1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flightBookings_GuestDetails1.Name = "flightBookings_GuestDetails1";
+            this.flightBookings_GuestDetails1.Size = new System.Drawing.Size(907, 677);
+            this.flightBookings_GuestDetails1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -251,6 +261,7 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
+        private FlightBookings_GuestDetails flightBookings_GuestDetails1;
     }
 }
 
