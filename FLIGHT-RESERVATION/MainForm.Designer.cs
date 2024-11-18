@@ -43,7 +43,6 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.flightBooking_FlightDetails1 = new FLIGHT_RESERVATION.FlightBooking_FlightDetails();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlMain.SuspendLayout();
@@ -202,20 +201,11 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Controls.Add(this.flightBooking_FlightDetails1);
             this.pnlMain.Location = new System.Drawing.Point(348, 167);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(909, 679);
             this.pnlMain.TabIndex = 10;
-            // 
-            // flightBooking_FlightDetails1
-            // 
-            this.flightBooking_FlightDetails1.BackColor = System.Drawing.Color.White;
-            this.flightBooking_FlightDetails1.Location = new System.Drawing.Point(3, 2);
-            this.flightBooking_FlightDetails1.Name = "flightBooking_FlightDetails1";
-            this.flightBooking_FlightDetails1.Size = new System.Drawing.Size(906, 677);
-            this.flightBooking_FlightDetails1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -261,7 +251,6 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
-        private FlightBooking_FlightDetails flightBooking_FlightDetails1;
     }
 }
 

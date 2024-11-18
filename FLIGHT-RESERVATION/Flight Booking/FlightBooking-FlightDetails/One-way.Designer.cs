@@ -44,7 +44,7 @@
             this.picDepartureReturnDate = new System.Windows.Forms.PictureBox();
             this.picClassSeat = new System.Windows.Forms.PictureBox();
             this.picDepartureArrivalLocation = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearchFlight = new System.Windows.Forms.Button();
             this.lblCompanions = new System.Windows.Forms.Label();
             this.numAdult = new System.Windows.Forms.NumericUpDown();
             this.lblAdult = new System.Windows.Forms.Label();
@@ -133,9 +133,8 @@
             this.lblDepartureLocation.Font = new System.Drawing.Font("Kantumruy Pro", 12F);
             this.lblDepartureLocation.Location = new System.Drawing.Point(71, 109);
             this.lblDepartureLocation.Name = "lblDepartureLocation";
-            this.lblDepartureLocation.Size = new System.Drawing.Size(398, 29);
+            this.lblDepartureLocation.Size = new System.Drawing.Size(0, 29);
             this.lblDepartureLocation.TabIndex = 44;
-            this.lblDepartureLocation.Text = "Ninoy Aquino International Airport (MNL)";
             // 
             // lblTo
             // 
@@ -238,20 +237,20 @@
             this.picDepartureArrivalLocation.TabIndex = 34;
             this.picDepartureArrivalLocation.TabStop = false;
             // 
-            // button1
+            // btnSearchFlight
             // 
-            this.button1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(355, 472);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 60);
-            this.button1.TabIndex = 65;
-            this.button1.Text = "SEARCH FLIGHT";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearchFlight.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
+            this.btnSearchFlight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchFlight.FlatAppearance.BorderSize = 0;
+            this.btnSearchFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchFlight.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFlight.ForeColor = System.Drawing.Color.White;
+            this.btnSearchFlight.Location = new System.Drawing.Point(338, 472);
+            this.btnSearchFlight.Name = "btnSearchFlight";
+            this.btnSearchFlight.Size = new System.Drawing.Size(194, 60);
+            this.btnSearchFlight.TabIndex = 65;
+            this.btnSearchFlight.Text = "SEARCH FLIGHT";
+            this.btnSearchFlight.UseVisualStyleBackColor = true;
             // 
             // lblCompanions
             // 
@@ -405,9 +404,8 @@
             this.lblArrivalLocation.Font = new System.Drawing.Font("Kantumruy Pro", 12F);
             this.lblArrivalLocation.Location = new System.Drawing.Point(71, 212);
             this.lblArrivalLocation.Name = "lblArrivalLocation";
-            this.lblArrivalLocation.Size = new System.Drawing.Size(398, 29);
+            this.lblArrivalLocation.Size = new System.Drawing.Size(0, 29);
             this.lblArrivalLocation.TabIndex = 46;
-            this.lblArrivalLocation.Text = "Ninoy Aquino International Airport (MNL)";
             // 
             // picAirplaneLand
             // 
@@ -433,7 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSearchFlight);
             this.Controls.Add(this.flowLayoutPanel5);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.cboClassSeat);
@@ -506,7 +504,6 @@
         private System.Windows.Forms.PictureBox picDepartureReturnDate;
         private System.Windows.Forms.PictureBox picClassSeat;
         private System.Windows.Forms.PictureBox picDepartureArrivalLocation;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCompanions;
         private System.Windows.Forms.NumericUpDown numAdult;
         private System.Windows.Forms.Label lblAdult;
@@ -525,5 +522,6 @@
         private System.Windows.Forms.PictureBox picAirplaneLand;
         public System.Windows.Forms.ComboBox cboDepartureLocation;
         public System.Windows.Forms.ComboBox cboArrivalLocation;
+        public System.Windows.Forms.Button btnSearchFlight;
     }
 }
