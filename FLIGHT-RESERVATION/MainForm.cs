@@ -61,7 +61,7 @@ namespace FLIGHT_RESERVATION
 
         public void SetButtonBorders()
         {
-            Button[] btns = { btnDashboard, btnFlightBooking, btnViewBookings, btnProfile, btnLogout, btnLogin };
+            Button[] btns = { btnDashboard, btnFlightBooking, btnViewBookings, btnAccount, btnLogout, btnLogin };
 
             foreach (Button btn in btns)
             {
@@ -208,10 +208,10 @@ namespace FLIGHT_RESERVATION
                 AddControl(viewBookings, pnlMain);
                 
             };
-            btnProfile.Click += (sender, e) =>
+            btnAccount.Click += (sender, e) =>
             {
-                SetIndicator(btnProfile, pnlIndicator4);
-                SetHeader("PROFILE");
+                SetIndicator(btnAccount, pnlIndicator4);
+                SetHeader("ACCOUNT");
                 ClearControls(pnlMain);
 
             };
