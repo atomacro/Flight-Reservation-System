@@ -23,13 +23,13 @@ namespace FLIGHT_RESERVATION
         //private int numChildren = int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Children"]);
         //private int numInfants = int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Infants"]);
 
-        private int numAdults = 3;
-        private int numChildren = 2;
-        private int numInfants = 1;
-        new Dictionary<String, GuestDetails> guestDetails = new Dictionary<string, GuestDetails>();
+        private int numAdults = 2;
+        private int numChildren = 0;
+        private int numInfants = 0;
+        Dictionary<String, GuestDetails> guestDetails = new Dictionary<string, GuestDetails>();
         private void InitializeGuestDetails()
         {
-            if(numAdults + numChildren + numInfants > 1)
+            if (numAdults + numChildren + numInfants > 1)
             {
                 int total = numAdults + numChildren + numInfants;
                 if (total % 2 != 0) total += 1;
@@ -69,9 +69,6 @@ namespace FLIGHT_RESERVATION
                 }
 
                 pnlGuestDetails.Controls.Add(GuestDetailsLayout);
-                btnContinue.Click += (s, e) => { Console.WriteLine(guestDetails["Adult 1"].txtFirstName.Text);};
-                btnContinue.Click += (s, e) => { Console.WriteLine(guestDetails["Adult 1"].txtLastName.Text); };
-
             }
             else
             {
@@ -80,6 +77,35 @@ namespace FLIGHT_RESERVATION
                 GuestDetails.AutoSize = true;
                 GuestDetails.Left = (pnlGuestDetails.Width - GuestDetails.Width) / 2;
                 GuestDetails.Top = (pnlGuestDetails.Height - GuestDetails.Height) / 2;
+                guestDetails["Adult 1"] = GuestDetails;
+            }
+
+            btnContinue.Click += Validate;
+
+
+            void Validate(object s, EventArgs e)
+            {
+                foreach (var item in guestDetails)
+                {
+
+                    foreach (TextBox txt in item.Value.Controls.OfType<TextBox>().ToList())
+                    {
+                        if (string.IsNullOrWhiteSpace(txt.Text))
+                        {
+                            MessageBox.Show($"{txt} cannot be empty");
+                            return;
+                        }
+                    }
+
+                    var birthdateBox = item.Value.Controls.OfType<TextBox>().FirstOrDefault(t => t.Name == "txtBirthdate");
+                    if (birthdateBox != null &&
+                        !DateTime.TryParseExact(birthdateBox.Text, "MMMM dd, yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime date))
+                    {
+                        MessageBox.Show("Birthdate must be in 'MMMM dd, yyyy' format.\nExample: January 1, 2001.");
+                        return;
+                    }
+                }
+                MessageBox.Show("Clear");
             }
         }
 
