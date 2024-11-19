@@ -118,11 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls.cs" />
-    <Compile Include="Flight Booking\FlightBooking-AddOns\AddOns.cs">
+    <Compile Include="Flight Booking\FlightBooking-AddOns.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-AddOns\AddOns.Designer.cs">
-      <DependentUpon>AddOns.cs</DependentUpon>
+    <Compile Include="Flight Booking\FlightBooking-AddOns.Designer.cs">
+      <DependentUpon>FlightBooking-AddOns.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBooking-AvailableFlights.cs">
       <SubType>UserControl</SubType>
@@ -213,8 +213,8 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Flight Booking\FlightBooking-AddOns\AddOns.resx">
-      <DependentUpon>AddOns.cs</DependentUpon>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-AddOns.resx">
+      <DependentUpon>FlightBooking-AddOns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-AvailableFlights.resx">
       <DependentUpon>FlightBooking-AvailableFlights.cs</DependentUpon>
@@ -318,6 +318,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Public\Flight Bookings - Guest Details\Textbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Addons\ADDONS-UNSELECTED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Addons\ADDONS-SELECTED.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

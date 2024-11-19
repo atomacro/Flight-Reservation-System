@@ -51,7 +51,7 @@
             // 
             this.pnlAvailableFlights.AutoScroll = true;
             this.pnlAvailableFlights.Location = new System.Drawing.Point(32, 117);
-            this.pnlAvailableFlights.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAvailableFlights.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAvailableFlights.Name = "pnlAvailableFlights";
             this.pnlAvailableFlights.Size = new System.Drawing.Size(616, 320);
             this.pnlAvailableFlights.TabIndex = 2;
@@ -65,7 +65,7 @@
             this.btnContinueAvailableFlights.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinueAvailableFlights.ForeColor = System.Drawing.Color.White;
             this.btnContinueAvailableFlights.Location = new System.Drawing.Point(331, 479);
-            this.btnContinueAvailableFlights.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContinueAvailableFlights.Margin = new System.Windows.Forms.Padding(2);
             this.btnContinueAvailableFlights.Name = "btnContinueAvailableFlights";
             this.btnContinueAvailableFlights.Size = new System.Drawing.Size(130, 52);
             this.btnContinueAvailableFlights.TabIndex = 4;
@@ -83,7 +83,7 @@
             this.btnBack.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.SlateBlue;
             this.btnBack.Location = new System.Drawing.Point(182, 479);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(130, 52);
             this.btnBack.TabIndex = 3;
@@ -93,7 +93,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(20, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(641, 447);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.pnlAvailableFlights);
             this.Controls.Add(this.lblAvailableFlights);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FlightBooking_AvailableFlights";
             this.Size = new System.Drawing.Size(680, 550);
             this.Load += new System.EventHandler(this.FlightBooking_AvailableFlights_Load);
