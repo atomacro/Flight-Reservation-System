@@ -325,5 +325,8 @@
   <ItemGroup>
     <None Include="Public\Addons\ADDONS-SELECTED.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

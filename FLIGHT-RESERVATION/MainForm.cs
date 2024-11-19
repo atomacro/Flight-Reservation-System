@@ -38,6 +38,11 @@ namespace FLIGHT_RESERVATION
 
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         // ------ UI Related Methods ------
         public void SetIndicator(Button activeButton, Panel pnlIndicator)
         {
@@ -282,13 +287,13 @@ namespace FLIGHT_RESERVATION
 
         private void LoginControl_OpenForgotPasswordForm(object sender, EventArgs e) // From signup form => login form
         {
-            ResetButtonColors();
-            SetHeader("LOGIN");
             ClearControls(pnlMain);
             var forgotPassword = new ForgotPassword();
             AddControl(forgotPassword, pnlMain);
 
             forgotPassword.OpenLoginForm += LoginControl_OpenLoginForm;
         }
+
+        
     }
 }

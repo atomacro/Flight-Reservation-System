@@ -43,6 +43,7 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +87,7 @@
             // Header
             // 
             this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Header.Controls.Add(this.btnExit);
             this.Header.Controls.Add(this.btnLogin);
             this.Header.Controls.Add(this.lblPageName);
             this.Header.Controls.Add(this.btnLogout);
@@ -98,6 +100,10 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
             this.btnLogin.Location = new System.Drawing.Point(791, 36);
@@ -106,7 +112,7 @@
             this.btnLogin.Size = new System.Drawing.Size(155, 44);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = " ";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // lblPageName
             // 
@@ -120,6 +126,10 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.Location = new System.Drawing.Point(791, 36);
@@ -128,7 +138,7 @@
             this.btnLogout.Size = new System.Drawing.Size(155, 44);
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = " ";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
             // picLogo
             // 
@@ -206,6 +216,20 @@
             this.pnlMain.Size = new System.Drawing.Size(682, 552);
             this.pnlMain.TabIndex = 10;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.Exit;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Location = new System.Drawing.Point(931, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(53, 37);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +273,7 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
