@@ -34,21 +34,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(34, 106);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(834, 468);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(398, 465);
-            this.panel1.TabIndex = 0;
-            // 
             // lblAvailableFlights
             // 
             this.lblAvailableFlights.AutoSize = true;

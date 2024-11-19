@@ -66,6 +66,13 @@ namespace FLIGHT_RESERVATION.Properties {
         internal static System.Drawing.Bitmap ADD_ONS_BORDER {
             get {
                 object obj = ResourceManager.GetObject("ADD-ONS-BORDER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap border {
             get {
                 object obj = ResourceManager.GetObject("border", resourceCulture);
@@ -189,16 +196,6 @@ namespace FLIGHT_RESERVATION.Properties {
         internal static System.Drawing.Bitmap Unselected_Border1 {
             get {
                 object obj = ResourceManager.GetObject("Unselected Border1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap visibility {
-            get {
-                object obj = ResourceManager.GetObject("visibility", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
