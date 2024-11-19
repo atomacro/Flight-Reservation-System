@@ -121,11 +121,11 @@
   <data name="KantumruyPro-Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KantumruyPro-Medium.ttf;System.Byte[]</value>
   </data>
+  <data name="ADDONS-UNSELECTED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Public\Addons\ADDONS-UNSELECTED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="border" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Public\Flight Bookings - Guest Details\border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ADD-ONS-BORDER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Assets\ADD-ONS-BORDER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KantumruyPro-Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KantumruyPro-Bold.ttf;System.Byte[]</value>
@@ -139,6 +139,9 @@
 	<data name="visibility" type="System.Resources.ResXFileRef, System.Windows.Forms">
 		<value>..\Public\Assets\visibility.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 	</data>
+  <data name="ADD-ONS-BORDER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Public\Assets\ADD-ONS-BORDER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="visibility_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Public\Assets\visibility_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,13 +160,16 @@
   <data name="TwoWayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Public\Flight Bookings - Flight Details\TwoWayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Textbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Public\Flight Bookings - Guest Details\Textbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="OneWayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Public\Flight Bookings - Flight Details\OneWayButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KantumruyPro-Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KantumruyPro-Regular.ttf;System.Byte[]</value>
   </data>
-  <data name="Textbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Public\Flight Bookings - Guest Details\Textbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ADDONS-SELECTED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Public\Addons\ADDONS-SELECTED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
