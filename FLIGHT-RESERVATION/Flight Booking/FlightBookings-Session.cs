@@ -1,9 +1,13 @@
-﻿using System;
+﻿using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails;
+using Google.Protobuf.WellKnownTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Mysqlx.Expect.Open.Types.Condition.Types;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FLIGHT_RESERVATION
 {
@@ -38,7 +42,34 @@ namespace FLIGHT_RESERVATION
 
         public Dictionary<String, String> CardDetails { get; set; } = new Dictionary<string, string>();
 
-        public void setFlightDetails(Trips trip, String type)
+
+        public void setGuestDetails(Dictionary<String, GuestDetails> guestDetails)
+        { 
+            PassengerDetails.Clear();
+            foreach (var key in guestDetails.Keys)
+            {
+                PassengerDetails[key] = new Dictionary<string, string>();
+            }
+            foreach (KeyValuePair<string, GuestDetails> item in guestDetails)
+            {
+                String FirstName = item.Value.txtFirstName.Text;
+                String LastName = item.Value.txtLastName.Text;
+                String Age = item.Value.txtAge.Text;
+                String Birthdate = item.Value.txtBirthdate.Text;
+                var guestInfo = new Dictionary<string, string>
+                {
+                    { "FirstName", FirstName },
+                    { "LastName", LastName },
+                    { "Age", Age },
+                    { "Birthdate", Birthdate }
+                };
+
+                PassengerDetails[item.Key] = guestInfo;
+            }
+        }
+
+
+            public void setFlightDetails(Trips trip, String type)
         {
             if (FlightDetails != null)
             {
@@ -72,5 +103,7 @@ namespace FLIGHT_RESERVATION
             FlightDetails["Number of Children"] = numChildren;
             FlightDetails["Number of Infants"] = numInfant;
         }
+
+
     }
 }
