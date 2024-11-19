@@ -19,16 +19,15 @@ namespace FLIGHT_RESERVATION
         }
 
 
-        //private int numAdults = int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Adults"]);
-        //private int numChildren = int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Children"]);
-        //private int numInfants = int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Infants"]);
-
-        private int numAdults = 2;
-        private int numChildren = 0;
-        private int numInfants = 0;
-        Dictionary<String, GuestDetails> guestDetails = new Dictionary<string, GuestDetails>();
+        public Dictionary<String, GuestDetails> guestDetails = new Dictionary<string, GuestDetails>();
         private void InitializeGuestDetails()
         {
+
+            int numAdults = FlightDetails_Session.Instance.FlightDetails.ContainsKey("Number of Adults") ? int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Adults"]) : 0;
+            int numChildren = FlightDetails_Session.Instance.FlightDetails.ContainsKey("Number of Children") ? int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Children"]) : 0;
+            int numInfants = FlightDetails_Session.Instance.FlightDetails.ContainsKey("Number of Infants") ? int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Infants"]) : 0;
+
+
             if (numAdults + numChildren + numInfants > 1)
             {
                 int total = numAdults + numChildren + numInfants;
@@ -79,34 +78,33 @@ namespace FLIGHT_RESERVATION
                 GuestDetails.Top = (pnlGuestDetails.Height - GuestDetails.Height) / 2;
                 guestDetails["Adult 1"] = GuestDetails;
             }
+        }
 
-            btnContinue.Click += Validate;
 
-
-            void Validate(object s, EventArgs e)
+       public Boolean Validate()
+        {
+            foreach (var item in guestDetails)
             {
-                foreach (var item in guestDetails)
+
+                foreach (TextBox txt in item.Value.Controls.OfType<TextBox>().ToList())
                 {
-
-                    foreach (TextBox txt in item.Value.Controls.OfType<TextBox>().ToList())
+                    if (string.IsNullOrWhiteSpace(txt.Text))
                     {
-                        if (string.IsNullOrWhiteSpace(txt.Text))
-                        {
-                            MessageBox.Show($"{txt} cannot be empty");
-                            return;
-                        }
-                    }
-
-                    var birthdateBox = item.Value.Controls.OfType<TextBox>().FirstOrDefault(t => t.Name == "txtBirthdate");
-                    if (birthdateBox != null &&
-                        !DateTime.TryParseExact(birthdateBox.Text, "MMMM dd, yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime date))
-                    {
-                        MessageBox.Show("Birthdate must be in 'MMMM dd, yyyy' format.\nExample: January 1, 2001.");
-                        return;
+                        MessageBox.Show($"{txt.Name.Substring(3)} cannot be empty");
+                        return false;
                     }
                 }
-                MessageBox.Show("Clear");
+
+                var birthdateBox = item.Value.Controls.OfType<TextBox>().FirstOrDefault(t => t.Name == "txtBirthdate");
+                if (birthdateBox != null &&
+                    !DateTime.TryParseExact(birthdateBox.Text, "MMMM dd, yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime date))
+                {
+                    MessageBox.Show("Birthdate must be in 'MMMM dd, yyyy' format.\nExample: January 1, 2001.");
+                    return false;
+                }
             }
+            MessageBox.Show("Clear");
+            return true;
         }
 
         private void FlightBookings_GuestDetails_Load(object sender, EventArgs e)

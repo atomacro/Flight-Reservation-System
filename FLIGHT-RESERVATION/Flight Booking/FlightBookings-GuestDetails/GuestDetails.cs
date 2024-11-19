@@ -23,6 +23,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
         private void GuestDetails_Load(object sender, EventArgs e)
         {
             HandleText();
+            foreach (TextBox txt in this.Controls.OfType<TextBox>().ToArray()) {
+
+                txt.BackColor = ColorTranslator.FromHtml("#F4F4F4");
+            }
         }
 
         public void HandleText()
