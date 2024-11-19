@@ -50,7 +50,7 @@
             this.pnlGuestDetails.AutoScroll = true;
             this.pnlGuestDetails.BackColor = System.Drawing.Color.Transparent;
             this.pnlGuestDetails.Location = new System.Drawing.Point(16, 83);
-            this.pnlGuestDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlGuestDetails.Margin = new System.Windows.Forms.Padding(2);
             this.pnlGuestDetails.Name = "pnlGuestDetails";
             this.pnlGuestDetails.Size = new System.Drawing.Size(656, 377);
             this.pnlGuestDetails.TabIndex = 6;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.pnlGuestDetails);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.lblAvailableFlights);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FlightBookings_GuestDetails";
             this.Size = new System.Drawing.Size(680, 552);
             this.Load += new System.EventHandler(this.FlightBookings_GuestDetails_Load);

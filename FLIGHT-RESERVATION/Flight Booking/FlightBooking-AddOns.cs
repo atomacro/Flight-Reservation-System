@@ -15,36 +15,37 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns
         public FlightBooking_AddOns()
         {
             InitializeComponent();
+            Select();
         }
 
         public Dictionary<String, Boolean> Addons { get; set; }
 
-        public void Select()
+        new public void Select()
         {
             Boolean Food = false;
             Boolean Baggage = false;
             Boolean Services = false;
 
-            picBaggage.Click += (sender, e) => SelectImage(Baggage, picBaggage);
-            picFood.Click += (sender, e) => SelectImage(Baggage, picFood);
-            picServices.Click += (sender, e) => SelectImage(Baggage, picServices);
+            picBaggage.Click += (sender, e) => SelectImage(ref Baggage, picBaggage);
+            picFood.Click += (sender, e) => SelectImage(ref Food, picFood);
+            picServices.Click += (sender, e) => SelectImage(ref Services, picServices);
 
 
 
-            void SelectImage(Boolean cond, PictureBox pic)
+            void SelectImage(ref Boolean condition, PictureBox pic)
             {
-                if (cond)
+                if (condition)
                 {
                     pic.Image = global::FLIGHT_RESERVATION.Properties.Resources.ADDONS_UNSELECTED;
-                    cond = false;
-                    return;
+                    condition = false;
                 }
-                pic.Image = global::FLIGHT_RESERVATION.Properties.Resources.ADDONS_SELECTED;
-                Baggage = true;
+                else
+                {
+                    pic.Image = global::FLIGHT_RESERVATION.Properties.Resources.ADDONS_SELECTED;
+                    condition = true;
+                }
+
             }
-
         }
-
-
     }
 }
