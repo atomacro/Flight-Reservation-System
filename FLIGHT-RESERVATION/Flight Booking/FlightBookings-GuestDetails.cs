@@ -70,6 +70,8 @@ namespace FLIGHT_RESERVATION
 
                 pnlGuestDetails.Controls.Add(GuestDetailsLayout);
                 btnContinue.Click += (s, e) => { Console.WriteLine(guestDetails["Adult 1"].txtFirstName.Text);};
+                btnContinue.Click += (s, e) => { Console.WriteLine(guestDetails["Adult 1"].txtLastName.Text); };
+
             }
             else
             {
