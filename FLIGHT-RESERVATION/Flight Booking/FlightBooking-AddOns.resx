@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="picFood.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="borderFood.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAARQAAAGCCAYAAAAhTzwnAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAB7RJREFUeF7t3NFRHEcCgGFCcAZWCM7AyuCcgZwBzoDLQPdGFQg2BEIgBEIgBELQ
+        DAAACwwBP0AiyAAAB7RJREFUeF7t3NFRHEcCgGFCcAZWCM7AyuCcgZwBzoDLQPdGFQg2BEIgBEIgBELQ
         da975bEEEqBfvpP4vqoumJllVy/zV3fvro6e6/z8/PW7d++Ox7i6uLi4HT/vxnhvGMZ3N+a9ezPGvJdP
         5r29bvNva7fb/TRe7N/rH3DfP8wwjB9jzEnC7vT09NW6/TszJOPJ/7N5sfdzVjLG28vLyzfj+Of5mPVw
         4Dsy792zs7Nfxr38r3lPrxXHNi5dWMaM5I/xhNsZyW688K/rMvADmoEZYdlt7vsZmTfr8vOMJ9jOSq6/
@@ -157,10 +157,10 @@
         8JMdHf0XdokaWfVoQXMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="picBaggage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="borderBaggage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAARQAAAGCCAYAAAAhTzwnAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAB7RJREFUeF7t3NFRHEcCgGFCcAZWCM7AyuCcgZwBzoDLQPdGFQg2BEIgBEIgBELQ
+        DAAACwwBP0AiyAAAB7RJREFUeF7t3NFRHEcCgGFCcAZWCM7AyuCcgZwBzoDLQPdGFQg2BEIgBEIgBELQ
         da975bEEEqBfvpP4vqoumJllVy/zV3fvro6e6/z8/PW7d++Ox7i6uLi4HT/vxnhvGMZ3N+a9ezPGvJdP
         5r29bvNva7fb/TRe7N/rH3DfP8wwjB9jzEnC7vT09NW6/TszJOPJ/7N5sfdzVjLG28vLyzfj+Of5mPVw
         4Dsy792zs7Nfxr38r3lPrxXHNi5dWMaM5I/xhNsZyW688K/rMvADmoEZYdlt7vsZmTfr8vOMJ9jOSq6/
