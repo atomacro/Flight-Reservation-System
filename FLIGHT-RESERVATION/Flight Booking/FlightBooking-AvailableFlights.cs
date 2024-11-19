@@ -125,7 +125,6 @@ namespace FLIGHT_RESERVATION
     public class Database_Available_Flights
     {
         private MySqlConnection _connection;
-        private MySqlTransaction _transaction;
         private String DataBaseName = "airplaneticketingsystem2024";
         private String UserName = "root";
         private String Password = "";

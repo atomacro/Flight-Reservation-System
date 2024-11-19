@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlightBooking_AddOns));
             this.lblAddOns = new System.Windows.Forms.Label();
             this.lblBaggage = new System.Windows.Forms.Label();
             this.lblFood = new System.Windows.Forms.Label();
             this.lblServices = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnContinue = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.picServices = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picFood = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnContinue = new System.Windows.Forms.Button();
             this.picBaggage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picServices)).BeginInit();
@@ -96,60 +97,10 @@
             this.lblServices.Text = "SERVICES";
             this.lblServices.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(481, 134);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(160, 128);
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            // 
-            // picServices
-            // 
-            this.picServices.BackColor = System.Drawing.Color.Transparent;
-            this.picServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picServices.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.picServices.Location = new System.Drawing.Point(455, 106);
-            this.picServices.Margin = new System.Windows.Forms.Padding(2);
-            this.picServices.Name = "picServices";
-            this.picServices.Size = new System.Drawing.Size(211, 306);
-            this.picServices.TabIndex = 13;
-            this.picServices.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(260, 134);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(160, 128);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // picFood
-            // 
-            this.picFood.BackColor = System.Drawing.Color.Transparent;
-            this.picFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picFood.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.picFood.Location = new System.Drawing.Point(234, 106);
-            this.picFood.Margin = new System.Windows.Forms.Padding(2);
-            this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(211, 306);
-            this.picFood.TabIndex = 10;
-            this.picFood.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(39, 134);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 128);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON2;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.FlatAppearance.BorderSize = 0;
@@ -167,6 +118,7 @@
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
             this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnContinue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContinue.FlatAppearance.BorderSize = 0;
@@ -181,15 +133,72 @@
             this.btnContinue.Text = "CONTINUE";
             this.btnContinue.UseVisualStyleBackColor = false;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(481, 134);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(160, 128);
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            // 
+            // picServices
+            // 
+            this.picServices.BackColor = System.Drawing.Color.Transparent;
+            this.picServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picServices.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picServices.Image = global::FLIGHT_RESERVATION.Properties.Resources.ADDONS_UNSELECTED;
+            this.picServices.Location = new System.Drawing.Point(455, 106);
+            this.picServices.Margin = new System.Windows.Forms.Padding(2);
+            this.picServices.Name = "picServices";
+            this.picServices.Size = new System.Drawing.Size(211, 306);
+            this.picServices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picServices.TabIndex = 13;
+            this.picServices.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(260, 134);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(160, 128);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // picFood
+            // 
+            this.picFood.BackColor = System.Drawing.Color.Transparent;
+            this.picFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picFood.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picFood.Image = ((System.Drawing.Image)(resources.GetObject("picFood.Image")));
+            this.picFood.Location = new System.Drawing.Point(234, 106);
+            this.picFood.Margin = new System.Windows.Forms.Padding(2);
+            this.picFood.Name = "picFood";
+            this.picFood.Size = new System.Drawing.Size(211, 306);
+            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFood.TabIndex = 10;
+            this.picFood.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(39, 134);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 128);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // picBaggage
             // 
             this.picBaggage.BackColor = System.Drawing.Color.Transparent;
             this.picBaggage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBaggage.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picBaggage.Image = ((System.Drawing.Image)(resources.GetObject("picBaggage.Image")));
             this.picBaggage.Location = new System.Drawing.Point(14, 106);
             this.picBaggage.Margin = new System.Windows.Forms.Padding(2);
             this.picBaggage.Name = "picBaggage";
             this.picBaggage.Size = new System.Drawing.Size(211, 306);
+            this.picBaggage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBaggage.TabIndex = 0;
             this.picBaggage.TabStop = false;
             // 
