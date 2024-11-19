@@ -93,6 +93,16 @@ namespace FLIGHT_RESERVATION.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BAGGAGE {
+            get {
+                object obj = ResourceManager.GetObject("BAGGAGE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap border {
             get {
                 object obj = ResourceManager.GetObject("border", resourceCulture);
@@ -126,6 +136,16 @@ namespace FLIGHT_RESERVATION.Properties {
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FOOD {
+            get {
+                object obj = ResourceManager.GetObject("FOOD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +216,16 @@ namespace FLIGHT_RESERVATION.Properties {
         internal static System.Drawing.Bitmap Textbox {
             get {
                 object obj = ResourceManager.GetObject("Textbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TRANSPORT {
+            get {
+                object obj = ResourceManager.GetObject("TRANSPORT", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

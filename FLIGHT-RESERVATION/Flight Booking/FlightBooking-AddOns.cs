@@ -26,9 +26,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns
             Boolean Baggage = false;
             Boolean Services = false;
 
-            picBaggage.Click += (sender, e) => SelectImage(ref Baggage, picBaggage);
-            picFood.Click += (sender, e) => SelectImage(ref Food, picFood);
-            picServices.Click += (sender, e) => SelectImage(ref Services, picServices);
+            picBaggage.Click += (sender, e) => SelectImage(ref Baggage, borderBaggage);
+            picFood.Click += (sender, e) => SelectImage(ref Food, borderFood);
+            picTransport.Click += (sender, e) => SelectImage(ref Services, borderTransport);
 
 
 
@@ -47,5 +47,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns
 
             }
         }
+
     }
 }
