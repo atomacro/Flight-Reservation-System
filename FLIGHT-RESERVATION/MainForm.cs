@@ -18,10 +18,16 @@ namespace FLIGHT_RESERVATION
 {
     public partial class MainForm : Form
     {
+
+        ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
+        FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
+
+
         public MainForm()
         {
             InitializeComponent();
-            //pnlMain.BackColor = Color.Transparent;
+            FlightBookings(FlightDetails);
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -35,6 +41,13 @@ namespace FLIGHT_RESERVATION
             SetIndicator(btnDashboard, pnlIndicator1);
 
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+
+            AddControl(viewBookings, pnlMain);
+            AddControl(FlightDetails, pnlMain);
+            viewBookings.Hide();
+            FlightDetails.Hide();
+
+
 
         }
 
@@ -94,9 +107,8 @@ namespace FLIGHT_RESERVATION
         }
 
 
-        private void FlightBookings()
+        private void FlightBookings(FlightBooking_FlightDetails FlightDetails)
         {
-            var FlightDetails = new FlightBooking_FlightDetails();
 
             FlightDetails.OneWay.btnSearchFlight.Click += (s, e) =>
             {
@@ -114,6 +126,7 @@ namespace FLIGHT_RESERVATION
             {
                 if (!FlightDetails.HandleSubmit(segment, tripType))
                 {
+                    MessageBox.Show("Please fill up all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -159,13 +172,14 @@ namespace FLIGHT_RESERVATION
                 }
             }
 
-            void SetupGuestDetails(FlightBooking_AvailableFlights PreviousPanel)
+            void SetupGuestDetails(Control PreviousPanel)
             {
                 var GuestDetails = new FlightBookings_GuestDetails();
                 AddControl(GuestDetails, pnlMain);
+               
                 GuestDetails.btnBack.Click += (s, e) =>
                 {
-                    GuestDetails.Hide();
+                    GuestDetails.Dispose();
                     PreviousPanel.Show();
                 };
                 GuestDetails.btnContinue.Click += (s, e) =>
@@ -177,8 +191,23 @@ namespace FLIGHT_RESERVATION
 
                     FlightDetails_Session.Instance.setGuestDetails(GuestDetails.guestDetails);
                     GuestDetails.Hide();
+                    SetupAddons(GuestDetails);
+                };
+            }
+
+            void SetupAddons(Control PreviousPanel) 
+            {
+                var Addons = new FlightBooking_AddOns();
+                AddControl(Addons, pnlMain);
+
+                Addons.btnBack.Click += (s, e) =>
+                {
+                    Addons.Dispose();
+                    PreviousPanel.Show();
                 };
 
+                Addons.btnContinue.Click += Addons.HandleSubmit;
+                
             }
         }
         private void InitializeSidebar()
@@ -195,16 +224,13 @@ namespace FLIGHT_RESERVATION
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
-
-                FlightBookings();
+                AddControl(FlightDetails, pnlMain);
             };
             btnViewBookings.Click += (sender, e) =>
             {
                 SetIndicator(btnViewBookings, pnlIndicator3);
                 SetHeader("VIEW BOOKINGS");
                 ClearControls(pnlMain);
-                
-                var viewBookings = new ViewBookings.ViewBookings();
                 AddControl(viewBookings, pnlMain);
                 
             };
@@ -228,17 +254,21 @@ namespace FLIGHT_RESERVATION
         {
             foreach (Control control in pnl.Controls)
             {
-                control.Dispose();
+                control.Hide();
             }
-            pnl.Controls.Clear();
         }
 
         private void AddControl(Control control, Panel pnl)
         {
-            pnl.AutoSize = true;
-            pnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            pnl.Controls.Add(control);
-            control.BringToFront();
+            if (!pnl.Contains(control))
+            {
+                pnl.AutoSize = true;
+                pnl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                pnl.Controls.Add(control);
+                control.BringToFront();
+                return;
+            }
+            control.Show();
         }
 
         public void UpdateUIBasedOnLoginStatus(bool isLoggedIn)

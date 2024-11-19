@@ -59,7 +59,7 @@ namespace FLIGHT_RESERVATION
                 {
                     for (int i = 1; i <= counter; i++)
                     {
-                        var GuestDetails = new GuestDetails(type, i) { Margin = new Padding(0, 25, 0, 0) };
+                        var GuestDetails = new GuestDetails(type, i) { Margin = new Padding(0, 0, 0, 25) };
                         GuestDetailsLayout.Controls.Add(GuestDetails, currentColumn, currentRow);
                         if (currentColumn == 1) { currentColumn = 0; currentRow++; }
                         else currentColumn++;
@@ -103,7 +103,6 @@ namespace FLIGHT_RESERVATION
                     return false;
                 }
             }
-            MessageBox.Show("Clear");
             return true;
         }
 

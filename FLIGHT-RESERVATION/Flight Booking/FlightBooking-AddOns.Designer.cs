@@ -61,36 +61,36 @@
             // picBaggage
             // 
             this.picBaggage.BackColor = System.Drawing.Color.Transparent;
-            this.picBaggage.Image = global::FLIGHT_RESERVATION.Properties.Resources.BAGGAGE;
-            this.picBaggage.Location = new System.Drawing.Point(20, 116);
-            this.picBaggage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBaggage.Image = ((System.Drawing.Image)(resources.GetObject("picBaggage.Image")));
+            this.picBaggage.Location = new System.Drawing.Point(21, 87);
+            this.picBaggage.Margin = new System.Windows.Forms.Padding(2);
             this.picBaggage.Name = "picBaggage";
-            this.picBaggage.Size = new System.Drawing.Size(199, 285);
-            this.picBaggage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBaggage.Size = new System.Drawing.Size(196, 322);
+            this.picBaggage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBaggage.TabIndex = 16;
             this.picBaggage.TabStop = false;
             // 
             // picTransport
             // 
             this.picTransport.BackColor = System.Drawing.Color.Transparent;
-            this.picTransport.Image = global::FLIGHT_RESERVATION.Properties.Resources.TRANSPORT;
-            this.picTransport.Location = new System.Drawing.Point(461, 116);
-            this.picTransport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTransport.Image = ((System.Drawing.Image)(resources.GetObject("picTransport.Image")));
+            this.picTransport.Location = new System.Drawing.Point(462, 87);
+            this.picTransport.Margin = new System.Windows.Forms.Padding(2);
             this.picTransport.Name = "picTransport";
-            this.picTransport.Size = new System.Drawing.Size(199, 285);
-            this.picTransport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTransport.Size = new System.Drawing.Size(196, 322);
+            this.picTransport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTransport.TabIndex = 15;
             this.picTransport.TabStop = false;
             // 
             // picFood
             // 
             this.picFood.BackColor = System.Drawing.Color.Transparent;
-            this.picFood.Image = global::FLIGHT_RESERVATION.Properties.Resources.FOOD;
-            this.picFood.Location = new System.Drawing.Point(239, 116);
-            this.picFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFood.Image = ((System.Drawing.Image)(resources.GetObject("picFood.Image")));
+            this.picFood.Location = new System.Drawing.Point(240, 87);
+            this.picFood.Margin = new System.Windows.Forms.Padding(2);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(199, 285);
-            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFood.Size = new System.Drawing.Size(196, 322);
+            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFood.TabIndex = 14;
             this.picFood.TabStop = false;
             // 
@@ -100,11 +100,11 @@
             this.borderTransport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.borderTransport.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.borderTransport.Image = global::FLIGHT_RESERVATION.Properties.Resources.ADDONS_UNSELECTED;
-            this.borderTransport.Location = new System.Drawing.Point(455, 106);
-            this.borderTransport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.borderTransport.Location = new System.Drawing.Point(455, 78);
+            this.borderTransport.Margin = new System.Windows.Forms.Padding(2);
             this.borderTransport.Name = "borderTransport";
-            this.borderTransport.Size = new System.Drawing.Size(211, 306);
-            this.borderTransport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.borderTransport.Size = new System.Drawing.Size(211, 343);
+            this.borderTransport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.borderTransport.TabIndex = 13;
             this.borderTransport.TabStop = false;
             // 
@@ -114,11 +114,11 @@
             this.borderFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.borderFood.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.borderFood.Image = ((System.Drawing.Image)(resources.GetObject("borderFood.Image")));
-            this.borderFood.Location = new System.Drawing.Point(234, 106);
-            this.borderFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.borderFood.Location = new System.Drawing.Point(234, 78);
+            this.borderFood.Margin = new System.Windows.Forms.Padding(2);
             this.borderFood.Name = "borderFood";
-            this.borderFood.Size = new System.Drawing.Size(211, 306);
-            this.borderFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.borderFood.Size = new System.Drawing.Size(211, 343);
+            this.borderFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.borderFood.TabIndex = 10;
             this.borderFood.TabStop = false;
             // 
@@ -133,7 +133,7 @@
             this.btnBack.Font = new System.Drawing.Font("Kantumruy Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.BlueViolet;
             this.btnBack.Location = new System.Drawing.Point(158, 457);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(171, 50);
             this.btnBack.TabIndex = 5;
@@ -151,7 +151,7 @@
             this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
             this.btnContinue.Location = new System.Drawing.Point(350, 457);
-            this.btnContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(171, 50);
             this.btnContinue.TabIndex = 3;
@@ -164,11 +164,11 @@
             this.borderBaggage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.borderBaggage.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.borderBaggage.Image = ((System.Drawing.Image)(resources.GetObject("borderBaggage.Image")));
-            this.borderBaggage.Location = new System.Drawing.Point(14, 106);
-            this.borderBaggage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.borderBaggage.Location = new System.Drawing.Point(14, 78);
+            this.borderBaggage.Margin = new System.Windows.Forms.Padding(2);
             this.borderBaggage.Name = "borderBaggage";
-            this.borderBaggage.Size = new System.Drawing.Size(211, 306);
-            this.borderBaggage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.borderBaggage.Size = new System.Drawing.Size(211, 343);
+            this.borderBaggage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.borderBaggage.TabIndex = 0;
             this.borderBaggage.TabStop = false;
             // 
@@ -186,7 +186,7 @@
             this.Controls.Add(this.lblAddOns);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.borderBaggage);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FlightBooking_AddOns";
             this.Size = new System.Drawing.Size(680, 550);
             ((System.ComponentModel.ISupportInitialize)(this.picBaggage)).EndInit();
@@ -203,13 +203,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox borderBaggage;
-        private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label lblAddOns;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.PictureBox borderFood;
         private System.Windows.Forms.PictureBox borderTransport;
         private System.Windows.Forms.PictureBox picFood;
         private System.Windows.Forms.PictureBox picTransport;
         private System.Windows.Forms.PictureBox picBaggage;
+        public System.Windows.Forms.Button btnContinue;
+        public System.Windows.Forms.Button btnBack;
     }
 }
