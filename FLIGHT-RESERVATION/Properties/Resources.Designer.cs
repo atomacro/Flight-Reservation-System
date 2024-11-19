@@ -63,6 +63,46 @@ namespace FLIGHT_RESERVATION.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ADD_ONS_BORDER {
+            get {
+                object obj = ResourceManager.GetObject("ADD-ONS-BORDER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ADDONS_SELECTED {
+            get {
+                object obj = ResourceManager.GetObject("ADDONS-SELECTED", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ADDONS_UNSELECTED {
+            get {
+                object obj = ResourceManager.GetObject("ADDONS-UNSELECTED", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap border {
+            get {
+                object obj = ResourceManager.GetObject("border", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BUTTON {
             get {
                 object obj = ResourceManager.GetObject("BUTTON", resourceCulture);
@@ -136,6 +176,16 @@ namespace FLIGHT_RESERVATION.Properties {
         internal static System.Drawing.Bitmap Selected_Border {
             get {
                 object obj = ResourceManager.GetObject("Selected Border", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Textbox {
+            get {
+                object obj = ResourceManager.GetObject("Textbox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

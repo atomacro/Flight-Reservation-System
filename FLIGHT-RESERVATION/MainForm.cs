@@ -10,7 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FLIGHT_RESERVATION.Flight_Booking;
+using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns;
 using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails;
+using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails;
 
 namespace FLIGHT_RESERVATION
 {
@@ -87,7 +89,7 @@ namespace FLIGHT_RESERVATION
         }
 
 
-        private void ViewBookings()
+        private void FlightBookings()
         {
             var FlightDetails = new FlightBooking_FlightDetails();
 
@@ -127,7 +129,7 @@ namespace FLIGHT_RESERVATION
                     if (!AvailableFlightsDeparture.SubmitSelectedAirplane()) return;
                     AvailableFlightsDeparture.Hide();
                     if (tripType == "Round Trip") AvailableFlightsReturn.Show();
-                    //show next form pwede diff methods
+                    SetupGuestDetails(AvailableFlightsDeparture);
                 };
 
                 AddControl(AvailableFlightsDeparture, pnlMain);
@@ -143,13 +145,35 @@ namespace FLIGHT_RESERVATION
                     {
 
                         if (!AvailableFlightsReturn.SubmitSelectedAirplane()) return;
-                        //AvailableFlightsReturn.Hide();
-                        //show next form pwede diff methods
+                        AvailableFlightsReturn.Hide();
+                        SetupGuestDetails(AvailableFlightsReturn);
                     };
 
                     AddControl(AvailableFlightsReturn, pnlMain);
                     AvailableFlightsReturn.Hide();
                 }
+            }
+
+            void SetupGuestDetails(FlightBooking_AvailableFlights PreviousPanel)
+            {
+                var GuestDetails = new FlightBookings_GuestDetails();
+                AddControl(GuestDetails, pnlMain);
+                GuestDetails.btnBack.Click += (s, e) =>
+                {
+                    GuestDetails.Hide();
+                    PreviousPanel.Show();
+                };
+                GuestDetails.btnContinue.Click += (s, e) =>
+                {
+                    if (!GuestDetails.Validate())
+                    {
+                        return;
+                    }
+
+                    FlightDetails_Session.Instance.setGuestDetails(GuestDetails.guestDetails);
+                    GuestDetails.Hide();
+                };
+
             }
         }
         private void InitializeSidebar()
@@ -167,7 +191,7 @@ namespace FLIGHT_RESERVATION
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
 
-                ViewBookings();
+                FlightBookings();
             };
             btnViewBookings.Click += (sender, e) =>
             {

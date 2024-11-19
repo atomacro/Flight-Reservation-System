@@ -131,7 +131,6 @@ namespace FLIGHT_RESERVATION
         //5 hashmap, 2 List
 
         private MySqlConnection _connection;
-        private MySqlTransaction _transaction;
         private String DataBaseName = "airplaneticketingsystem2024";
         private String UserName = "root";
         private String Password = "";

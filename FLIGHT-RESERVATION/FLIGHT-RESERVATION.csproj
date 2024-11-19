@@ -118,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls.cs" />
+    <Compile Include="Flight Booking\FlightBooking-AddOns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-AddOns.Designer.cs">
+      <DependentUpon>FlightBooking-AddOns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBooking-AvailableFlights.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-AddOns.resx">
+      <DependentUpon>FlightBooking-AddOns.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-AvailableFlights.resx">
       <DependentUpon>FlightBooking-AvailableFlights.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +309,7 @@
     <None Include="Public\Assets\visibility.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Public\Assets\ADD-ONS-BORDER.png" />
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -310,6 +320,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Guest Details\border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Flight Bookings - Guest Details\Textbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Addons\ADDONS-UNSELECTED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Addons\ADDONS-SELECTED.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
