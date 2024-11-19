@@ -56,7 +56,6 @@ namespace FLIGHT_RESERVATION
                     }
                     if (control == null || string.IsNullOrWhiteSpace(control.Text))
                     {
-                        MessageBox.Show("Please fill up all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                     }
                 }
