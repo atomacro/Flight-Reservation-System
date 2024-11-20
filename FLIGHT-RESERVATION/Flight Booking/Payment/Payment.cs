@@ -16,5 +16,20 @@ namespace FLIGHT_RESERVATION.Flight_Booking.Payment
         {
             InitializeComponent();
         }
+
+        private void picPayment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

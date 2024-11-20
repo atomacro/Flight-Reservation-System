@@ -93,6 +93,16 @@ namespace FLIGHT_RESERVATION.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AirplaneLines {
+            get {
+                object obj = ResourceManager.GetObject("AirplaneLines", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BAGGAGE {
             get {
                 object obj = ResourceManager.GetObject("BAGGAGE", resourceCulture);
