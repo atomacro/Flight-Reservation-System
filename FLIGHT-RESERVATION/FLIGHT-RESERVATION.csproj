@@ -245,6 +245,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\Payment\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="LoginSignUp\ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
