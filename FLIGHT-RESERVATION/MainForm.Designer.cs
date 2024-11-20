@@ -34,6 +34,7 @@
             this.pnlIndicator3 = new System.Windows.Forms.Panel();
             this.pnlIndicator2 = new System.Windows.Forms.Panel();
             this.Header = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblPageName = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnFlightBooking = new System.Windows.Forms.Button();
             this.btnViewBookings = new System.Windows.Forms.Button();
-            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -86,6 +87,7 @@
             // Header
             // 
             this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Header.Controls.Add(this.btnExit);
             this.Header.Controls.Add(this.btnLogin);
             this.Header.Controls.Add(this.lblPageName);
             this.Header.Controls.Add(this.btnLogout);
@@ -96,8 +98,26 @@
             this.Header.Size = new System.Drawing.Size(989, 122);
             this.Header.TabIndex = 33;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::FLIGHT_RESERVATION.Properties.Resources.Exit;
+            this.btnExit.Location = new System.Drawing.Point(930, 4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(52, 37);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
             this.btnLogin.Location = new System.Drawing.Point(791, 36);
@@ -106,7 +126,7 @@
             this.btnLogin.Size = new System.Drawing.Size(155, 44);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = " ";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // lblPageName
             // 
@@ -120,6 +140,10 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.Location = new System.Drawing.Point(791, 36);
@@ -128,7 +152,7 @@
             this.btnLogout.Size = new System.Drawing.Size(155, 44);
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = " ";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
             // picLogo
             // 
@@ -182,19 +206,19 @@
             this.btnViewBookings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnViewBookings.UseVisualStyleBackColor = true;
             // 
-            // btnProfile
+            // btnAccount
             // 
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.ForeColor = System.Drawing.Color.Black;
-            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
-            this.btnProfile.Location = new System.Drawing.Point(-1, 563);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(2);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(236, 152);
-            this.btnProfile.TabIndex = 37;
-            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.ForeColor = System.Drawing.Color.Black;
+            this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
+            this.btnAccount.Location = new System.Drawing.Point(-1, 563);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(236, 152);
+            this.btnAccount.TabIndex = 37;
+            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAccount.UseVisualStyleBackColor = true;
             // 
             // pnlMain
             // 
@@ -220,7 +244,7 @@
             this.Controls.Add(this.pnlIndicator2);
             this.Controls.Add(this.btnFlightBooking);
             this.Controls.Add(this.btnViewBookings);
-            this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -242,13 +266,14 @@
         internal System.Windows.Forms.Panel pnlIndicator2;
         internal System.Windows.Forms.Button btnFlightBooking;
         internal System.Windows.Forms.Button btnViewBookings;
-        internal System.Windows.Forms.Button btnProfile;
+        internal System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

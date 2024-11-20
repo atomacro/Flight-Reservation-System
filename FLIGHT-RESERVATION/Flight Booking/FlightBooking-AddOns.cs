@@ -18,19 +18,20 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns
             Select();
         }
 
-        public Dictionary<String, Boolean> Addons { get; set; }
+        public Dictionary<String, Boolean> Addons = new Dictionary<string, Boolean>();
+        Boolean Food;
+        Boolean Baggage;
+        Boolean Services;
 
         new public void Select()
         {
-            Boolean Food = false;
-            Boolean Baggage = false;
-            Boolean Services = false;
+            this.Food = false;
+            this.Baggage = false;
+            this.Services = false;
 
-            picBaggage.Click += (sender, e) => SelectImage(ref Baggage, picBaggage);
-            picFood.Click += (sender, e) => SelectImage(ref Food, picFood);
-            picServices.Click += (sender, e) => SelectImage(ref Services, picServices);
-
-
+            picBaggage.Click += (sender, e) => SelectImage(ref Baggage, borderBaggage);
+            picFood.Click += (sender, e) => SelectImage(ref Food, borderFood);
+            picTransport.Click += (sender, e) => SelectImage(ref Services, borderTransport);
 
             void SelectImage(ref Boolean condition, PictureBox pic)
             {
@@ -47,5 +48,17 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns
 
             }
         }
+
+         public void HandleSubmit(Object sender, EventArgs e)
+        {
+
+            if (Addons != null) Addons.Clear();
+            Addons["Food"] = Food;
+            Addons["Baggage"] = Baggage;
+            Addons["Services"] = Services;
+            FlightDetails_Session.Instance.setAddons(Addons);
+
+        }
+
     }
 }
