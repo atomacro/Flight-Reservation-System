@@ -31,5 +31,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.Payment
         {
 
         }
+
+        private void Payment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
