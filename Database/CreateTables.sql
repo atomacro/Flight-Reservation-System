@@ -20,6 +20,7 @@ CREATE TABLE Flights (
     SeatsRemaining INT NOT NULL,
     SeatingCapacity INT NOT NULL,
     TimeDifference INT GENERATED ALWAYS AS (TIMESTAMPDIFF(HOUR, DepartureDate, ArrivalDate)),
+    FlightPrice INT NOT NULL,
     FOREIGN KEY (DepartureAirportID) REFERENCES Airport(AirportID),
     FOREIGN KEY (ArrivalAirportID) REFERENCES Airport(AirportID)
 );
