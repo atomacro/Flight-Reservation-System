@@ -23,9 +23,9 @@ namespace FLIGHT_RESERVATION
         private void InitializeGuestDetails()
         {
 
-            int numAdults = FlightDetails_Session.Instance.FlightDetails.ContainsKey("Number of Adults") ? int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Adults"]) : 0;
-            int numChildren = FlightDetails_Session.Instance.FlightDetails.ContainsKey("Number of Children") ? int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Children"]) : 0;
-            int numInfants = FlightDetails_Session.Instance.FlightDetails.ContainsKey("Number of Infants") ? int.Parse(FlightDetails_Session.Instance.FlightDetails["Number of Infants"]) : 0;
+            int numAdults = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Adults") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Adults"]) : 0;
+            int numChildren = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Children") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Children"]) : 0;
+            int numInfants = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Infants") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Infants"]) : 0;
 
 
             if (numAdults + numChildren + numInfants > 1)
