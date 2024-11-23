@@ -11,9 +11,9 @@ INSERT INTO Airport (AirportCode, AirportFullName, AirportLocation) VALUES
 
 -- Insert data into Flights table
 INSERT INTO Flights (AirplaneNumber, DepartureDate, ArrivalDate, DepartureAirportID, ArrivalAirportID, SeatsRemaining, SeatingCapacity) VALUES
-('AP123', '2024-12-01 08:00:00', '2024-12-01 12:00:00', 1, 2, 50, 100),
-('AP456', '2024-12-05 14:00:00', '2024-12-05 18:30:00', 3, 4, 75, 100),
-('AP789', '2024-12-10 09:00:00', '2024-12-10 13:00:00', 5, 6, 60, 80);
+('AP123', '2024-12-01 08:00:00', '2024-12-01 12:00:00', 1, 2, 50, 100, 1500),
+('AP456', '2024-12-05 14:00:00', '2024-12-05 18:30:00', 3, 4, 75, 100 2000),
+('AP789', '2024-12-10 09:00:00', '2024-12-10 13:00:00', 5, 6, 60, 80 2500);
 
 -- Insert data into Accounts table
 INSERT INTO Accounts (FirstName, LastName, Email, Password) VALUES
