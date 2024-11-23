@@ -162,12 +162,6 @@
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.Designer.cs">
       <DependentUpon>FlightsAvailable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight Booking\FlightBookings-GuestDetails.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Flight Booking\FlightBookings-GuestDetails.Designer.cs">
-      <DependentUpon>FlightBookings-GuestDetails.cs</DependentUpon>
-    </Compile>
     <Compile Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,7 +174,6 @@
     <Compile Include="Flight Booking\FlightBookings-Payment\Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight Booking\FlightBookings-Session.cs" />
     <Compile Include="Flight Booking\Payment\Payment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.resx">
       <DependentUpon>FlightsAvailable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails.resx">
-      <DependentUpon>FlightBookings-GuestDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.resx">
       <DependentUpon>GuestDetails.cs</DependentUpon>
