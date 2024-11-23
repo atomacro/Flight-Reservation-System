@@ -8,10 +8,10 @@ assignees: Luhartt, vivrelavie
 ---
 
 ## Describe the bug
-_A clear and concise description of what the bug is._
+<!-- A clear and concise description of what the bug is. -->
 
 ### Files
-_A list of relevant files for this issue. This will help people navigate the project and offer some clues of where to start._
+<!-- A list of relevant files for this issue. This will help people navigate the project and offer some clues of where to start -->
 
 ### To Reproduce
 Steps to reproduce the behavior:
@@ -21,17 +21,16 @@ Steps to reproduce the behavior:
 4. See error
 
 ### Expected behavior
-_A clear and concise description of what you expected to happen._
+<!-- A clear and concise description of what you expected to happen -->
 
 ### Screenshots
-_If applicable, add screenshots to help explain your problem._
+<!-- If applicable, add screenshots to help explain your problem -->
 
 ### Additional context
-_Add any other context about the problem here._
-_If it’s long, please paste to https://gist.github.com/ and insert the link here._
+<!-- Add any other context about the problem here. If it’s long, please paste to https://gist.github.com/ and insert the link here -->
 
 ## Tasks
-_Include specific tasks in the order they need to be done in. Include links to specific lines of code where the task should happen at._
+<!-- Include specific tasks in the order they need to be done in. Include links to specific lines of code where the task should happen at -->
 - [ ] Task 1
 - [ ] Task 2
 - [ ] Task 3
