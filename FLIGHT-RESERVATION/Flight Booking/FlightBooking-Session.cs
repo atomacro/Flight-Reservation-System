@@ -11,18 +11,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FLIGHT_RESERVATION
 {
-    internal class FlightDetails_Session
+    internal class FlightBooking_Session
     {
 
-        private static FlightDetails_Session _instance;
+        private static FlightBooking_Session _instance;
 
-        public static FlightDetails_Session Instance
+        public static FlightBooking_Session Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new FlightDetails_Session();
+                    _instance = new FlightBooking_Session();
                 }
                 return _instance;
             }

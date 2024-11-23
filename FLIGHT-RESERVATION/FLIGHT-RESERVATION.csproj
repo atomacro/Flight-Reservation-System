@@ -149,6 +149,13 @@
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails\Trips.cs" />
+    <Compile Include="Flight Booking\FlightBooking-GuestDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-GuestDetails.Designer.cs">
+      <DependentUpon>FlightBooking-GuestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-Session.cs" />
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,6 +181,12 @@
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBookings-Session.cs" />
+    <Compile Include="Flight Booking\Payment\Payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\Payment\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="LoginSignUp\ForgotPassword.cs">
       <SubType>UserControl</SubType>
@@ -234,6 +247,9 @@
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.resx">
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-GuestDetails.resx">
+      <DependentUpon>FlightBooking-GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.resx">
       <DependentUpon>FlightsAvailable.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +260,9 @@
       <DependentUpon>GuestDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-Payment\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\Payment\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginSignUp\ForgotPassword.resx">
