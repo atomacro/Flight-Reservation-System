@@ -149,17 +149,18 @@
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBooking-FlightDetails\Trips.cs" />
+    <Compile Include="Flight Booking\FlightBooking-GuestDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-GuestDetails.Designer.cs">
+      <DependentUpon>FlightBooking-GuestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-Session.cs" />
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.Designer.cs">
       <DependentUpon>FlightsAvailable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Flight Booking\FlightBookings-GuestDetails.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Flight Booking\FlightBookings-GuestDetails.Designer.cs">
-      <DependentUpon>FlightBookings-GuestDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.cs">
       <SubType>UserControl</SubType>
@@ -167,7 +168,18 @@
     <Compile Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.Designer.cs">
       <DependentUpon>GuestDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight Booking\FlightBookings-Session.cs" />
+    <Compile Include="Flight Booking\FlightBookings-Payment\Payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-Payment\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\Payment\Payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\Payment\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="LoginSignUp\ForgotPassword.cs">
       <SubType>UserControl</SubType>
@@ -228,14 +240,20 @@
     <EmbeddedResource Include="Flight Booking\FlightBooking-FlightDetails\Round-Trip.resx">
       <DependentUpon>Round-Trip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBooking-GuestDetails.resx">
+      <DependentUpon>FlightBooking-GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.resx">
       <DependentUpon>FlightsAvailable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails.resx">
-      <DependentUpon>FlightBookings-GuestDetails.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.resx">
       <DependentUpon>GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBookings-Payment\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\Payment\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginSignUp\ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
