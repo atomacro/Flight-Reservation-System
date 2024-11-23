@@ -47,7 +47,7 @@ namespace FLIGHT_RESERVATION
             Addons.Clear();
             Addons["Food"] = addons["Food"];
             Addons["Baggage"] = addons["Baggage"];
-            Addons["Services"] = addons["Services"];
+            Addons["Transport"] = addons["Services"];
 
             foreach(var item in addons)
             {
@@ -126,7 +126,7 @@ namespace FLIGHT_RESERVATION
                 string ReturnDate = trip.cboReturnDateControl.Text;
                 FlightDetails["Return Date"] = ReturnDate;
             }
-            FlightDetails["Class Seat"] = ClassSeat;
+            FlightDetails["Seat Class"] = ClassSeat;
             FlightDetails["Number of Adults"] = numAdult;
             FlightDetails["Number of Children"] = numChildren;
             FlightDetails["Number of Infants"] = numInfant;
