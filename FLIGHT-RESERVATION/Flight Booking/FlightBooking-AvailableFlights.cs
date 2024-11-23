@@ -40,13 +40,13 @@ namespace FLIGHT_RESERVATION
 
             if (this.TripType == "Departure")
             {
-                DepartureLocation = FlightDetails_Session.Instance.FlightDetails["Departure Location"];
-                ArrivalLocation = FlightDetails_Session.Instance.FlightDetails["Arrival Location"];
+                DepartureLocation = FlightBooking_Session.Instance.FlightDetails["Departure Location"];
+                ArrivalLocation = FlightBooking_Session.Instance.FlightDetails["Arrival Location"];
             }
             else
             {
-                DepartureLocation = FlightDetails_Session.Instance.FlightDetails["Arrival Location"];
-                ArrivalLocation = FlightDetails_Session.Instance.FlightDetails["Departure Location"];
+                DepartureLocation = FlightBooking_Session.Instance.FlightDetails["Arrival Location"];
+                ArrivalLocation = FlightBooking_Session.Instance.FlightDetails["Departure Location"];
             }
 
 
@@ -106,14 +106,14 @@ namespace FLIGHT_RESERVATION
             }
             if (this.TripType == "Departure")
             {
-                FlightDetails_Session.Instance.DepartureAirplaneNumber = this.SelectedAirplane;
-                Console.WriteLine(FlightDetails_Session.Instance.DepartureAirplaneNumber);
+                FlightBooking_Session.Instance.DepartureAirplaneNumber = this.SelectedAirplane;
+                Console.WriteLine(FlightBooking_Session.Instance.DepartureAirplaneNumber);
                 return true;
             }
             if (this.TripType == "Return")
             {
-                FlightDetails_Session.Instance.ReturnAirplaneNumber = this.SelectedAirplane;
-                Console.WriteLine(FlightDetails_Session.Instance.ReturnAirplaneNumber);
+                FlightBooking_Session.Instance.ReturnAirplaneNumber = this.SelectedAirplane;
+                Console.WriteLine(FlightBooking_Session.Instance.ReturnAirplaneNumber);
                 return true;
             }
 
