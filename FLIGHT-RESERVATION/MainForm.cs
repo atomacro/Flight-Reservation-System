@@ -189,7 +189,7 @@ namespace FLIGHT_RESERVATION
                         return;
                     }
 
-                    FlightDetails_Session.Instance.setGuestDetails(GuestDetails.guestDetails);
+                    FlightBooking_Session.Instance.setGuestDetails(GuestDetails.guestDetails);
                     GuestDetails.Hide();
                     SetupAddons(GuestDetails);
                 };

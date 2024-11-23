@@ -56,7 +56,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns
             Addons["Food"] = Food;
             Addons["Baggage"] = Baggage;
             Addons["Services"] = Services;
-            FlightDetails_Session.Instance.setAddons(Addons);
+            FlightBooking_Session.Instance.setAddons(Addons);
 
         }
 
