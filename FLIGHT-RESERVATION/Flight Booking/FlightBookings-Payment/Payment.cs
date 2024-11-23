@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace FLIGHT_RESERVATION.Flight_Booking.Payment
+namespace FLIGHT_RESERVATION
 {
     public partial class Payment : UserControl
     {
@@ -17,8 +17,14 @@ namespace FLIGHT_RESERVATION.Flight_Booking.Payment
         {
             InitializeComponent();
         }
-        
+
+
         private void Payment_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
