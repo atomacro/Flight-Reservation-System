@@ -60,7 +60,7 @@ namespace FLIGHT_RESERVATION
                     }
                 }
             }
-            FlightDetails_Session.Instance.setFlightDetails(Trip, Type);
+            FlightBooking_Session.Instance.setFlightDetails(Trip, Type);
             return true;
         }
         private void btnChangeType_Click(object sender, EventArgs e)
