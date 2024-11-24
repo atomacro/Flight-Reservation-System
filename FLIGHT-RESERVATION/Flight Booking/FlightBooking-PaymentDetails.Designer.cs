@@ -30,9 +30,9 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cardDetails1 = new FLIGHT_RESERVATION.Flight_Booking.FlightBookings__CardDetails_.CardDetails();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnContinue = new System.Windows.Forms.Button();
             this.btnChangeType = new System.Windows.Forms.PictureBox();
+            this.btnContinue = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeType)).BeginInit();
             this.SuspendLayout();
@@ -49,25 +49,20 @@
             // 
             this.cardDetails1.Location = new System.Drawing.Point(3, 3);
             this.cardDetails1.Name = "cardDetails1";
-            this.cardDetails1.Size = new System.Drawing.Size(623, 369);
+            this.cardDetails1.Size = new System.Drawing.Size(623, 445);
             this.cardDetails1.TabIndex = 0;
             // 
-            // button1
+            // btnChangeType
             // 
-            this.button1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON2;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.button1.Location = new System.Drawing.Point(185, 483);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 49);
-            this.button1.TabIndex = 69;
-            this.button1.TabStop = false;
-            this.button1.Text = "CONTINUE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnChangeType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.OneWayButton;
+            this.btnChangeType.Location = new System.Drawing.Point(218, 22);
+            this.btnChangeType.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChangeType.Name = "btnChangeType";
+            this.btnChangeType.Size = new System.Drawing.Size(246, 62);
+            this.btnChangeType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnChangeType.TabIndex = 70;
+            this.btnChangeType.TabStop = false;
             // 
             // btnContinue
             // 
@@ -87,17 +82,22 @@
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
-            // btnChangeType
+            // button1
             // 
-            this.btnChangeType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.OneWayButton;
-            this.btnChangeType.Location = new System.Drawing.Point(218, 22);
-            this.btnChangeType.Margin = new System.Windows.Forms.Padding(2);
-            this.btnChangeType.Name = "btnChangeType";
-            this.btnChangeType.Size = new System.Drawing.Size(246, 62);
-            this.btnChangeType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnChangeType.TabIndex = 70;
-            this.btnChangeType.TabStop = false;
+            this.button1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON2;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.BlueViolet;
+            this.button1.Location = new System.Drawing.Point(185, 483);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 49);
+            this.button1.TabIndex = 69;
+            this.button1.TabStop = false;
+            this.button1.Text = "CONTINUE";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FlightBooking_PaymentDetails
             // 
@@ -118,9 +118,9 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        public System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.PictureBox btnChangeType;
         public FlightBookings__CardDetails_.CardDetails cardDetails1;
+        public System.Windows.Forms.Button btnContinue;
+        public System.Windows.Forms.Button button1;
     }
 }

@@ -22,10 +22,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            String firstName = cardDetails1.txtFirstName.Text;
-            Console.WriteLine(firstName);
-
-
+            cardDetails1.ValidateInput();
         }
     }
 }

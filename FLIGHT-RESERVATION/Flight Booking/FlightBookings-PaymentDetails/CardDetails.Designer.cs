@@ -140,7 +140,6 @@
             this.txtCVV.Size = new System.Drawing.Size(286, 35);
             this.txtCVV.TabIndex = 11;
             this.txtCVV.UnderlinedStyle = false;
-            this.txtCVV.TextChanged += new System.EventHandler(this.txtCVV_TextChanged);
             // 
             // lblCCV
             // 
@@ -174,7 +173,6 @@
             this.txtExpiryDate.Size = new System.Drawing.Size(286, 35);
             this.txtExpiryDate.TabIndex = 13;
             this.txtExpiryDate.UnderlinedStyle = false;
-            this.txtExpiryDate.TextChanged += new System.EventHandler(this.txtExpiryDate_TextChanged);
             // 
             // lblExpiryDate
             // 
@@ -220,7 +218,6 @@
             this.txtStreetAddress.Size = new System.Drawing.Size(269, 35);
             this.txtStreetAddress.TabIndex = 16;
             this.txtStreetAddress.UnderlinedStyle = false;
-            this.txtStreetAddress.TextChanged += new System.EventHandler(this.txtStreetAddress_TextChanged);
             // 
             // txtCity
             // 
@@ -242,7 +239,6 @@
             this.txtCity.Size = new System.Drawing.Size(269, 35);
             this.txtCity.TabIndex = 17;
             this.txtCity.UnderlinedStyle = false;
-            this.txtCity.TextChanged += new System.EventHandler(this.txtCity_TextChanged);
             // 
             // txtCountry
             // 
@@ -264,7 +260,6 @@
             this.txtCountry.Size = new System.Drawing.Size(269, 35);
             this.txtCountry.TabIndex = 18;
             this.txtCountry.UnderlinedStyle = false;
-            this.txtCountry.TextChanged += new System.EventHandler(this.txtCountry_TextChanged);
             // 
             // txtZipCode
             // 
@@ -286,7 +281,6 @@
             this.txtZipCode.Size = new System.Drawing.Size(269, 35);
             this.txtZipCode.TabIndex = 19;
             this.txtZipCode.UnderlinedStyle = false;
-            this.txtZipCode.TextChanged += new System.EventHandler(this.txtZipCode_TextChanged);
             // 
             // lblCity
             // 
@@ -344,7 +338,6 @@
             this.txtCardNumber.Size = new System.Drawing.Size(286, 35);
             this.txtCardNumber.TabIndex = 25;
             this.txtCardNumber.UnderlinedStyle = false;
-            this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
             // 
             // txtFirstName
             // 
@@ -366,7 +359,6 @@
             this.txtFirstName.Size = new System.Drawing.Size(139, 35);
             this.txtFirstName.TabIndex = 26;
             this.txtFirstName.UnderlinedStyle = false;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtLastName
             // 
@@ -388,7 +380,6 @@
             this.txtLastName.Size = new System.Drawing.Size(139, 35);
             this.txtLastName.TabIndex = 27;
             this.txtLastName.UnderlinedStyle = false;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // CardDetails
             // 
@@ -417,7 +408,6 @@
             this.Controls.Add(this.lblBookingTotal);
             this.Name = "CardDetails";
             this.Size = new System.Drawing.Size(623, 369);
-            this.Load += new System.EventHandler(this.CardDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
