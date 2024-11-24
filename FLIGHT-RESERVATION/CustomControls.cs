@@ -340,7 +340,7 @@ namespace FLIGHT_RESERVATION
 
             private void RemovePlaceholder()
             {
-                if (isPlaceholderActive && placeholderText != "")
+                if (isPlaceholderActive)
                 {
                     isPlaceholderActive = false;
                     textBox1.Text = "";

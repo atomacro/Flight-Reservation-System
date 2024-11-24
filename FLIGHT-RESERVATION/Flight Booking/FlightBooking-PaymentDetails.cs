@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FLIGHT_RESERVATION.Flight_Booking.FlightBookings__CardDetails_;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         public FlightBooking_PaymentDetails()
         {
             InitializeComponent();
+        }
+
+
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            String firstName = cardDetails1.txtFirstName.Text;
+            Console.WriteLine(firstName);
+
+
         }
     }
 }

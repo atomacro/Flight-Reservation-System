@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardDetails));
-            this.txtFirstName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.lblBookingTotal = new System.Windows.Forms.Label();
             this.lblBillingAddress = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFIrstName = new System.Windows.Forms.Label();
-            this.txtLastName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.txtCardNumber = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.lblCardNumber = new System.Windows.Forms.Label();
             this.roundedTextBox1 = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.lblCCV = new System.Windows.Forms.Label();
@@ -50,38 +47,17 @@
             this.lblCity = new System.Windows.Forms.Label();
             this.lblCountry = new System.Windows.Forms.Label();
             this.lblZipCode = new System.Windows.Forms.Label();
-            this.btnContinue = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtFirstName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.txtLastName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.txtCardNumber = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtFirstName.BorderColor = System.Drawing.Color.Transparent;
-            this.txtFirstName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.txtFirstName.BorderRadius = 10;
-            this.txtFirstName.BorderSize = 1;
-            this.txtFirstName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFirstName.Location = new System.Drawing.Point(25, 143);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFirstName.Multiline = false;
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtFirstName.PasswordChar = false;
-            this.txtFirstName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtFirstName.PlaceholderText = "";
-            this.txtFirstName.Size = new System.Drawing.Size(139, 30);
-            this.txtFirstName.TabIndex = 0;
-            this.txtFirstName.UnderlinedStyle = false;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.roundedTextBox1_TextChanged);
             // 
             // lblBookingTotal
             // 
             this.lblBookingTotal.AutoSize = true;
             this.lblBookingTotal.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingTotal.Location = new System.Drawing.Point(27, 90);
+            this.lblBookingTotal.Location = new System.Drawing.Point(15, 37);
             this.lblBookingTotal.Name = "lblBookingTotal";
             this.lblBookingTotal.Size = new System.Drawing.Size(267, 23);
             this.lblBookingTotal.TabIndex = 1;
@@ -91,7 +67,7 @@
             // 
             this.lblBillingAddress.AutoSize = true;
             this.lblBillingAddress.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillingAddress.Location = new System.Drawing.Point(357, 90);
+            this.lblBillingAddress.Location = new System.Drawing.Point(335, 37);
             this.lblBillingAddress.Name = "lblBillingAddress";
             this.lblBillingAddress.Size = new System.Drawing.Size(127, 23);
             this.lblBillingAddress.TabIndex = 2;
@@ -102,7 +78,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(318, 90);
+            this.pictureBox1.Location = new System.Drawing.Point(309, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 279);
             this.pictureBox1.TabIndex = 3;
@@ -114,32 +90,11 @@
             this.lblFIrstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFIrstName.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFIrstName.ForeColor = System.Drawing.Color.DimGray;
-            this.lblFIrstName.Location = new System.Drawing.Point(27, 123);
+            this.lblFIrstName.Location = new System.Drawing.Point(15, 70);
             this.lblFIrstName.Name = "lblFIrstName";
             this.lblFIrstName.Size = new System.Drawing.Size(79, 19);
             this.lblFIrstName.TabIndex = 5;
             this.lblFIrstName.Text = "First Name";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtLastName.BorderColor = System.Drawing.Color.Transparent;
-            this.txtLastName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.txtLastName.BorderRadius = 10;
-            this.txtLastName.BorderSize = 1;
-            this.txtLastName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLastName.Location = new System.Drawing.Point(172, 143);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLastName.Multiline = false;
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtLastName.PasswordChar = false;
-            this.txtLastName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtLastName.PlaceholderText = "";
-            this.txtLastName.Size = new System.Drawing.Size(139, 30);
-            this.txtLastName.TabIndex = 7;
-            this.txtLastName.UnderlinedStyle = false;
             // 
             // lblLastName
             // 
@@ -147,32 +102,11 @@
             this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastName.ForeColor = System.Drawing.Color.DimGray;
-            this.lblLastName.Location = new System.Drawing.Point(177, 123);
+            this.lblLastName.Location = new System.Drawing.Point(165, 70);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(76, 19);
             this.lblLastName.TabIndex = 8;
             this.lblLastName.Text = "Last Name";
-            // 
-            // txtCardNumber
-            // 
-            this.txtCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCardNumber.BorderColor = System.Drawing.Color.Transparent;
-            this.txtCardNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.txtCardNumber.BorderRadius = 10;
-            this.txtCardNumber.BorderSize = 1;
-            this.txtCardNumber.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtCardNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCardNumber.Location = new System.Drawing.Point(25, 203);
-            this.txtCardNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCardNumber.Multiline = false;
-            this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtCardNumber.PasswordChar = false;
-            this.txtCardNumber.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtCardNumber.PlaceholderText = "";
-            this.txtCardNumber.Size = new System.Drawing.Size(286, 30);
-            this.txtCardNumber.TabIndex = 9;
-            this.txtCardNumber.UnderlinedStyle = false;
             // 
             // lblCardNumber
             // 
@@ -180,7 +114,7 @@
             this.lblCardNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblCardNumber.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCardNumber.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCardNumber.Location = new System.Drawing.Point(27, 180);
+            this.lblCardNumber.Location = new System.Drawing.Point(15, 127);
             this.lblCardNumber.Name = "lblCardNumber";
             this.lblCardNumber.Size = new System.Drawing.Size(93, 19);
             this.lblCardNumber.TabIndex = 10;
@@ -195,7 +129,7 @@
             this.roundedTextBox1.BorderSize = 1;
             this.roundedTextBox1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.roundedTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.roundedTextBox1.Location = new System.Drawing.Point(25, 261);
+            this.roundedTextBox1.Location = new System.Drawing.Point(13, 208);
             this.roundedTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.roundedTextBox1.Multiline = false;
             this.roundedTextBox1.Name = "roundedTextBox1";
@@ -213,7 +147,7 @@
             this.lblCCV.BackColor = System.Drawing.Color.Transparent;
             this.lblCCV.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCCV.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCCV.Location = new System.Drawing.Point(27, 238);
+            this.lblCCV.Location = new System.Drawing.Point(15, 185);
             this.lblCCV.Name = "lblCCV";
             this.lblCCV.Size = new System.Drawing.Size(36, 19);
             this.lblCCV.TabIndex = 12;
@@ -228,7 +162,7 @@
             this.txtExpiryDate.BorderSize = 1;
             this.txtExpiryDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtExpiryDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtExpiryDate.Location = new System.Drawing.Point(25, 326);
+            this.txtExpiryDate.Location = new System.Drawing.Point(13, 273);
             this.txtExpiryDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtExpiryDate.Multiline = false;
             this.txtExpiryDate.Name = "txtExpiryDate";
@@ -246,7 +180,7 @@
             this.lblExpiryDate.BackColor = System.Drawing.Color.Transparent;
             this.lblExpiryDate.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpiryDate.ForeColor = System.Drawing.Color.DimGray;
-            this.lblExpiryDate.Location = new System.Drawing.Point(27, 303);
+            this.lblExpiryDate.Location = new System.Drawing.Point(15, 250);
             this.lblExpiryDate.Name = "lblExpiryDate";
             this.lblExpiryDate.Size = new System.Drawing.Size(83, 19);
             this.lblExpiryDate.TabIndex = 14;
@@ -258,7 +192,7 @@
             this.lblStreetAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblStreetAddress.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStreetAddress.ForeColor = System.Drawing.Color.DimGray;
-            this.lblStreetAddress.Location = new System.Drawing.Point(357, 123);
+            this.lblStreetAddress.Location = new System.Drawing.Point(335, 70);
             this.lblStreetAddress.Name = "lblStreetAddress";
             this.lblStreetAddress.Size = new System.Drawing.Size(104, 19);
             this.lblStreetAddress.TabIndex = 15;
@@ -273,7 +207,7 @@
             this.txtStreetAddress.BorderSize = 1;
             this.txtStreetAddress.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtStreetAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtStreetAddress.Location = new System.Drawing.Point(361, 143);
+            this.txtStreetAddress.Location = new System.Drawing.Point(339, 90);
             this.txtStreetAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtStreetAddress.Multiline = false;
             this.txtStreetAddress.Name = "txtStreetAddress";
@@ -294,7 +228,7 @@
             this.txtCity.BorderSize = 1;
             this.txtCity.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCity.Location = new System.Drawing.Point(361, 203);
+            this.txtCity.Location = new System.Drawing.Point(339, 150);
             this.txtCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCity.Multiline = false;
             this.txtCity.Name = "txtCity";
@@ -315,7 +249,7 @@
             this.roundedTextBox3.BorderSize = 1;
             this.roundedTextBox3.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.roundedTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.roundedTextBox3.Location = new System.Drawing.Point(361, 261);
+            this.roundedTextBox3.Location = new System.Drawing.Point(339, 208);
             this.roundedTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.roundedTextBox3.Multiline = false;
             this.roundedTextBox3.Name = "roundedTextBox3";
@@ -336,7 +270,7 @@
             this.roundedTextBox4.BorderSize = 1;
             this.roundedTextBox4.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.roundedTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.roundedTextBox4.Location = new System.Drawing.Point(361, 326);
+            this.roundedTextBox4.Location = new System.Drawing.Point(339, 273);
             this.roundedTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.roundedTextBox4.Multiline = false;
             this.roundedTextBox4.Name = "roundedTextBox4";
@@ -354,7 +288,7 @@
             this.lblCity.BackColor = System.Drawing.Color.Transparent;
             this.lblCity.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCity.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCity.Location = new System.Drawing.Point(357, 180);
+            this.lblCity.Location = new System.Drawing.Point(335, 127);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(75, 19);
             this.lblCity.TabIndex = 20;
@@ -366,7 +300,7 @@
             this.lblCountry.BackColor = System.Drawing.Color.Transparent;
             this.lblCountry.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCountry.Location = new System.Drawing.Point(357, 238);
+            this.lblCountry.Location = new System.Drawing.Point(335, 185);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(61, 19);
             this.lblCountry.TabIndex = 21;
@@ -378,51 +312,82 @@
             this.lblZipCode.BackColor = System.Drawing.Color.Transparent;
             this.lblZipCode.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblZipCode.ForeColor = System.Drawing.Color.DimGray;
-            this.lblZipCode.Location = new System.Drawing.Point(357, 303);
+            this.lblZipCode.Location = new System.Drawing.Point(335, 250);
             this.lblZipCode.Name = "lblZipCode";
             this.lblZipCode.Size = new System.Drawing.Size(65, 19);
             this.lblZipCode.TabIndex = 22;
             this.lblZipCode.Text = "Zip Code";
             // 
-            // btnContinue
+            // txtFirstName
             // 
-            this.btnContinue.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
-            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(338, 384);
-            this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(146, 49);
-            this.btnContinue.TabIndex = 66;
-            this.btnContinue.Text = "CONTINUE";
-            this.btnContinue.UseVisualStyleBackColor = true;
-            this.btnContinue.Click += new System.EventHandler(this.btnSearchFlight_Click);
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtFirstName.BorderColor = System.Drawing.Color.Transparent;
+            this.txtFirstName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
+            this.txtFirstName.BorderRadius = 10;
+            this.txtFirstName.BorderSize = 2;
+            this.txtFirstName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFirstName.Location = new System.Drawing.Point(13, 90);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFirstName.Multiline = false;
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.txtFirstName.PasswordChar = false;
+            this.txtFirstName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(146)))), ((int)(((byte)(161)))));
+            this.txtFirstName.PlaceholderText = "";
+            this.txtFirstName.Size = new System.Drawing.Size(139, 30);
+            this.txtFirstName.TabIndex = 23;
+            this.txtFirstName.UnderlinedStyle = false;
             // 
-            // button1
+            // txtLastName
             // 
-            this.button1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON2;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.button1.Location = new System.Drawing.Point(172, 384);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 49);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "CONTINUE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtLastName.BorderColor = System.Drawing.Color.Transparent;
+            this.txtLastName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
+            this.txtLastName.BorderRadius = 10;
+            this.txtLastName.BorderSize = 2;
+            this.txtLastName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLastName.Location = new System.Drawing.Point(160, 90);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLastName.Multiline = false;
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.txtLastName.PasswordChar = false;
+            this.txtLastName.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(146)))), ((int)(((byte)(161)))));
+            this.txtLastName.PlaceholderText = "";
+            this.txtLastName.Size = new System.Drawing.Size(139, 30);
+            this.txtLastName.TabIndex = 24;
+            this.txtLastName.UnderlinedStyle = false;
+            // 
+            // txtCardNumber
+            // 
+            this.txtCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCardNumber.BorderColor = System.Drawing.Color.Transparent;
+            this.txtCardNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
+            this.txtCardNumber.BorderRadius = 10;
+            this.txtCardNumber.BorderSize = 2;
+            this.txtCardNumber.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.txtCardNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCardNumber.Location = new System.Drawing.Point(13, 150);
+            this.txtCardNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCardNumber.Multiline = false;
+            this.txtCardNumber.Name = "txtCardNumber";
+            this.txtCardNumber.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.txtCardNumber.PasswordChar = false;
+            this.txtCardNumber.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(146)))), ((int)(((byte)(161)))));
+            this.txtCardNumber.PlaceholderText = "";
+            this.txtCardNumber.Size = new System.Drawing.Size(286, 30);
+            this.txtCardNumber.TabIndex = 25;
+            this.txtCardNumber.UnderlinedStyle = false;
             // 
             // CardDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnContinue);
+            this.Controls.Add(this.txtCardNumber);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblZipCode);
             this.Controls.Add(this.lblCountry);
             this.Controls.Add(this.lblCity);
@@ -436,16 +401,13 @@
             this.Controls.Add(this.lblCCV);
             this.Controls.Add(this.roundedTextBox1);
             this.Controls.Add(this.lblCardNumber);
-            this.Controls.Add(this.txtCardNumber);
             this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblFIrstName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblBillingAddress);
             this.Controls.Add(this.lblBookingTotal);
-            this.Controls.Add(this.txtFirstName);
             this.Name = "CardDetails";
-            this.Size = new System.Drawing.Size(653, 464);
+            this.Size = new System.Drawing.Size(623, 369);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -453,29 +415,26 @@
         }
 
         #endregion
-
-        private CustomControls.RoundedTextBox txtFirstName;
         private System.Windows.Forms.Label lblBookingTotal;
         private System.Windows.Forms.Label lblBillingAddress;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblFIrstName;
-        private CustomControls.RoundedTextBox txtLastName;
         private System.Windows.Forms.Label lblLastName;
-        private CustomControls.RoundedTextBox txtCardNumber;
         private System.Windows.Forms.Label lblCardNumber;
-        private CustomControls.RoundedTextBox roundedTextBox1;
         private System.Windows.Forms.Label lblCCV;
-        private CustomControls.RoundedTextBox txtExpiryDate;
         private System.Windows.Forms.Label lblExpiryDate;
         private System.Windows.Forms.Label lblStreetAddress;
-        private CustomControls.RoundedTextBox txtStreetAddress;
-        private CustomControls.RoundedTextBox txtCity;
-        private CustomControls.RoundedTextBox roundedTextBox3;
-        private CustomControls.RoundedTextBox roundedTextBox4;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.Label lblZipCode;
-        public System.Windows.Forms.Button btnContinue;
-        public System.Windows.Forms.Button button1;
+        public CustomControls.RoundedTextBox roundedTextBox1;
+        public CustomControls.RoundedTextBox txtExpiryDate;
+        public CustomControls.RoundedTextBox txtStreetAddress;
+        public CustomControls.RoundedTextBox txtCity;
+        public CustomControls.RoundedTextBox roundedTextBox3;
+        public CustomControls.RoundedTextBox roundedTextBox4;
+        public CustomControls.RoundedTextBox txtFirstName;
+        public CustomControls.RoundedTextBox txtLastName;
+        public CustomControls.RoundedTextBox txtCardNumber;
     }
 }

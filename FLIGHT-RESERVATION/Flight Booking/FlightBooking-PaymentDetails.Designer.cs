@@ -29,18 +29,28 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cardDetails1 = new FLIGHT_RESERVATION.Flight_Booking.FlightBookings__CardDetails_.CardDetails();
             this.button1 = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
             this.btnChangeType = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeType)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.cardDetails1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 101);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(623, 369);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // cardDetails1
+            // 
+            this.cardDetails1.Location = new System.Drawing.Point(3, 3);
+            this.cardDetails1.Name = "cardDetails1";
+            this.cardDetails1.Size = new System.Drawing.Size(623, 369);
+            this.cardDetails1.TabIndex = 0;
             // 
             // button1
             // 
@@ -75,6 +85,7 @@
             this.btnContinue.TabStop = false;
             this.btnContinue.Text = "CONTINUE";
             this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // btnChangeType
             // 
@@ -98,6 +109,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FlightBooking_PaymentDetails";
             this.Size = new System.Drawing.Size(682, 552);
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeType)).EndInit();
             this.ResumeLayout(false);
 
@@ -109,5 +121,6 @@
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.PictureBox btnChangeType;
+        public FlightBookings__CardDetails_.CardDetails cardDetails1;
     }
 }
