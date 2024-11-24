@@ -155,11 +155,17 @@
     <Compile Include="Flight Booking\FlightBooking-GuestDetails.Designer.cs">
       <DependentUpon>FlightBooking-GuestDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight Booking\FlightBooking-Session.cs" />
-    <Compile Include="Flight Booking\FlightBookings-%28CardDetails%29\CardDetails.cs">
+    <Compile Include="Flight Booking\FlightBooking-PaymentDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Flight Booking\FlightBookings-%28CardDetails%29\CardDetails.Designer.cs">
+    <Compile Include="Flight Booking\FlightBooking-PaymentDetails.Designer.cs">
+      <DependentUpon>FlightBooking-PaymentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBooking-Session.cs" />
+    <Compile Include="Flight Booking\FlightBookings-PaymentDetails\CardDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-PaymentDetails\CardDetails.Designer.cs">
       <DependentUpon>CardDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.cs">
@@ -173,6 +179,12 @@
     </Compile>
     <Compile Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.Designer.cs">
       <DependentUpon>GuestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-PaymentDetails\GCash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-PaymentDetails\GCash.Designer.cs">
+      <DependentUpon>GCash.cs</DependentUpon>
     </Compile>
     <Compile Include="Flight Booking\FlightBookings-Payment\Payment.cs">
       <SubType>UserControl</SubType>
@@ -249,7 +261,10 @@
     <EmbeddedResource Include="Flight Booking\FlightBooking-GuestDetails.resx">
       <DependentUpon>FlightBooking-GuestDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flight Booking\FlightBookings-%28CardDetails%29\CardDetails.resx">
+    <EmbeddedResource Include="Flight Booking\FlightBooking-PaymentDetails.resx">
+      <DependentUpon>FlightBooking-PaymentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBookings-PaymentDetails\CardDetails.resx">
       <DependentUpon>CardDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-AvailableFlights\FlightsAvailable.resx">
@@ -257,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-GuestDetails\GuestDetails.resx">
       <DependentUpon>GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBookings-PaymentDetails\GCash.resx">
+      <DependentUpon>GCash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-Payment\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
