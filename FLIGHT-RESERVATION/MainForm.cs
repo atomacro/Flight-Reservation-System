@@ -235,6 +235,8 @@ namespace FLIGHT_RESERVATION
                 SetHeader("DASHBOARD");
                 ClearControls(pnlMain);
 
+                var dashboard = new dashboard();
+                AddControl(dashboard, pnlMain);
             };
             btnFlightBooking.Click += (sender, EventArgs) =>
             {

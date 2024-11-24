@@ -118,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls.cs" />
+    <Compile Include="Dashboard\dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dashboard\dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBooking-AddOns.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     <Compile Include="ViewBookings\ViewBookings.Designer.cs">
       <DependentUpon>ViewBookings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dashboard\dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-AddOns.resx">
       <DependentUpon>FlightBooking-AddOns.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,5 +385,6 @@
   <ItemGroup>
     <None Include="Public\Assets\line.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
