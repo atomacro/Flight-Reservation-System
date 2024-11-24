@@ -36,7 +36,7 @@
             this.txtFirstName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtLastName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtAge = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
-            this.roundedTextBox1 = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.txtBirthdate = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.SuspendLayout();
             // 
             // lblDetails
@@ -166,26 +166,26 @@
             this.txtAge.UnderlinedStyle = false;
             this.txtAge.TextChanged += new System.EventHandler(this.txtAge_TextChanged);
             // 
-            // roundedTextBox1
+            // txtBirthdate
             // 
-            this.roundedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.roundedTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.roundedTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.roundedTextBox1.BorderRadius = 10;
-            this.roundedTextBox1.BorderSize = 1;
-            this.roundedTextBox1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.roundedTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.roundedTextBox1.Location = new System.Drawing.Point(20, 302);
-            this.roundedTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.roundedTextBox1.Multiline = false;
-            this.roundedTextBox1.Name = "roundedTextBox1";
-            this.roundedTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.roundedTextBox1.PasswordChar = false;
-            this.roundedTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.roundedTextBox1.PlaceholderText = "MMMM DD, YYYY";
-            this.roundedTextBox1.Size = new System.Drawing.Size(268, 34);
-            this.roundedTextBox1.TabIndex = 29;
-            this.roundedTextBox1.UnderlinedStyle = false;
+            this.txtBirthdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtBirthdate.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtBirthdate.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.txtBirthdate.BorderRadius = 10;
+            this.txtBirthdate.BorderSize = 1;
+            this.txtBirthdate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.txtBirthdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBirthdate.Location = new System.Drawing.Point(20, 302);
+            this.txtBirthdate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBirthdate.Multiline = false;
+            this.txtBirthdate.Name = "txtBirthdate";
+            this.txtBirthdate.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBirthdate.PasswordChar = false;
+            this.txtBirthdate.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBirthdate.PlaceholderText = "MMMM DD, YYYY";
+            this.txtBirthdate.Size = new System.Drawing.Size(268, 34);
+            this.txtBirthdate.TabIndex = 29;
+            this.txtBirthdate.UnderlinedStyle = false;
             // 
             // GuestDetails
             // 
@@ -194,7 +194,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.border;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.roundedTextBox1);
+            this.Controls.Add(this.txtBirthdate);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
@@ -223,6 +223,6 @@
         public CustomControls.RoundedTextBox txtFirstName;
         public CustomControls.RoundedTextBox txtLastName;
         public CustomControls.RoundedTextBox txtAge;
-        public CustomControls.RoundedTextBox roundedTextBox1;
+        public CustomControls.RoundedTextBox txtBirthdate;
     }
 }
