@@ -28,10 +28,10 @@ namespace FLIGHT_RESERVATION
         public Round_Trip RoundTrip = new Round_Trip();
         public One_Way OneWay = new One_Way();
 
-        private void FlightBooking_FlightDetails_Load(object sender, EventArgs @event)
+        private async void FlightBooking_FlightDetails_Load(object sender, EventArgs @event)
         {
-            SetComboBoxItems(RoundTrip, "Round Trip");
-            SetComboBoxItems(OneWay, "One Way");
+            await SetComboBoxItems(RoundTrip, "Round Trip");
+            await SetComboBoxItems(OneWay, "One Way");
 
             OneWay.AutoSize = true;
             OneWay.Location = new Point(0, 0);
@@ -87,10 +87,11 @@ namespace FLIGHT_RESERVATION
 
 
         //trips is an Interface class under FlightBooking-FlightDetails
-        private void SetComboBoxItems(Trips trip, String Type)
+        private async Task SetComboBoxItems(Trips trip, String Type)
         {
 
             var db_FlightDetails = new Database_FlightDetails();
+            await db_FlightDetails.selectLocations();
 
             trip.cboArrivalLocationControl.SelectedIndexChanged -= HandleLocationChange;
             trip.cboDepartureLocationControl.SelectedIndexChanged -= HandleLocationChange; //remove existing Event Handlers
@@ -104,11 +105,12 @@ namespace FLIGHT_RESERVATION
                 trip.cboReturnDateControl.SelectedIndexChanged += HandleDateChange;
                 trip.cboDepartureDateControl.SelectedIndexChanged += HandleDateChange;
             }
-            void HandleLocationChange(object sender, EventArgs e)
+            async void HandleLocationChange(object sender, EventArgs e)
             {
                 if (trip.cboDepartureLocationControl.SelectedItem != null && trip.cboArrivalLocationControl.SelectedItem != null)
                 {
-                    db_FlightDetails.selectDates(trip.cboDepartureLocationControl.Text, trip.cboArrivalLocationControl.Text, Type, trip);
+
+                   await db_FlightDetails.selectDates(trip.cboDepartureLocationControl.Text, trip.cboArrivalLocationControl.Text, Type, trip);
                     trip.SetDates(db_FlightDetails.DepartureDates, db_FlightDetails.ReturnDates);
                 }
             }
@@ -146,15 +148,14 @@ namespace FLIGHT_RESERVATION
 
             string connectionString = $"Server=localhost;Database={this.DataBaseName};User ID={this.UserName};Password={this.Password};";
             _connection = new MySqlConnection(connectionString);
-            selectLocations();
         }
 
-        public void selectLocations()
+        public async Task selectLocations()
         {
             try
             {
            
-                _connection.Open();
+                await _connection.OpenAsync();
 
                 String query = "SELECT DISTINCT DepartureLocation.AirportFullName AS DepartureLocation, " +
                 "DepartureLocation.AirportLocation AS DepartureAirportLocation, " +
@@ -169,7 +170,7 @@ namespace FLIGHT_RESERVATION
                 MySqlCommand command = new MySqlCommand(query, _connection);
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    while (reader.Read())
+                    while (await reader.ReadAsync())
                     {
                         
                             string arrivalLocation = reader.GetString("ArrivalLocation");
@@ -196,16 +197,19 @@ namespace FLIGHT_RESERVATION
             finally
             {
 
-                _connection.Close();
+                await _connection.CloseAsync();
             }
 
         }
 
-        public void selectDates(String Departure, String Arrival, String Type, Trips trip)
+        public async Task selectDates(String Departure, String Arrival, String Type, Trips trip)
         {
             try
             {
-                _connection.Open();
+                if(DepartureDates != null) DepartureDates.Clear();
+                if(ReturnDates != null) ReturnDates.Clear();
+
+                await _connection.OpenAsync();
                 String query = "SELECT flights.DepartureDate " +
                     "FROM flights JOIN airport AS Departure ON " +
                     "flights.DepartureAirportID = Departure.AirportID " +
@@ -218,7 +222,7 @@ namespace FLIGHT_RESERVATION
                 commandDeparture.Parameters.AddWithValue("@ArrivalLocation", Arrival);
                 
 
-                using (MySqlDataReader readerDeparture = commandDeparture.ExecuteReader())
+                using (var readerDeparture = await commandDeparture.ExecuteReaderAsync())
                 {
                     if (!readerDeparture.HasRows) {
                         MessageBox.Show("Sorry, No available flights");
@@ -227,9 +231,9 @@ namespace FLIGHT_RESERVATION
                         return; 
                     }
 
-                    while (readerDeparture.Read())
+                    while (await readerDeparture.ReadAsync())
                     {
-                        this.DepartureDates.Add(readerDeparture.GetDateTime("DepartureDate").ToString("MMMM dd, yyyy"));
+                        this.DepartureDates.Add(((DateTime)readerDeparture["DepartureDate"]).ToString("MMMM dd, yyyy"));
                     }
                 }
 
@@ -240,7 +244,7 @@ namespace FLIGHT_RESERVATION
                     commandReturn.Parameters.AddWithValue("@DepartureLocation", Arrival);
                     commandReturn.Parameters.AddWithValue("@ArrivalLocation", Departure);
 
-                    using (MySqlDataReader readerReturn = commandReturn.ExecuteReader())
+                    using (var readerReturn = await commandReturn.ExecuteReaderAsync())
                     {
                         if (!readerReturn.HasRows)
                         {
@@ -250,9 +254,9 @@ namespace FLIGHT_RESERVATION
                             return;
                         }
 
-                        while (readerReturn.Read())
+                        while (await readerReturn.ReadAsync())
                         {
-                            this.ReturnDates.Add(readerReturn.GetDateTime("DepartureDate").ToString("MMMM dd, yyyy"));
+                            this.DepartureDates.Add(((DateTime)readerReturn["DepartureDate"]).ToString("MMMM dd, yyyy"));
                         }
                     }
                 }
@@ -264,7 +268,7 @@ namespace FLIGHT_RESERVATION
             }
             finally
             {
-                _connection.Close();
+               await _connection.CloseAsync();
             }
         }
     }
