@@ -44,17 +44,15 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.flightBooking_PaymentDetails1 = new FLIGHT_RESERVATION.Flight_Booking.FlightBooking_PaymentDetails();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlIndicator1
             // 
             this.pnlIndicator1.BackColor = System.Drawing.Color.Transparent;
             this.pnlIndicator1.Location = new System.Drawing.Point(228, 114);
-            this.pnlIndicator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlIndicator1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlIndicator1.Name = "pnlIndicator1";
             this.pnlIndicator1.Size = new System.Drawing.Size(8, 152);
             this.pnlIndicator1.TabIndex = 41;
@@ -63,7 +61,7 @@
             // 
             this.pnlIndicator4.BackColor = System.Drawing.Color.Transparent;
             this.pnlIndicator4.Location = new System.Drawing.Point(228, 565);
-            this.pnlIndicator4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlIndicator4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlIndicator4.Name = "pnlIndicator4";
             this.pnlIndicator4.Size = new System.Drawing.Size(8, 151);
             this.pnlIndicator4.TabIndex = 39;
@@ -72,7 +70,7 @@
             // 
             this.pnlIndicator3.BackColor = System.Drawing.Color.Transparent;
             this.pnlIndicator3.Location = new System.Drawing.Point(228, 416);
-            this.pnlIndicator3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlIndicator3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlIndicator3.Name = "pnlIndicator3";
             this.pnlIndicator3.Size = new System.Drawing.Size(8, 152);
             this.pnlIndicator3.TabIndex = 38;
@@ -81,7 +79,7 @@
             // 
             this.pnlIndicator2.BackColor = System.Drawing.Color.Transparent;
             this.pnlIndicator2.Location = new System.Drawing.Point(228, 266);
-            this.pnlIndicator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlIndicator2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlIndicator2.Name = "pnlIndicator2";
             this.pnlIndicator2.Size = new System.Drawing.Size(8, 152);
             this.pnlIndicator2.TabIndex = 34;
@@ -95,7 +93,7 @@
             this.Header.Controls.Add(this.btnLogout);
             this.Header.Controls.Add(this.picLogo);
             this.Header.Location = new System.Drawing.Point(-7, -6);
-            this.Header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Header.Margin = new System.Windows.Forms.Padding(2);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(989, 122);
             this.Header.TabIndex = 33;
@@ -123,7 +121,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
             this.btnLogin.Location = new System.Drawing.Point(791, 36);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(155, 44);
             this.btnLogin.TabIndex = 10;
@@ -149,7 +147,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.Location = new System.Drawing.Point(791, 36);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(155, 44);
             this.btnLogout.TabIndex = 8;
@@ -161,7 +159,7 @@
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
             this.picLogo.Location = new System.Drawing.Point(18, 3);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(256, 109);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,7 +171,7 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.Location = new System.Drawing.Point(-1, 114);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(236, 152);
             this.btnDashboard.TabIndex = 40;
@@ -186,7 +184,7 @@
             this.btnFlightBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFlightBooking.Image = ((System.Drawing.Image)(resources.GetObject("btnFlightBooking.Image")));
             this.btnFlightBooking.Location = new System.Drawing.Point(-1, 265);
-            this.btnFlightBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFlightBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnFlightBooking.Name = "btnFlightBooking";
             this.btnFlightBooking.Size = new System.Drawing.Size(236, 152);
             this.btnFlightBooking.TabIndex = 36;
@@ -200,7 +198,7 @@
             this.btnViewBookings.ForeColor = System.Drawing.Color.Black;
             this.btnViewBookings.Image = ((System.Drawing.Image)(resources.GetObject("btnViewBookings.Image")));
             this.btnViewBookings.Location = new System.Drawing.Point(-1, 414);
-            this.btnViewBookings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewBookings.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewBookings.Name = "btnViewBookings";
             this.btnViewBookings.Size = new System.Drawing.Size(236, 152);
             this.btnViewBookings.TabIndex = 35;
@@ -214,7 +212,7 @@
             this.btnAccount.ForeColor = System.Drawing.Color.Black;
             this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
             this.btnAccount.Location = new System.Drawing.Point(-1, 563);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(236, 152);
             this.btnAccount.TabIndex = 37;
@@ -227,18 +225,10 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Controls.Add(this.flightBooking_PaymentDetails1);
             this.pnlMain.Location = new System.Drawing.Point(261, 136);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(682, 552);
             this.pnlMain.TabIndex = 10;
-            // 
-            // flightBooking_PaymentDetails1
-            // 
-            this.flightBooking_PaymentDetails1.Location = new System.Drawing.Point(2, 3);
-            this.flightBooking_PaymentDetails1.Name = "flightBooking_PaymentDetails1";
-            this.flightBooking_PaymentDetails1.Size = new System.Drawing.Size(682, 552);
-            this.flightBooking_PaymentDetails1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -257,14 +247,13 @@
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -285,7 +274,6 @@
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
-        private Flight_Booking.FlightBooking_PaymentDetails flightBooking_PaymentDetails1;
     }
 }
 
