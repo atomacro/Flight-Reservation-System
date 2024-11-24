@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDetails = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
@@ -37,18 +36,9 @@
             this.txtLastName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtAge = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtBirthdate = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
+            this.btnFocus = new System.Windows.Forms.Button();
+            this.lblDetails = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblDetails
-            // 
-            this.lblDetails.BackColor = System.Drawing.Color.Transparent;
-            this.lblDetails.Font = new System.Drawing.Font("Kantumruy Pro", 16F, System.Drawing.FontStyle.Bold);
-            this.lblDetails.Location = new System.Drawing.Point(3, 9);
-            this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(302, 32);
-            this.lblDetails.TabIndex = 7;
-            this.lblDetails.Text = "Guest 2 Details";
-            this.lblDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFirstName
             // 
@@ -187,6 +177,27 @@
             this.txtBirthdate.TabIndex = 29;
             this.txtBirthdate.UnderlinedStyle = false;
             // 
+            // btnFocus
+            // 
+            this.btnFocus.Location = new System.Drawing.Point(-10, -10);
+            this.btnFocus.Name = "btnFocus";
+            this.btnFocus.Size = new System.Drawing.Size(0, 0);
+            this.btnFocus.TabIndex = 30;
+            this.btnFocus.TabStop = false;
+            this.btnFocus.UseVisualStyleBackColor = true;
+            // 
+            // lblDetails
+            // 
+            this.lblDetails.AutoEllipsis = true;
+            this.lblDetails.BackColor = System.Drawing.Color.Transparent;
+            this.lblDetails.Font = new System.Drawing.Font("Kantumruy Pro", 16F, System.Drawing.FontStyle.Bold);
+            this.lblDetails.Location = new System.Drawing.Point(20, 15);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(268, 37);
+            this.lblDetails.TabIndex = 7;
+            this.lblDetails.Text = "Guest 2 Details";
+            this.lblDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // GuestDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -194,6 +205,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.border;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnFocus);
             this.Controls.Add(this.txtBirthdate);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.txtLastName);
@@ -219,10 +231,11 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblBirthdate;
-        public System.Windows.Forms.Label lblDetails;
         public CustomControls.RoundedTextBox txtFirstName;
         public CustomControls.RoundedTextBox txtLastName;
         public CustomControls.RoundedTextBox txtAge;
         public CustomControls.RoundedTextBox txtBirthdate;
+        private System.Windows.Forms.Button btnFocus;
+        public System.Windows.Forms.Label lblDetails;
     }
 }

@@ -148,7 +148,7 @@ namespace FLIGHT_RESERVATION
                     if (!AvailableFlightsDeparture.SubmitSelectedAirplane()) return;
                     AvailableFlightsDeparture.Hide();
                     if (tripType == "Round Trip") AvailableFlightsReturn.Show();
-                    SetupGuestDetails(AvailableFlightsDeparture);
+                    else SetupGuestDetails(AvailableFlightsDeparture);
                 };
 
                 AddControl(AvailableFlightsDeparture, pnlMain);

@@ -30,6 +30,6 @@ namespace FLIGHT_RESERVATION
         //methods under this interface
         void SetArrivalLocation(Dictionary<string, string> locations);
         void SetDepartureLocation(Dictionary<string, string> locations);
-        void SetDates(List<string> departureDates, List<string> returnDates = null);
+        void SetDates(HashSet<string> departureDates, HashSet<string> returnDates = null);
     }
 }

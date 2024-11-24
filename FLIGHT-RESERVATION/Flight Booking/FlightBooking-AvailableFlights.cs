@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,23 +38,34 @@ namespace FLIGHT_RESERVATION
 
             String DepartureLocation = "";
             String ArrivalLocation = "";
+            String DepartureDate = "";
+            String ArrivalDate = "";
 
             if (this.TripType == "Departure")
             {
 
                 DepartureLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Departure Location") ? FlightBooking_Session.Instance.FlightDetails["Departure Location"] : null;
                 ArrivalLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Arrival Location") ? FlightBooking_Session.Instance.FlightDetails["Arrival Location"] : null;
+                String Departure = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Departure Date") ? FlightBooking_Session.Instance.FlightDetails["Departure Date"] : null;
+                DateTime parsedDate = DateTime.ParseExact(Departure, "MMMM dd, yyyy", CultureInfo.InvariantCulture);
+                DepartureDate = parsedDate.ToString("yyyy-MM-dd");
             }
             else
             {
                 DepartureLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Arrival Location") ? FlightBooking_Session.Instance.FlightDetails["Arrival Location"] : null;
                 ArrivalLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Departure Location") ? FlightBooking_Session.Instance.FlightDetails["Departure Location"] : null;
+                String Departure = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Return Date") ? FlightBooking_Session.Instance.FlightDetails["Return Date"] : null;
+
+
+                DateTime parsedDate = DateTime.ParseExact(Departure, "MMMM dd, yyyy", CultureInfo.InvariantCulture);
+                DepartureDate = parsedDate.ToString("yyyy-MM-dd");
+
             }
 
 
             //set Arrival Location and Departure Location, panel and button if no flights are seen
             Database_Available_Flights AvailableFlightsData = new Database_Available_Flights();
-            await AvailableFlightsData.SelectAvailableFlights(DepartureLocation, ArrivalLocation, pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
+            await AvailableFlightsData.SelectAvailableFlights(DepartureLocation, ArrivalLocation, DepartureDate,pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
 
 
             int selectedIndex = 0;
@@ -79,7 +91,7 @@ namespace FLIGHT_RESERVATION
             }
         }
 
-        public String SelectedAirplane = "";
+        public FlightsAvailable SelectedAirplane;
         public void setSelected(List<FlightsAvailable> availableFlights, int index)
         {
 
@@ -88,33 +100,34 @@ namespace FLIGHT_RESERVATION
             {
                 if (i != index || availableFlights[i].btnBook.Text == "Unselect")
                 {
-                    SelectedAirplane = "";
                     availableFlights[i].btnBook.Text = "Select";
                     availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border); //reset the borders of unselected
                     continue;
                 }
                 availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border); //set border to selected
                 availableFlights[i].btnBook.Text = "Unselect";
-                SelectedAirplane = availableFlights[i].lblAirplaneNumber.Text;
+                SelectedAirplane = availableFlights[i];
             }
         }
 
         public bool SubmitSelectedAirplane()
         {
-            if (string.IsNullOrWhiteSpace(this.SelectedAirplane))
+            String Airplane = SelectedAirplane.lblAirplaneNumber.Text;
+
+            if (string.IsNullOrWhiteSpace(Airplane))
             {
                 MessageBox.Show("Please Select a Flight", "Select a Flight", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (this.TripType == "Departure")
             {
-                FlightBooking_Session.Instance.DepartureAirplaneNumber = this.SelectedAirplane;
+                FlightBooking_Session.Instance.DepartureAirplaneNumber = Airplane;
                 Console.WriteLine(FlightBooking_Session.Instance.DepartureAirplaneNumber);
                 return true;
             }
             if (this.TripType == "Return")
             {
-                FlightBooking_Session.Instance.ReturnAirplaneNumber = this.SelectedAirplane;
+                FlightBooking_Session.Instance.ReturnAirplaneNumber = Airplane;
                 Console.WriteLine(FlightBooking_Session.Instance.ReturnAirplaneNumber);
                 return true;
             }
@@ -150,7 +163,7 @@ namespace FLIGHT_RESERVATION
 
         }
 
-        public async Task SelectAvailableFlights(String FromLocation, String ToLocation, Panel pnlAvailableFlights, Button btnContinue, Label lblAvailableFlights) //add Panel and Button for message if there are no flights available
+        public async Task SelectAvailableFlights(String FromLocation, String ToLocation, String DepartureDate, Panel pnlAvailableFlights, Button btnContinue, Label lblAvailableFlights) //add Panel and Button for message if there are no flights available
         {
             try
             {
@@ -164,12 +177,16 @@ namespace FLIGHT_RESERVATION
                "JOIN airport AS DepartureLocation ON flights.DepartureAirportID = DepartureLocation.AirportID " +
                "JOIN airport AS ArrivalLocation ON ArrivalLocation.AirportID = flights.ArrivalAirportID " +
                "WHERE DepartureLocation.AirportLocation = @DepartureLocation " +
-               "AND ArrivalLocation.AirportLocation = @ArrivalLocation";
+               "AND ArrivalLocation.AirportLocation = @ArrivalLocation " +
+               "AND Date(flights.DepartureDate) = @DepartureDate; ";
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
 
-                command.Parameters.AddWithValue("@DepartureLocation", FromLocation);
-                command.Parameters.AddWithValue("@ArrivalLocation", ToLocation);    
+
+            command.Parameters.AddWithValue("@DepartureLocation", FromLocation);
+                command.Parameters.AddWithValue("@ArrivalLocation", ToLocation);
+                command.Parameters.AddWithValue("@DepartureDate", DepartureDate);
+                
 
 
                 using (var reader = await command.ExecuteReaderAsync())
@@ -219,7 +236,7 @@ namespace FLIGHT_RESERVATION
             }
             finally
             {
-               await _connection.CloseAsync();
+                await _connection.CloseAsync();
             }
         }
 

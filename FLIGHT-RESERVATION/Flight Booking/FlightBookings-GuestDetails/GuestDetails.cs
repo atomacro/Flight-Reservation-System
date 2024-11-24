@@ -44,6 +44,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
                 {
                     MessageBox.Show("Age must be from range 0 - 110 only");
                     txtAge.Text = "";
+                    btnFocus.Focus();
                 }
             };
         }

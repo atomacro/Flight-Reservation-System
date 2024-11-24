@@ -70,7 +70,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             };
         }
 
-        public void SetDates(List<string> departureDates, List<string> returnDates = null)
+        public void SetDates(HashSet<string> departureDates, HashSet<string> returnDates = null)
         {
             cboDepartureDate.Items.Clear();
             cboDepartureDate.Items.AddRange(departureDates.ToArray());

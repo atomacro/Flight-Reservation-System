@@ -43,10 +43,10 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Kantumruy Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(88, 29);
+            this.lblName.Font = new System.Drawing.Font("Kantumruy Pro", 16F, System.Drawing.FontStyle.Bold);
+            this.lblName.Location = new System.Drawing.Point(99, 28);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(259, 28);
+            this.lblName.Size = new System.Drawing.Size(298, 32);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Airplane Ticketing System";
             // 
@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 57);
+            this.label1.Location = new System.Drawing.Point(102, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 18);
             this.label1.TabIndex = 1;
@@ -63,7 +63,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FLIGHT_RESERVATION.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(79, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +81,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(542, 504);
+            this.btnContinue.Location = new System.Drawing.Point(561, 558);
             this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(135, 42);
@@ -101,7 +101,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnCancel.Location = new System.Drawing.Point(403, 504);
+            this.btnCancel.Location = new System.Drawing.Point(422, 558);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 42);
@@ -114,10 +114,10 @@
             // 
             this.lblTerms.AutoSize = true;
             this.lblTerms.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTerms.Font = new System.Drawing.Font("Kantumruy Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTerms.Font = new System.Drawing.Font("Kantumruy Pro", 9F);
             this.lblTerms.Location = new System.Drawing.Point(3, 0);
             this.lblTerms.Name = "lblTerms";
-            this.lblTerms.Size = new System.Drawing.Size(123, 16);
+            this.lblTerms.Size = new System.Drawing.Size(133, 18);
             this.lblTerms.TabIndex = 0;
             this.lblTerms.Text = "Terms And Conditions";
             this.lblTerms.Click += new System.EventHandler(this.lblTerms_Click);
@@ -125,10 +125,11 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.lblTerms);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 112);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 110);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(647, 377);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(679, 428);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // TermsAndConditions
@@ -136,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(706, 573);
+            this.ClientSize = new System.Drawing.Size(718, 621);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnContinue);

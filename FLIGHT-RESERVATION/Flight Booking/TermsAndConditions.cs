@@ -66,10 +66,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             termsAndConditions.AppendLine("   - The airline's liability for loss, injury, or damage is limited by applicable laws and international conventions.");
             termsAndConditions.AppendLine();
             termsAndConditions.AppendLine("10. Acceptance of Terms:");
-            termsAndConditions.AppendLine("    - By booking a ticket, passengers agree to abide by these Terms and Conditions and any additional policies set forth by the airline.");
+            termsAndConditions.AppendLine("    - By booking a ticket, passengers agree to abide by these Terms and Conditions and any additional policies");
+            termsAndConditions.AppendLine("    set forth by the airline.");
+            termsAndConditions.AppendLine();
 
 
-            String terms = termsAndConditions.ToString();
+             String terms = termsAndConditions.ToString();
             lblTerms.Text = terms;
         
         

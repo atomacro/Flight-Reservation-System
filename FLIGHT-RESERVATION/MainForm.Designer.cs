@@ -107,7 +107,7 @@
             this.btnExit.Image = global::FLIGHT_RESERVATION.Properties.Resources.Exit;
             this.btnExit.Location = new System.Drawing.Point(930, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(52, 37);
+            this.btnExit.Size = new System.Drawing.Size(52, 40);
             this.btnExit.TabIndex = 11;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -120,7 +120,7 @@
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(791, 36);
+            this.btnLogin.Location = new System.Drawing.Point(770, 35);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(155, 44);
@@ -146,7 +146,7 @@
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(791, 36);
+            this.btnLogout.Location = new System.Drawing.Point(770, 35);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(155, 44);
@@ -225,7 +225,7 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Location = new System.Drawing.Point(261, 136);
+            this.pnlMain.Location = new System.Drawing.Point(266, 136);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(682, 552);
             this.pnlMain.TabIndex = 10;

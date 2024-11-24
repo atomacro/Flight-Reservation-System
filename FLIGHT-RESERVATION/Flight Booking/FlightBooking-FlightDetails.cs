@@ -111,7 +111,10 @@ namespace FLIGHT_RESERVATION
                 {
 
                    await db_FlightDetails.selectDates(trip.cboDepartureLocationControl.Text, trip.cboArrivalLocationControl.Text, Type, trip);
-                    trip.SetDates(db_FlightDetails.DepartureDates, db_FlightDetails.ReturnDates);
+                   trip.SetDates(db_FlightDetails.DepartureDates, db_FlightDetails.ReturnDates);
+
+                    Console.WriteLine(trip.cboArrivalLocationControl.Text);
+                    Console.WriteLine(trip.cboDepartureLocationControl.Text);
                 }
             }
 
@@ -137,14 +140,14 @@ namespace FLIGHT_RESERVATION
         private String Password = "";
         public Dictionary<String, String> ArrivalLocations;
         public Dictionary<String, String> DepartureLocations;
-        public List<String> ReturnDates;
-        public List<String> DepartureDates;
+        public HashSet<String> ReturnDates;
+        public HashSet<String> DepartureDates;
         public Database_FlightDetails()
         {
             this.ArrivalLocations = new Dictionary<String, String>();
             this.DepartureLocations = new Dictionary<String, String>();
-            this.ReturnDates = new List<String>();
-            this.DepartureDates = new List<String>();
+            this.ReturnDates = new HashSet<String>();
+            this.DepartureDates = new HashSet<String>();
 
             string connectionString = $"Server=localhost;Database={this.DataBaseName};User ID={this.UserName};Password={this.Password};";
             _connection = new MySqlConnection(connectionString);
@@ -206,11 +209,10 @@ namespace FLIGHT_RESERVATION
         {
             try
             {
-                if(DepartureDates != null) DepartureDates.Clear();
-                if(ReturnDates != null) ReturnDates.Clear();
+
 
                 await _connection.OpenAsync();
-                String query = "SELECT flights.DepartureDate " +
+                String query = "SELECT DISTINCT flights.DepartureDate " +
                     "FROM flights JOIN airport AS Departure ON " +
                     "flights.DepartureAirportID = Departure.AirportID " +
                     "JOIN airport AS Arrival ON flights.ArrivalAirportID = Arrival.AirportID " +
@@ -224,6 +226,9 @@ namespace FLIGHT_RESERVATION
 
                 using (var readerDeparture = await commandDeparture.ExecuteReaderAsync())
                 {
+
+                    if (DepartureDates != null) DepartureDates.Clear();
+
                     if (!readerDeparture.HasRows) {
                         MessageBox.Show("Sorry, No available flights");
                         this.ReturnDates.Clear();
@@ -239,6 +244,7 @@ namespace FLIGHT_RESERVATION
 
                 if (Type == "Round Trip")
                 {
+                    if (ReturnDates != null) ReturnDates.Clear();
 
                     MySqlCommand commandReturn = new MySqlCommand(query, _connection);
                     commandReturn.Parameters.AddWithValue("@DepartureLocation", Arrival);
@@ -256,7 +262,7 @@ namespace FLIGHT_RESERVATION
 
                         while (await readerReturn.ReadAsync())
                         {
-                            this.DepartureDates.Add(((DateTime)readerReturn["DepartureDate"]).ToString("MMMM dd, yyyy"));
+                            this.ReturnDates.Add(((DateTime)readerReturn["DepartureDate"]).ToString("MMMM dd, yyyy"));
                         }
                     }
                 }
