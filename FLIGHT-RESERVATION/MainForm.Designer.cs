@@ -44,8 +44,10 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.flightBooking_PaymentDetails1 = new FLIGHT_RESERVATION.Flight_Booking.FlightBooking_PaymentDetails();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlIndicator1
@@ -225,10 +227,19 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlMain.Controls.Add(this.flightBooking_PaymentDetails1);
             this.pnlMain.Location = new System.Drawing.Point(261, 136);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(682, 552);
             this.pnlMain.TabIndex = 10;
+            // 
+            // flightBooking_PaymentDetails1
+            // 
+            this.flightBooking_PaymentDetails1.AutoSize = true;
+            this.flightBooking_PaymentDetails1.Location = new System.Drawing.Point(13, 9);
+            this.flightBooking_PaymentDetails1.Name = "flightBooking_PaymentDetails1";
+            this.flightBooking_PaymentDetails1.Size = new System.Drawing.Size(656, 534);
+            this.flightBooking_PaymentDetails1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -254,6 +265,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -274,6 +287,7 @@
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
+        private Flight_Booking.FlightBooking_PaymentDetails flightBooking_PaymentDetails1;
     }
 }
 

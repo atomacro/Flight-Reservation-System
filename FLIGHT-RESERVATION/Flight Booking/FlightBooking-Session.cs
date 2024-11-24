@@ -35,6 +35,7 @@ namespace FLIGHT_RESERVATION
         public string GcashReferenceNumber { get; set; }
         public string DepartureAirplaneNumber { get; set; }
         public string ReturnAirplaneNumber { get; set; }
+        public float BookingSubTotal { get; set; }
         public Dictionary<string, string> FlightDetails { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, Dictionary<String, String>> PassengerDetails { get; set; } = new Dictionary<string, Dictionary<String, String>>();
 

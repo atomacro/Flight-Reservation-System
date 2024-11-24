@@ -122,8 +122,8 @@
             // 
             // txtCVV
             // 
-            this.txtCVV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCVV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCVV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCVV.BorderColor = System.Drawing.Color.Transparent;
             this.txtCVV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCVV.BorderRadius = 10;
             this.txtCVV.BorderSize = 1;
@@ -140,7 +140,6 @@
             this.txtCVV.Size = new System.Drawing.Size(286, 35);
             this.txtCVV.TabIndex = 11;
             this.txtCVV.UnderlinedStyle = false;
-            this.txtCVV.TextChanged += new System.EventHandler(this.txtCVV_TextChanged);
             // 
             // lblCCV
             // 
@@ -156,8 +155,8 @@
             // 
             // txtExpiryDate
             // 
-            this.txtExpiryDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtExpiryDate.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtExpiryDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtExpiryDate.BorderColor = System.Drawing.Color.Transparent;
             this.txtExpiryDate.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtExpiryDate.BorderRadius = 10;
             this.txtExpiryDate.BorderSize = 1;
@@ -174,7 +173,6 @@
             this.txtExpiryDate.Size = new System.Drawing.Size(286, 35);
             this.txtExpiryDate.TabIndex = 13;
             this.txtExpiryDate.UnderlinedStyle = false;
-            this.txtExpiryDate.TextChanged += new System.EventHandler(this.txtExpiryDate_TextChanged);
             // 
             // lblExpiryDate
             // 
@@ -202,8 +200,8 @@
             // 
             // txtStreetAddress
             // 
-            this.txtStreetAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtStreetAddress.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtStreetAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtStreetAddress.BorderColor = System.Drawing.Color.Transparent;
             this.txtStreetAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtStreetAddress.BorderRadius = 10;
             this.txtStreetAddress.BorderSize = 1;
@@ -220,12 +218,11 @@
             this.txtStreetAddress.Size = new System.Drawing.Size(269, 35);
             this.txtStreetAddress.TabIndex = 16;
             this.txtStreetAddress.UnderlinedStyle = false;
-            this.txtStreetAddress.TextChanged += new System.EventHandler(this.txtStreetAddress_TextChanged);
             // 
             // txtCity
             // 
-            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCity.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCity.BorderColor = System.Drawing.Color.Transparent;
             this.txtCity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCity.BorderRadius = 10;
             this.txtCity.BorderSize = 1;
@@ -242,12 +239,11 @@
             this.txtCity.Size = new System.Drawing.Size(269, 35);
             this.txtCity.TabIndex = 17;
             this.txtCity.UnderlinedStyle = false;
-            this.txtCity.TextChanged += new System.EventHandler(this.txtCity_TextChanged);
             // 
             // txtCountry
             // 
-            this.txtCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCountry.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCountry.BorderColor = System.Drawing.Color.Transparent;
             this.txtCountry.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCountry.BorderRadius = 10;
             this.txtCountry.BorderSize = 1;
@@ -264,12 +260,11 @@
             this.txtCountry.Size = new System.Drawing.Size(269, 35);
             this.txtCountry.TabIndex = 18;
             this.txtCountry.UnderlinedStyle = false;
-            this.txtCountry.TextChanged += new System.EventHandler(this.txtCountry_TextChanged);
             // 
             // txtZipCode
             // 
-            this.txtZipCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtZipCode.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtZipCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtZipCode.BorderColor = System.Drawing.Color.Transparent;
             this.txtZipCode.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtZipCode.BorderRadius = 10;
             this.txtZipCode.BorderSize = 1;
@@ -286,7 +281,6 @@
             this.txtZipCode.Size = new System.Drawing.Size(269, 35);
             this.txtZipCode.TabIndex = 19;
             this.txtZipCode.UnderlinedStyle = false;
-            this.txtZipCode.TextChanged += new System.EventHandler(this.txtZipCode_TextChanged);
             // 
             // lblCity
             // 
@@ -326,8 +320,8 @@
             // 
             // txtCardNumber
             // 
-            this.txtCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCardNumber.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCardNumber.BorderColor = System.Drawing.Color.Transparent;
             this.txtCardNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCardNumber.BorderRadius = 10;
             this.txtCardNumber.BorderSize = 1;
@@ -344,12 +338,11 @@
             this.txtCardNumber.Size = new System.Drawing.Size(286, 35);
             this.txtCardNumber.TabIndex = 25;
             this.txtCardNumber.UnderlinedStyle = false;
-            this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtFirstName.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtFirstName.BorderColor = System.Drawing.Color.Transparent;
             this.txtFirstName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtFirstName.BorderRadius = 10;
             this.txtFirstName.BorderSize = 1;
@@ -366,12 +359,11 @@
             this.txtFirstName.Size = new System.Drawing.Size(139, 35);
             this.txtFirstName.TabIndex = 26;
             this.txtFirstName.UnderlinedStyle = false;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtLastName
             // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtLastName.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtLastName.BorderColor = System.Drawing.Color.Transparent;
             this.txtLastName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtLastName.BorderRadius = 10;
             this.txtLastName.BorderSize = 1;
@@ -388,12 +380,12 @@
             this.txtLastName.Size = new System.Drawing.Size(139, 35);
             this.txtLastName.TabIndex = 27;
             this.txtLastName.UnderlinedStyle = false;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // CardDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtCardNumber);
@@ -417,7 +409,6 @@
             this.Controls.Add(this.lblBookingTotal);
             this.Name = "CardDetails";
             this.Size = new System.Drawing.Size(623, 369);
-            this.Load += new System.EventHandler(this.CardDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

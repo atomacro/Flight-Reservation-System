@@ -104,8 +104,8 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtFirstName.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtFirstName.BorderColor = System.Drawing.Color.Transparent;
             this.txtFirstName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtFirstName.BorderRadius = 10;
             this.txtFirstName.BorderSize = 1;
@@ -125,8 +125,8 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtLastName.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtLastName.BorderColor = System.Drawing.Color.Transparent;
             this.txtLastName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtLastName.BorderRadius = 10;
             this.txtLastName.BorderSize = 1;
@@ -146,8 +146,8 @@
             // 
             // txtAge
             // 
-            this.txtAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtAge.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtAge.BorderColor = System.Drawing.Color.Transparent;
             this.txtAge.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtAge.BorderRadius = 10;
             this.txtAge.BorderSize = 1;
@@ -168,8 +168,8 @@
             // 
             // txtBirthdate
             // 
-            this.txtBirthdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtBirthdate.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtBirthdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtBirthdate.BorderColor = System.Drawing.Color.Transparent;
             this.txtBirthdate.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtBirthdate.BorderRadius = 10;
             this.txtBirthdate.BorderSize = 1;

@@ -143,6 +143,16 @@ namespace FLIGHT_RESERVATION.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Card_button {
+            get {
+                object obj = ResourceManager.GetObject("Card button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
@@ -156,6 +166,16 @@ namespace FLIGHT_RESERVATION.Properties {
         internal static System.Drawing.Bitmap FOOD {
             get {
                 object obj = ResourceManager.GetObject("FOOD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GCash_button {
+            get {
+                object obj = ResourceManager.GetObject("GCash button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
