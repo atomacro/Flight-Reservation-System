@@ -23,14 +23,14 @@ namespace FLIGHT_RESERVATION
             TripType = tripType;
         }
 
-        private void FlightBooking_AvailableFlights_Load(object sender, EventArgs e)
+        private async void FlightBooking_AvailableFlights_Load(object sender, EventArgs e)
         {
-            PopulateAvailableBookings();
+            await PopulateAvailableBookings();
             btnBack.FlatAppearance.BorderSize = 0;
             lblFlightType.Text = $"Select {TripType} Flight";
         }
         List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
-        public void PopulateAvailableBookings()
+        public async Task PopulateAvailableBookings()
         {
 
 
@@ -40,18 +40,20 @@ namespace FLIGHT_RESERVATION
 
             if (this.TripType == "Departure")
             {
-                DepartureLocation = FlightBooking_Session.Instance.FlightDetails["Departure Location"];
-                ArrivalLocation = FlightBooking_Session.Instance.FlightDetails["Arrival Location"];
+
+                DepartureLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Departure Location") ? FlightBooking_Session.Instance.FlightDetails["Departure Location"] : null;
+                ArrivalLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Arrival Location") ? FlightBooking_Session.Instance.FlightDetails["Arrival Location"] : null;
             }
             else
             {
-                DepartureLocation = FlightBooking_Session.Instance.FlightDetails["Arrival Location"];
-                ArrivalLocation = FlightBooking_Session.Instance.FlightDetails["Departure Location"];
+                DepartureLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Arrival Location") ? FlightBooking_Session.Instance.FlightDetails["Arrival Location"] : null;
+                ArrivalLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Departure Location") ? FlightBooking_Session.Instance.FlightDetails["Departure Location"] : null;
             }
 
 
             //set Arrival Location and Departure Location, panel and button if no flights are seen
-            Database_Available_Flights AvailableFlightsData = new Database_Available_Flights(DepartureLocation, ArrivalLocation, pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
+            Database_Available_Flights AvailableFlightsData = new Database_Available_Flights();
+            await AvailableFlightsData.SelectAvailableFlights(DepartureLocation, ArrivalLocation, pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
 
 
             int selectedIndex = 0;
@@ -135,7 +137,7 @@ namespace FLIGHT_RESERVATION
         public List<String> AirplaneNumber = new List<string>();
         public List<String> AvailableSeats = new List<string>();
 
-        public Database_Available_Flights(string From, string To, Panel pnlAvailableFlights, Button btnContinue, Label lblAvailableFlights)
+        public Database_Available_Flights()
         {
 
             string connectionString = $"Server=localhost;Database={this.DataBaseName};User ID={this.UserName};Password={this.Password};";
@@ -145,17 +147,15 @@ namespace FLIGHT_RESERVATION
             this.DepartureTime.Clear();
             this.ArrivalTime.Clear();
             this.AirplaneNumber.Clear();
-            SelectAvailableFlights(From, To, pnlAvailableFlights, btnContinue, lblAvailableFlights);
 
         }
 
-        public void SelectAvailableFlights(String FromLocation, String ToLocation, Panel pnlAvailableFlights, Button btnContinue, Label lblAvailableFlights) //add Panel and Button for message if there are no flights available
+        public async Task SelectAvailableFlights(String FromLocation, String ToLocation, Panel pnlAvailableFlights, Button btnContinue, Label lblAvailableFlights) //add Panel and Button for message if there are no flights available
         {
-
-            _connection.Open();
-
             try
             {
+                await _connection.OpenAsync();
+
                 string query = "SELECT DepartureLocation.AirportCode AS DepartureAirportCode, " +
                "ArrivalLocation.AirportCode AS ArrivalAirportCode, " +
                "flights.ArrivalDate, flights.DepartureDate, flights.AirplaneNumber, " +
@@ -172,7 +172,7 @@ namespace FLIGHT_RESERVATION
                 command.Parameters.AddWithValue("@ArrivalLocation", ToLocation);    
 
 
-                using (MySqlDataReader reader = command.ExecuteReader())
+                using (var reader = await command.ExecuteReaderAsync())
                 {
 
                     if (!reader.HasRows)
@@ -182,25 +182,25 @@ namespace FLIGHT_RESERVATION
                     }
 
 
-                    while (reader.Read())
+                    while (await reader.ReadAsync())
                     {
                         //get Date input to DateTime 
-                        DateTime Departure = reader.GetDateTime("DepartureDate");
-                        DateTime Arrival = reader.GetDateTime("ArrivalDate");
+                        DateTime Departure = (DateTime) reader["DepartureDate"];
+                        DateTime Arrival = (DateTime)reader["ArrivalDate"];
                         //convert to specific formats
                         string DepartureTime = Departure.ToString("HH:mm");
                         string ArrivalTime = Arrival.ToString("HH:mm");
                         string Date = Departure.ToString("MMMM dd, yyyy");
 
                         //get Departure and Arrival Location in db
-                        string DepartureLocation = reader.GetString("DepartureAirportCode");
-                        string ArrivalLocation = reader.GetString("ArrivalAirportCode");
+                        string DepartureLocation = (String) reader["DepartureAirportCode"];
+                        string ArrivalLocation = (String) reader["ArrivalAirportCode"];
 
                         //get AirplaneNumber
-                        string AirplaneNumber = reader.GetString("AirplaneNumber");
+                        string AirplaneNumber = (String)reader["AirplaneNumber"];
 
                         //get AvailableSeats
-                        string AvailableSeats = reader.GetInt32("SeatsRemaining").ToString();
+                        string AvailableSeats = reader["SeatsRemaining"].ToString();
 
 
                         //populate list
@@ -219,7 +219,7 @@ namespace FLIGHT_RESERVATION
             }
             finally
             {
-                _connection.Close();
+               await _connection.CloseAsync();
             }
         }
 

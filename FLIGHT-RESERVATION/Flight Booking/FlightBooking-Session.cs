@@ -47,7 +47,7 @@ namespace FLIGHT_RESERVATION
             Addons.Clear();
             Addons["Food"] = addons["Food"];
             Addons["Baggage"] = addons["Baggage"];
-            Addons["Transport"] = addons["Services"];
+            Addons["Transport"] = addons["Transport"];
 
             foreach(var item in addons)
             {

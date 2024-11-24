@@ -120,7 +120,7 @@ namespace FLIGHT_RESERVATION
                 SetupFlightSearch(FlightDetails.RoundTrip, "Round Trip");
             };
 
-            AddControl(FlightDetails, pnlMain);
+            FlightDetails.Show();
 
             void SetupFlightSearch(Trips segment, string tripType)
             {
@@ -207,7 +207,23 @@ namespace FLIGHT_RESERVATION
                 };
 
                 Addons.btnContinue.Click += Addons.HandleSubmit;
-                
+                Addons.btnContinue.Click += (s, e) => { SetupPayment(Addons); Addons.Hide(); };
+               
+            }
+
+            void SetupPayment(Control PreviousPanel)
+            {
+                var Payment = new Payment();
+
+                AddControl(Payment, pnlMain);
+
+                Payment.btnBack.Click += (s, @event) =>
+                {
+                    Payment.Dispose();
+                    PreviousPanel.Show();
+                };
+
+                //Payment.btnContinue.Click +=
             }
         }
         private void InitializeSidebar()
