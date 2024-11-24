@@ -409,6 +409,7 @@
             this.Controls.Add(this.lblBookingTotal);
             this.Name = "CardDetails";
             this.Size = new System.Drawing.Size(623, 369);
+            this.Load += new System.EventHandler(this.CardDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
