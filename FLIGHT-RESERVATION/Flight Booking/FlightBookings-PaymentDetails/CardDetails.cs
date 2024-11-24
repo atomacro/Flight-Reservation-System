@@ -22,33 +22,33 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings__CardDetails_
 
         Validator Validate = new Validator();
 
-        public void ValidateInput()
+        public bool ValidateInput()
         {
             foreach (Control ctr in this.Controls.OfType<CustomControls.RoundedTextBox>().ToList())
             {
                 if (ctr.Text.Length == 0)
                 {
                     MessageBox.Show("Fill Up All Fields", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; 
+                    return false; 
                 }
             }
 
             if (!Validate.IsValidCreditCard(txtCardNumber.Text))
             {
-                return;
+                return false;
             }
 
             if (!Validate.isCVVValid(txtCVV.Text))
             {
-                return;
+                return false;
             }
 
             if (!Validate.isExpiryDateValid(txtExpiryDate.Text))
             {
-                return;
+                return false;
             }
 
-            MessageBox.Show("All fields are valid.", "Validation Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return true;
         }
 
 

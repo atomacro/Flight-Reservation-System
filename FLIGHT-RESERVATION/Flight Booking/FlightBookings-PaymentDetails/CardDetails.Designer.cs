@@ -122,8 +122,8 @@
             // 
             // txtCVV
             // 
-            this.txtCVV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCVV.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCVV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCVV.BorderColor = System.Drawing.Color.Transparent;
             this.txtCVV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCVV.BorderRadius = 10;
             this.txtCVV.BorderSize = 1;
@@ -155,8 +155,8 @@
             // 
             // txtExpiryDate
             // 
-            this.txtExpiryDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtExpiryDate.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtExpiryDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtExpiryDate.BorderColor = System.Drawing.Color.Transparent;
             this.txtExpiryDate.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtExpiryDate.BorderRadius = 10;
             this.txtExpiryDate.BorderSize = 1;
@@ -200,8 +200,8 @@
             // 
             // txtStreetAddress
             // 
-            this.txtStreetAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtStreetAddress.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtStreetAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtStreetAddress.BorderColor = System.Drawing.Color.Transparent;
             this.txtStreetAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtStreetAddress.BorderRadius = 10;
             this.txtStreetAddress.BorderSize = 1;
@@ -221,8 +221,8 @@
             // 
             // txtCity
             // 
-            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCity.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCity.BorderColor = System.Drawing.Color.Transparent;
             this.txtCity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCity.BorderRadius = 10;
             this.txtCity.BorderSize = 1;
@@ -242,8 +242,8 @@
             // 
             // txtCountry
             // 
-            this.txtCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCountry.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCountry.BorderColor = System.Drawing.Color.Transparent;
             this.txtCountry.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCountry.BorderRadius = 10;
             this.txtCountry.BorderSize = 1;
@@ -263,8 +263,8 @@
             // 
             // txtZipCode
             // 
-            this.txtZipCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtZipCode.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtZipCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtZipCode.BorderColor = System.Drawing.Color.Transparent;
             this.txtZipCode.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtZipCode.BorderRadius = 10;
             this.txtZipCode.BorderSize = 1;
@@ -320,8 +320,8 @@
             // 
             // txtCardNumber
             // 
-            this.txtCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCardNumber.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtCardNumber.BorderColor = System.Drawing.Color.Transparent;
             this.txtCardNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtCardNumber.BorderRadius = 10;
             this.txtCardNumber.BorderSize = 1;
@@ -341,8 +341,8 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtFirstName.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtFirstName.BorderColor = System.Drawing.Color.Transparent;
             this.txtFirstName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtFirstName.BorderRadius = 10;
             this.txtFirstName.BorderSize = 1;
@@ -362,8 +362,8 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtLastName.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.txtLastName.BorderColor = System.Drawing.Color.Transparent;
             this.txtLastName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtLastName.BorderRadius = 10;
             this.txtLastName.BorderSize = 1;
@@ -385,6 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtCardNumber);

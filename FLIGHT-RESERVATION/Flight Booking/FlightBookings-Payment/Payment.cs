@@ -242,6 +242,7 @@ namespace FLIGHT_RESERVATION
             await setExpenses(type);
             setAddons();
             lblSubtotalPrice.Text = String.Format("{0:0.00}", this.DepartureSubTotal + this.ReturnSubTotal + this.AddonSubTotal);
+            session.BookingSubTotal = this.DepartureSubTotal + this.ReturnSubTotal + this.AddonSubTotal;
 
         }
 

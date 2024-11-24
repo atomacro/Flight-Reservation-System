@@ -385,6 +385,11 @@
   <ItemGroup>
     <None Include="Public\Assets\line.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Public\Assets\Card button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Assets\GCash button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
