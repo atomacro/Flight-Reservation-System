@@ -42,7 +42,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(227, 87);
+            this.pictureBox1.Location = new System.Drawing.Point(238, 102);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 147);
             this.pictureBox1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.lblFlightBookedSuccessfully.AutoSize = true;
             this.lblFlightBookedSuccessfully.Font = new System.Drawing.Font("Kantumruy Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFlightBookedSuccessfully.Location = new System.Drawing.Point(107, 237);
+            this.lblFlightBookedSuccessfully.Location = new System.Drawing.Point(120, 252);
             this.lblFlightBookedSuccessfully.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFlightBookedSuccessfully.Name = "lblFlightBookedSuccessfully";
             this.lblFlightBookedSuccessfully.Size = new System.Drawing.Size(443, 48);
@@ -69,8 +69,8 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(224, 370);
-            this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContinue.Location = new System.Drawing.Point(229, 370);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(224, 76);
             this.btnContinue.TabIndex = 34;
@@ -81,10 +81,10 @@
             // 
             this.lblSuccess.AutoSize = true;
             this.lblSuccess.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuccess.Location = new System.Drawing.Point(85, 285);
+            this.lblSuccess.Location = new System.Drawing.Point(61, 300);
             this.lblSuccess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSuccess.Name = "lblSuccess";
-            this.lblSuccess.Size = new System.Drawing.Size(363, 23);
+            this.lblSuccess.Size = new System.Drawing.Size(411, 23);
             this.lblSuccess.TabIndex = 35;
             this.lblSuccess.Text = "Kindly check your email for the ticket or go to ";
             this.lblSuccess.Click += new System.EventHandler(this.label1_Click);
@@ -94,10 +94,10 @@
             this.lblManageBookings.AutoSize = true;
             this.lblManageBookings.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblManageBookings.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblManageBookings.Location = new System.Drawing.Point(437, 285);
+            this.lblManageBookings.Location = new System.Drawing.Point(463, 300);
             this.lblManageBookings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManageBookings.Name = "lblManageBookings";
-            this.lblManageBookings.Size = new System.Drawing.Size(141, 23);
+            this.lblManageBookings.Size = new System.Drawing.Size(156, 23);
             this.lblManageBookings.TabIndex = 36;
             this.lblManageBookings.Text = "Manage Bookings";
             // 
@@ -111,7 +111,7 @@
             this.Controls.Add(this.lblFlightBookedSuccessfully);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Success";
-            this.Size = new System.Drawing.Size(653, 464);
+            this.Size = new System.Drawing.Size(682, 552);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
