@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using FLIGHT_RESERVATION.Flight_Booking;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,9 +127,6 @@ namespace FLIGHT_RESERVATION
         public async Task setExpenses(String type)
         {
 
-            //int AdultCount = 2;
-            //int ChildrenCount = 2;
-            //int InfantCount = 2;
             String SeatClass = session.FlightDetails.ContainsKey("Seat Class") ? session.FlightDetails["Seat Class"] : "Economy";
             float DepartureSubTotal = 0;
             float ReturnSubTotal = 0;
@@ -206,32 +204,31 @@ namespace FLIGHT_RESERVATION
                 if (SeatClass == "Business Economy") multiplier = 1.5f;
                 if (SeatClass == "First Class") multiplier = 2.5f;
 
-                if(AdultCount > 0)
+                if (AdultCount > 0)
                 {
-                    float adultTickets = (float) (price * multiplier) * AdultCount;
+                    float adultTickets = (float)(price * multiplier) * AdultCount;
                     SubTotal += adultTickets;
 
                     sb.AppendLine($"{String.Format("{0:0.00}", adultTickets)}");
                 }
-                if (ChildrenCount > 0) {
-                    float childrenTickets = (float) ((price * multiplier) * 0.75) * ChildrenCount;
+                if (ChildrenCount > 0)
+                {
+                    float childrenTickets = (float)((price * multiplier) * 0.75) * ChildrenCount;
                     SubTotal += childrenTickets;
 
                     sb.AppendLine($"{String.Format("{0:0.00}", childrenTickets)}");
                 }
                 if (InfantCount > 0)
                 {
-                    float infantTickets = (float) ((price * multiplier) * 0.50) * InfantCount;
+                    float infantTickets = (float)((price * multiplier) * 0.50) * InfantCount;
                     SubTotal += infantTickets;
 
                     sb.AppendLine($"{String.Format("{0:0.00}", infantTickets)}");
                 }
 
-                
+
                 return sb.ToString();
             }
-
-
         }
 
         private async void Payment_Load(object sender, EventArgs e)
@@ -248,7 +245,19 @@ namespace FLIGHT_RESERVATION
 
         private void lblTermsAndConditions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Terms and Conditions", "Terms and Conditions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using (var termsForm = new TermsAndConditions())
+            {
+                if (termsForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Terms and conditions accepted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    chkTermsAndConditions.Checked = true;
+                }
+                else
+                {
+                    chkTermsAndConditions.Checked = false;
+                }
+            }
+
         }
 
     }
@@ -278,16 +287,17 @@ namespace FLIGHT_RESERVATION
         {
             try
             {
-               await _connection.OpenAsync();
+                if (_connection.State != ConnectionState.Open)
+                    await _connection.OpenAsync();
 
-                string query = "SELECT DepartureLocation.AirportCode AS DepartureAirportCode, " +
-                "ArrivalLocation.AirportCode AS ArrivalAirportCode, " +
-                "flights.ArrivalDate, flights.DepartureDate, flights.AirplaneNumber, " +
-                "flights.FlightPrice " +
-                "FROM flights " +
-                "JOIN airport AS DepartureLocation ON flights.DepartureAirportID = DepartureLocation.AirportID " +
-                "JOIN airport AS ArrivalLocation ON ArrivalLocation.AirportID = flights.ArrivalAirportID " +
-                "WHERE flights.AirplaneNumber = @AirplaneNumber";
+                string query = @"SELECT DepartureLocation.AirportCode AS DepartureAirportCode, 
+                ArrivalLocation.AirportCode AS ArrivalAirportCode, 
+                flights.ArrivalDate, flights.DepartureDate, 
+                flights.AirplaneNumber, flights.FlightPrice 
+                FROM flights 
+                JOIN airport AS DepartureLocation ON flights.DepartureAirportID = DepartureLocation.AirportID 
+                JOIN airport AS ArrivalLocation ON ArrivalLocation.AirportID = flights.ArrivalAirportID 
+                WHERE flights.AirplaneNumber = @AirplaneNumber; "; 
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
 

@@ -30,11 +30,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            if (!ValidateContents()) { return; }
-            Console.WriteLine(GenerateTransactionId());
+
         }
 
-        public static string GenerateTransactionId()
+        public string GenerateTransactionId()
         {
             string prefix = "ATS";
 
@@ -47,7 +46,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         public bool ValidateContents()
         {
             if (type == "Card" && cardDetails.ValidateInput()) return true;
+            if(type == "GCash" && gcash.isReferenceNumberValid()) return true;
+
             return false;
+
 
         }
 
