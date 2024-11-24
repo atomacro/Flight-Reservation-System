@@ -138,7 +138,7 @@
             this.txtCVV.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCVV.PlaceholderText = "XXX";
             this.txtCVV.Size = new System.Drawing.Size(286, 35);
-            this.txtCVV.TabIndex = 11;
+            this.txtCVV.TabIndex = 3;
             this.txtCVV.UnderlinedStyle = false;
             // 
             // lblCCV
@@ -171,7 +171,7 @@
             this.txtExpiryDate.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtExpiryDate.PlaceholderText = "MM YY";
             this.txtExpiryDate.Size = new System.Drawing.Size(286, 35);
-            this.txtExpiryDate.TabIndex = 13;
+            this.txtExpiryDate.TabIndex = 4;
             this.txtExpiryDate.UnderlinedStyle = false;
             // 
             // lblExpiryDate
@@ -216,7 +216,7 @@
             this.txtStreetAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtStreetAddress.PlaceholderText = "Enter street address";
             this.txtStreetAddress.Size = new System.Drawing.Size(269, 35);
-            this.txtStreetAddress.TabIndex = 16;
+            this.txtStreetAddress.TabIndex = 5;
             this.txtStreetAddress.UnderlinedStyle = false;
             // 
             // txtCity
@@ -237,7 +237,7 @@
             this.txtCity.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCity.PlaceholderText = "Enter city/town";
             this.txtCity.Size = new System.Drawing.Size(269, 35);
-            this.txtCity.TabIndex = 17;
+            this.txtCity.TabIndex = 6;
             this.txtCity.UnderlinedStyle = false;
             // 
             // txtCountry
@@ -258,7 +258,7 @@
             this.txtCountry.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCountry.PlaceholderText = "Enter Country";
             this.txtCountry.Size = new System.Drawing.Size(269, 35);
-            this.txtCountry.TabIndex = 18;
+            this.txtCountry.TabIndex = 7;
             this.txtCountry.UnderlinedStyle = false;
             // 
             // txtZipCode
@@ -279,7 +279,7 @@
             this.txtZipCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtZipCode.PlaceholderText = "Enter Zip Code";
             this.txtZipCode.Size = new System.Drawing.Size(269, 35);
-            this.txtZipCode.TabIndex = 19;
+            this.txtZipCode.TabIndex = 8;
             this.txtZipCode.UnderlinedStyle = false;
             // 
             // lblCity
@@ -336,7 +336,7 @@
             this.txtCardNumber.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCardNumber.PlaceholderText = "XXXX XXXX XXXX XXXX";
             this.txtCardNumber.Size = new System.Drawing.Size(286, 35);
-            this.txtCardNumber.TabIndex = 25;
+            this.txtCardNumber.TabIndex = 2;
             this.txtCardNumber.UnderlinedStyle = false;
             // 
             // txtFirstName
@@ -357,7 +357,7 @@
             this.txtFirstName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtFirstName.PlaceholderText = "First Name";
             this.txtFirstName.Size = new System.Drawing.Size(139, 35);
-            this.txtFirstName.TabIndex = 26;
+            this.txtFirstName.TabIndex = 0;
             this.txtFirstName.UnderlinedStyle = false;
             // 
             // txtLastName
@@ -378,7 +378,7 @@
             this.txtLastName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtLastName.PlaceholderText = "Last Name";
             this.txtLastName.Size = new System.Drawing.Size(139, 35);
-            this.txtLastName.TabIndex = 27;
+            this.txtLastName.TabIndex = 1;
             this.txtLastName.UnderlinedStyle = false;
             // 
             // CardDetails

@@ -39,7 +39,7 @@
             // 
             this.pnlPaymentDetails.Location = new System.Drawing.Point(30, 101);
             this.pnlPaymentDetails.Name = "pnlPaymentDetails";
-            this.pnlPaymentDetails.Size = new System.Drawing.Size(623, 369);
+            this.pnlPaymentDetails.Size = new System.Drawing.Size(623, 337);
             this.pnlPaymentDetails.TabIndex = 0;
             // 
             // btnChangeType
@@ -64,7 +64,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.button1.Location = new System.Drawing.Point(185, 483);
+            this.button1.Location = new System.Drawing.Point(185, 456);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 49);
@@ -81,7 +81,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(351, 483);
+            this.btnContinue.Location = new System.Drawing.Point(351, 456);
             this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(146, 49);

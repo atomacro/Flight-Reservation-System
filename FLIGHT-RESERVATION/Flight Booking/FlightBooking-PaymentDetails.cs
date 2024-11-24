@@ -47,7 +47,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         public bool ValidateContents()
         {
             if (type == "Card" && cardDetails.ValidateInput()) return true;
+            if(type == "GCash" && gcash.isReferenceNumberValid()) return true;
+
             return false;
+
 
         }
 
