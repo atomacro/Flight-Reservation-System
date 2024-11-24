@@ -51,7 +51,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings__CardDetails_
             return true;
         }
 
+        private void CardDetails_Load(object sender, EventArgs e)
+        {
+            String totalPrice = FlightBooking_Session.Instance.BookingSubTotal.ToString("N2");
+            lblBookingTotal.Text = $"Booking Total: {totalPrice}";
 
+        }
     }
 
     class Validator
