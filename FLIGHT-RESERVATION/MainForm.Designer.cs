@@ -44,10 +44,8 @@
             this.btnViewBookings = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.payment1 = new FLIGHT_RESERVATION.Payment();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlIndicator1
@@ -108,7 +106,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::FLIGHT_RESERVATION.Properties.Resources.Exit;
             this.btnExit.Location = new System.Drawing.Point(1240, 5);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(69, 46);
             this.btnExit.TabIndex = 11;
@@ -227,21 +225,11 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Controls.Add(this.payment1);
             this.pnlMain.Location = new System.Drawing.Point(348, 167);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(909, 679);
             this.pnlMain.TabIndex = 10;
-            // 
-            // payment1
-            // 
-            this.payment1.BackColor = System.Drawing.Color.White;
-            this.payment1.Location = new System.Drawing.Point(0, 0);
-            this.payment1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.payment1.Name = "payment1";
-            this.payment1.Size = new System.Drawing.Size(903, 674);
-            this.payment1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -267,7 +255,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -288,7 +275,6 @@
         private System.Windows.Forms.Label lblPageName;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
-        private Payment payment1;
     }
 }
 

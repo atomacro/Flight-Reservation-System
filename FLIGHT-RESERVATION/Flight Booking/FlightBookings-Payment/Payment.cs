@@ -14,15 +14,18 @@ namespace FLIGHT_RESERVATION
 {
     public partial class Payment : UserControl
     {
-        public Payment()
-        {
-            InitializeComponent();
-        }
 
         FlightBooking_Session session = FlightBooking_Session.Instance;
         float DepartureSubTotal { get; set; } = 0;
         float ReturnSubTotal { get; set; } = 0;
         float AddonSubTotal { get; set; } = 0;
+
+        public Payment()
+        {
+
+            InitializeComponent();
+        }
+
 
 
         public void Initialize(String type)
@@ -73,24 +76,16 @@ namespace FLIGHT_RESERVATION
 
         public void setAddons()
         {
-            bool Addon = true;
+            int AddonCount = 3;
             StringBuilder Addons = new StringBuilder();
             StringBuilder Prices = new StringBuilder();
 
-            Dictionary<string, bool> test = new Dictionary<string, bool>()
-            {
-                { "Food", true },
-                { "Baggage", true },
-                { "Transport", true }
-            };
 
-
-
-            foreach (var item in test) //change to session.Addons
+            foreach (var item in session.Addons)
             { 
                 if (!item.Value)
                 {
-                    Addon = false;
+                    AddonCount -= 1;
                     continue;
                 }
 
@@ -107,7 +102,7 @@ namespace FLIGHT_RESERVATION
 
             }
 
-            if (!Addon)
+            if (AddonCount == 0)
             {
                 lblAddon.Dispose();
                 lblAddonPrice.Dispose();
@@ -128,25 +123,25 @@ namespace FLIGHT_RESERVATION
 
         }
 
-        public void setExpenses(String type)
+        public async Task setExpenses(String type)
         {
 
-
-            int AdultCount = 2;
-            int ChildrenCount = 2;
-            int InfantCount = 2;
+            //int AdultCount = 2;
+            //int ChildrenCount = 2;
+            //int InfantCount = 2;
             String SeatClass = session.FlightDetails.ContainsKey("Seat Class") ? session.FlightDetails["Seat Class"] : "Economy";
             float DepartureSubTotal = 0;
             float ReturnSubTotal = 0;
 
-            //int AdultCount = session.FlightDetails.ContainsKey("Number of Infants") == null ? Int32.Parse(session.FlightDetails["Number of Adults"]) : 0 ;
-            //int ChildrenCount = session.FlightDetails.ContainsKey("Number of Infants") == null ? Int32.Parse(session.FlightDetails["Number of Children"]) : 0;
-            //int InfantCount = session.FlightDetails.ContainsKey("Number of Infants") == null ? Int32.Parse(session.FlightDetails["Number of Infants"]) : 0;
+            int AdultCount = session.FlightDetails.ContainsKey("Number of Infants") ? Int32.Parse(session.FlightDetails["Number of Adults"]) : 0 ;
+            int ChildrenCount = session.FlightDetails.ContainsKey("Number of Infants") ? Int32.Parse(session.FlightDetails["Number of Children"]) : 0;
+            int InfantCount = session.FlightDetails.ContainsKey("Number of Infants") ? Int32.Parse(session.FlightDetails["Number of Infants"]) : 0;
 
 
             if (type == "Round Trip")
             {
-                Flight Return = new Flight("AP123");
+                Flight Return = new Flight();
+                await Return.SelectFlight(session.ReturnAirplaneNumber);
                 lblReturnArrivalTime.Text = Return.ArrivalTime;
                 lblDepartureDepartureTime.Text = Return.DepartureTime;
                 lblReturnFrom.Text = Return.DepartureLocation;
@@ -164,7 +159,9 @@ namespace FLIGHT_RESERVATION
                 this.ReturnSubTotal = ReturnSubTotal;
             }
 
-            Flight Departure = new Flight("AP123");
+            Flight Departure = new Flight();
+            await Departure.SelectFlight(session.DepartureAirplaneNumber);
+
 
             lblDeparturePlaneNumber.Text = $"Plane Number: {Departure.AirplaneNumber}";
             lblDeparturePassengers.Text = Passengers();
@@ -237,12 +234,15 @@ namespace FLIGHT_RESERVATION
 
         }
 
-        private void Payment_Load(object sender, EventArgs e)
+        private async void Payment_Load(object sender, EventArgs e)
         {
-            Initialize("Round Trip");
-            setExpenses("Round Trip");
+            String type = session.Type == null ? "One Way" : session.Type;
+
+            Initialize(type);
+            await setExpenses(type);
             setAddons();
             lblSubtotalPrice.Text = String.Format("{0:0.00}", this.DepartureSubTotal + this.ReturnSubTotal + this.AddonSubTotal);
+
         }
 
         private void lblTermsAndConditions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -267,20 +267,17 @@ namespace FLIGHT_RESERVATION
 
 
 
-        public Flight(String airplaneNumber)
+        public Flight()
         {
             string connectionString = $"Server=localhost;Database={this.DataBaseName};User ID={this.UserName};Password={this.Password};";
             _connection = new MySqlConnection(connectionString);
-
-            SelectFlight( airplaneNumber );
-            
         }
 
-       private void SelectFlight(string airplaneNumber)
+       public async Task SelectFlight(string airplaneNumber)
         {
             try
             {
-                _connection.Open();
+               await _connection.OpenAsync();
 
                 string query = "SELECT DepartureLocation.AirportCode AS DepartureAirportCode, " +
                 "ArrivalLocation.AirportCode AS ArrivalAirportCode, " +
@@ -295,18 +292,18 @@ namespace FLIGHT_RESERVATION
 
                 command.Parameters.AddWithValue("@AirplaneNumber", airplaneNumber);
 
-                using (MySqlDataReader reader = command.ExecuteReader()) {
+                using (var reader = await command.ExecuteReaderAsync()) {
                     if (!reader.HasRows) {
                         return;
                     }
-                    while (reader.Read())
+                    while (await reader.ReadAsync())
                     {
-                        DepartureLocation = reader.GetString("DepartureAirportCode");
-                        ArrivalLocation = reader.GetString("ArrivalAirportCode");
+                        DepartureLocation = (String) reader["DepartureAirportCode"];
+                        ArrivalLocation = (String) reader["ArrivalAirportCode"];
                         DepartureTime = ((DateTime)reader["DepartureDate"]).ToString("hh:mm");
                         ArrivalTime = ((DateTime)reader["ArrivalDate"]).ToString("hh:mm");
-                        AirplaneNumber = reader.GetString("AirplaneNumber");
-                        Price = float.Parse(reader.GetInt32("FlightPrice").ToString());
+                        AirplaneNumber = (String)reader["AirplaneNumber"];
+                        Price = float.Parse(reader["FlightPrice"].ToString());
                     }
                 }
 
@@ -315,7 +312,7 @@ namespace FLIGHT_RESERVATION
             {
                 MessageBox.Show(ex.Message);
             }
-            finally { _connection.Close(); }
+            finally { await _connection.CloseAsync(); }
         }
 
 
