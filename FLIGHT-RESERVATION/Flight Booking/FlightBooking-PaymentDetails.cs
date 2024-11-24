@@ -30,11 +30,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            if (!ValidateContents()) { return; }
-            Console.WriteLine(GenerateTransactionId());
+
         }
 
-        public static string GenerateTransactionId()
+        public string GenerateTransactionId()
         {
             string prefix = "ATS";
 

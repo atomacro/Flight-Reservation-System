@@ -30,8 +30,9 @@
         {
             this.lblAvailableFlights = new System.Windows.Forms.Label();
             this.pnlGuestDetails = new System.Windows.Forms.Panel();
-            this.btnContinue = new System.Windows.Forms.Button();
+            this.btnFocus = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnContinue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAvailableFlights
@@ -55,21 +56,15 @@
             this.pnlGuestDetails.Size = new System.Drawing.Size(656, 377);
             this.pnlGuestDetails.TabIndex = 6;
             // 
-            // btnContinue
+            // btnFocus
             // 
-            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
-            this.btnContinue.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
-            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(349, 483);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(130, 52);
-            this.btnContinue.TabIndex = 5;
-            this.btnContinue.Text = "Continue";
-            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnFocus.Location = new System.Drawing.Point(-10, -10);
+            this.btnFocus.Name = "btnFocus";
+            this.btnFocus.Size = new System.Drawing.Size(0, 0);
+            this.btnFocus.TabIndex = 999;
+            this.btnFocus.TabStop = false;
+            this.btnFocus.Text = "button1";
+            this.btnFocus.UseVisualStyleBackColor = true;
             // 
             // btnBack
             // 
@@ -89,11 +84,28 @@
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.BUTTON;
+            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnContinue.ForeColor = System.Drawing.Color.White;
+            this.btnContinue.Location = new System.Drawing.Point(349, 483);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(130, 52);
+            this.btnContinue.TabIndex = 5;
+            this.btnContinue.Text = "Continue";
+            this.btnContinue.UseVisualStyleBackColor = false;
+            // 
             // FlightBookings_GuestDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnFocus);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pnlGuestDetails);
             this.Controls.Add(this.btnContinue);
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Panel pnlGuestDetails;
         public System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.Button btnFocus;
     }
 }

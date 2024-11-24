@@ -86,11 +86,12 @@ namespace FLIGHT_RESERVATION
             foreach (var item in guestDetails)
             {
 
-                foreach (TextBox txt in item.Value.Controls.OfType<TextBox>().ToList())
+                foreach (var txt in item.Value.Controls.OfType<CustomControls.RoundedTextBox>().ToArray())
                 {
                     if (string.IsNullOrWhiteSpace(txt.Text))
                     {
                         MessageBox.Show($"{txt.Name.Substring(3)} cannot be empty");
+                        btnFocus.Focus();
                         return false;
                     }
                 }
@@ -100,6 +101,8 @@ namespace FLIGHT_RESERVATION
                     !DateTime.TryParseExact(birthdateBox.Text, "MMMM dd, yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime date))
                 {
                     MessageBox.Show("Birthdate must be in 'MMMM dd, yyyy' format.\nExample: January 1, 2001.");
+                    btnFocus.Focus();
+
                     return false;
                 }
             }

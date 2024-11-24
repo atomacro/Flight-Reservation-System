@@ -224,7 +224,35 @@ namespace FLIGHT_RESERVATION
                     PreviousPanel.Show();
                 };
 
-                //Payment.btnContinue.Click +=
+                Payment.btnContinue.Click += (s, e) => {
+
+                    if (!Payment.chkTermsAndConditions.Checked)
+                    {
+                        MessageBox.Show("Please accept terms and conditions", "Terms and Conditions", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    SetupPaymentDetails(Payment);
+                
+                };
+            }
+
+            void SetupPaymentDetails(Control PreviousPanel)
+            {
+                var PaymentDetails = new FlightBooking_PaymentDetails();
+                AddControl(PaymentDetails, pnlMain);
+                PaymentDetails.btnBack.Click += (s, @event) =>
+                {
+                    PaymentDetails.Dispose();
+                    PreviousPanel.Show();
+                };
+
+                PaymentDetails.btnContinue.Click += (s, @event) =>
+                {
+                    if (!PaymentDetails.ValidateContents()){ return; }
+                    Console.WriteLine(PaymentDetails.GenerateTransactionId());
+
+                    //Inserting to Database
+                };
             }
         }
         private void InitializeSidebar()

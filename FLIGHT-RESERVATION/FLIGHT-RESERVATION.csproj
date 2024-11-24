@@ -204,6 +204,12 @@
     <Compile Include="Flight Booking\FlightBookings-Success\Success.Designer.cs">
       <DependentUpon>Success.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\TermsAndConditions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\TermsAndConditions.Designer.cs">
+      <DependentUpon>TermsAndConditions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fonts.cs" />
     <Compile Include="LoginSignUp\ForgotPassword.cs">
       <SubType>UserControl</SubType>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-Success\Success.resx">
       <DependentUpon>Success.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\TermsAndConditions.resx">
+      <DependentUpon>TermsAndConditions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginSignUp\ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
@@ -390,6 +399,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Public\Assets\GCash button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\Assets\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
