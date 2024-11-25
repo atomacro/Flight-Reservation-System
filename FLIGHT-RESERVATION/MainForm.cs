@@ -250,7 +250,7 @@ namespace FLIGHT_RESERVATION
 
                 PaymentDetails.btnContinue.Click += (s, @event) =>
                 {
-                    if (!PaymentDetails.ValidateContents()){ return; }
+                    if (!PaymentDetails.ValidateContents()){ return;  }
                     Console.WriteLine(PaymentDetails.GenerateTransactionId());
 
                     //Inserting to Database

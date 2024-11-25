@@ -128,6 +128,6 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.PictureBox picQrCode;
         private System.Windows.Forms.Label lblReferenceNumber;
-        private CustomControls.RoundedTextBox txtReferenceNumber;
+        public CustomControls.RoundedTextBox txtReferenceNumber;
     }
 }

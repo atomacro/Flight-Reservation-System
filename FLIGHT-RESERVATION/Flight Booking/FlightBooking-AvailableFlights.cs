@@ -39,7 +39,6 @@ namespace FLIGHT_RESERVATION
             String DepartureLocation = "";
             String ArrivalLocation = "";
             String DepartureDate = "";
-            String ArrivalDate = "";
 
             if (this.TripType == "Departure")
             {
@@ -91,43 +90,53 @@ namespace FLIGHT_RESERVATION
             }
         }
 
-        public FlightsAvailable SelectedAirplane;
+        public String SelectedAirplane = "";
+
         public void setSelected(List<FlightsAvailable> availableFlights, int index)
         {
-
-
             for (int i = 0; i < availableFlights.Count; i++)
             {
-                if (i != index || availableFlights[i].btnBook.Text == "Unselect")
+                if (i == index) 
+                {
+                    if (availableFlights[i].btnBook.Text == "Select")
+                    {
+                        availableFlights[i].btnBook.Text = "Unselect";
+                        availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border);
+                        SelectedAirplane = availableFlights[i].lblAirplaneNumber.Text;
+                    }
+                    else
+                    {
+                        availableFlights[i].btnBook.Text = "Select";
+                        availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border);
+                        SelectedAirplane = "";
+                    }
+                }
+                else
                 {
                     availableFlights[i].btnBook.Text = "Select";
-                    availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border); //reset the borders of unselected
-                    continue;
+                    availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border);
                 }
-                availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border); //set border to selected
-                availableFlights[i].btnBook.Text = "Unselect";
-                SelectedAirplane = availableFlights[i];
             }
         }
 
+
         public bool SubmitSelectedAirplane()
         {
-            String Airplane = SelectedAirplane.lblAirplaneNumber.Text;
 
-            if (string.IsNullOrWhiteSpace(Airplane))
+            if (string.IsNullOrWhiteSpace(SelectedAirplane))
             {
                 MessageBox.Show("Please Select a Flight", "Select a Flight", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (this.TripType == "Departure")
             {
-                FlightBooking_Session.Instance.DepartureAirplaneNumber = Airplane;
+                FlightBooking_Session.Instance.DepartureAirplaneNumber = SelectedAirplane;
                 Console.WriteLine(FlightBooking_Session.Instance.DepartureAirplaneNumber);
                 return true;
             }
             if (this.TripType == "Return")
             {
-                FlightBooking_Session.Instance.ReturnAirplaneNumber = Airplane;
+                FlightBooking_Session.Instance.ReturnAirplaneNumber = SelectedAirplane;
                 Console.WriteLine(FlightBooking_Session.Instance.ReturnAirplaneNumber);
                 return true;
             }
