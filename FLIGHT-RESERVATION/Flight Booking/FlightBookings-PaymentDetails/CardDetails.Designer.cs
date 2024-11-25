@@ -151,7 +151,7 @@
             this.lblCCV.Name = "lblCCV";
             this.lblCCV.Size = new System.Drawing.Size(36, 19);
             this.lblCCV.TabIndex = 12;
-            this.lblCCV.Text = "CCV";
+            this.lblCCV.Text = "CVV";
             // 
             // txtExpiryDate
             // 
