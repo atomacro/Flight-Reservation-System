@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace FLIGHT_RESERVATION
         ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
         FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
         dashboard dashboard = new dashboard();
+        SignUp signUp = new SignUp();
 
         public MainForm()
         {
@@ -287,8 +289,12 @@ namespace FLIGHT_RESERVATION
                 SetHeader("ACCOUNT");
                 ClearControls(pnlMain);
 
-                var account = new AccountSettings();
-                AddControl(account, pnlMain);
+                if (Session.IsLoggedIn)
+                {
+                    var account = new AccountSettings();
+                    AddControl(account, pnlMain);
+                }
+                else { LoginControl_OpenLoginForm(this, EventArgs.Empty); }
             };
             btnLogin.Click += LoginControl_OpenLoginForm;
             btnLogout.Click += (sender, e) =>
@@ -334,21 +340,17 @@ namespace FLIGHT_RESERVATION
             SetIndicator(btnDashboard, pnlIndicator1);
             SetHeader("DASHBOARD");
             ClearControls(pnlMain);
-
-            // ---- NOTE: only for example. CHANGE TO DASHBOARD USER CONTROL
-            //var viewBookings = new ViewBookings.ViewBookings();
-            //AddControl(viewBookings, pnlMain);
+            AddControl(dashboard, pnlMain);
         }
 
         private void LoginControl_OpenSignUpForm(object sender, EventArgs e) // From login form => sign up form
         {
             SetHeader("SIGN UP");
             ClearControls(pnlMain);
-            var signup = new SignUp();
-            AddControl(signup, pnlMain);
+            AddControl(signUp, pnlMain);
 
-            signup.SignUpSuccessful += LoginControl_LoginSuccessful;
-            signup.OpenLoginForm += LoginControl_OpenLoginForm;
+            signUp.SignUpSuccessful += LoginControl_LoginSuccessful;
+            signUp.OpenLoginForm += LoginControl_OpenLoginForm;
         }
 
         private void LoginControl_OpenLoginForm(object sender, EventArgs e) // From signup form => login form

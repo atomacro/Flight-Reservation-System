@@ -133,7 +133,7 @@
             this.lblPageName.Location = new System.Drawing.Point(274, 3);
             this.lblPageName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageName.Name = "lblPageName";
-            this.lblPageName.Size = new System.Drawing.Size(512, 109);
+            this.lblPageName.Size = new System.Drawing.Size(498, 109);
             this.lblPageName.TabIndex = 9;
             this.lblPageName.Text = "label1";
             this.lblPageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
