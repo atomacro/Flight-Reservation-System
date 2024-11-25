@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FLIGHT_RESERVATION.Account;
 using FLIGHT_RESERVATION.Flight_Booking;
 using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns;
 using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails;
@@ -21,7 +22,7 @@ namespace FLIGHT_RESERVATION
 
         ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
         FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
-
+        dashboard dashboard = new dashboard();
 
         public MainForm()
         {
@@ -39,6 +40,7 @@ namespace FLIGHT_RESERVATION
             InitializeSidebar();
             SetHeader("DASHBOARD");
             SetIndicator(btnDashboard, pnlIndicator1);
+            AddControl(dashboard, pnlMain);
 
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
 
@@ -262,8 +264,6 @@ namespace FLIGHT_RESERVATION
                 SetIndicator(btnDashboard, pnlIndicator1);
                 SetHeader("DASHBOARD");
                 ClearControls(pnlMain);
-
-                var dashboard = new dashboard();
                 AddControl(dashboard, pnlMain);
             };
             btnFlightBooking.Click += (sender, EventArgs) =>
@@ -287,6 +287,8 @@ namespace FLIGHT_RESERVATION
                 SetHeader("ACCOUNT");
                 ClearControls(pnlMain);
 
+                var account = new AccountSettings();
+                AddControl(account, pnlMain);
             };
             btnLogin.Click += LoginControl_OpenLoginForm;
             btnLogout.Click += (sender, e) =>
