@@ -61,11 +61,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
 
 
-        private void btnContinue_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public string GenerateTransactionId()
         {
             string prefix = "ATS";
