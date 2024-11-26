@@ -15,6 +15,7 @@ using FLIGHT_RESERVATION.Flight_Booking;
 using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_AddOns;
 using FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails;
 using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails;
+using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Success;
 
 namespace FLIGHT_RESERVATION
 {
@@ -254,7 +255,8 @@ namespace FLIGHT_RESERVATION
                 {
                     if (!PaymentDetails.ValidateContents()){ return;  }
                     Console.WriteLine(PaymentDetails.GenerateTransactionId());
-
+                    var Success = new Success();
+                    AddControl(Success, pnlMain);
                     //Inserting to Database
                 };
             }
