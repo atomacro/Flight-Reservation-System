@@ -6,10 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FLIGHT_RESERVATION.Flight_Booking
 {
@@ -44,28 +46,30 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             return $"{prefix}{randomNumber}";
         }
 
+        new Validator Validate = new Validator();
+
         public bool ValidateContents()
         {
             if (type == "Card" && ValidateInput()) return true;
-            if(type == "GCash" && isReferenceNumberValid()) return true;
+            if(type == "GCash" && Validate.isReferenceNumberValid(gcash.txtReferenceNumber.Text)) return true;
 
+            Console.WriteLine(GenerateTransactionId());
             return false;
 
         }
 
-        new Validator Validate;
 
         public bool ValidateInput()
         {
-            foreach (Control ctr in cardDetails.Controls.OfType<CustomControls.RoundedTextBox>().ToList())
+
+
+            foreach (var ctr in cardDetails.Controls.OfType<CustomControls.RoundedTextBox>().ToArray())
             {
                 if (String.IsNullOrWhiteSpace(ctr.Text))
                 {
                     MessageBox.Show($"Fill Up All Fields", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-
-                //Console.WriteLine(ctr.Text
             }
 
             if (!Validate.IsValidCreditCard(cardDetails.txtCardNumber.Text))
@@ -83,30 +87,14 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 return false;
             }
 
-            return false;
-        }
-
-        public bool isReferenceNumberValid()
-        {
-            if (!Regex.IsMatch(gcash.txtReferenceNumber.Text, @"^\d+$"))
+            if (!Validate.isZipCodeValid(cardDetails.txtZipCode.Text))
             {
-                MessageBox.Show("Reference number must be Numeric", "Reference number invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (gcash.txtReferenceNumber.Text.Length != 13)
-            {
-                MessageBox.Show("Reference number must be 13 digits long", "Reference number invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            if (String.IsNullOrWhiteSpace(gcash.txtReferenceNumber.Text))
-            {
-                MessageBox.Show("Fill up all fields", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
             return true;
         }
+
+        
 
         private void btnChangeType_Click(object sender, EventArgs e)
         {
@@ -139,10 +127,40 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
     class Validator
     {
+        public bool isReferenceNumberValid(String ReferenceNumber)
+        {
+            if (!Regex.IsMatch(ReferenceNumber, @"^\d+$"))
+            {
+                MessageBox.Show("Reference number must be Numeric", "Reference number invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (ReferenceNumber.Length != 13)
+            {
+                MessageBox.Show("Reference number must be 13 digits long", "Reference number invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (String.IsNullOrWhiteSpace(ReferenceNumber))
+            {
+                MessageBox.Show("Fill up all fields", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+        public bool isZipCodeValid(string ZipCode)
+        {
+            if (!Regex.IsMatch(ZipCode, @"^\d+$"))
+            {
+                MessageBox.Show("Reference number must be Numeric", "Reference number invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
 
         public bool isExpiryDateValid(string ExpiryDate)
         {
-            if (DateTime.TryParseExact(ExpiryDate, "MM yyyy",
+            if (DateTime.TryParseExact(ExpiryDate, "MMMM yyyy",
              System.Globalization.CultureInfo.InvariantCulture,
             System.Globalization.DateTimeStyles.None,
             out DateTime expiryDate))
@@ -161,8 +179,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 return false;
             }
 
-            if (CVV.Length != 4 || CVV.Length != 3)
+            if (CVV.Length != 4 && CVV.Length != 3)
             {
+                Console.WriteLine(CVV);
                 MessageBox.Show("CVV must be 3 - 4 digits only", "CVV Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
