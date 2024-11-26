@@ -1,4 +1,5 @@
-﻿using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails;
+﻿using FLIGHT_RESERVATION.Flight_Booking.FlightBookings__CardDetails_;
+using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails;
 using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,20 @@ namespace FLIGHT_RESERVATION
             foreach(var item in addons)
             {
                 Console.WriteLine($"{item.Key} : {item.Value} ");
+            }
+        }
+
+        public void setCardDetails(Dictionary<String, String> Card)
+        {
+           foreach(var item in Card)
+            {
+                CardDetails[item.Key] = item.Value;
+            }
+
+
+            foreach (var item in CardDetails)
+            {
+                Console.WriteLine($"{item.Key} : {item.Value}");
             }
         }
 
