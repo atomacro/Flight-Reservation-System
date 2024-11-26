@@ -188,10 +188,8 @@ namespace FLIGHT_RESERVATION
                 };
                 GuestDetails.btnContinue.Click += (s, e) =>
                 {
-                    if (!GuestDetails.Validate())
-                    {
-                        return;
-                    }
+                    if (!GuestDetails.Validate()) return;
+                    
 
                     FlightBooking_Session.Instance.setGuestDetails(GuestDetails.guestDetails);
                     GuestDetails.Hide();
@@ -252,10 +250,13 @@ namespace FLIGHT_RESERVATION
                 PaymentDetails.btnContinue.Click += (s, @event) =>
                 {
                     if (!PaymentDetails.ValidateContents()){ return;  }
+
+                    PaymentDetails.FillData();
+                    Console.WriteLine(PaymentDetails.GenerateTransactionId());
+
                     Console.WriteLine(PaymentDetails.GenerateTransactionId());
                     var Success = new Success();
                     AddControl(Success, pnlMain);
-                    //Inserting to Database
                 };
             }
         }

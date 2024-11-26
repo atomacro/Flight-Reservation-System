@@ -89,7 +89,6 @@
             this.btnContinue.TabStop = false;
             this.btnContinue.Text = "CONTINUE";
             this.btnContinue.UseVisualStyleBackColor = true;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // FlightBooking_PaymentDetails
             // 

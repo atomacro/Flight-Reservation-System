@@ -21,12 +21,42 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         String type { get; set; } = "Card";
         CardDetails cardDetails = new CardDetails();
         GCash gcash = new GCash();
+        Dictionary<String, String> CardDetails = new Dictionary<String, String>();
 
 
 
         public FlightBooking_PaymentDetails()
         {
             InitializeComponent();
+        }
+
+        private void btnChangeType_Click(object sender, EventArgs e)
+        {
+            if (type == "Card")
+            {
+                btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.GCash_button;
+                type = "GCash";
+                cardDetails.Hide();
+                gcash.Show();
+            }
+            else
+            {
+                btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.Card_button;
+                type = "Card";
+                cardDetails.Show();
+                gcash.Hide();
+            }
+        }
+
+        private void FlightBooking_PaymentDetails_Load(object sender, EventArgs e)
+        {
+            cardDetails.AutoSize = true;
+            cardDetails.Location = new Point(0, 0);
+            gcash.AutoSize = true;
+            gcash.Location = new Point(0, 0);
+            pnlPaymentDetails.Controls.Add(cardDetails);
+            pnlPaymentDetails.Controls.Add(gcash);
+            gcash.Hide();
         }
 
 
@@ -50,14 +80,31 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         public bool ValidateContents()
         {
-            if (type == "Card" && ValidateInput()) return true;
-            if(type == "GCash" && Validate.isReferenceNumberValid(gcash.txtReferenceNumber.Text)) return true;
+            if (type == "Card") {
+                return ValidateInput();
+            }
+            else if (type == "GCash")
+            {
+                return Validate.isReferenceNumberValid(gcash.txtReferenceNumber.Text);
+            } 
 
-            Console.WriteLine(GenerateTransactionId());
             return false;
 
         }
 
+        public void FillData()
+        {
+            CardDetails["First Name"] = cardDetails.txtFirstName.Text;
+            CardDetails["Last Name"] = cardDetails.txtLastName.Text;
+            CardDetails["Card Number"] = cardDetails.txtCardNumber.Text;
+            CardDetails["CVV"] = cardDetails.txtCVV.Text;
+            CardDetails["Expiry Date"] = cardDetails.txtExpiryDate.Text;
+            CardDetails["Street Address"] = cardDetails.txtStreetAddress.Text;
+            CardDetails["City/Town"] = cardDetails.txtCity.Text;
+            CardDetails["Country"] = cardDetails.txtCountry.Text;
+            CardDetails["Zip Code"] = cardDetails.txtZipCode.Text;
+            FlightBooking_Session.Instance.setCardDetails(CardDetails);
+        }
 
         public bool ValidateInput()
         {
@@ -71,57 +118,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                     return false;
                 }
             }
-
-            if (!Validate.IsValidCreditCard(cardDetails.txtCardNumber.Text))
-            {
-                return false;
-            }
-
-            if (!Validate.isCVVValid(cardDetails.txtCVV.Text))
-            {
-                return false;
-            }
-
-            if (!Validate.isExpiryDateValid(cardDetails.txtExpiryDate.Text))
-            {
-                return false;
-            }
-
-            if (!Validate.isZipCodeValid(cardDetails.txtZipCode.Text))
-            {
-                return false;
-            }
+            if (!Validate.IsValidCreditCard(cardDetails.txtCardNumber.Text)){ return false;}
+            if (!Validate.isCVVValid(cardDetails.txtCVV.Text)){return false;}
+            if (!Validate.isExpiryDateValid(cardDetails.txtExpiryDate.Text)){return false; }
+            if (!Validate.isZipCodeValid(cardDetails.txtZipCode.Text)){return false; }
+            if(!Validate.isCreditCardNotExpired(cardDetails.txtExpiryDate.Text)) { return false; }
             return true;
-        }
-
-        
-
-        private void btnChangeType_Click(object sender, EventArgs e)
-        {
-            if(type == "Card"){
-                  btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.GCash_button;
-                  type = "GCash";
-                  cardDetails.Hide();
-                  gcash.Show();
-            }
-            else
-            {
-                btnChangeType.Image = global::FLIGHT_RESERVATION.Properties.Resources.Card_button;
-                type = "Card";
-                cardDetails.Show();
-                gcash.Hide();
-            }
-        }
-
-        private void FlightBooking_PaymentDetails_Load(object sender, EventArgs e)
-        {
-            cardDetails.AutoSize = true;
-            cardDetails.Location = new Point(0, 0);
-            gcash.AutoSize = true;
-            gcash.Location = new Point(0, 0);
-            pnlPaymentDetails.Controls.Add(cardDetails);
-            pnlPaymentDetails.Controls.Add(gcash);
-            gcash.Hide();
         }
     }
 
@@ -148,11 +150,29 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
             return true;
         }
+
+        public bool isCreditCardNotExpired(String expiryDate)
+        {
+            DateTime.TryParseExact(expiryDate, "MMMM yyyy",
+             System.Globalization.CultureInfo.InvariantCulture,
+            System.Globalization.DateTimeStyles.None,
+            out DateTime ExpiryDate);
+                
+                DateTime CurrentDate = DateTime.Now;
+
+            if(ExpiryDate < CurrentDate)
+            {
+                return false;
+            }
+
+            return true;
+
+        }
         public bool isZipCodeValid(string ZipCode)
         {
             if (!Regex.IsMatch(ZipCode, @"^\d+$"))
             {
-                MessageBox.Show("Reference number must be Numeric", "Reference number invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Zip code must be", "Zip code is invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
