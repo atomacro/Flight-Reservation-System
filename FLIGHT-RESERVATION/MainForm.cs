@@ -301,7 +301,7 @@ namespace FLIGHT_RESERVATION
             btnLogout.Click += (sender, e) =>
             {
                 Session.IsLoggedIn = false;
-                Session.CurrentUser = string.Empty;
+                Session.CurrentUser = -1;
                 UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
             };
         }

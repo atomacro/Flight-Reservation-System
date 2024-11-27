@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,18 @@ namespace FLIGHT_RESERVATION
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            
-            bool validUserInfo =
-                user.ValidateRegistration(txtFName.Text, txtLName.Text, txtEmail.Text, txtPassword.Text);
+            Session session = new Session();
+
+            string firstName = txtFName.Text;
+            string lastName = txtLName.Text;
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+
+            bool validUserInfo = ValidateRegistration(firstName, lastName, email, password);
 
             if (validUserInfo)
             {
-                Session session = new Session();
+                User user = new User(firstName, lastName, email, password);
                 bool registrationSuccess = session.RegisterUser(user);
 
                 if (registrationSuccess)
@@ -64,6 +69,38 @@ namespace FLIGHT_RESERVATION
             btnHidePassword.Visible = true;
             btnShowPassword.Visible = false;
             txtPassword.Focus();
+        }
+
+        public static bool ValidateRegistration(string firstName, string lastName, string email, string password)
+        {
+            using (StringWriter writer = new StringWriter())
+            {
+                if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+                {
+                    writer.WriteLine("Fields cannot be empty.");
+                }
+
+                if (!Validation.IsValidEmail(email))
+                {
+                    writer.WriteLine("Please enter a valid email.");
+                }
+
+                if (!Validation.IsValidPassword(password))
+                {
+                    writer.WriteLine("Password must be at least 8 characters.");
+                }
+
+                string errorMessage = writer.ToString();
+
+                if (errorMessage.Length > 0)
+                {
+                    MessageBox.Show(errorMessage, "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+
+                return true;
+            }
         }
     }
 }
