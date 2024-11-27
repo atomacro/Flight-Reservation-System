@@ -109,6 +109,7 @@
             this.txtCurrentPassword.BorderSize = 2;
             this.txtCurrentPassword.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtCurrentPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtCurrentPassword.IsPassword = false;
             this.txtCurrentPassword.Location = new System.Drawing.Point(101, 458);
             this.txtCurrentPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtCurrentPassword.Multiline = false;
@@ -116,7 +117,7 @@
             this.txtCurrentPassword.Padding = new System.Windows.Forms.Padding(11, 7, 11, 7);
             this.txtCurrentPassword.PasswordChar = false;
             this.txtCurrentPassword.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(146)))), ((int)(((byte)(161)))));
-            this.txtCurrentPassword.PlaceholderText = "Enter your password";
+            this.txtCurrentPassword.PlaceholderText = "";
             this.txtCurrentPassword.Size = new System.Drawing.Size(345, 44);
             this.txtCurrentPassword.TabIndex = 28;
             this.txtCurrentPassword.UnderlinedStyle = false;
@@ -130,6 +131,7 @@
             this.txtEmail.BorderSize = 2;
             this.txtEmail.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.IsPassword = false;
             this.txtEmail.Location = new System.Drawing.Point(100, 350);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.Multiline = false;
@@ -175,6 +177,7 @@
             this.txtLName.BorderSize = 2;
             this.txtLName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtLName.ForeColor = System.Drawing.Color.Black;
+            this.txtLName.IsPassword = false;
             this.txtLName.Location = new System.Drawing.Point(465, 263);
             this.txtLName.Margin = new System.Windows.Forms.Padding(5);
             this.txtLName.Multiline = false;
@@ -196,6 +199,7 @@
             this.txtFName.BorderSize = 2;
             this.txtFName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtFName.ForeColor = System.Drawing.Color.Black;
+            this.txtFName.IsPassword = false;
             this.txtFName.Location = new System.Drawing.Point(96, 263);
             this.txtFName.Margin = new System.Windows.Forms.Padding(5);
             this.txtFName.Multiline = false;
@@ -273,6 +277,7 @@
             this.txtNewPassword.BorderSize = 2;
             this.txtNewPassword.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtNewPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtNewPassword.IsPassword = false;
             this.txtNewPassword.Location = new System.Drawing.Point(468, 458);
             this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtNewPassword.Multiline = false;
@@ -308,13 +313,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnShowPassword2);
+            this.Controls.Add(this.btnShowPassword1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnHidePassword2);
-            this.Controls.Add(this.btnShowPassword2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.btnHidePassword1);
-            this.Controls.Add(this.btnShowPassword1);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtCurrentPassword);
             this.Controls.Add(this.txtEmail);

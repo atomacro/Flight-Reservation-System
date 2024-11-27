@@ -184,6 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.btnHidePassword);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.btnChangePassword);
@@ -191,7 +192,6 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblPageName);
-            this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.txtPassword);
             this.Name = "ForgotPassword";
             this.Size = new System.Drawing.Size(907, 677);

@@ -113,7 +113,7 @@ namespace FLIGHT_RESERVATION
         [ToolboxItem(true)]
         [ToolboxBitmap(typeof(TextBox))]
         public class RoundedTextBox : UserControl
-        {
+        {   
             private Color borderColor = ColorTranslator.FromHtml("#F4F4F4");
             private int borderSize = 1;
             private bool underlinedStyle = false;
@@ -125,12 +125,17 @@ namespace FLIGHT_RESERVATION
             private bool isPlaceholderActive = true;
 
             private TextBox textBox1;
+            public bool IsPassword { get; set; }
 
             public new event EventHandler TextChanged;
 
             public RoundedTextBox()
             {
                 InitializeComponent();
+                if (IsPassword)
+                {
+                    textBox1.UseSystemPasswordChar = true;
+                }
             }
 
             private void InitializeComponent()
@@ -303,38 +308,49 @@ namespace FLIGHT_RESERVATION
 
             public new string Text
             {
-                get
-                {
-                    if (isPlaceholderActive) return "";
-                    return textBox1.Text;
-                }
+                get => isPlaceholderActive ? "" : textBox1.Text; // Return empty if placeholder is active
                 set
                 {
-                    textBox1.Text = value;
-                    SetPlaceholder();
+                    if (string.IsNullOrWhiteSpace(value))
+                    {
+                        SetPlaceholder();
+                    }
+                    else
+                    {
+                        isPlaceholderActive = false;
+                        textBox1.Text = value;
+                        textBox1.ForeColor = this.ForeColor;
+                        textBox1.UseSystemPasswordChar = PasswordChar; // Reapply masking for actual text
+                    }
                 }
             }
 
             public bool PasswordChar
             {
                 get => textBox1.UseSystemPasswordChar;
-                set => textBox1.UseSystemPasswordChar = value;
-            }
-
-            public bool Multiline
-            {
-                get => textBox1.Multiline;
-                set { textBox1.Multiline = value; UpdateControlHeight(); }
+                set
+                {
+                    // Apply PasswordChar based on whether placeholder is active or not
+                    if (!isPlaceholderActive)
+                    {
+                        textBox1.UseSystemPasswordChar = value;
+                    }
+                }
             }
 
             private void SetPlaceholder()
             {
-                if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
+                if (string.IsNullOrWhiteSpace(textBox1.Text) && !string.IsNullOrEmpty(placeholderText))
                 {
                     isPlaceholderActive = true;
                     textBox1.Text = placeholderText;
                     textBox1.ForeColor = placeholderColor;
-                    if (PasswordChar) textBox1.UseSystemPasswordChar = false;
+
+                    // Disable password masking if placeholder is active
+                    if (IsPassword)
+                    {
+                        textBox1.UseSystemPasswordChar = false;
+                    }
                 }
             }
 
@@ -345,8 +361,19 @@ namespace FLIGHT_RESERVATION
                     isPlaceholderActive = false;
                     textBox1.Text = "";
                     textBox1.ForeColor = this.ForeColor;
-                    if (PasswordChar) textBox1.UseSystemPasswordChar = true;
+
+                    // Enable password masking if it's a password field
+                    if (IsPassword && string.IsNullOrWhiteSpace(textBox1.Text))
+                    {
+                        textBox1.UseSystemPasswordChar = true;
+                    }
                 }
+            }
+
+            public bool Multiline
+            {
+                get => textBox1.Multiline;
+                set { textBox1.Multiline = value; UpdateControlHeight(); }
             }
 
             private void UpdateControlHeight()
@@ -377,13 +404,27 @@ namespace FLIGHT_RESERVATION
                 isFocused = true;
                 this.Invalidate();
                 RemovePlaceholder();
-            }
 
+                // If it's a password field and the textbox is empty, enable password masking
+                if (IsPassword && string.IsNullOrWhiteSpace(textBox1.Text))
+                {
+                    textBox1.UseSystemPasswordChar = true;
+                }
+            }
+                
             private void textBox1_Leave(object sender, EventArgs e)
             {
                 isFocused = false;
                 this.Invalidate();
-                SetPlaceholder();
+                // If it's empty, set the placeholder text and disable password masking
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                {
+                    SetPlaceholder();
+                    if (IsPassword)
+                    {
+                        textBox1.UseSystemPasswordChar = false; // Remove password masking if it's empty
+                    }
+                }
             }
 
             private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace FLIGHT_RESERVATION
         public SignUp()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = true;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
