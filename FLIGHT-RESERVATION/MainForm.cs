@@ -21,11 +21,9 @@ namespace FLIGHT_RESERVATION
 {
     public partial class MainForm : Form
     {
-
         ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
         FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
         dashboard dashboard = new dashboard();
-        SignUp signUp = new SignUp();
 
         public MainForm()
         {
@@ -350,10 +348,11 @@ namespace FLIGHT_RESERVATION
         {
             SetHeader("SIGN UP");
             ClearControls(pnlMain);
-            AddControl(signUp, pnlMain);
+            var signup = new SignUp();
+            AddControl(signup, pnlMain);
 
-            signUp.SignUpSuccessful += LoginControl_LoginSuccessful;
-            signUp.OpenLoginForm += LoginControl_OpenLoginForm;
+            signup.SignUpSuccessful += LoginControl_LoginSuccessful;
+            signup.OpenLoginForm += LoginControl_OpenLoginForm;
         }
 
         private void LoginControl_OpenLoginForm(object sender, EventArgs e) // From signup form => login form
