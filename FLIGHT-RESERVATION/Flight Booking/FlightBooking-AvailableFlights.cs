@@ -192,7 +192,7 @@ namespace FLIGHT_RESERVATION
                 MySqlCommand command = new MySqlCommand(query, _connection);
 
 
-            command.Parameters.AddWithValue("@DepartureLocation", FromLocation);
+                command.Parameters.AddWithValue("@DepartureLocation", FromLocation);
                 command.Parameters.AddWithValue("@ArrivalLocation", ToLocation);
                 command.Parameters.AddWithValue("@DepartureDate", DepartureDate);
                 

@@ -111,7 +111,7 @@ namespace FLIGHT_RESERVATION
         }
 
 
-        private void FlightBookings(FlightBooking_FlightDetails FlightDetails)
+        private async void FlightBookings(FlightBooking_FlightDetails FlightDetails)
         {
 
             FlightDetails.OneWay.btnSearchFlight.Click += (s, e) =>
@@ -233,7 +233,6 @@ namespace FLIGHT_RESERVATION
                         return;
                     }
                     SetupPaymentDetails(Payment);
-                
                 };
             }
 
@@ -249,12 +248,11 @@ namespace FLIGHT_RESERVATION
 
                 PaymentDetails.btnContinue.Click += (s, @event) =>
                 {
-                    if (!PaymentDetails.ValidateContents()){ return;  }
+                    if (!PaymentDetails.ValidateContents()){ return; }
 
                     PaymentDetails.FillData();
-                    Console.WriteLine(PaymentDetails.GenerateTransactionId());
+                    InsertDatabaseData Database = new InsertDatabaseData(1, PaymentDetails.GenerateTransactionId(), FlightBooking_Session.Instance.Type);
 
-                    Console.WriteLine(PaymentDetails.GenerateTransactionId());
                     var Success = new Success();
                     AddControl(Success, pnlMain);
                 };

@@ -167,7 +167,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         {
             if (!Regex.IsMatch(ZipCode, @"^\d+$"))
             {
-                MessageBox.Show("Zip code must be", "Zip code is invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Zip code must be numeric", "Zip code is invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
