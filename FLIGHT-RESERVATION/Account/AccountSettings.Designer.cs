@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnHidePassword = new System.Windows.Forms.Button();
-            this.btnShowPassword = new System.Windows.Forms.Button();
+            this.btnHidePassword1 = new System.Windows.Forms.Button();
+            this.btnShowPassword1 = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtCurrentPassword = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtEmail = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
@@ -39,11 +39,11 @@
             this.txtLName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.txtFName = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHidePassword2 = new System.Windows.Forms.Button();
+            this.btnShowPassword2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNewPassword = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
-            this.btnSignUp = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
+            this.btnSave = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -56,35 +56,37 @@
             this.lblHeader.TabIndex = 2;
             this.lblHeader.Text = "Account Information";
             // 
-            // btnHidePassword
+            // btnHidePassword1
             // 
-            this.btnHidePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnHidePassword.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility_off;
-            this.btnHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHidePassword.FlatAppearance.BorderSize = 0;
-            this.btnHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHidePassword.Location = new System.Drawing.Point(400, 466);
-            this.btnHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHidePassword.Name = "btnHidePassword";
-            this.btnHidePassword.Size = new System.Drawing.Size(40, 30);
-            this.btnHidePassword.TabIndex = 31;
-            this.btnHidePassword.UseVisualStyleBackColor = false;
+            this.btnHidePassword1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.btnHidePassword1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility_off;
+            this.btnHidePassword1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHidePassword1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHidePassword1.FlatAppearance.BorderSize = 0;
+            this.btnHidePassword1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHidePassword1.Location = new System.Drawing.Point(400, 466);
+            this.btnHidePassword1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHidePassword1.Name = "btnHidePassword1";
+            this.btnHidePassword1.Size = new System.Drawing.Size(40, 30);
+            this.btnHidePassword1.TabIndex = 31;
+            this.btnHidePassword1.UseVisualStyleBackColor = false;
+            this.btnHidePassword1.Click += new System.EventHandler(this.btnHidePassword1_Click);
             // 
-            // btnShowPassword
+            // btnShowPassword1
             // 
-            this.btnShowPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnShowPassword.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility;
-            this.btnShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowPassword.FlatAppearance.BorderSize = 0;
-            this.btnShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowPassword.Location = new System.Drawing.Point(400, 466);
-            this.btnShowPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(40, 30);
-            this.btnShowPassword.TabIndex = 30;
-            this.btnShowPassword.UseVisualStyleBackColor = false;
+            this.btnShowPassword1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.btnShowPassword1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility;
+            this.btnShowPassword1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnShowPassword1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowPassword1.FlatAppearance.BorderSize = 0;
+            this.btnShowPassword1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPassword1.Location = new System.Drawing.Point(400, 466);
+            this.btnShowPassword1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnShowPassword1.Name = "btnShowPassword1";
+            this.btnShowPassword1.Size = new System.Drawing.Size(40, 30);
+            this.btnShowPassword1.TabIndex = 30;
+            this.btnShowPassword1.UseVisualStyleBackColor = false;
+            this.btnShowPassword1.Click += new System.EventHandler(this.btnShowPassword1_Click);
             // 
             // lblPassword
             // 
@@ -108,7 +110,7 @@
             this.txtCurrentPassword.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtCurrentPassword.ForeColor = System.Drawing.Color.Black;
             this.txtCurrentPassword.Location = new System.Drawing.Point(101, 458);
-            this.txtCurrentPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCurrentPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtCurrentPassword.Multiline = false;
             this.txtCurrentPassword.Name = "txtCurrentPassword";
             this.txtCurrentPassword.Padding = new System.Windows.Forms.Padding(11, 7, 11, 7);
@@ -129,7 +131,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(100, 350);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(11, 7, 11, 7);
@@ -174,7 +176,7 @@
             this.txtLName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtLName.ForeColor = System.Drawing.Color.Black;
             this.txtLName.Location = new System.Drawing.Point(465, 263);
-            this.txtLName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtLName.Margin = new System.Windows.Forms.Padding(5);
             this.txtLName.Multiline = false;
             this.txtLName.Name = "txtLName";
             this.txtLName.Padding = new System.Windows.Forms.Padding(11, 7, 11, 7);
@@ -195,7 +197,7 @@
             this.txtFName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtFName.ForeColor = System.Drawing.Color.Black;
             this.txtFName.Location = new System.Drawing.Point(96, 263);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(5);
             this.txtFName.Multiline = false;
             this.txtFName.Name = "txtFName";
             this.txtFName.Padding = new System.Windows.Forms.Padding(11, 7, 11, 7);
@@ -218,35 +220,37 @@
             this.lblFirstName.Text = "First Name";
             this.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // btnHidePassword2
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.button1.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility_off;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(767, 466);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 30);
-            this.button1.TabIndex = 37;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnHidePassword2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.btnHidePassword2.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility_off;
+            this.btnHidePassword2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHidePassword2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHidePassword2.FlatAppearance.BorderSize = 0;
+            this.btnHidePassword2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHidePassword2.Location = new System.Drawing.Point(767, 466);
+            this.btnHidePassword2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHidePassword2.Name = "btnHidePassword2";
+            this.btnHidePassword2.Size = new System.Drawing.Size(40, 30);
+            this.btnHidePassword2.TabIndex = 37;
+            this.btnHidePassword2.UseVisualStyleBackColor = false;
+            this.btnHidePassword2.Click += new System.EventHandler(this.btnHidePassword2_Click);
             // 
-            // button2
+            // btnShowPassword2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.button2.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(767, 466);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 30);
-            this.button2.TabIndex = 36;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnShowPassword2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.btnShowPassword2.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.visibility;
+            this.btnShowPassword2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnShowPassword2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowPassword2.FlatAppearance.BorderSize = 0;
+            this.btnShowPassword2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPassword2.Location = new System.Drawing.Point(767, 466);
+            this.btnShowPassword2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnShowPassword2.Name = "btnShowPassword2";
+            this.btnShowPassword2.Size = new System.Drawing.Size(40, 30);
+            this.btnShowPassword2.TabIndex = 36;
+            this.btnShowPassword2.UseVisualStyleBackColor = false;
+            this.btnShowPassword2.Click += new System.EventHandler(this.btnShowPassword2_Click);
             // 
             // label3
             // 
@@ -270,7 +274,7 @@
             this.txtNewPassword.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtNewPassword.ForeColor = System.Drawing.Color.Black;
             this.txtNewPassword.Location = new System.Drawing.Point(468, 458);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtNewPassword.Multiline = false;
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Padding = new System.Windows.Forms.Padding(11, 7, 11, 7);
@@ -281,36 +285,36 @@
             this.txtNewPassword.TabIndex = 34;
             this.txtNewPassword.UnderlinedStyle = false;
             // 
-            // btnSignUp
+            // btnSave
             // 
-            this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
-            this.btnSignUp.BorderRadius = 20;
-            this.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSignUp.FlatAppearance.BorderSize = 0;
-            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUp.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
-            this.btnSignUp.ForeColor = System.Drawing.Color.White;
-            this.btnSignUp.Location = new System.Drawing.Point(261, 549);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(384, 57);
-            this.btnSignUp.TabIndex = 38;
-            this.btnSignUp.Text = "SAVE CHANGES";
-            this.btnSignUp.UseVisualStyleBackColor = false;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(93)))), ((int)(((byte)(241)))));
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(261, 549);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(384, 57);
+            this.btnSave.TabIndex = 38;
+            this.btnSave.Text = "SAVE CHANGES";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AccountSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnSignUp);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnHidePassword2);
+            this.Controls.Add(this.btnShowPassword2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNewPassword);
-            this.Controls.Add(this.btnHidePassword);
-            this.Controls.Add(this.btnShowPassword);
+            this.Controls.Add(this.btnHidePassword1);
+            this.Controls.Add(this.btnShowPassword1);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtCurrentPassword);
             this.Controls.Add(this.txtEmail);
@@ -332,8 +336,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Button btnHidePassword;
-        private System.Windows.Forms.Button btnShowPassword;
+        private System.Windows.Forms.Button btnHidePassword1;
+        private System.Windows.Forms.Button btnShowPassword1;
         private System.Windows.Forms.Label lblPassword;
         private CustomControls.RoundedTextBox txtCurrentPassword;
         private CustomControls.RoundedTextBox txtEmail;
@@ -342,10 +346,10 @@
         private CustomControls.RoundedTextBox txtLName;
         private CustomControls.RoundedTextBox txtFName;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHidePassword2;
+        private System.Windows.Forms.Button btnShowPassword2;
         private System.Windows.Forms.Label label3;
         private CustomControls.RoundedTextBox txtNewPassword;
-        private CustomControls.RoundedButton btnSignUp;
+        private CustomControls.RoundedButton btnSave;
     }
 }

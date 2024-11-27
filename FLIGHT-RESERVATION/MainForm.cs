@@ -351,7 +351,7 @@ namespace FLIGHT_RESERVATION
             var signup = new SignUp();
             AddControl(signup, pnlMain);
 
-            signup.SignUpSuccessful += LoginControl_LoginSuccessful;
+            signup.SignUpSuccessful += LoginControl_OpenLoginForm;
             signup.OpenLoginForm += LoginControl_OpenLoginForm;
         }
 
