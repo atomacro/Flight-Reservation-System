@@ -304,7 +304,7 @@ namespace FLIGHT_RESERVATION
                 
                     command.Parameters.AddWithValue("@FlightID", flightID);
                     command.Parameters.AddWithValue("@NumberOfTickets", this.numberOfTickets);
-
+                await command.ExecuteNonQueryAsync();
                 await transaction.CommitAsync();
                 
             }
