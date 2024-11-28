@@ -27,6 +27,8 @@ namespace FLIGHT_RESERVATION
         private String Type { get; set; }
         private int DepartureTicketID { get; set; }
         private int ReturnTicketID { get; set; }
+        private int numberOfTickets { get; set; } = 0;
+
 
         public InsertDatabaseData(int UserID, String ReferenceNumber)
         {
@@ -49,6 +51,8 @@ namespace FLIGHT_RESERVATION
                     await InsertTransaction();
                     await InsertPassengerDetails();
                     await InsertTicketDetails("Departure");
+                    await DecrementSeatsRemaining("Departure");
+
                 }
                 else if (Type == "Round Trip")
                 {
@@ -56,6 +60,9 @@ namespace FLIGHT_RESERVATION
                     await InsertPassengerDetails();
                     await InsertTicketDetails("Departure");
                     await InsertTicketDetails("Return");
+                    await DecrementSeatsRemaining("Departure");
+                    await DecrementSeatsRemaining("Return");
+
                 }
             }
             finally
@@ -159,13 +166,12 @@ namespace FLIGHT_RESERVATION
                     throw new Exception($"Flight ID for '{flight}' could not be determined.");
                 }
 
-                int numberOfTickets = 0;
 
                 if (session.FlightDetails.TryGetValue("Number of Adults", out string adults) &&
                     session.FlightDetails.TryGetValue("Number of Children", out string children) &&
                     session.FlightDetails.TryGetValue("Number of Infants", out string infants))
                 {
-                    numberOfTickets = int.Parse(adults) + int.Parse(children) + int.Parse(infants);
+                    this.numberOfTickets = int.Parse(adults) + int.Parse(children) + int.Parse(infants);
                 }
                 else
                 {
@@ -275,6 +281,42 @@ namespace FLIGHT_RESERVATION
 
             }
 
+        }
+        public async Task DecrementSeatsRemaining(string flight)
+        {
+            var transaction = await _connection.BeginTransactionAsync();
+            try
+            {
+                int flightID = 0;
+
+                if (flight == "Return")
+                {
+                    flightID = await SelectFlightID(session.ReturnAirplaneNumber);
+                }
+                else if (flight == "Departure")
+                {
+                    flightID = await SelectFlightID(session.DepartureAirplaneNumber);
+                }
+
+                string query = "UPDATE flights SET SeatsRemaining = SeatsRemaining - @NumberOfTickets WHERE FlightID = @FlightID";
+
+                var command = new MySqlCommand(query, _connection, transaction);
+                
+                    command.Parameters.AddWithValue("@FlightID", flightID);
+                    command.Parameters.AddWithValue("@NumberOfTickets", this.numberOfTickets);
+
+                await transaction.CommitAsync();
+                
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                Console.WriteLine($"Error decrementing SeatsRemaining: {ex.Message}");
+            }
+            finally
+            {
+                transaction.Dispose();
+            }
         }
     }
 }
