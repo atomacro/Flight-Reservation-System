@@ -22,6 +22,7 @@ namespace FLIGHT_RESERVATION
         public Login()
         {
             InitializeComponent();
+            txtPassword.IsPassword = true;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

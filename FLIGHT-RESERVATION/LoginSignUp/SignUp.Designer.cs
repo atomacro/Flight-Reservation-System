@@ -255,8 +255,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnHidePassword);
             this.Controls.Add(this.btnShowPassword);
+            this.Controls.Add(this.btnHidePassword);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.lblSignUp);

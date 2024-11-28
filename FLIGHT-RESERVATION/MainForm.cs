@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -335,14 +336,18 @@ namespace FLIGHT_RESERVATION
                 ClearControls(pnlMain);
                 this.ResumeLayout();
 
-                var account = new AccountSettings();
-                AddControl(account, pnlMain);
+                if (Session.IsLoggedIn)
+                {
+                    var account = new AccountSettings();
+                    AddControl(account, pnlMain);
+                }
+                else { LoginControl_OpenLoginForm(this, EventArgs.Empty); }
             };
             btnLogin.Click += LoginControl_OpenLoginForm;
             btnLogout.Click += (sender, e) =>
             {
                 Session.IsLoggedIn = false;
-                Session.CurrentUser = string.Empty;
+                Session.CurrentUser = -1;
                 UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
             };
         }
@@ -382,10 +387,7 @@ namespace FLIGHT_RESERVATION
             SetIndicator(btnDashboard, pnlIndicator1);
             SetHeader("DASHBOARD");
             ClearControls(pnlMain);
-
-            // ---- NOTE: only for example. CHANGE TO DASHBOARD USER CONTROL
-            //var viewBookings = new ViewBookings.ViewBookings();
-            //AddControl(viewBookings, pnlMain);
+            AddControl(dashboard, pnlMain);
         }
 
         private void LoginControl_OpenSignUpForm(object sender, EventArgs e) // From login form => sign up form
@@ -395,7 +397,7 @@ namespace FLIGHT_RESERVATION
             var signup = new SignUp();
             AddControl(signup, pnlMain);
 
-            signup.SignUpSuccessful += LoginControl_LoginSuccessful;
+            signup.SignUpSuccessful += LoginControl_OpenLoginForm;
             signup.OpenLoginForm += LoginControl_OpenLoginForm;
         }
 

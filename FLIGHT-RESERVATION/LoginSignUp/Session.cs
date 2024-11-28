@@ -17,7 +17,8 @@ namespace FLIGHT_RESERVATION
     public class Session
     {
         public static bool IsLoggedIn { get; set; } = false;
-        public static string CurrentUser { get; set; } = string.Empty;
+        public static int CurrentUser { get; set; } = 0;
+        public static string Password { get; set; } = string.Empty;
 
         private MySqlConnection _connection;
         private MySqlTransaction _transaction;
@@ -67,16 +68,16 @@ namespace FLIGHT_RESERVATION
                     using (reader)
                     {
                         reader.Read();
-                        string firstName = reader.GetString("FirstName");
-                        string lastName = reader.GetString("LastName");
-                        CurrentUser = $"{firstName} {lastName}";
-                    }
+                        int currentUser = (int) reader["AccountID"];
+                        Password = password;
+                        CurrentUser = currentUser;
 
+                    }
                     return true;
                 }
                 else
                 {
-                    CurrentUser = null;
+                    CurrentUser = -1;
                     return false;
                 }
             }
@@ -236,6 +237,47 @@ namespace FLIGHT_RESERVATION
                 return false;
             }     
         }
+
+        public User GetAccountInfo()
+        {
+            OpenConnection();
+            try
+            {
+                string query = $"SELECT * FROM accounts WHERE AccountID = @CurrentUserID";
+                MySqlCommand command = new MySqlCommand(query, _connection);
+                command.Parameters.AddWithValue("@CurrentUserID", CurrentUser);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string firstName = reader.GetString("FirstName");
+                        string lastName = reader.GetString("LastName");
+                        string email = reader.GetString("Email");
+
+                        return new User(firstName, lastName, email, Password);
+                    }
+                }
+
+                return null;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"MySQL Error:\nNumber: {ex.Number}\nMessage: {ex.Message}\nSQL State: {ex.SqlState}",
+                    "MySQL Error");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"General Error: {ex.Message}\nStack Trace: {ex.StackTrace}",
+                    "General Error");
+                return null;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
     }
 
     public class User
@@ -245,45 +287,14 @@ namespace FLIGHT_RESERVATION
         public string Email { get; set; } = String.Empty;
         public string Password { get; set; } = String.Empty;
 
-        public User()
+        public User(string firstName, string lastName, string email, string password)
         {
-
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Password = password;
         }
 
-        public bool ValidateRegistration(string firstName, string lastName, string email, string password)
-        {
-            using (StringWriter writer = new StringWriter())
-            {
-                if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-                {
-                    writer.WriteLine("Fields cannot be empty.");
-                }
-
-                if (!Validation.IsValidEmail(email))
-                {
-                    writer.WriteLine("Please enter a valid email.");
-                }
-
-                if (!Validation.IsValidPassword(password))
-                {
-                    writer.WriteLine("Password must be at least 8 characters.");
-                }
-
-                string errorMessage = writer.ToString();
-
-                if (errorMessage.Length > 0)
-                {
-                    MessageBox.Show(errorMessage, "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-
-                FirstName = firstName;
-                LastName = lastName;
-                Email = email;
-                Password = password;
-                return true;
-            }
-        }
     }
 
     public class Validation
@@ -336,5 +347,7 @@ namespace FLIGHT_RESERVATION
                 return false;
             }
         }
+
+        
     }
 }
