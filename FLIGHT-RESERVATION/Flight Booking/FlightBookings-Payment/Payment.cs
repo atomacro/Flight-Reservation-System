@@ -127,6 +127,9 @@ namespace FLIGHT_RESERVATION
         public async Task setExpenses(String type)
         {
 
+            this.SuspendLayout();
+
+            try { 
             String SeatClass = session.FlightDetails.ContainsKey("Seat Class") ? session.FlightDetails["Seat Class"] : "Economy";
             float DepartureSubTotal = 0;
             float ReturnSubTotal = 0;
@@ -195,39 +198,44 @@ namespace FLIGHT_RESERVATION
             }
 
             String PassengerTicketPrices(Flight flight, ref float SubTotal)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    float price = flight.Price;
+                    float multiplier = 1;
+
+                    if (SeatClass == "Business") multiplier = 2f;
+                    if (SeatClass == "Business Economy") multiplier = 1.5f;
+                    if (SeatClass == "First Class") multiplier = 2.5f;
+
+                    if (AdultCount > 0)
+                    {
+                        float adultTickets = (float)(price * multiplier) * AdultCount;
+                        SubTotal += adultTickets;
+
+                        sb.AppendLine($"{String.Format("{0:0.00}", adultTickets)}");
+                    }
+                    if (ChildrenCount > 0)
+                    {
+                        float childrenTickets = (float)((price * multiplier) * 0.75) * ChildrenCount;
+                        SubTotal += childrenTickets;
+
+                        sb.AppendLine($"{String.Format("{0:0.00}", childrenTickets)}");
+                    }
+                    if (InfantCount > 0)
+                    {
+                        float infantTickets = (float)((price * multiplier) * 0.50) * InfantCount;
+                        SubTotal += infantTickets;
+
+                        sb.AppendLine($"{String.Format("{0:0.00}", infantTickets)}");
+                    }
+
+
+                    return sb.ToString();
+                }
+            }
+            finally
             {
-                StringBuilder sb = new StringBuilder();
-                float price = flight.Price;
-                float multiplier = 1;
-
-                if (SeatClass == "Business") multiplier = 2f;
-                if (SeatClass == "Business Economy") multiplier = 1.5f;
-                if (SeatClass == "First Class") multiplier = 2.5f;
-
-                if (AdultCount > 0)
-                {
-                    float adultTickets = (float)(price * multiplier) * AdultCount;
-                    SubTotal += adultTickets;
-
-                    sb.AppendLine($"{String.Format("{0:0.00}", adultTickets)}");
-                }
-                if (ChildrenCount > 0)
-                {
-                    float childrenTickets = (float)((price * multiplier) * 0.75) * ChildrenCount;
-                    SubTotal += childrenTickets;
-
-                    sb.AppendLine($"{String.Format("{0:0.00}", childrenTickets)}");
-                }
-                if (InfantCount > 0)
-                {
-                    float infantTickets = (float)((price * multiplier) * 0.50) * InfantCount;
-                    SubTotal += infantTickets;
-
-                    sb.AppendLine($"{String.Format("{0:0.00}", infantTickets)}");
-                }
-
-
-                return sb.ToString();
+                this.ResumeLayout();
             }
         }
 
@@ -235,12 +243,14 @@ namespace FLIGHT_RESERVATION
         {
             String type = session.Type == null ? "One Way" : session.Type;
 
+
+            this.SuspendLayout();
             Initialize(type);
             await setExpenses(type);
             setAddons();
             lblSubtotalPrice.Text = String.Format("{0:0.00}", this.DepartureSubTotal + this.ReturnSubTotal + this.AddonSubTotal);
             session.BookingSubTotal = this.DepartureSubTotal + this.ReturnSubTotal + this.AddonSubTotal;
-
+            this.ResumeLayout();
         }
 
         private void lblTermsAndConditions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

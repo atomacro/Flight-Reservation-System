@@ -56,7 +56,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             cboArrivalLocation.Items.AddRange(locations.Keys.ToArray());
             cboArrivalLocation.SelectedIndexChanged += (s, e) =>
             {
-                lblArrivalLocation.Text = locations[cboArrivalLocation.Text];
+                if (locations.ContainsKey(cboArrivalLocation.Text))
+                 lblArrivalLocation.Text = locations[cboArrivalLocation.Text];
             };
         }
 
@@ -66,7 +67,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             cboDepartureLocation.Items.AddRange(locations.Keys.ToArray());
             cboDepartureLocation.SelectedIndexChanged += (s, e) =>
             {
-                lblDepartureLocation.Text = locations[cboDepartureLocation.Text];
+                if (locations.ContainsKey(cboDepartureLocation.Text))
+                    lblDepartureLocation.Text = locations[cboDepartureLocation.Text];
+                
             };
         }
 

@@ -21,36 +21,41 @@ namespace FLIGHT_RESERVATION
 {
     public partial class MainForm : Form
     {
-        ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
-        FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
+
+
         dashboard dashboard = new dashboard();
+        FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
+
 
         public MainForm()
         {
             InitializeComponent();
-            FlightBookings(FlightDetails);
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            String formColor = "#E6E9F0";
-            this.BackColor = ColorTranslator.FromHtml(formColor);
-            Header.BackColor = Color.White;
-            SetButtonBorders();
-            InitializeSidebar();
-            SetHeader("DASHBOARD");
-            SetIndicator(btnDashboard, pnlIndicator1);
-            AddControl(dashboard, pnlMain);
+            this.SuspendLayout();
+            try
+            {
+                String formColor = "#E6E9F0";
+                this.BackColor = ColorTranslator.FromHtml(formColor);
+                Header.BackColor = Color.White;
 
-            UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+                SetButtonBorders();
+                InitializeSidebar();
+                SetHeader("DASHBOARD");
+                SetIndicator(btnDashboard, pnlIndicator1);
+                AddControl(dashboard, pnlMain);
 
-            AddControl(viewBookings, pnlMain);
-            AddControl(FlightDetails, pnlMain);
-            viewBookings.Hide();
-            FlightDetails.Hide();
-
-
+                AddControl(FlightDetails, pnlMain);
+                FlightBookings(FlightDetails);
+                FlightDetails.Hide();
+                UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+            }
+            finally
+            {
+                this.ResumeLayout();
+            }
 
 
         }
@@ -109,8 +114,19 @@ namespace FLIGHT_RESERVATION
                 }
             }
         }
+        void FlightDetails_ResetControls(Trips trip)
+        {
+            this.SuspendLayout();
 
-
+            trip.cboClassSeatControl.SelectedItem = null;
+            trip.cboDepartureDateControl.SelectedItem = null;
+            trip.cboArrivalLocationControl.SelectedItem = null;
+            trip.cboDepartureDateControl.SelectedItem = null;
+            if(trip.cboReturnDateControl != null) trip.cboReturnDateControl.SelectedItem = null;
+            trip.lblArrivalAirportNameControl.Text = "";
+            trip.lblDepartureAirportNameControl.Text = "";
+            this.ResumeLayout();
+        }
         private void FlightBookings(FlightBooking_FlightDetails FlightDetails)
         {
 
@@ -247,16 +263,37 @@ namespace FLIGHT_RESERVATION
                     PreviousPanel.Show();
                 };
 
-                PaymentDetails.btnContinue.Click += (s, @event) =>
+                PaymentDetails.btnContinue.Click += async (s, @event) =>
                 {
                     if (!PaymentDetails.ValidateContents()){ return;  }
 
                     PaymentDetails.FillData();
-                    Console.WriteLine(PaymentDetails.GenerateTransactionId());
-
-                    Console.WriteLine(PaymentDetails.GenerateTransactionId());
+                    InsertDatabaseData Database = new InsertDatabaseData(1, PaymentDetails.GenerateTransactionId());
+                    await Database.InsertDatabase();
                     var Success = new Success();
                     AddControl(Success, pnlMain);
+
+                    Success.lblViewBookings.Click += (o, @e) =>
+                    {
+                        this.SuspendLayout();
+                        SetIndicator(btnViewBookings, pnlIndicator3);
+                        ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
+                        SetHeader("VIEW BOOKINGS");
+                        ClearControls(pnlMain);
+                        AddControl(viewBookings, pnlMain);
+                        this.ResumeLayout();
+                    };
+
+                    Success.btnContinue.Click += (o, @e) =>
+                    {
+                        this.SuspendLayout();
+                        SetIndicator(btnViewBookings, pnlIndicator3);
+                        ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
+                        SetHeader("VIEW BOOKINGS");
+                        ClearControls(pnlMain);
+                        AddControl(viewBookings, pnlMain);
+                        this.ResumeLayout();
+                    };
                 };
             }
         }
@@ -271,24 +308,33 @@ namespace FLIGHT_RESERVATION
             };
             btnFlightBooking.Click += (sender, EventArgs) =>
             {
+                this.SuspendLayout();
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
                 AddControl(FlightDetails, pnlMain);
+                FlightDetails_ResetControls(FlightDetails.OneWay);
+                FlightDetails_ResetControls(FlightDetails.RoundTrip);
+                this.ResumeLayout();
             };
             btnViewBookings.Click += (sender, e) =>
             {
+                this.SuspendLayout();
                 SetIndicator(btnViewBookings, pnlIndicator3);
+                ViewBookings.ViewBookings viewBookings = new ViewBookings.ViewBookings();
                 SetHeader("VIEW BOOKINGS");
                 ClearControls(pnlMain);
                 AddControl(viewBookings, pnlMain);
+                this.ResumeLayout();
                 
             };
             btnAccount.Click += (sender, e) =>
             {
+                this.SuspendLayout(); 
                 SetIndicator(btnAccount, pnlIndicator4);
                 SetHeader("ACCOUNT");
                 ClearControls(pnlMain);
+                this.ResumeLayout();
 
                 if (Session.IsLoggedIn)
                 {
