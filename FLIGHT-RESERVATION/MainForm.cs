@@ -119,7 +119,7 @@ namespace FLIGHT_RESERVATION
             this.SuspendLayout();
 
             trip.cboClassSeatControl.SelectedItem = null;
-            trip.cboDepartureDateControl.SelectedItem = null;
+            trip.cboDepartureLocationControl.SelectedItem = null;
             trip.cboArrivalLocationControl.SelectedItem = null;
             trip.cboDepartureDateControl.SelectedItem = null;
             if(trip.cboReturnDateControl != null) trip.cboReturnDateControl.SelectedItem = null;
