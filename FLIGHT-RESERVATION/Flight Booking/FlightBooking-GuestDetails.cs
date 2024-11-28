@@ -22,66 +22,77 @@ namespace FLIGHT_RESERVATION
         public Dictionary<String, GuestDetails> guestDetails = new Dictionary<string, GuestDetails>();
         private void InitializeGuestDetails()
         {
+            this.SuspendLayout();
 
-            int numAdults = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Adults") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Adults"]) : 0;
-            int numChildren = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Children") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Children"]) : 0;
-            int numInfants = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Infants") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Infants"]) : 0;
-
-
-            if (numAdults + numChildren + numInfants > 1)
+            try
             {
-                int total = numAdults + numChildren + numInfants;
-                if (total % 2 != 0) total += 1;
-                int numRows = (total / 2);
 
-                TableLayoutPanel GuestDetailsLayout = new TableLayoutPanel()
+
+
+                int numAdults = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Adults") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Adults"]) : 0;
+                int numChildren = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Children") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Children"]) : 0;
+                int numInfants = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Infants") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Infants"]) : 0;
+
+
+                if (numAdults + numChildren + numInfants > 1)
                 {
-                    Width = pnlGuestDetails.Width,
-                    AutoSize = true,
-                    Dock = DockStyle.Top
-                };
-                int xCenter = (pnlGuestDetails.Width - GuestDetailsLayout.Width) / 2;
-                GuestDetailsLayout.Location = new Point(xCenter + 20, GuestDetailsLayout.Location.Y);
+                    int total = numAdults + numChildren + numInfants;
+                    if (total % 2 != 0) total += 1;
+                    int numRows = (total / 2);
 
-                GuestDetailsLayout.Width = pnlGuestDetails.Width / 2;
-                GuestDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-                GuestDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-
-                int currentColumn = 0;
-                int currentRow = 0;
-
-                InitializeGuestDetails("Adult", numAdults);
-                InitializeGuestDetails("Children", numChildren);
-                InitializeGuestDetails("Infant", numInfants);
-
-
-                void InitializeGuestDetails(String type, int counter)
-                {
-                    for (int i = 1; i <= counter; i++)
+                    TableLayoutPanel GuestDetailsLayout = new TableLayoutPanel()
                     {
-                        var GuestDetails = new GuestDetails(type, i) { Margin = new Padding(0, 0, 0, 25) };
-                        GuestDetailsLayout.Controls.Add(GuestDetails, currentColumn, currentRow);
-                        if (currentColumn == 1) { currentColumn = 0; currentRow++; }
-                        else currentColumn++;
-                        guestDetails[$"{type} {i}"] = GuestDetails;
-                    }
-                }
+                        Width = pnlGuestDetails.Width,
+                        AutoSize = true,
+                        Dock = DockStyle.Top
+                    };
+                    int xCenter = (pnlGuestDetails.Width - GuestDetailsLayout.Width) / 2;
+                    GuestDetailsLayout.Location = new Point(xCenter + 20, GuestDetailsLayout.Location.Y);
 
-                pnlGuestDetails.Controls.Add(GuestDetailsLayout);
+                    GuestDetailsLayout.Width = pnlGuestDetails.Width / 2;
+                    GuestDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+                    GuestDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+
+                    int currentColumn = 0;
+                    int currentRow = 0;
+
+                    InitializeGuestDetails("Adult", numAdults);
+                    InitializeGuestDetails("Children", numChildren);
+                    InitializeGuestDetails("Infant", numInfants);
+
+
+                    void InitializeGuestDetails(String type, int counter)
+                    {
+                        for (int i = 1; i <= counter; i++)
+                        {
+                            var GuestDetails = new GuestDetails(type, i) { Margin = new Padding(0, 0, 0, 25) };
+                            GuestDetailsLayout.Controls.Add(GuestDetails, currentColumn, currentRow);
+                            if (currentColumn == 1) { currentColumn = 0; currentRow++; }
+                            else currentColumn++;
+                            guestDetails[$"{type} {i}"] = GuestDetails;
+                        }
+                    }
+
+                    pnlGuestDetails.Controls.Add(GuestDetailsLayout);
+                }
+                else
+                {
+                    var GuestDetails = new GuestDetails("Passenger", 0);
+                    pnlGuestDetails.Controls.Add(GuestDetails);
+                    GuestDetails.AutoSize = true;
+                    GuestDetails.Left = (pnlGuestDetails.Width - GuestDetails.Width) / 2;
+                    GuestDetails.Top = (pnlGuestDetails.Height - GuestDetails.Height) / 2;
+                    guestDetails["Adult 1"] = GuestDetails;
+                }
             }
-            else
+            finally
             {
-                var GuestDetails = new GuestDetails("Passenger", 0);
-                pnlGuestDetails.Controls.Add(GuestDetails);
-                GuestDetails.AutoSize = true;
-                GuestDetails.Left = (pnlGuestDetails.Width - GuestDetails.Width) / 2;
-                GuestDetails.Top = (pnlGuestDetails.Height - GuestDetails.Height) / 2;
-                guestDetails["Adult 1"] = GuestDetails;
+                this.ResumeLayout();
             }
         }
 
 
-       public Boolean Validate()
+       new public Boolean Validate()
         {
             foreach (var item in guestDetails)
             {

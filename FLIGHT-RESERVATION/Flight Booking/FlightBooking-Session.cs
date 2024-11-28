@@ -31,9 +31,6 @@ namespace FLIGHT_RESERVATION
 
         public string Type { get; private set; }
         public string Email { get; set; }
-        public float TotalPrice { get; set; }
-        public string PaymentMode { get; set; }
-        public string GcashReferenceNumber { get; set; }
         public string DepartureAirplaneNumber { get; set; }
         public string ReturnAirplaneNumber { get; set; }
         public float BookingSubTotal { get; set; }
@@ -42,7 +39,7 @@ namespace FLIGHT_RESERVATION
 
         public Dictionary<string, Boolean> Addons { get; set; } = new Dictionary<string, Boolean>();
 
-        public Dictionary<String, String> CardDetails { get; set; } = new Dictionary<string, string>();
+        public Dictionary<String, String> PaymentDetails { get; set; } = new Dictionary<string, string>();
 
         public void setAddons(Dictionary<string, Boolean> addons)
         {
@@ -61,11 +58,11 @@ namespace FLIGHT_RESERVATION
         {
            foreach(var item in Card)
             {
-                CardDetails[item.Key] = item.Value;
+                PaymentDetails[item.Key] = item.Value;
             }
 
 
-            foreach (var item in CardDetails)
+            foreach (var item in PaymentDetails)
             {
                 Console.WriteLine($"{item.Key} : {item.Value}");
             }
@@ -86,8 +83,8 @@ namespace FLIGHT_RESERVATION
                 String Birthdate = item.Value.txtBirthdate.Text;
                 var guestInfo = new Dictionary<string, string>
                 {
-                    { "FirstName", FirstName },
-                    { "LastName", LastName },
+                    { "First Name", FirstName },
+                    { "Last Name", LastName },
                     { "Age", Age },
                     { "Birthdate", Birthdate }
                 };
@@ -151,6 +148,8 @@ namespace FLIGHT_RESERVATION
             {
                 Console.WriteLine($"{item.Key} : {item.Value} ");
             }
+
+            Console.WriteLine(Type);
         }
 
     }

@@ -210,6 +210,7 @@
     <Compile Include="Flight Booking\FlightBookings-Success\Success.Designer.cs">
       <DependentUpon>Success.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\InsertDatabaseData.cs" />
     <Compile Include="Flight Booking\TermsAndConditions.cs">
       <SubType>Form</SubType>
     </Compile>
