@@ -95,7 +95,6 @@ namespace FLIGHT_RESERVATION.Account
             txtNewPassword.PasswordChar = true;
             btnShowPassword2.Visible = true;
             btnHidePassword2.Visible = false;
-            txtNewPassword.Focus();
         }
 
         private void btnShowPassword1_Click(object sender, EventArgs e)
@@ -110,7 +109,6 @@ namespace FLIGHT_RESERVATION.Account
             txtNewPassword.PasswordChar = false;
             btnHidePassword2.Visible = true;
             btnShowPassword2.Visible = false;
-            txtNewPassword.Focus();
         }
     }
 }
