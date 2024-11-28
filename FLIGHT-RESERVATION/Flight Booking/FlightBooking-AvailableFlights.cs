@@ -26,16 +26,19 @@ namespace FLIGHT_RESERVATION
 
         private async void FlightBooking_AvailableFlights_Load(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             await PopulateAvailableBookings();
             btnBack.FlatAppearance.BorderSize = 0;
             lblFlightType.Text = $"Select {TripType} Flight";
+            this.ResumeLayout();
         }
         List<FlightsAvailable> availableFlights = new List<FlightsAvailable>();
         public async Task PopulateAvailableBookings()
         {
 
+            this.SuspendLayout();
 
-
+            try { 
             String DepartureLocation = "";
             String ArrivalLocation = "";
             String DepartureDate = "";
@@ -68,25 +71,30 @@ namespace FLIGHT_RESERVATION
 
 
             int selectedIndex = 0;
-            for (int i = 0; i < AvailableFlightsData.AirplaneNumber.Count; i++)
-            {
-                FlightsAvailable AvailableFlight = new FlightsAvailable();
-
-                AvailableFlight.setTime(AvailableFlightsData.ArrivalTime[i], AvailableFlightsData.DepartureTime[i]);
-                AvailableFlight.setLocations(AvailableFlightsData.DepartureLocation[i], AvailableFlightsData.ArrivalLocation[i]);
-                AvailableFlight.setTime(AvailableFlightsData.DepartureTime[i], AvailableFlightsData.ArrivalTime[i]);
-                AvailableFlight.setSeatsAvailable(AvailableFlightsData.AvailableSeats[i]);
-                AvailableFlight.setAirplaneNumber(AvailableFlightsData.AirplaneNumber[i]);
-
-                //lamda function to add event listener for selecting
-                AvailableFlight.btnBook.Click += (s, e) =>
+                for (int i = 0; i < AvailableFlightsData.AirplaneNumber.Count; i++)
                 {
-                    selectedIndex = availableFlights.IndexOf(AvailableFlight); // get index of the selected Flight
-                    setSelected(availableFlights, selectedIndex); // set the border of the AvailableFlight
-                };
+                    FlightsAvailable AvailableFlight = new FlightsAvailable();
 
-                availableFlights.Add(AvailableFlight); // add every instance of AvailableFlights to the list
-                pnlAvailableFlights.Controls.Add(AvailableFlight);
+                    AvailableFlight.setTime(AvailableFlightsData.ArrivalTime[i], AvailableFlightsData.DepartureTime[i]);
+                    AvailableFlight.setLocations(AvailableFlightsData.DepartureLocation[i], AvailableFlightsData.ArrivalLocation[i]);
+                    AvailableFlight.setTime(AvailableFlightsData.DepartureTime[i], AvailableFlightsData.ArrivalTime[i]);
+                    AvailableFlight.setSeatsAvailable(AvailableFlightsData.AvailableSeats[i]);
+                    AvailableFlight.setAirplaneNumber(AvailableFlightsData.AirplaneNumber[i]);
+
+                    //lamda function to add event listener for selecting
+                    AvailableFlight.btnBook.Click += (s, e) =>
+                    {
+                        selectedIndex = availableFlights.IndexOf(AvailableFlight); // get index of the selected Flight
+                        setSelected(availableFlights, selectedIndex); // set the border of the AvailableFlight
+                    };
+
+                    availableFlights.Add(AvailableFlight); // add every instance of AvailableFlights to the list
+                    pnlAvailableFlights.Controls.Add(AvailableFlight);
+                }
+            }
+            finally
+            {
+                this.ResumeLayout();
             }
         }
 

@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FLIGHT_RESERVATION.Flight_Booking
@@ -94,15 +95,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         public void FillData()
         {
-            CardDetails["First Name"] = cardDetails.txtFirstName.Text;
-            CardDetails["Last Name"] = cardDetails.txtLastName.Text;
-            CardDetails["Card Number"] = cardDetails.txtCardNumber.Text;
-            CardDetails["CVV"] = cardDetails.txtCVV.Text;
-            CardDetails["Expiry Date"] = cardDetails.txtExpiryDate.Text;
-            CardDetails["Street Address"] = cardDetails.txtStreetAddress.Text;
-            CardDetails["City/Town"] = cardDetails.txtCity.Text;
-            CardDetails["Country"] = cardDetails.txtCountry.Text;
-            CardDetails["Zip Code"] = cardDetails.txtZipCode.Text;
+            Random random = new Random();
+
+            CardDetails["Payment Type"] = type;
+            CardDetails["Reference Number"] = $"REF{random.Next(100000000, 1000000000)}";
             FlightBooking_Session.Instance.setCardDetails(CardDetails);
         }
 
@@ -162,6 +158,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
             if(ExpiryDate < CurrentDate)
             {
+                MessageBox.Show("Credit card must not be expired", "Credit card expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

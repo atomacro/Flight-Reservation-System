@@ -21,5 +21,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Success
         {
 
         }
+
+        private void lblManageBookings_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

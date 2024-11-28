@@ -32,7 +32,7 @@ namespace FLIGHT_RESERVATION
         {
             await SetComboBoxItems(RoundTrip, "Round Trip");
             await SetComboBoxItems(OneWay, "One Way");
-
+            this.SuspendLayout();
             OneWay.AutoSize = true;
             OneWay.Location = new Point(0, 0);
             RoundTrip.AutoSize = true;
@@ -40,6 +40,7 @@ namespace FLIGHT_RESERVATION
             pnlFlightBooking.Controls.Add(RoundTrip);
             pnlFlightBooking.Controls.Add(OneWay);
             OneWay.BringToFront();
+            this.ResumeLayout();
         }
 
         public bool HandleSubmit(Trips Trip, String Type)
