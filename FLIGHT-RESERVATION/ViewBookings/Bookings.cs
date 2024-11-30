@@ -79,6 +79,11 @@ namespace FLIGHT_RESERVATION
         {
 
         }
+
+        private void lblAirplaneNumber_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
