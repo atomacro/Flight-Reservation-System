@@ -67,7 +67,7 @@ namespace FLIGHT_RESERVATION
 
             //set Arrival Location and Departure Location, panel and button if no flights are seen
             Database_Available_Flights AvailableFlightsData = new Database_Available_Flights();
-            await AvailableFlightsData.SelectAvailableFlights(DepartureLocation, ArrivalLocation, DepartureDate,pnlAvailableFlights, btnContinueAvailableFlights, lblAvailableFlights);
+            await AvailableFlightsData.SelectAvailableFlights(DepartureLocation, ArrivalLocation, DepartureDate,pnlAvailableFlights, btnContinueAvailableFlights, btnBack, lblAvailableFlights, lblFlightType);
 
 
             int selectedIndex = 0;
@@ -180,7 +180,7 @@ namespace FLIGHT_RESERVATION
 
         }
 
-        public async Task SelectAvailableFlights(String FromLocation, String ToLocation, String DepartureDate, Panel pnlAvailableFlights, Button btnContinue, Label lblAvailableFlights) //add Panel and Button for message if there are no flights available
+        public async Task SelectAvailableFlights(String FromLocation, String ToLocation, String DepartureDate, Panel pnlAvailableFlights, Button btnContinue, Button btnBack, Label lblAvailableFlights, Label lblFlightType) //add Panel and Button for message if there are no flights available
         {
             try
             {
@@ -195,7 +195,8 @@ namespace FLIGHT_RESERVATION
                "JOIN airport AS ArrivalLocation ON ArrivalLocation.AirportID = flights.ArrivalAirportID " +
                "WHERE DepartureLocation.AirportLocation = @DepartureLocation " +
                "AND ArrivalLocation.AirportLocation = @ArrivalLocation " +
-               "AND Date(flights.DepartureDate) = @DepartureDate; ";
+               "AND Date(flights.DepartureDate) = @DepartureDate " +
+               "AND flights.SeatsRemaining > 0; ";
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
 
@@ -211,7 +212,7 @@ namespace FLIGHT_RESERVATION
 
                     if (!reader.HasRows)
                     {
-                    noFlightAvailable(pnlAvailableFlights, btnContinue, lblAvailableFlights);
+                    noFlightAvailable(pnlAvailableFlights, btnContinue, btnBack, lblAvailableFlights, lblFlightType);
                     return;
                     }
 
@@ -257,12 +258,15 @@ namespace FLIGHT_RESERVATION
             }
         }
 
-        private void noFlightAvailable(Panel pnlAvailableFlights, Button btnContinue, Label lblAvailableFlights)
+        private void noFlightAvailable(Panel pnlAvailableFlights, Button btnContinue, Button btnBack,Label lblAvailableFlights, Label lblFlightType)
         {
             Label lblEmptyBookingMessage = new Label();
             btnContinue.Visible = false;
             btnContinue.Enabled = false;
             lblAvailableFlights.Visible = false;
+            lblFlightType.Visible = false;
+            btnBack.Size = new System.Drawing.Size(194, 52);
+            btnBack.Location = new Point(243, 479);
 
             lblEmptyBookingMessage.Text = "What the Sigma? There's no flight available??";
 
