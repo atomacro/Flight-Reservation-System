@@ -60,6 +60,7 @@
             // picBaggage
             // 
             this.picBaggage.BackColor = System.Drawing.Color.Transparent;
+            this.picBaggage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBaggage.Image = ((System.Drawing.Image)(resources.GetObject("picBaggage.Image")));
             this.picBaggage.Location = new System.Drawing.Point(28, 107);
             this.picBaggage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -72,6 +73,7 @@
             // picTransport
             // 
             this.picTransport.BackColor = System.Drawing.Color.Transparent;
+            this.picTransport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTransport.Image = ((System.Drawing.Image)(resources.GetObject("picTransport.Image")));
             this.picTransport.Location = new System.Drawing.Point(616, 107);
             this.picTransport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -84,6 +86,7 @@
             // picFood
             // 
             this.picFood.BackColor = System.Drawing.Color.Transparent;
+            this.picFood.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFood.Image = ((System.Drawing.Image)(resources.GetObject("picFood.Image")));
             this.picFood.Location = new System.Drawing.Point(320, 107);
             this.picFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
