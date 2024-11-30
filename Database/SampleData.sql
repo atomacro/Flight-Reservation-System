@@ -4,7 +4,7 @@ USE `AirplaneTicketingSystem2024`;
 INSERT INTO Airport (AirportCode, AirportFullName, AirportLocation) VALUES
 ('ATL', 'Hartsfield-Jackson Atlanta International Airport', 'Atlanta, GA'),
 ('LAX', 'Los Angeles International Airport', 'Los Angeles, CA'),
-('MIA', 'Manila International Airport', 'Manila, PH'),
+('NAIA', 'Ninoy Aquino Airport', 'Manila, PH'),
 ('DFW', 'Dallas/Fort Worth International Airport', 'Dallas, TX'),
 ('DEN', 'Denver International Airport', 'Denver, CO'),
 ('JFK', 'John F. Kennedy International Airport', 'New York, NY'),
@@ -45,25 +45,5 @@ INSERT INTO Flights (AirplaneNumber, DepartureDate, ArrivalDate, DepartureAirpor
 ('QR1401', '2024-12-27 07:30:00', '2024-12-27 11:00:00', 4, 7, 170, 200),
 ('QR1402', '2024-12-28 14:45:00', '2024-12-28 18:15:00', 7, 4, 165, 200),
 ('JL1501', '2024-12-29 05:45:00', '2024-12-29 09:45:00', 5, 9, 180, 220),
-('JL1502', '2024-12-30 20:00:00', '2024-12-30 23:59:00', 9, 5, 175, 220),
+('JL1502', '2024-12-30 20:00:00', '2024-12-30 23:59:00', 9, 5, 175, 220);
 
-
-
--- Insert data into Accounts table
-INSERT INTO Accounts (FirstName, LastName, Email, Password) VALUES
-
-
--- Insert data into Transactions table
-INSERT INTO Transactions (AccountID, BookingDate, ReferenceNo) VALUES
-
-
--- Insert data into Passengers table
-INSERT INTO Passengers (TransactionID, Type, FirstName, LastName, Age, Birthdate) VALUES
-
-
--- Insert data into TicketDetails table
-INSERT INTO TicketDetails (TransactionID, FlightID, NumberOfTickets, Children, Infant, Food, Baggage, TransferServices, TotalPrice) VALUES
-
-
--- Insert data into Payment table
-INSERT INTO Payment (TransactionID, ModeOfPayment, ReferenceNo) VALUES
