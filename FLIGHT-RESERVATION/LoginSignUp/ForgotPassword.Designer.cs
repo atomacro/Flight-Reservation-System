@@ -96,6 +96,7 @@
             this.txtEmail.BorderSize = 2;
             this.txtEmail.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.IsPassword = false;
             this.txtEmail.Location = new System.Drawing.Point(206, 246);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.Multiline = false;
@@ -168,6 +169,7 @@
             this.txtPassword.BorderSize = 2;
             this.txtPassword.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.IsPassword = false;
             this.txtPassword.Location = new System.Drawing.Point(206, 366);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtPassword.Multiline = false;
