@@ -1,7 +1,7 @@
 # FLIGHT-RESERVATION
 
 ## Flight Reservation 2024 
-## A Project presented to Ms. Jomariss B. Plan, and Mr. Lester Diampoc during the Object Oriented Course in 2024
+### A Project presented to Ms. Jomariss B. Plan, and Mr. Lester Diampoc during the Object Oriented Course in 2024
 
 ## Project Features
 - Dashboard
