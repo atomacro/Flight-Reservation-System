@@ -35,25 +35,44 @@ namespace FLIGHT_RESERVATION.Account
                 txtFName.Text = user.FirstName;
                 txtLName.Text = user.LastName;
                 txtEmail.Text = user.Email;
-                txtCurrentPassword.Text = user.Password;
                 txtCurrentPassword.IsPassword = true;
+                txtCurrentPassword.Text = user.Password;
                 txtNewPassword.IsPassword = true;
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // TRY: save null textboxes
+            Session session = new Session();
+            User user = session.GetAccountInfo();
 
             string email = txtEmail.Text;
             string firstName = txtFName.Text;
             string lastName = txtLName.Text;
             string password = txtNewPassword.Text;
 
+            bool hasChanges = firstName != user.FirstName || lastName != user.LastName || email != user.Email ||
+                              (password != user.Password && !string.IsNullOrWhiteSpace(password));
+
+            if (!hasChanges)
+            {
+                MessageBox.Show("No changes to save.");
+                return;
+            }
+
             if (isValidInfo(email, password))
             {
-                Session session = new Session();
-                //session.UpdateAccountInfo
+                Console.WriteLine("pasok!");
+                bool updateSuccess = session.UpdateAccountInfo(firstName, lastName, email, password);
+
+                if (updateSuccess)
+                {
+                    MessageBox.Show("Account information updated successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update account information. Please try again.");
+                }
             }
 
         }
@@ -63,12 +82,18 @@ namespace FLIGHT_RESERVATION.Account
 
             StringBuilder errors = new StringBuilder();
 
+            if (Validation.IsTextboxEmpty(txtEmail) || Validation.IsTextboxEmpty(txtFName) ||
+                Validation.IsTextboxEmpty(txtLName))
+            {
+                errors.AppendLine("Name and email cannot be blank.");
+            }
+
             if (!Validation.IsValidEmail(email))
             {
                 errors.AppendLine("Please enter a valid email.");
             }
 
-            if (!Validation.IsValidPassword(password))
+            if (!Validation.IsValidPassword(password) && !string.IsNullOrWhiteSpace(password))
             {
                 errors.AppendLine("Password must be at least 8 characters.");
             }
