@@ -253,6 +253,26 @@ namespace FLIGHT_RESERVATION.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rounded_Border {
+            get {
+                object obj = ResourceManager.GetObject("Rounded Border", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rounded_Border1 {
+            get {
+                object obj = ResourceManager.GetObject("Rounded Border1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Selected_Border {
             get {
                 object obj = ResourceManager.GetObject("Selected Border", resourceCulture);
