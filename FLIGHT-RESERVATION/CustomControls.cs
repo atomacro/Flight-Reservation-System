@@ -125,7 +125,7 @@ namespace FLIGHT_RESERVATION
             private bool isPlaceholderActive = true;
 
             private TextBox textBox1;
-            public bool IsPassword { get; set; }
+            public bool IsPassword { get; set; } = false;
 
             public new event EventHandler TextChanged;
 
@@ -320,7 +320,7 @@ namespace FLIGHT_RESERVATION
                         isPlaceholderActive = false;
                         textBox1.Text = value;
                         textBox1.ForeColor = this.ForeColor;
-                        textBox1.UseSystemPasswordChar = PasswordChar; // Reapply masking for actual text
+                        textBox1.UseSystemPasswordChar = IsPassword; // Reapply masking for actual text
                     }
                 }
             }

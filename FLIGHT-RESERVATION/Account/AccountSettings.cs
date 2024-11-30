@@ -17,7 +17,6 @@ namespace FLIGHT_RESERVATION.Account
         public AccountSettings()
         {
             InitializeComponent();
-            txtCurrentPassword.Enabled = false;
         }
 
         private void AccountSettings_Load(object sender, EventArgs e)
@@ -37,6 +36,7 @@ namespace FLIGHT_RESERVATION.Account
                 txtEmail.Text = user.Email;
                 txtCurrentPassword.IsPassword = true;
                 txtCurrentPassword.Text = user.Password;
+                txtCurrentPassword.Enabled = false;
                 txtNewPassword.IsPassword = true;
             }
         }
