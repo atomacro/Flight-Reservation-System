@@ -43,7 +43,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(317, 126);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(275, 181);
             this.pictureBox1.TabIndex = 0;
@@ -66,6 +66,8 @@
             this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnContinue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 15F, System.Drawing.FontStyle.Bold);
             this.btnContinue.ForeColor = System.Drawing.Color.White;
@@ -109,7 +111,7 @@
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.lblFlightBookedSuccessfully);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Success";
             this.Size = new System.Drawing.Size(909, 679);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

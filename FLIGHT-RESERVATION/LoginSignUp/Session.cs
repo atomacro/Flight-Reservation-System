@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Google.Protobuf.WellKnownTypes;
+//using Google.Protobuf.WellKnownTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Globalization;
 using System.IO;
@@ -33,7 +33,7 @@ namespace FLIGHT_RESERVATION
             _connection = new MySqlConnection(connectionString);
         }
 
-        public void OpenConnection()
+        private void OpenConnection()
         {
             if (_connection.State != System.Data.ConnectionState.Open)
             {
@@ -41,7 +41,7 @@ namespace FLIGHT_RESERVATION
             }
         }
 
-        public void CloseConnection()
+        private void CloseConnection()
         {
             if (_connection.State == System.Data.ConnectionState.Open)
             {
@@ -174,9 +174,10 @@ namespace FLIGHT_RESERVATION
                     command.Parameters.AddWithValue("@Email", user.Email);
                     command.Parameters.AddWithValue("@Password", user.Password);
 
-                    command.ExecuteNonQuery();
+
+                    int RowsAffected = command.ExecuteNonQuery();
                     _transaction.Commit();
-                    return true;
+                    return RowsAffected > 0;
                 }
             }
             // Uncomment if debugging
@@ -224,6 +225,67 @@ namespace FLIGHT_RESERVATION
                     }
                 }
             }
+            //catch (MySqlException ex)
+            //{
+            //    MessageBox.Show($"MySQL Error:\nNumber: {ex.Number}\nMessage: {ex.Message}\nSQL State: {ex.SqlState}",
+            //        "MySQL Error");
+            //    return false;
+            //}
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An Error has Occured: {ex.Message}");
+                return false;
+            }     
+        }
+
+        public bool UpdateAccountInfo(string firstName, string lastName, string email, string password)
+        {
+            OpenConnection();
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(password))
+                {
+                    string query = @"
+                        UPDATE accounts 
+                        SET FirstName = @firstName, 
+                            LastName = @lastName, 
+                            Email = @email, 
+                            Password = SHA2(@Password, 256)  
+                        WHERE AccountID = @CurrentUser";
+
+                    using (MySqlCommand command = new MySqlCommand(query, _connection))
+                    {
+                        command.Parameters.AddWithValue("@firstName", firstName);
+                        command.Parameters.AddWithValue("@lastName", lastName);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@Password", password);
+                        command.Parameters.AddWithValue("@CurrentUser", CurrentUser);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                else
+                {
+                    string query = @"
+                        UPDATE accounts 
+                        SET FirstName = @firstName, 
+                            LastName = @lastName, 
+                            Email = @email            
+                        WHERE AccountID = @CurrentUser";
+
+                    using (MySqlCommand command = new MySqlCommand(query, _connection))
+                    {
+                        command.Parameters.AddWithValue("@firstName", firstName);
+                        command.Parameters.AddWithValue("@lastName", lastName);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@CurrentUser", CurrentUser);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
             catch (MySqlException ex)
             {
                 MessageBox.Show($"MySQL Error:\nNumber: {ex.Number}\nMessage: {ex.Message}\nSQL State: {ex.SqlState}",
@@ -232,10 +294,13 @@ namespace FLIGHT_RESERVATION
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"General Error: {ex.Message}\nStack Trace: {ex.StackTrace}",
-                    "General Error");
+                Console.WriteLine($"An Error has Occured: {ex.Message}");
                 return false;
-            }     
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public User GetAccountInfo()
@@ -269,8 +334,7 @@ namespace FLIGHT_RESERVATION
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"General Error: {ex.Message}\nStack Trace: {ex.StackTrace}",
-                    "General Error");
+                Console.WriteLine($"An Error has Occured: {ex.Message}");
                 return null;
             }
             finally
@@ -299,6 +363,15 @@ namespace FLIGHT_RESERVATION
 
     public class Validation
     {
+        public static bool IsTextboxEmpty(CustomControls.RoundedTextBox txtBox1)
+        {
+            if (string.IsNullOrWhiteSpace(txtBox1.Text))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static bool IsValidPassword(string password)
         {
             return password.Length >= 8;
