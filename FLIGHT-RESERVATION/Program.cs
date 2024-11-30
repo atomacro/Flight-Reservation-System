@@ -17,7 +17,7 @@ namespace FLIGHT_RESERVATION
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookingDetails());
+            Application.Run(new MainForm());
         }
     }
 }
