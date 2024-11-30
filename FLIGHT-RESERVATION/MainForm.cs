@@ -344,11 +344,13 @@ namespace FLIGHT_RESERVATION
                 else { LoginControl_OpenLoginForm(this, EventArgs.Empty); }
             };
             btnLogin.Click += LoginControl_OpenLoginForm;
+
             btnLogout.Click += (sender, e) =>
             {
                 Session.IsLoggedIn = false;
                 Session.CurrentUser = -1;
                 UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
+                OpenDashboard();
             };
         }
 
@@ -380,9 +382,8 @@ namespace FLIGHT_RESERVATION
         }
 
         // ------ LOGIN NAVIGATION ------
-        private void LoginControl_LoginSuccessful(object sender, EventArgs e) // Goes to dashboard after successful login
+        private void OpenDashboard()
         {
-            Session.IsLoggedIn = true;
             UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
             SetIndicator(btnDashboard, pnlIndicator1);
             SetHeader("DASHBOARD");
@@ -409,7 +410,11 @@ namespace FLIGHT_RESERVATION
             var login = new Login();
             AddControl(login, pnlMain);
 
-            login.LoginSuccessful += LoginControl_LoginSuccessful;
+            login.LoginSuccessful += (s, args) =>
+            {
+                Session.IsLoggedIn = true;
+                OpenDashboard();
+            };
             login.OpenSignUpForm += LoginControl_OpenSignUpForm;
             login.OpenForgotPasswordForm += LoginControl_OpenForgotPasswordForm;
         }
