@@ -17,7 +17,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
             InitializeComponent();
             lblTime1.ForeColor = ColorTranslator.FromHtml("#9C9C9C");
             lblTime2.ForeColor = ColorTranslator.FromHtml("#9C9C9C");
-            lblSeatsAvailable.ForeColor = ColorTranslator.FromHtml("#9C9C9C");
         }
 
         public void setLocations(String location1, String location2)
@@ -47,6 +46,11 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
             this.BackgroundImage = img;
         }
 
+        public void setPrice(float price)
+        {
+            lblPrice.Text = $"Price: {price}.00";
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -58,6 +62,11 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
         }
 
         private void lblSeatsAvailable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FlightsAvailable_Load(object sender, EventArgs e)
         {
 
         }
