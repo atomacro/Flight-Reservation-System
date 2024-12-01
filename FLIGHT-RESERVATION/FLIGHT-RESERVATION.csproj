@@ -263,6 +263,7 @@
     <Compile Include="ViewBookings\Bookings.Designer.cs">
       <DependentUpon>Bookings.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewBookings\GetBookingDetails.cs" />
     <Compile Include="ViewBookings\ViewBookings.cs">
       <SubType>UserControl</SubType>
     </Compile>
