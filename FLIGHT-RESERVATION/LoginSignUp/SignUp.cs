@@ -20,7 +20,7 @@ namespace FLIGHT_RESERVATION
         public SignUp()
         {
             InitializeComponent();
-            txtPassword.PasswordChar = true;
+            txtPassword.IsPassword = true;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

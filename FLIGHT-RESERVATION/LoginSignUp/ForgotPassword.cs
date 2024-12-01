@@ -19,6 +19,7 @@ namespace FLIGHT_RESERVATION
         public ForgotPassword()
         {
             InitializeComponent();
+            txtPassword.IsPassword = true;
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
