@@ -38,6 +38,7 @@
             this.txtBirthdate = new FLIGHT_RESERVATION.CustomControls.RoundedTextBox();
             this.btnFocus = new System.Windows.Forms.Button();
             this.lblDetails = new System.Windows.Forms.Label();
+            this.chkDiscounted = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -101,6 +102,7 @@
             this.txtFirstName.BorderSize = 1;
             this.txtFirstName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFirstName.IsPassword = false;
             this.txtFirstName.Location = new System.Drawing.Point(20, 92);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Multiline = false;
@@ -122,6 +124,7 @@
             this.txtLastName.BorderSize = 1;
             this.txtLastName.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLastName.IsPassword = false;
             this.txtLastName.Location = new System.Drawing.Point(20, 162);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Multiline = false;
@@ -143,6 +146,7 @@
             this.txtAge.BorderSize = 1;
             this.txtAge.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAge.IsPassword = false;
             this.txtAge.Location = new System.Drawing.Point(20, 230);
             this.txtAge.Margin = new System.Windows.Forms.Padding(4);
             this.txtAge.Multiline = false;
@@ -165,6 +169,7 @@
             this.txtBirthdate.BorderSize = 1;
             this.txtBirthdate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtBirthdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBirthdate.IsPassword = false;
             this.txtBirthdate.Location = new System.Drawing.Point(20, 302);
             this.txtBirthdate.Margin = new System.Windows.Forms.Padding(4);
             this.txtBirthdate.Multiline = false;
@@ -198,6 +203,18 @@
             this.lblDetails.Text = "Guest 2 Details";
             this.lblDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // chkDiscounted
+            // 
+            this.chkDiscounted.AutoSize = true;
+            this.chkDiscounted.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.chkDiscounted.Font = new System.Drawing.Font("Kantumruy Pro", 8F);
+            this.chkDiscounted.Location = new System.Drawing.Point(22, 352);
+            this.chkDiscounted.Name = "chkDiscounted";
+            this.chkDiscounted.Size = new System.Drawing.Size(266, 20);
+            this.chkDiscounted.TabIndex = 31;
+            this.chkDiscounted.Text = "I am a person with disability or senior citizen";
+            this.chkDiscounted.UseVisualStyleBackColor = true;
+            // 
             // GuestDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -205,6 +222,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.border;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.chkDiscounted);
             this.Controls.Add(this.btnFocus);
             this.Controls.Add(this.txtBirthdate);
             this.Controls.Add(this.txtAge);
@@ -219,7 +237,7 @@
             this.Font = new System.Drawing.Font("Kantumruy Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GuestDetails";
-            this.Size = new System.Drawing.Size(308, 374);
+            this.Size = new System.Drawing.Size(308, 403);
             this.Load += new System.EventHandler(this.GuestDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,5 +255,6 @@
         public CustomControls.RoundedTextBox txtBirthdate;
         private System.Windows.Forms.Button btnFocus;
         public System.Windows.Forms.Label lblDetails;
+        public System.Windows.Forms.CheckBox chkDiscounted;
     }
 }

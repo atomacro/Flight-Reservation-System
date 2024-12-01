@@ -81,12 +81,16 @@ namespace FLIGHT_RESERVATION
                 String LastName = item.Value.txtLastName.Text;
                 String Age = item.Value.txtAge.Text;
                 String Birthdate = item.Value.txtBirthdate.Text;
+                String Discounted = item.Value.chkDiscounted.Checked ? "Yes" : "No";
+                String Type = item.Value.type;
                 var guestInfo = new Dictionary<string, string>
                 {
+                    { "Type", Type },
                     { "First Name", FirstName },
                     { "Last Name", LastName },
                     { "Age", Age },
-                    { "Birthdate", Birthdate }
+                    { "Birthdate", Birthdate },
+                    { "Discounted", Discounted }
                 };
 
                 PassengerDetails[item.Key] = guestInfo;
