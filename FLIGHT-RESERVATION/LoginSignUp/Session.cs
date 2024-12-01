@@ -308,7 +308,7 @@ namespace FLIGHT_RESERVATION
             OpenConnection();
             try
             {
-                string query = $"SELECT * FROM accounts WHERE AccountID = @CurrentUserID";
+                string query = @"SELECT * FROM accounts WHERE AccountID = @CurrentUserID";
                 MySqlCommand command = new MySqlCommand(query, _connection);
                 command.Parameters.AddWithValue("@CurrentUserID", CurrentUser);
 
