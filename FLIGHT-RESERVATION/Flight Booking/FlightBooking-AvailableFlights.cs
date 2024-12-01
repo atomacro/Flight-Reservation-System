@@ -80,6 +80,7 @@ namespace FLIGHT_RESERVATION
                     AvailableFlight.setTime(AvailableFlightsData.DepartureTime[i], AvailableFlightsData.ArrivalTime[i]);
                     AvailableFlight.setSeatsAvailable(AvailableFlightsData.AvailableSeats[i]);
                     AvailableFlight.setAirplaneNumber(AvailableFlightsData.AirplaneNumber[i]);
+                    AvailableFlight.setPrice(AvailableFlightsData.Price[i]);
 
                     //lamda function to add event listener for selecting
                     AvailableFlight.btnBook.Click += (s, e) =>
@@ -166,6 +167,7 @@ namespace FLIGHT_RESERVATION
         public List<String> ArrivalTime = new List<string>();
         public List<String> AirplaneNumber = new List<string>();
         public List<String> AvailableSeats = new List<string>();
+        public List<float> Price = new List<float>();
 
         public Database_Available_Flights()
         {
@@ -177,6 +179,8 @@ namespace FLIGHT_RESERVATION
             this.DepartureTime.Clear();
             this.ArrivalTime.Clear();
             this.AirplaneNumber.Clear();
+            this.AvailableSeats.Clear();
+            this.Price.Clear();
 
         }
 
@@ -189,21 +193,28 @@ namespace FLIGHT_RESERVATION
                 string query = "SELECT DepartureLocation.AirportCode AS DepartureAirportCode, " +
                "ArrivalLocation.AirportCode AS ArrivalAirportCode, " +
                "flights.ArrivalDate, flights.DepartureDate, flights.AirplaneNumber, " +
-               "flights.SeatsRemaining " +
+               "flights.SeatsRemaining, " +
+               "flights.FlightPrice " +
                "FROM flights " +
                "JOIN airport AS DepartureLocation ON flights.DepartureAirportID = DepartureLocation.AirportID " +
                "JOIN airport AS ArrivalLocation ON ArrivalLocation.AirportID = flights.ArrivalAirportID " +
                "WHERE DepartureLocation.AirportLocation = @DepartureLocation " +
                "AND ArrivalLocation.AirportLocation = @ArrivalLocation " +
                "AND Date(flights.DepartureDate) = @DepartureDate " +
-               "AND flights.SeatsRemaining > 0; ";
+               "AND flights.SeatsRemaining > @Seats; ";
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
 
+                int numAdults = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Adults") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Adults"]) : 0;
+                int numChildren = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Children") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Children"]) : 0;
+                int numInfants = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Number of Infants") ? int.Parse(FlightBooking_Session.Instance.FlightDetails["Number of Infants"]) : 0;
+
+                int TotalSeats = numAdults + numChildren + numInfants;
 
                 command.Parameters.AddWithValue("@DepartureLocation", FromLocation);
                 command.Parameters.AddWithValue("@ArrivalLocation", ToLocation);
                 command.Parameters.AddWithValue("@DepartureDate", DepartureDate);
+                command.Parameters.AddWithValue("@Seats", TotalSeats);
                 
 
 
@@ -236,6 +247,7 @@ namespace FLIGHT_RESERVATION
 
                         //get AvailableSeats
                         string AvailableSeats = reader["SeatsRemaining"].ToString();
+                        float Price = float.Parse(reader["FlightPrice"].ToString());
 
 
                         //populate list
@@ -245,6 +257,7 @@ namespace FLIGHT_RESERVATION
                         this.DepartureTime.Add(DepartureTime);
                         this.AirplaneNumber.Add(AirplaneNumber);
                         this.AvailableSeats.Add(AvailableSeats);
+                        this.Price.Add(Price);
                     }
                  }
             }
