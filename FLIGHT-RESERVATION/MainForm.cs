@@ -56,8 +56,6 @@ namespace FLIGHT_RESERVATION
             {
                 this.ResumeLayout();
             }
-
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
