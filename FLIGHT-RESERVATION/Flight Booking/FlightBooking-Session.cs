@@ -77,10 +77,10 @@ namespace FLIGHT_RESERVATION
             }
             foreach (KeyValuePair<string, GuestDetails> item in guestDetails)
             {
-                String FirstName = item.Value.txtFirstName.Text;
-                String LastName = item.Value.txtLastName.Text;
-                String Age = item.Value.txtAge.Text;
-                String Birthdate = item.Value.txtBirthdate.Text;
+                String FirstName = item.Value.txtFirstName.Text.Trim();
+                String LastName = item.Value.txtLastName.Text.Trim();
+                String Age = item.Value.txtAge.Text.Trim();
+                String Birthdate = item.Value.txtBirthdate.Text.Trim();
                 String Discounted = item.Value.chkDiscounted.Checked ? "Yes" : "No";
                 String Type = item.Value.type;
                 var guestInfo = new Dictionary<string, string>

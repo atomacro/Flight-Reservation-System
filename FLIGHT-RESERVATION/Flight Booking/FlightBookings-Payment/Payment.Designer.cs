@@ -42,12 +42,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblDeparturePassengersPrice = new System.Windows.Forms.Label();
             this.lblDepartureSubtotalPrice = new System.Windows.Forms.Label();
+            this.btnDepartureViewDetails = new System.Windows.Forms.Button();
             this.pnlReturnPrices = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblReturnPassengersPrice = new System.Windows.Forms.Label();
             this.lblReturnSubTotalPrice = new System.Windows.Forms.Label();
+            this.btnReturnViewDetails = new System.Windows.Forms.Button();
             this.pnlFlightDeparture = new System.Windows.Forms.TableLayoutPanel();
             this.lblDepartureFrom = new System.Windows.Forms.Label();
             this.lblDepartureDepartureTime = new System.Windows.Forms.Label();
@@ -87,8 +89,6 @@
             this.picPayment = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnContinue = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
-            this.txtDepartureViewDetails = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlPayTitle.SuspendLayout();
             this.pnlDepartureExpenses.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -206,7 +206,7 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.lblDepartureSubtotalPrice);
-            this.flowLayoutPanel1.Controls.Add(this.txtDepartureViewDetails);
+            this.flowLayoutPanel1.Controls.Add(this.btnDepartureViewDetails);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(389, 65);
@@ -223,7 +223,7 @@
             this.flowLayoutPanel2.Controls.Add(this.lblDeparturePassengersPrice);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(4, 63);
             this.flowLayoutPanel2.TabIndex = 36;
@@ -282,6 +282,17 @@
             this.lblDepartureSubtotalPrice.Size = new System.Drawing.Size(0, 21);
             this.lblDepartureSubtotalPrice.TabIndex = 17;
             // 
+            // btnDepartureViewDetails
+            // 
+            this.btnDepartureViewDetails.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDepartureViewDetails.Location = new System.Drawing.Point(3, 91);
+            this.btnDepartureViewDetails.Name = "btnDepartureViewDetails";
+            this.btnDepartureViewDetails.Size = new System.Drawing.Size(75, 23);
+            this.btnDepartureViewDetails.TabIndex = 37;
+            this.btnDepartureViewDetails.Text = "View Details";
+            this.btnDepartureViewDetails.UseVisualStyleBackColor = true;
+            this.btnDepartureViewDetails.Click += new System.EventHandler(this.btnDepartureViewDetails_Click);
+            // 
             // pnlReturnPrices
             // 
             this.pnlReturnPrices.AutoSize = true;
@@ -290,7 +301,7 @@
             this.pnlReturnPrices.Controls.Add(this.label7);
             this.pnlReturnPrices.Controls.Add(this.lblReturnPassengersPrice);
             this.pnlReturnPrices.Controls.Add(this.lblReturnSubTotalPrice);
-            this.pnlReturnPrices.Controls.Add(this.button1);
+            this.pnlReturnPrices.Controls.Add(this.btnReturnViewDetails);
             this.pnlReturnPrices.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlReturnPrices.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnlReturnPrices.Location = new System.Drawing.Point(389, 268);
@@ -359,6 +370,17 @@
             this.lblReturnSubTotalPrice.Size = new System.Drawing.Size(0, 21);
             this.lblReturnSubTotalPrice.TabIndex = 40;
             // 
+            // btnReturnViewDetails
+            // 
+            this.btnReturnViewDetails.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReturnViewDetails.Location = new System.Drawing.Point(3, 87);
+            this.btnReturnViewDetails.Name = "btnReturnViewDetails";
+            this.btnReturnViewDetails.Size = new System.Drawing.Size(75, 23);
+            this.btnReturnViewDetails.TabIndex = 46;
+            this.btnReturnViewDetails.Text = "View Details";
+            this.btnReturnViewDetails.UseVisualStyleBackColor = true;
+            this.btnReturnViewDetails.Click += new System.EventHandler(this.btnReturnViewDetails_Click);
+            // 
             // pnlFlightDeparture
             // 
             this.pnlFlightDeparture.ColumnCount = 3;
@@ -411,7 +433,7 @@
             this.picAirplane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAirplane1.Image = ((System.Drawing.Image)(resources.GetObject("picAirplane1.Image")));
             this.picAirplane1.Location = new System.Drawing.Point(95, 2);
-            this.picAirplane1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAirplane1.Margin = new System.Windows.Forms.Padding(2);
             this.picAirplane1.Name = "picAirplane1";
             this.pnlFlightDeparture.SetRowSpan(this.picAirplane1, 2);
             this.picAirplane1.Size = new System.Drawing.Size(276, 52);
@@ -645,7 +667,7 @@
             this.picAirplane2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAirplane2.Image = ((System.Drawing.Image)(resources.GetObject("picAirplane2.Image")));
             this.picAirplane2.Location = new System.Drawing.Point(95, 2);
-            this.picAirplane2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAirplane2.Margin = new System.Windows.Forms.Padding(2);
             this.picAirplane2.Name = "picAirplane2";
             this.pnlFlightReturn.SetRowSpan(this.picAirplane2, 2);
             this.picAirplane2.Size = new System.Drawing.Size(276, 52);
@@ -687,7 +709,7 @@
             this.picLine1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLine1.Image = ((System.Drawing.Image)(resources.GetObject("picLine1.Image")));
             this.picLine1.Location = new System.Drawing.Point(2, 187);
-            this.picLine1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picLine1.Margin = new System.Windows.Forms.Padding(2);
             this.picLine1.Name = "picLine1";
             this.picLine1.Size = new System.Drawing.Size(469, 14);
             this.picLine1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -702,7 +724,7 @@
             this.picLine2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLine2.Image = ((System.Drawing.Image)(resources.GetObject("picLine2.Image")));
             this.picLine2.Location = new System.Drawing.Point(2, 386);
-            this.picLine2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picLine2.Margin = new System.Windows.Forms.Padding(2);
             this.picLine2.Name = "picLine2";
             this.picLine2.Size = new System.Drawing.Size(469, 13);
             this.picLine2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -795,7 +817,7 @@
             this.pnlPayment.SetColumnSpan(this.picLine3, 2);
             this.picLine3.Image = ((System.Drawing.Image)(resources.GetObject("picLine3.Image")));
             this.picLine3.Location = new System.Drawing.Point(2, 472);
-            this.picLine3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picLine3.Margin = new System.Windows.Forms.Padding(2);
             this.picLine3.Name = "picLine3";
             this.picLine3.Size = new System.Drawing.Size(469, 13);
             this.picLine3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -823,7 +845,7 @@
             this.pnlAddons.Controls.Add(this.lblAddonSubtotal);
             this.pnlAddons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnlAddons.Location = new System.Drawing.Point(2, 403);
-            this.pnlAddons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAddons.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddons.Name = "pnlAddons";
             this.pnlAddons.Size = new System.Drawing.Size(71, 63);
             this.pnlAddons.TabIndex = 45;
@@ -881,7 +903,7 @@
             this.btnBack.Font = new System.Drawing.Font("Kantumruy Pro", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.BlueViolet;
             this.btnBack.Location = new System.Drawing.Point(184, 476);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(152, 42);
             this.btnBack.TabIndex = 3;
@@ -894,7 +916,7 @@
             this.picPayment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPayment.BackgroundImage")));
             this.picPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPayment.Location = new System.Drawing.Point(25, 11);
-            this.picPayment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picPayment.Margin = new System.Windows.Forms.Padding(2);
             this.picPayment.Name = "picPayment";
             this.picPayment.Size = new System.Drawing.Size(626, 441);
             this.picPayment.TabIndex = 4;
@@ -924,26 +946,6 @@
             this.btnContinue.Text = "Continue";
             this.btnContinue.UseVisualStyleBackColor = false;
             // 
-            // txtDepartureViewDetails
-            // 
-            this.txtDepartureViewDetails.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtDepartureViewDetails.Location = new System.Drawing.Point(3, 91);
-            this.txtDepartureViewDetails.Name = "txtDepartureViewDetails";
-            this.txtDepartureViewDetails.Size = new System.Drawing.Size(75, 23);
-            this.txtDepartureViewDetails.TabIndex = 37;
-            this.txtDepartureViewDetails.Text = "View Details";
-            this.txtDepartureViewDetails.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(3, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "View Details";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -954,7 +956,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblPayment);
             this.Controls.Add(this.picPayment);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Payment";
             this.Size = new System.Drawing.Size(677, 548);
             this.Load += new System.EventHandler(this.Payment_Load);
@@ -1055,7 +1057,7 @@
         public System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.CheckBox chkTermsAndConditions;
         public CustomControls.RoundedButton btnContinue;
-        private System.Windows.Forms.Button txtDepartureViewDetails;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDepartureViewDetails;
+        private System.Windows.Forms.Button btnReturnViewDetails;
     }
 }

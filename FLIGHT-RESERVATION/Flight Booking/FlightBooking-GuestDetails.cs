@@ -111,7 +111,7 @@ namespace FLIGHT_RESERVATION
                 if (birthdateBox != null &&
                     !DateTime.TryParseExact(birthdateBox.Text, "MMMM dd, yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime date))
                 {
-                    MessageBox.Show("Birthdate must be in 'MMMM dd, yyyy' format.\nExample: January 1, 2001.");
+                    MessageBox.Show("Birthdate must be in 'MMMM dd, yyyy' format.\nExample: January 01, 2001.");
                     birthdateBox.Text = "";
                     btnFocus.Focus();
                     return false;
