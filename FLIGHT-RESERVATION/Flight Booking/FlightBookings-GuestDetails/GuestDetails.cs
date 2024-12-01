@@ -12,12 +12,19 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
 {
     public partial class GuestDetails : UserControl
     {
+        public String type;
+
         public GuestDetails(String type, int num)
-        {
+        { 
             InitializeComponent();
             String label = $"{type} {num} Details";
             if (num == 0) label = "Passenger Details";
             lblDetails.Text = label;
+            Console.WriteLine(type);
+            if (type == "Passenger" || type == "Adult") this.type = "Adult";
+            else if (type == "Children") this.type = "Children";
+            else if (type == "Infant") this.type = "Infant";
+
         }
 
         private void GuestDetails_Load(object sender, EventArgs e)

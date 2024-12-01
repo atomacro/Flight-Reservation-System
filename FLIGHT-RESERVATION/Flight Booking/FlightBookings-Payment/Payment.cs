@@ -200,35 +200,60 @@ namespace FLIGHT_RESERVATION
             String PassengerTicketPrices(Flight flight, ref float SubTotal)
                 {
                     StringBuilder sb = new StringBuilder();
-                    float price = flight.Price;
+                    float basePrice = flight.Price;
                     float multiplier = 1;
+                    
 
                     if (SeatClass == "Business") multiplier = 2f;
                     if (SeatClass == "Business Economy") multiplier = 1.5f;
                     if (SeatClass == "First Class") multiplier = 2.5f;
+                    float AdultSubtotal = 0;
+                    float ChildrenSubtotal = 0;
+                    float InfantSubtotal = 0;
 
-                    if (AdultCount > 0)
+                    foreach(var item in session.PassengerDetails)
                     {
-                        float adultTickets = (float)(price * multiplier) * AdultCount;
-                        SubTotal += adultTickets;
+                        var innerentry = item.Value;
 
-                        sb.AppendLine($"{String.Format("{0:0.00}", adultTickets)}");
+                        if (innerentry["Type"] == "Adult")
+                        {
+                            Boolean discounted = innerentry["Discounted"] == "Yes" ? true : false;
+                            AdultSubtotal += CalculatePrice(discounted, 1.0f, multiplier);
+                        }
+                        else if (innerentry["Type"] == "Children")
+                        {
+                            Boolean discounted = innerentry["Discounted"] == "Yes" ? true : false;
+                            ChildrenSubtotal += CalculatePrice(discounted, 0.75f, multiplier);
+                        }
+                        else if (innerentry["Type"] == "Infant")
+                        {
+                            Boolean discounted = innerentry["Discounted"] == "Yes" ? true : false;
+                            InfantSubtotal += CalculatePrice(discounted, 0.5f, multiplier);
+                        }
                     }
-                    if (ChildrenCount > 0)
+
+
+                    float CalculatePrice(Boolean Discounted, float typeMultiplier, float seatMultipler)
                     {
-                        float childrenTickets = (float)((price * multiplier) * 0.75) * ChildrenCount;
-                        SubTotal += childrenTickets;
+                        float tax = 0.12f;
+                        float discount = 1;
 
-                        sb.AppendLine($"{String.Format("{0:0.00}", childrenTickets)}");
+                        if (Discounted)
+                        {
+                            tax = 0;
+                            discount = 0.80f;
+                        }
+
+                        float tempPrice = (basePrice * typeMultiplier) * seatMultipler;
+                        tempPrice += tempPrice * tax;
+                        tempPrice *= discount;
+                        return tempPrice;
                     }
-                    if (InfantCount > 0)
-                    {
-                        float infantTickets = (float)((price * multiplier) * 0.50) * InfantCount;
-                        SubTotal += infantTickets;
 
-                        sb.AppendLine($"{String.Format("{0:0.00}", infantTickets)}");
-                    }
-
+                    SubTotal += AdultSubtotal + ChildrenSubtotal + InfantSubtotal;
+                    if (AdultSubtotal > 0) sb.AppendLine($"{String.Format("{0:0.00}", AdultSubtotal)}");
+                    if (ChildrenSubtotal > 0) sb.AppendLine($"{String.Format("{0:0.00}", ChildrenSubtotal)}");
+                    if (InfantSubtotal > 0) sb.AppendLine($"{String.Format("{0:0.00}", InfantSubtotal)}");
 
                     return sb.ToString();
                 }

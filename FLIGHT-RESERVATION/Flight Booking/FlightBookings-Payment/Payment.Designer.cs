@@ -87,6 +87,8 @@
             this.picPayment = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnContinue = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
+            this.txtDepartureViewDetails = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlPayTitle.SuspendLayout();
             this.pnlDepartureExpenses.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -204,11 +206,12 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.lblDepartureSubtotalPrice);
+            this.flowLayoutPanel1.Controls.Add(this.txtDepartureViewDetails);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(483, 65);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(389, 65);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 88);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(81, 117);
             this.flowLayoutPanel1.TabIndex = 38;
             // 
             // flowLayoutPanel2
@@ -220,7 +223,7 @@
             this.flowLayoutPanel2.Controls.Add(this.lblDeparturePassengersPrice);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(4, 63);
             this.flowLayoutPanel2.TabIndex = 36;
@@ -257,6 +260,7 @@
             // 
             this.lblDeparturePassengersPrice.AutoSize = true;
             this.lblDeparturePassengersPrice.BackColor = System.Drawing.Color.White;
+            this.lblDeparturePassengersPrice.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDeparturePassengersPrice.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeparturePassengersPrice.ForeColor = System.Drawing.Color.Gray;
             this.lblDeparturePassengersPrice.Location = new System.Drawing.Point(2, 42);
@@ -269,6 +273,7 @@
             // 
             this.lblDepartureSubtotalPrice.AutoSize = true;
             this.lblDepartureSubtotalPrice.BackColor = System.Drawing.Color.White;
+            this.lblDepartureSubtotalPrice.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDepartureSubtotalPrice.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartureSubtotalPrice.ForeColor = System.Drawing.Color.Black;
             this.lblDepartureSubtotalPrice.Location = new System.Drawing.Point(2, 67);
@@ -285,11 +290,12 @@
             this.pnlReturnPrices.Controls.Add(this.label7);
             this.pnlReturnPrices.Controls.Add(this.lblReturnPassengersPrice);
             this.pnlReturnPrices.Controls.Add(this.lblReturnSubTotalPrice);
+            this.pnlReturnPrices.Controls.Add(this.button1);
             this.pnlReturnPrices.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlReturnPrices.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlReturnPrices.Location = new System.Drawing.Point(429, 239);
+            this.pnlReturnPrices.Location = new System.Drawing.Point(389, 268);
             this.pnlReturnPrices.Name = "pnlReturnPrices";
-            this.pnlReturnPrices.Size = new System.Drawing.Size(62, 84);
+            this.pnlReturnPrices.Size = new System.Drawing.Size(81, 113);
             this.pnlReturnPrices.TabIndex = 39;
             // 
             // flowLayoutPanel5
@@ -314,7 +320,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(58, 21);
+            this.label2.Size = new System.Drawing.Size(77, 21);
             this.label2.TabIndex = 37;
             // 
             // label7
@@ -370,7 +376,7 @@
             this.pnlFlightDeparture.RowCount = 2;
             this.pnlFlightDeparture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.pnlFlightDeparture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlFlightDeparture.Size = new System.Drawing.Size(471, 56);
+            this.pnlFlightDeparture.Size = new System.Drawing.Size(467, 56);
             this.pnlFlightDeparture.TabIndex = 41;
             // 
             // lblDepartureFrom
@@ -382,7 +388,7 @@
             this.lblDepartureFrom.Location = new System.Drawing.Point(2, 0);
             this.lblDepartureFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartureFrom.Name = "lblDepartureFrom";
-            this.lblDepartureFrom.Size = new System.Drawing.Size(90, 28);
+            this.lblDepartureFrom.Size = new System.Drawing.Size(89, 28);
             this.lblDepartureFrom.TabIndex = 21;
             this.lblDepartureFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -395,7 +401,7 @@
             this.lblDepartureDepartureTime.Location = new System.Drawing.Point(2, 28);
             this.lblDepartureDepartureTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartureDepartureTime.Name = "lblDepartureDepartureTime";
-            this.lblDepartureDepartureTime.Size = new System.Drawing.Size(90, 28);
+            this.lblDepartureDepartureTime.Size = new System.Drawing.Size(89, 28);
             this.lblDepartureDepartureTime.TabIndex = 23;
             this.lblDepartureDepartureTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -404,11 +410,11 @@
             this.picAirplane1.BackColor = System.Drawing.Color.White;
             this.picAirplane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAirplane1.Image = ((System.Drawing.Image)(resources.GetObject("picAirplane1.Image")));
-            this.picAirplane1.Location = new System.Drawing.Point(96, 2);
-            this.picAirplane1.Margin = new System.Windows.Forms.Padding(2);
+            this.picAirplane1.Location = new System.Drawing.Point(95, 2);
+            this.picAirplane1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picAirplane1.Name = "picAirplane1";
             this.pnlFlightDeparture.SetRowSpan(this.picAirplane1, 2);
-            this.picAirplane1.Size = new System.Drawing.Size(278, 52);
+            this.picAirplane1.Size = new System.Drawing.Size(276, 52);
             this.picAirplane1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picAirplane1.TabIndex = 20;
             this.picAirplane1.TabStop = false;
@@ -419,10 +425,10 @@
             this.lblDepartureTo.BackColor = System.Drawing.Color.White;
             this.lblDepartureTo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDepartureTo.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartureTo.Location = new System.Drawing.Point(378, 0);
+            this.lblDepartureTo.Location = new System.Drawing.Point(375, 0);
             this.lblDepartureTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartureTo.Name = "lblDepartureTo";
-            this.lblDepartureTo.Size = new System.Drawing.Size(91, 28);
+            this.lblDepartureTo.Size = new System.Drawing.Size(90, 28);
             this.lblDepartureTo.TabIndex = 22;
             this.lblDepartureTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -432,16 +438,15 @@
             this.lblDepartureArrivalTime.BackColor = System.Drawing.Color.White;
             this.lblDepartureArrivalTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDepartureArrivalTime.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartureArrivalTime.Location = new System.Drawing.Point(378, 28);
+            this.lblDepartureArrivalTime.Location = new System.Drawing.Point(375, 28);
             this.lblDepartureArrivalTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartureArrivalTime.Name = "lblDepartureArrivalTime";
-            this.lblDepartureArrivalTime.Size = new System.Drawing.Size(91, 28);
+            this.lblDepartureArrivalTime.Size = new System.Drawing.Size(90, 28);
             this.lblDepartureArrivalTime.TabIndex = 24;
             this.lblDepartureArrivalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlPayment
             // 
-            this.pnlPayment.AutoScroll = true;
             this.pnlPayment.AutoSize = true;
             this.pnlPayment.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlPayment.ColumnCount = 2;
@@ -462,7 +467,8 @@
             this.pnlPayment.Controls.Add(this.picLine3, 0, 8);
             this.pnlPayment.Controls.Add(this.chkTermsAndConditions, 0, 10);
             this.pnlPayment.Controls.Add(this.pnlAddons, 0, 7);
-            this.pnlPayment.Location = new System.Drawing.Point(3, 3);
+            this.pnlPayment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPayment.Location = new System.Drawing.Point(0, 0);
             this.pnlPayment.Name = "pnlPayment";
             this.pnlPayment.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.pnlPayment.RowCount = 11;
@@ -477,7 +483,7 @@
             this.pnlPayment.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnlPayment.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnlPayment.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnlPayment.Size = new System.Drawing.Size(514, 488);
+            this.pnlPayment.Size = new System.Drawing.Size(493, 546);
             this.pnlPayment.TabIndex = 41;
             // 
             // lblTermsAndConditions
@@ -486,9 +492,9 @@
             this.lblTermsAndConditions.Font = new System.Drawing.Font("Kantumruy Pro", 8.999999F);
             this.lblTermsAndConditions.ForeColor = System.Drawing.Color.Black;
             this.lblTermsAndConditions.LinkColor = System.Drawing.Color.Black;
-            this.lblTermsAndConditions.Location = new System.Drawing.Point(352, 466);
+            this.lblTermsAndConditions.Location = new System.Drawing.Point(337, 524);
             this.lblTermsAndConditions.Name = "lblTermsAndConditions";
-            this.lblTermsAndConditions.Size = new System.Drawing.Size(134, 22);
+            this.lblTermsAndConditions.Size = new System.Drawing.Size(133, 22);
             this.lblTermsAndConditions.TabIndex = 42;
             this.lblTermsAndConditions.TabStop = true;
             this.lblTermsAndConditions.Text = "Terms and Conditions";
@@ -503,7 +509,7 @@
             this.pnlAddonsPrices.Controls.Add(this.lblAddonSubtotalPrice);
             this.pnlAddonsPrices.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlAddonsPrices.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlAddonsPrices.Location = new System.Drawing.Point(487, 346);
+            this.pnlAddonsPrices.Location = new System.Drawing.Point(466, 404);
             this.pnlAddonsPrices.Name = "pnlAddonsPrices";
             this.pnlAddonsPrices.Size = new System.Drawing.Size(4, 63);
             this.pnlAddonsPrices.TabIndex = 42;
@@ -564,7 +570,7 @@
             this.lblSubtotalPrice.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblSubtotalPrice.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtotalPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblSubtotalPrice.Location = new System.Drawing.Point(492, 429);
+            this.lblSubtotalPrice.Location = new System.Drawing.Point(471, 487);
             this.lblSubtotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubtotalPrice.Name = "lblSubtotalPrice";
             this.lblSubtotalPrice.Padding = new System.Windows.Forms.Padding(0, 0, 0, 16);
@@ -578,7 +584,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(2, 429);
+            this.label3.Location = new System.Drawing.Point(2, 487);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 16);
@@ -599,12 +605,12 @@
             this.pnlFlightReturn.Controls.Add(this.lblReturnTo, 2, 0);
             this.pnlFlightReturn.Controls.Add(this.lblReturnArrivalTime, 2, 1);
             this.pnlFlightReturn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFlightReturn.Location = new System.Drawing.Point(3, 177);
+            this.pnlFlightReturn.Location = new System.Drawing.Point(3, 206);
             this.pnlFlightReturn.Name = "pnlFlightReturn";
             this.pnlFlightReturn.RowCount = 2;
             this.pnlFlightReturn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.pnlFlightReturn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlFlightReturn.Size = new System.Drawing.Size(488, 56);
+            this.pnlFlightReturn.Size = new System.Drawing.Size(467, 56);
             this.pnlFlightReturn.TabIndex = 42;
             // 
             // lblReturnFrom
@@ -616,7 +622,7 @@
             this.lblReturnFrom.Location = new System.Drawing.Point(2, 0);
             this.lblReturnFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnFrom.Name = "lblReturnFrom";
-            this.lblReturnFrom.Size = new System.Drawing.Size(93, 28);
+            this.lblReturnFrom.Size = new System.Drawing.Size(89, 28);
             this.lblReturnFrom.TabIndex = 21;
             this.lblReturnFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -629,7 +635,7 @@
             this.lblReturnDepartureTime.Location = new System.Drawing.Point(2, 28);
             this.lblReturnDepartureTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnDepartureTime.Name = "lblReturnDepartureTime";
-            this.lblReturnDepartureTime.Size = new System.Drawing.Size(93, 28);
+            this.lblReturnDepartureTime.Size = new System.Drawing.Size(89, 28);
             this.lblReturnDepartureTime.TabIndex = 23;
             this.lblReturnDepartureTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -638,11 +644,11 @@
             this.picAirplane2.BackColor = System.Drawing.Color.White;
             this.picAirplane2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAirplane2.Image = ((System.Drawing.Image)(resources.GetObject("picAirplane2.Image")));
-            this.picAirplane2.Location = new System.Drawing.Point(99, 2);
-            this.picAirplane2.Margin = new System.Windows.Forms.Padding(2);
+            this.picAirplane2.Location = new System.Drawing.Point(95, 2);
+            this.picAirplane2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picAirplane2.Name = "picAirplane2";
             this.pnlFlightReturn.SetRowSpan(this.picAirplane2, 2);
-            this.picAirplane2.Size = new System.Drawing.Size(288, 52);
+            this.picAirplane2.Size = new System.Drawing.Size(276, 52);
             this.picAirplane2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picAirplane2.TabIndex = 20;
             this.picAirplane2.TabStop = false;
@@ -653,10 +659,10 @@
             this.lblReturnTo.BackColor = System.Drawing.Color.White;
             this.lblReturnTo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblReturnTo.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturnTo.Location = new System.Drawing.Point(391, 0);
+            this.lblReturnTo.Location = new System.Drawing.Point(375, 0);
             this.lblReturnTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnTo.Name = "lblReturnTo";
-            this.lblReturnTo.Size = new System.Drawing.Size(95, 28);
+            this.lblReturnTo.Size = new System.Drawing.Size(90, 28);
             this.lblReturnTo.TabIndex = 22;
             this.lblReturnTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -666,10 +672,10 @@
             this.lblReturnArrivalTime.BackColor = System.Drawing.Color.White;
             this.lblReturnArrivalTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblReturnArrivalTime.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturnArrivalTime.Location = new System.Drawing.Point(391, 28);
+            this.lblReturnArrivalTime.Location = new System.Drawing.Point(375, 28);
             this.lblReturnArrivalTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReturnArrivalTime.Name = "lblReturnArrivalTime";
-            this.lblReturnArrivalTime.Size = new System.Drawing.Size(95, 28);
+            this.lblReturnArrivalTime.Size = new System.Drawing.Size(90, 28);
             this.lblReturnArrivalTime.TabIndex = 24;
             this.lblReturnArrivalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -680,10 +686,10 @@
             this.pnlPayment.SetColumnSpan(this.picLine1, 2);
             this.picLine1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLine1.Image = ((System.Drawing.Image)(resources.GetObject("picLine1.Image")));
-            this.picLine1.Location = new System.Drawing.Point(2, 158);
-            this.picLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.picLine1.Location = new System.Drawing.Point(2, 187);
+            this.picLine1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picLine1.Name = "picLine1";
-            this.picLine1.Size = new System.Drawing.Size(490, 14);
+            this.picLine1.Size = new System.Drawing.Size(469, 14);
             this.picLine1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLine1.TabIndex = 16;
             this.picLine1.TabStop = false;
@@ -695,10 +701,10 @@
             this.pnlPayment.SetColumnSpan(this.picLine2, 2);
             this.picLine2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLine2.Image = ((System.Drawing.Image)(resources.GetObject("picLine2.Image")));
-            this.picLine2.Location = new System.Drawing.Point(2, 328);
-            this.picLine2.Margin = new System.Windows.Forms.Padding(2);
+            this.picLine2.Location = new System.Drawing.Point(2, 386);
+            this.picLine2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picLine2.Name = "picLine2";
-            this.picLine2.Size = new System.Drawing.Size(490, 13);
+            this.picLine2.Size = new System.Drawing.Size(469, 13);
             this.picLine2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLine2.TabIndex = 35;
             this.picLine2.TabStop = false;
@@ -710,7 +716,7 @@
             this.pnlReturnExpenses.Controls.Add(this.flowLayoutPanel7);
             this.pnlReturnExpenses.Controls.Add(this.label4);
             this.pnlReturnExpenses.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlReturnExpenses.Location = new System.Drawing.Point(3, 239);
+            this.pnlReturnExpenses.Location = new System.Drawing.Point(3, 268);
             this.pnlReturnExpenses.Name = "pnlReturnExpenses";
             this.pnlReturnExpenses.Size = new System.Drawing.Size(155, 84);
             this.pnlReturnExpenses.TabIndex = 44;
@@ -788,10 +794,10 @@
             this.picLine3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnlPayment.SetColumnSpan(this.picLine3, 2);
             this.picLine3.Image = ((System.Drawing.Image)(resources.GetObject("picLine3.Image")));
-            this.picLine3.Location = new System.Drawing.Point(2, 414);
-            this.picLine3.Margin = new System.Windows.Forms.Padding(2);
+            this.picLine3.Location = new System.Drawing.Point(2, 472);
+            this.picLine3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picLine3.Name = "picLine3";
-            this.picLine3.Size = new System.Drawing.Size(473, 13);
+            this.picLine3.Size = new System.Drawing.Size(469, 13);
             this.picLine3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLine3.TabIndex = 42;
             this.picLine3.TabStop = false;
@@ -800,10 +806,10 @@
             // 
             this.chkTermsAndConditions.Dock = System.Windows.Forms.DockStyle.Top;
             this.chkTermsAndConditions.Font = new System.Drawing.Font("Kantumruy Pro", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTermsAndConditions.Location = new System.Drawing.Point(0, 466);
+            this.chkTermsAndConditions.Location = new System.Drawing.Point(0, 524);
             this.chkTermsAndConditions.Margin = new System.Windows.Forms.Padding(0);
             this.chkTermsAndConditions.Name = "chkTermsAndConditions";
-            this.chkTermsAndConditions.Size = new System.Drawing.Size(349, 18);
+            this.chkTermsAndConditions.Size = new System.Drawing.Size(334, 18);
             this.chkTermsAndConditions.TabIndex = 43;
             this.chkTermsAndConditions.Text = "I confirm that I have read, understood, and accept the ";
             this.chkTermsAndConditions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -816,8 +822,8 @@
             this.pnlAddons.Controls.Add(this.lblAddons);
             this.pnlAddons.Controls.Add(this.lblAddonSubtotal);
             this.pnlAddons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlAddons.Location = new System.Drawing.Point(2, 345);
-            this.pnlAddons.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlAddons.Location = new System.Drawing.Point(2, 403);
+            this.pnlAddons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlAddons.Name = "pnlAddons";
             this.pnlAddons.Size = new System.Drawing.Size(71, 63);
             this.pnlAddons.TabIndex = 45;
@@ -875,7 +881,7 @@
             this.btnBack.Font = new System.Drawing.Font("Kantumruy Pro", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.BlueViolet;
             this.btnBack.Location = new System.Drawing.Point(184, 476);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(152, 42);
             this.btnBack.TabIndex = 3;
@@ -888,7 +894,7 @@
             this.picPayment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPayment.BackgroundImage")));
             this.picPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPayment.Location = new System.Drawing.Point(25, 11);
-            this.picPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.picPayment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picPayment.Name = "picPayment";
             this.picPayment.Size = new System.Drawing.Size(626, 441);
             this.picPayment.TabIndex = 4;
@@ -898,9 +904,9 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.pnlPayment);
-            this.panel1.Location = new System.Drawing.Point(56, 75);
+            this.panel1.Location = new System.Drawing.Point(111, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 348);
+            this.panel1.Size = new System.Drawing.Size(510, 348);
             this.panel1.TabIndex = 42;
             // 
             // btnContinue
@@ -918,6 +924,26 @@
             this.btnContinue.Text = "Continue";
             this.btnContinue.UseVisualStyleBackColor = false;
             // 
+            // txtDepartureViewDetails
+            // 
+            this.txtDepartureViewDetails.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtDepartureViewDetails.Location = new System.Drawing.Point(3, 91);
+            this.txtDepartureViewDetails.Name = "txtDepartureViewDetails";
+            this.txtDepartureViewDetails.Size = new System.Drawing.Size(75, 23);
+            this.txtDepartureViewDetails.TabIndex = 37;
+            this.txtDepartureViewDetails.Text = "View Details";
+            this.txtDepartureViewDetails.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Location = new System.Drawing.Point(3, 87);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "View Details";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -928,7 +954,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblPayment);
             this.Controls.Add(this.picPayment);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Payment";
             this.Size = new System.Drawing.Size(677, 548);
             this.Load += new System.EventHandler(this.Payment_Load);
@@ -1029,5 +1055,7 @@
         public System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.CheckBox chkTermsAndConditions;
         public CustomControls.RoundedButton btnContinue;
+        private System.Windows.Forms.Button txtDepartureViewDetails;
+        private System.Windows.Forms.Button button1;
     }
 }
