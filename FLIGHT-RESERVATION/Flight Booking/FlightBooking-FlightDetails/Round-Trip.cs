@@ -84,7 +84,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 
                 foreach (string date in returnDates)
                 {
-                    if (DateTime.Parse(cboDepartureDate.Text) < DateTime.Parse(date) || cboDepartureDate != null)
+                    if (String.IsNullOrWhiteSpace(cboDepartureDate.Text)) return;
+                    if (DateTime.Parse(cboDepartureDate.Text) < DateTime.Parse(date))
                     {
                         cboReturnDate.Items.Add(date);
                     }

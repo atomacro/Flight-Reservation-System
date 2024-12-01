@@ -65,7 +65,7 @@ namespace FLIGHT_RESERVATION
                     {
                         for (int i = 1; i <= counter; i++)
                         {
-                            var GuestDetails = new GuestDetails(type, i) { Margin = new Padding(0, 0, 0, 25) };
+                            var GuestDetails = new GuestDetails(type, i) { Margin = new Padding(0, 25, 0, 0) };
                             GuestDetailsLayout.Controls.Add(GuestDetails, currentColumn, currentRow);
                             if (currentColumn == 1) { currentColumn = 0; currentRow++; }
                             else currentColumn++;
@@ -77,11 +77,11 @@ namespace FLIGHT_RESERVATION
                 }
                 else
                 {
-                    var GuestDetails = new GuestDetails("Passenger", 0);
+                    var GuestDetails = new GuestDetails("Passenger", 0) { Margin = new Padding(0, 25, 0, 0) }; 
                     pnlGuestDetails.Controls.Add(GuestDetails);
-                    GuestDetails.AutoSize = true;
+                    //GuestDetails.AutoSize = true;
                     GuestDetails.Left = (pnlGuestDetails.Width - GuestDetails.Width) / 2;
-                    GuestDetails.Top = (pnlGuestDetails.Height - GuestDetails.Height) / 2;
+                    //GuestDetails.Top = (pnlGuestDetails.Height - GuestDetails.Height) / 2;
                     guestDetails["Adult 1"] = GuestDetails;
                 }
             }
