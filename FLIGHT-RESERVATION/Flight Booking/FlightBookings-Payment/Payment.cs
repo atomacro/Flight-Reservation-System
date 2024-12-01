@@ -1,5 +1,7 @@
 ﻿using FLIGHT_RESERVATION.Flight_Booking;
+using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Payment;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Math.EC.Multiplier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +22,9 @@ namespace FLIGHT_RESERVATION
         float DepartureSubTotal { get; set; } = 0;
         float ReturnSubTotal { get; set; } = 0;
         float AddonSubTotal { get; set; } = 0;
-
+        float DepartureFlightPrice = 0;
+        float ReturnFlightPrice = 0;
+        
         public Payment()
         {
 
@@ -143,6 +147,7 @@ namespace FLIGHT_RESERVATION
             {
                 Flight Return = new Flight();
                 await Return.SelectFlight(session.ReturnAirplaneNumber);
+                this.ReturnFlightPrice = Return.Price;
                 lblReturnArrivalTime.Text = Return.ArrivalTime;
                 lblDepartureDepartureTime.Text = Return.DepartureTime;
                 lblReturnFrom.Text = Return.DepartureLocation;
@@ -163,7 +168,7 @@ namespace FLIGHT_RESERVATION
             Flight Departure = new Flight();
             await Departure.SelectFlight(session.DepartureAirplaneNumber);
 
-
+            this.DepartureFlightPrice = Departure.Price;
             lblDeparturePlaneNumber.Text = $"Plane Number: {Departure.AirplaneNumber}";
             lblDeparturePassengers.Text = Passengers();
             lblDepartureArrivalTime.Text = Departure.ArrivalTime;
@@ -200,12 +205,10 @@ namespace FLIGHT_RESERVATION
             String PassengerTicketPrices(Flight flight, ref float SubTotal)
                 {
                     StringBuilder sb = new StringBuilder();
-                    float basePrice = flight.Price;
                     float multiplier = 1;
-                    
 
-                    if (SeatClass == "Business") multiplier = 2f;
-                    if (SeatClass == "Business Economy") multiplier = 1.5f;
+                    if (SeatClass == "Premium Economy") multiplier = 2f;
+                    if (SeatClass == "Business") multiplier = 1.5f;
                     if (SeatClass == "First Class") multiplier = 2.5f;
                     float AdultSubtotal = 0;
                     float ChildrenSubtotal = 0;
@@ -233,21 +236,20 @@ namespace FLIGHT_RESERVATION
                     }
 
 
-                    float CalculatePrice(Boolean Discounted, float typeMultiplier, float seatMultipler)
+                    float CalculatePrice(Boolean Discounted, float typeMultiplier, float seatMultiplier)
                     {
-                        float tax = 0.12f;
-                        float discount = 1;
-
-                        if (Discounted)
-                        {
-                            tax = 0;
-                            discount = 0.80f;
+                        float basePrice = (flight.Price * typeMultiplier) * seatMultiplier;
+                        float subtotal = 0;
+                        if (Discounted) {
+                            float discount = basePrice * 0.20f;
+                            subtotal = basePrice - discount;
                         }
-
-                        float tempPrice = (basePrice * typeMultiplier) * seatMultipler;
-                        tempPrice += tempPrice * tax;
-                        tempPrice *= discount;
-                        return tempPrice;
+                        else
+                        {
+                            float tax = basePrice * 0.12f;
+                            subtotal = basePrice + tax;
+                        }
+                        return subtotal;  
                     }
 
                     SubTotal += AdultSubtotal + ChildrenSubtotal + InfantSubtotal;
@@ -295,6 +297,33 @@ namespace FLIGHT_RESERVATION
 
         }
 
+ 
+
+        private void btnReturnViewDetails_Click(object sender, EventArgs e)
+        {
+            String SeatClass = session.FlightDetails.ContainsKey("Seat Class") ? session.FlightDetails["Seat Class"] : "Economy";
+            float multiplier = 1;
+            if (SeatClass == "Premium Economy") multiplier = 2f;
+            if (SeatClass == "Business") multiplier = 1.5f;
+            if (SeatClass == "First Class") multiplier = 2.5f;
+
+            var PaymentDetails = new PaymentDetails();
+            PaymentDetails.IntializeDetails(lblReturnFrom.Text, lblReturnTo.Text, ReturnFlightPrice, ReturnSubTotal, multiplier);
+            PaymentDetails.ShowDialog();
+        }
+
+        private void btnDepartureViewDetails_Click(object sender, EventArgs e)
+        {
+            String SeatClass = session.FlightDetails.ContainsKey("Seat Class") ? session.FlightDetails["Seat Class"] : "Economy";
+            float multiplier = 1;
+            if (SeatClass == "Premium Economy") multiplier = 2f;
+            if (SeatClass == "Business") multiplier = 1.5f;
+            if (SeatClass == "First Class") multiplier = 2.5f;
+
+            var PaymentDetails = new PaymentDetails();
+            PaymentDetails.IntializeDetails(lblDepartureFrom.Text, lblDepartureTo.Text, DepartureFlightPrice, DepartureSubTotal ,multiplier);
+            PaymentDetails.ShowDialog();
+        }
     }
 
     public class Flight

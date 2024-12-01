@@ -205,6 +205,12 @@
     <Compile Include="Flight Booking\FlightBookings-Payment\Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight Booking\FlightBookings-Payment\PaymentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flight Booking\FlightBookings-Payment\PaymentDetails.Designer.cs">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight Booking\FlightBookings-Success\Success.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-Payment\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight Booking\FlightBookings-Payment\PaymentDetails.resx">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBookings-Success\Success.resx">
       <DependentUpon>Success.cs</DependentUpon>
