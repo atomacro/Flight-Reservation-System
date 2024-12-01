@@ -67,6 +67,20 @@ namespace FLIGHT_RESERVATION.ViewBookings
             {
                 Bookings bookings = new Bookings();
 
+                int currentIndex = i;
+                bookings.btnViewBookingDetails.Click += (s, e) =>
+                {
+                    Console.WriteLine(currentIndex);
+                    var bookingDetails = new BookingDetails(
+                        dv_view_bookings.TransactionID[currentIndex], 
+                        dv_view_bookings.FlightID[currentIndex],
+                        dv_view_bookings.DepartureLocation[currentIndex], 
+                        dv_view_bookings.ArrivalLocation[currentIndex],
+                        dv_view_bookings.DepartureTime[currentIndex], 
+                        dv_view_bookings.ArrivalTime[currentIndex]);
+                    bookingDetails.ShowDialog();
+                };
+
                 bookings.Margin = new Padding(0, 0, 0, 10);
                 bookings.SetDate(dv_view_bookings.DepartureDate[i]);
                 bookings.setLocation(dv_view_bookings.DepartureLocation[i], dv_view_bookings.ArrivalLocation[i]);
@@ -87,6 +101,8 @@ namespace FLIGHT_RESERVATION.ViewBookings
         private String UserName = "root";
         private String Password = "";
         private int AccountId;
+        public List<int> TransactionID = new List<int>();
+        public List<int> FlightID = new List<int>();
         public List<String> DepartureDate = new List<String>();
         public List<String> DepartureLocation = new List<String>();
         public List<String> ArrivalLocation = new List<String>();
@@ -120,21 +136,22 @@ namespace FLIGHT_RESERVATION.ViewBookings
             {
                 String SortingCondition = "";
 
-                if(sortState == "Old")
+                if (sortState == "Old")
                 {
                     SortingCondition = " ORDER BY Flights.DepartureDate DESC";
                 }
 
-                    string query = "SELECT Flights.DepartureDate, Flights.ArrivalDate, Flights.AirplaneNumber," +
-                                       "ArrivalAirport.AirportCode AS ArrivalAirportCode, " +
-                                       "DepartureAirport.AirportCode AS DepartureAirportCode " +
-                                       "FROM Flights " +
-                                       "JOIN TicketDetails ON Flights.FlightID = TicketDetails.FlightID " +
-                                       "JOIN Airport AS DepartureAirport ON Flights.DepartureAirportID = DepartureAirport.AirportID " +
-                                       "JOIN Airport AS ArrivalAirport ON Flights.ArrivalAirportID = ArrivalAirport.AirportID " +
-                                       "JOIN Transactions ON Transactions.TransactionID = TicketDetails.TransactionID " +
-                                       "JOIN Accounts ON Transactions.AccountID = Accounts.AccountID " +
-                                       "WHERE Accounts.AccountID = @AccountId" + SortingCondition;
+                string query = "SELECT Flights.DepartureDate, Flights.ArrivalDate, Flights.AirplaneNumber, Flights.FlightID, " +
+                                   "ArrivalAirport.AirportCode AS ArrivalAirportCode, " +
+                                   "DepartureAirport.AirportCode AS DepartureAirportCode, " +
+                                   "Transactions.TransactionID " +
+                                   "FROM Flights " +
+                                   "JOIN TicketDetails ON Flights.FlightID = TicketDetails.FlightID " +
+                                   "JOIN Airport AS DepartureAirport ON Flights.DepartureAirportID = DepartureAirport.AirportID " +
+                                   "JOIN Airport AS ArrivalAirport ON Flights.ArrivalAirportID = ArrivalAirport.AirportID " +
+                                   "JOIN Transactions ON Transactions.TransactionID = TicketDetails.TransactionID " +
+                                   "JOIN Accounts ON Transactions.AccountID = Accounts.AccountID " +
+                                   "WHERE Accounts.AccountID = @AccountId" + SortingCondition;
 
                 MySqlCommand command = new MySqlCommand(query, _connection);
                 command.Parameters.AddWithValue("@AccountId", this.AccountId);
@@ -149,10 +166,11 @@ namespace FLIGHT_RESERVATION.ViewBookings
 
                     btnSort.Visible = true; //make the button visible if the query is empty
 
-                    while (reader.Read()) {
+                    while (reader.Read())
+                    {
                         //get Date input to DateTime 
                         DateTime Departure = reader.GetDateTime("DepartureDate");
-                        DateTime Arrival =reader.GetDateTime("ArrivalDate");
+                        DateTime Arrival = reader.GetDateTime("ArrivalDate");
                         //convert to specific formats
                         string DepartureTime = Departure.ToString("HH:mm");
                         string ArrivalTime = Arrival.ToString("HH:mm");
@@ -164,8 +182,12 @@ namespace FLIGHT_RESERVATION.ViewBookings
 
                         //get AirplaneNumber
                         string AirplaneNumber = reader.GetString("AirplaneNumber");
+                        int TransactionID = reader.GetInt32("TransactionID");
+                        int FlightID = reader.GetInt32("FlightID");
 
                         //populate list
+                        this.TransactionID.Add(TransactionID);
+                        this.FlightID.Add(FlightID);
                         this.ArrivalLocation.Add(ArrivalLocation);
                         this.DepartureLocation.Add(DepartureLocation);
                         this.DepartureDate.Add(Date);
@@ -174,10 +196,14 @@ namespace FLIGHT_RESERVATION.ViewBookings
                         this.AirplaneNumber.Add(AirplaneNumber);
                     }
                 }
-             }
-            catch(Exception ex) {
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Database Error: {ex.Message}", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex) {
 
-                MessageBox.Show("Error retrieving data. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error retrieving data. Please try again. {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

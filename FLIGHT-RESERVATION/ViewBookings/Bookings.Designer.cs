@@ -37,7 +37,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblAirplaneNumber = new System.Windows.Forms.Label();
-            this.roundedButton1 = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
+            this.btnViewBookingDetails = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,10 +47,9 @@
             this.lblLocation1.AutoSize = true;
             this.lblLocation1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLocation1.Font = new System.Drawing.Font("Kantumruy Pro", 18F, System.Drawing.FontStyle.Bold);
-            this.lblLocation1.Location = new System.Drawing.Point(2, 0);
-            this.lblLocation1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLocation1.Location = new System.Drawing.Point(3, 0);
             this.lblLocation1.Name = "lblLocation1";
-            this.lblLocation1.Size = new System.Drawing.Size(80, 40);
+            this.lblLocation1.Size = new System.Drawing.Size(106, 49);
             this.lblLocation1.TabIndex = 1;
             this.lblLocation1.Text = "MNL";
             this.lblLocation1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,10 +61,9 @@
             this.lblLocation2.AutoSize = true;
             this.lblLocation2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLocation2.Font = new System.Drawing.Font("Kantumruy Pro", 18F, System.Drawing.FontStyle.Bold);
-            this.lblLocation2.Location = new System.Drawing.Point(339, 0);
-            this.lblLocation2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLocation2.Location = new System.Drawing.Point(452, 0);
             this.lblLocation2.Name = "lblLocation2";
-            this.lblLocation2.Size = new System.Drawing.Size(81, 40);
+            this.lblLocation2.Size = new System.Drawing.Size(108, 49);
             this.lblLocation2.TabIndex = 2;
             this.lblLocation2.Text = "ORD";
             this.lblLocation2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,11 +73,11 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(86, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(115, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(249, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(331, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -90,10 +88,9 @@
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime2.Location = new System.Drawing.Point(339, 40);
-            this.lblTime2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTime2.Location = new System.Drawing.Point(452, 49);
             this.lblTime2.Name = "lblTime2";
-            this.lblTime2.Size = new System.Drawing.Size(81, 31);
+            this.lblTime2.Size = new System.Drawing.Size(108, 38);
             this.lblTime2.TabIndex = 4;
             this.lblTime2.Text = "07:50";
             this.lblTime2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -104,10 +101,9 @@
             this.lblTime1.AutoSize = true;
             this.lblTime1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime1.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime1.Location = new System.Drawing.Point(2, 40);
-            this.lblTime1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTime1.Location = new System.Drawing.Point(3, 49);
             this.lblTime1.Name = "lblTime1";
-            this.lblTime1.Size = new System.Drawing.Size(80, 31);
+            this.lblTime1.Size = new System.Drawing.Size(106, 38);
             this.lblTime1.TabIndex = 5;
             this.lblTime1.Text = "13:34";
             this.lblTime1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -125,14 +121,14 @@
             this.tableLayoutPanel1.Controls.Add(this.lblTime1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblLocation2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 39);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 48);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(422, 71);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(563, 87);
             this.tableLayoutPanel1.TabIndex = 6;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -140,10 +136,9 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(20, 13);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Location = new System.Drawing.Point(27, 16);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(143, 21);
+            this.lblDate.Size = new System.Drawing.Size(173, 25);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "November 09, 2024";
             this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
@@ -152,44 +147,44 @@
             // 
             this.lblAirplaneNumber.AutoSize = true;
             this.lblAirplaneNumber.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAirplaneNumber.Location = new System.Drawing.Point(335, 13);
-            this.lblAirplaneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAirplaneNumber.Location = new System.Drawing.Point(447, 16);
             this.lblAirplaneNumber.Name = "lblAirplaneNumber";
-            this.lblAirplaneNumber.Size = new System.Drawing.Size(105, 21);
+            this.lblAirplaneNumber.Size = new System.Drawing.Size(127, 25);
             this.lblAirplaneNumber.TabIndex = 7;
             this.lblAirplaneNumber.Text = "Flight: ABC123";
             this.lblAirplaneNumber.Click += new System.EventHandler(this.lblAirplaneNumber_Click);
             // 
-            // roundedButton1
+            // btnViewBookingDetails
             // 
-            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
-            this.roundedButton1.BorderRadius = 20;
-            this.roundedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedButton1.FlatAppearance.BorderSize = 0;
-            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton1.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
-            this.roundedButton1.ForeColor = System.Drawing.Color.White;
-            this.roundedButton1.Location = new System.Drawing.Point(440, 42);
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.Size = new System.Drawing.Size(127, 40);
-            this.roundedButton1.TabIndex = 8;
-            this.roundedButton1.Text = "View";
-            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.btnViewBookingDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.btnViewBookingDetails.BorderRadius = 20;
+            this.btnViewBookingDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewBookingDetails.FlatAppearance.BorderSize = 0;
+            this.btnViewBookingDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewBookingDetails.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
+            this.btnViewBookingDetails.ForeColor = System.Drawing.Color.White;
+            this.btnViewBookingDetails.Location = new System.Drawing.Point(587, 52);
+            this.btnViewBookingDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewBookingDetails.Name = "btnViewBookingDetails";
+            this.btnViewBookingDetails.Size = new System.Drawing.Size(169, 49);
+            this.btnViewBookingDetails.TabIndex = 8;
+            this.btnViewBookingDetails.Text = "View";
+            this.btnViewBookingDetails.UseVisualStyleBackColor = false;
             // 
             // Bookings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.roundedButton1);
+            this.Controls.Add(this.btnViewBookingDetails);
             this.Controls.Add(this.lblAirplaneNumber);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblDate);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Bookings";
-            this.Size = new System.Drawing.Size(596, 127);
+            this.Size = new System.Drawing.Size(795, 156);
             this.Load += new System.EventHandler(this.Bookings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -208,6 +203,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblAirplaneNumber;
-        private CustomControls.RoundedButton roundedButton1;
+        public CustomControls.RoundedButton btnViewBookingDetails;
     }
 }

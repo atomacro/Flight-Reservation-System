@@ -8,17 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using FLIGHT_RESERVATION.Flight_Booking;
+using FLIGHT_RESERVATION.ViewBookings;
 
 namespace FLIGHT_RESERVATION
 {
     public partial class Bookings : UserControl
     {
+        private string TransactionID;
+        private string FlightID;
+
         public Bookings()
         {
             InitializeComponent();
             lblTime1.ForeColor = ColorTranslator.FromHtml("#9F8FFF");
             lblTime2.ForeColor = ColorTranslator.FromHtml("#9F8FFF");
 
+            this.TransactionID = TransactionID;
+            this.FlightID = FlightID;
         }
         public void SetDate(string date)
         {

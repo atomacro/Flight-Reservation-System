@@ -57,15 +57,15 @@ namespace FLIGHT_RESERVATION
         public void setCardDetails(Dictionary<String, String> Card)
         {
            foreach(var item in Card)
-            {
+           {
                 PaymentDetails[item.Key] = item.Value;
-            }
+           }
 
 
-            foreach (var item in PaymentDetails)
-            {
+           foreach (var item in PaymentDetails) 
+           {
                 Console.WriteLine($"{item.Key} : {item.Value}");
-            }
+           }
         }
 
         public void setGuestDetails(Dictionary<String, GuestDetails> guestDetails)
@@ -113,8 +113,7 @@ namespace FLIGHT_RESERVATION
             }
         }
 
-
-            public void setFlightDetails(Trips trip, String type)
+        public void setFlightDetails(Trips trip, String type)
         {
             if (FlightDetails != null)
             {
