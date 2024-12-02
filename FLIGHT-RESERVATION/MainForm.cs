@@ -266,7 +266,7 @@ namespace FLIGHT_RESERVATION
                     if (!PaymentDetails.ValidateContents()){ return;  }
 
                     PaymentDetails.FillData();
-                    InsertDatabaseData Database = new InsertDatabaseData(1, PaymentDetails.GenerateTransactionId());
+                    InsertDatabaseData Database = new InsertDatabaseData(Session.CurrentUser, PaymentDetails.GenerateTransactionId());
                     await Database.InsertDatabase();
 
                     SendEmail Mailer = new SendEmail();
@@ -311,6 +311,13 @@ namespace FLIGHT_RESERVATION
             btnFlightBooking.Click += (sender, EventArgs) =>
             {
                 this.SuspendLayout();
+
+                if (!Session.IsLoggedIn)
+                {
+                    LoginControl_OpenLoginForm(this, EventArgs.Empty);
+                    return;
+                }
+                
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
@@ -332,18 +339,20 @@ namespace FLIGHT_RESERVATION
             };
             btnAccount.Click += (sender, e) =>
             {
-                this.SuspendLayout(); 
+                this.SuspendLayout();
+
+                if (!Session.IsLoggedIn)
+                {
+                    LoginControl_OpenLoginForm(this, EventArgs.Empty);
+                    return;
+                }
+                
                 SetIndicator(btnAccount, pnlIndicator4);
                 SetHeader("ACCOUNT");
                 ClearControls(pnlMain);
+                var account = new AccountSettings();
+                AddControl(account, pnlMain);
                 this.ResumeLayout();
-
-                if (Session.IsLoggedIn)
-                {
-                    var account = new AccountSettings();
-                    AddControl(account, pnlMain);
-                }
-                else { LoginControl_OpenLoginForm(this, EventArgs.Empty); }
             };
             btnLogin.Click += LoginControl_OpenLoginForm;
 

@@ -62,7 +62,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
 
         private void PopulateBookings(String sortState)
         {
-            Database_View_Bookings dv_view_bookings = new Database_View_Bookings(1, sortState, pnlBookings, btnSort); // 1 is account ID
+            Database_View_Bookings dv_view_bookings = new Database_View_Bookings(Session.CurrentUser, sortState, pnlBookings, btnSort); // 1 is account ID
             for (int i = 0; i < dv_view_bookings.DepartureDate.Count; i++)
             {
                 Bookings bookings = new Bookings();
@@ -70,7 +70,6 @@ namespace FLIGHT_RESERVATION.ViewBookings
                 int currentIndex = i;
                 bookings.btnViewBookingDetails.Click += (s, e) =>
                 {
-                    Console.WriteLine(currentIndex);
                     var bookingDetails = new BookingDetails(
                         dv_view_bookings.TransactionID[currentIndex], 
                         dv_view_bookings.FlightID[currentIndex],
