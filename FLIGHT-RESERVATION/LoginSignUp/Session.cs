@@ -18,6 +18,7 @@ namespace FLIGHT_RESERVATION
     {
         public static bool IsLoggedIn { get; set; } = false;
         public static int CurrentUser { get; set; } = 0;
+        public static string CurrentUserEmail { get; set; }
         public static string Password { get; set; } = string.Empty;
 
         private MySqlConnection _connection;
@@ -71,6 +72,7 @@ namespace FLIGHT_RESERVATION
                         int currentUser = (int) reader["AccountID"];
                         Password = password;
                         CurrentUser = currentUser;
+                        CurrentUserEmail = email;
 
                     }
                     return true;
