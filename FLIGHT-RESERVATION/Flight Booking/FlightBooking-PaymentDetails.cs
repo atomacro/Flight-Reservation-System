@@ -186,7 +186,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             }
 
             MessageBox.Show("Invalid Expiry Date format must be MM YYYY \n Ex. January 2030", "Expiry Date Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return true;
+            return false;
         }
         public bool isCVVValid(string CVV)
         {
