@@ -39,7 +39,6 @@ namespace FLIGHT_RESERVATION
             bool userIsAuthenticated = Session.AuthenticateUser(_email, _password);
             if (userIsAuthenticated)
             {
-                MessageBox.Show("Login Successful!");
                 LoginSuccessful?.Invoke(this, EventArgs.Empty);
             }
             else
