@@ -140,13 +140,11 @@ namespace FLIGHT_RESERVATION
             if (this.TripType == "Departure")
             {
                 FlightBooking_Session.Instance.DepartureAirplaneNumber = SelectedAirplane;
-                Console.WriteLine(FlightBooking_Session.Instance.DepartureAirplaneNumber);
                 return true;
             }
             if (this.TripType == "Return")
             {
                 FlightBooking_Session.Instance.ReturnAirplaneNumber = SelectedAirplane;
-                Console.WriteLine(FlightBooking_Session.Instance.ReturnAirplaneNumber);
                 return true;
             }
 

@@ -47,11 +47,6 @@ namespace FLIGHT_RESERVATION
             Addons["Food"] = addons["Food"];
             Addons["Baggage"] = addons["Baggage"];
             Addons["Transport"] = addons["Transport"];
-
-            foreach(var item in addons)
-            {
-                Console.WriteLine($"{item.Key} : {item.Value} ");
-            }
         }
 
         public void setCardDetails(Dictionary<String, String> Card)
@@ -59,12 +54,6 @@ namespace FLIGHT_RESERVATION
            foreach(var item in Card)
            {
                 PaymentDetails[item.Key] = item.Value;
-           }
-
-
-           foreach (var item in PaymentDetails) 
-           {
-                Console.WriteLine($"{item.Key} : {item.Value}");
            }
         }
 
@@ -94,22 +83,6 @@ namespace FLIGHT_RESERVATION
                 };
 
                 PassengerDetails[item.Key] = guestInfo;
-            }
-
-            foreach (var outerEntry in PassengerDetails)
-            {
-                string outerKey = outerEntry.Key; // Key of the outer dictionary
-                var innerDictionary = outerEntry.Value; // Value of the outer dictionary (an inner dictionary)
-
-                Console.WriteLine($"Passenger: {outerKey}");
-
-                foreach (var innerEntry in innerDictionary)
-                {
-                    string innerKey = innerEntry.Key; // Key of the inner dictionary
-                    string innerValue = innerEntry.Value; // Value of the inner dictionary
-
-                    Console.WriteLine($"  {innerKey}: {innerValue}");
-                }
             }
         }
 

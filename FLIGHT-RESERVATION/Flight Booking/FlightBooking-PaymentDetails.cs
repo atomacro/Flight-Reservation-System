@@ -198,7 +198,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
             if (CVV.Length != 4 && CVV.Length != 3)
             {
-                Console.WriteLine(CVV);
                 MessageBox.Show("CVV must be 3 - 4 digits only", "CVV Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

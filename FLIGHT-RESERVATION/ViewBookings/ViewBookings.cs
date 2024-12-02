@@ -70,7 +70,6 @@ namespace FLIGHT_RESERVATION.ViewBookings
                 int currentIndex = i;
                 bookings.btnViewBookingDetails.Click += (s, e) =>
                 {
-                    Console.WriteLine(currentIndex);
                     var bookingDetails = new BookingDetails(
                         dv_view_bookings.TransactionID[currentIndex], 
                         dv_view_bookings.FlightID[currentIndex],

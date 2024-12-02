@@ -113,9 +113,6 @@ namespace FLIGHT_RESERVATION
 
                    await db_FlightDetails.selectDates(trip.cboDepartureLocationControl.Text, trip.cboArrivalLocationControl.Text, Type, trip);
                    trip.SetDates(db_FlightDetails.DepartureDates, db_FlightDetails.ReturnDates);
-
-                    Console.WriteLine(trip.cboArrivalLocationControl.Text);
-                    Console.WriteLine(trip.cboDepartureLocationControl.Text);
                 }
             }
 

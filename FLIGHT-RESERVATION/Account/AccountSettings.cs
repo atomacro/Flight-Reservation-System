@@ -62,7 +62,6 @@ namespace FLIGHT_RESERVATION.Account
 
             if (isValidInfo(email, password))
             {
-                Console.WriteLine("pasok!");
                 bool updateSuccess = session.UpdateAccountInfo(firstName, lastName, email, password);
 
                 if (updateSuccess)
