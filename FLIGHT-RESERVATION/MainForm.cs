@@ -268,6 +268,10 @@ namespace FLIGHT_RESERVATION
                     PaymentDetails.FillData();
                     InsertDatabaseData Database = new InsertDatabaseData(1, PaymentDetails.GenerateTransactionId());
                     await Database.InsertDatabase();
+
+                    SendEmail Mailer = new SendEmail();
+                    Mailer.SendEmailAsync(Session.CurrentUserEmail);
+
                     var Success = new Success();
                     AddControl(Success, pnlMain);
 

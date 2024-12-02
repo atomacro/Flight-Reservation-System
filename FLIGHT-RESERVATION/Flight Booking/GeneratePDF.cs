@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FLIGHT_RESERVATION.Flight_Booking
 {
-    internal class CreatePDF
+    internal class GeneratePDF
     {
 
     }
