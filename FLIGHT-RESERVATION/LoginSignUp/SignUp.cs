@@ -73,7 +73,7 @@ namespace FLIGHT_RESERVATION
             txtPassword.Focus();
         }
 
-        public static bool ValidateRegistration(string firstName, string lastName, string email, string password)
+        private bool ValidateRegistration(string firstName, string lastName, string email, string password)
         {
             using (StringWriter writer = new StringWriter())
             {
@@ -99,7 +99,6 @@ namespace FLIGHT_RESERVATION
                     MessageBox.Show(errorMessage, "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-
 
                 return true;
             }
