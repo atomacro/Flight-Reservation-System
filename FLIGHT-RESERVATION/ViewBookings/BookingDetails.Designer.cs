@@ -78,6 +78,7 @@
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime2.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.lblTime2.Location = new System.Drawing.Point(539, 46);
             this.lblTime2.Name = "lblTime2";
             this.lblTime2.Size = new System.Drawing.Size(128, 38);
@@ -90,6 +91,7 @@
             this.lblTime1.AutoSize = true;
             this.lblTime1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime1.Font = new System.Drawing.Font("Kantumruy Pro Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.lblTime1.Location = new System.Drawing.Point(4, 46);
             this.lblTime1.Name = "lblTime1";
             this.lblTime1.Size = new System.Drawing.Size(127, 38);
@@ -114,12 +116,12 @@
             // 
             this.lblAirplaneNumber.AutoSize = true;
             this.lblAirplaneNumber.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblAirplaneNumber.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblAirplaneNumber.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblAirplaneNumber.ForeColor = System.Drawing.Color.Black;
             this.lblAirplaneNumber.Location = new System.Drawing.Point(252, 13);
             this.lblAirplaneNumber.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.lblAirplaneNumber.Name = "lblAirplaneNumber";
-            this.lblAirplaneNumber.Size = new System.Drawing.Size(113, 26);
+            this.lblAirplaneNumber.Size = new System.Drawing.Size(127, 26);
             this.lblAirplaneNumber.TabIndex = 11;
             this.lblAirplaneNumber.Text = "Flight: ABC123";
             this.lblAirplaneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,12 +166,12 @@
             // 
             this.lblDepartureDate.AutoSize = true;
             this.lblDepartureDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblDepartureDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDepartureDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblDepartureDate.ForeColor = System.Drawing.Color.Black;
             this.lblDepartureDate.Location = new System.Drawing.Point(252, 115);
             this.lblDepartureDate.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.lblDepartureDate.Name = "lblDepartureDate";
-            this.lblDepartureDate.Size = new System.Drawing.Size(153, 26);
+            this.lblDepartureDate.Size = new System.Drawing.Size(173, 26);
             this.lblDepartureDate.TabIndex = 9;
             this.lblDepartureDate.Text = "November 09, 2024";
             this.lblDepartureDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,19 +210,19 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(647, 592);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(647, 631);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPrice.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalPrice.Location = new System.Drawing.Point(252, 553);
+            this.lblTotalPrice.Location = new System.Drawing.Point(252, 592);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(118, 26);
+            this.lblTotalPrice.Size = new System.Drawing.Size(133, 26);
             this.lblTotalPrice.TabIndex = 25;
             this.lblTotalPrice.Text = "9999.9999 Php";
             this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,12 +231,12 @@
             // 
             this.lblAddons.AutoSize = true;
             this.lblAddons.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblAddons.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblAddons.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblAddons.ForeColor = System.Drawing.Color.Black;
-            this.lblAddons.Location = new System.Drawing.Point(252, 462);
+            this.lblAddons.Location = new System.Drawing.Point(252, 492);
             this.lblAddons.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.lblAddons.Name = "lblAddons";
-            this.lblAddons.Size = new System.Drawing.Size(145, 66);
+            this.lblAddons.Size = new System.Drawing.Size(165, 75);
             this.lblAddons.TabIndex = 24;
             this.lblAddons.Text = "Food\r\nBaggage\r\nTransport Services\r\n";
             this.lblAddons.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,12 +245,12 @@
             // 
             this.lblPassengers.AutoSize = true;
             this.lblPassengers.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblPassengers.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblPassengers.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblPassengers.ForeColor = System.Drawing.Color.Black;
             this.lblPassengers.Location = new System.Drawing.Point(252, 217);
             this.lblPassengers.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.lblPassengers.Name = "lblPassengers";
-            this.lblPassengers.Size = new System.Drawing.Size(181, 220);
+            this.lblPassengers.Size = new System.Drawing.Size(202, 250);
             this.lblPassengers.TabIndex = 23;
             this.lblPassengers.Text = "Charles Nathaniel Togle\r\nStefanie Gabion-Togle\r\nSnow\r\nLucky\r\nHu Tao\r\nOrang\r\nSnow " +
     "jr\r\nBlessie\r\nJohn\r\nKurama";
@@ -258,12 +260,12 @@
             // 
             this.lblArrivalDate.AutoSize = true;
             this.lblArrivalDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblArrivalDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblArrivalDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblArrivalDate.ForeColor = System.Drawing.Color.Black;
             this.lblArrivalDate.Location = new System.Drawing.Point(252, 166);
             this.lblArrivalDate.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.lblArrivalDate.Name = "lblArrivalDate";
-            this.lblArrivalDate.Size = new System.Drawing.Size(153, 26);
+            this.lblArrivalDate.Size = new System.Drawing.Size(173, 26);
             this.lblArrivalDate.TabIndex = 22;
             this.lblArrivalDate.Text = "November 09, 2024";
             this.lblArrivalDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,12 +274,12 @@
             // 
             this.lblBookingDate.AutoSize = true;
             this.lblBookingDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblBookingDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblBookingDate.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblBookingDate.ForeColor = System.Drawing.Color.Black;
             this.lblBookingDate.Location = new System.Drawing.Point(252, 64);
             this.lblBookingDate.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.lblBookingDate.Name = "lblBookingDate";
-            this.lblBookingDate.Size = new System.Drawing.Size(153, 26);
+            this.lblBookingDate.Size = new System.Drawing.Size(173, 26);
             this.lblBookingDate.TabIndex = 21;
             this.lblBookingDate.Text = "November 09, 2024";
             this.lblBookingDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -348,7 +350,7 @@
             this.label5.Location = new System.Drawing.Point(5, 217);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 12, 4, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 220);
+            this.label5.Size = new System.Drawing.Size(239, 250);
             this.label5.TabIndex = 18;
             this.label5.Text = "Passengers:";
             // 
@@ -359,10 +361,10 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Kantumruy Pro Medium", 10.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(5, 462);
+            this.label6.Location = new System.Drawing.Point(5, 492);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 12, 4, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(239, 66);
+            this.label6.Size = new System.Drawing.Size(239, 75);
             this.label6.TabIndex = 19;
             this.label6.Text = "Addons";
             // 
@@ -373,7 +375,7 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Kantumruy Pro Medium", 10.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(5, 553);
+            this.label7.Location = new System.Drawing.Point(5, 592);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 12, 4, 12);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(239, 26);
@@ -394,12 +396,12 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label13.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.label13.Location = new System.Drawing.Point(129, 39);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(503, 32);
+            this.label13.Size = new System.Drawing.Size(552, 35);
             this.label13.TabIndex = 14;
             this.label13.Text = "Thank you for using Airplane Ticketing System";
             // 

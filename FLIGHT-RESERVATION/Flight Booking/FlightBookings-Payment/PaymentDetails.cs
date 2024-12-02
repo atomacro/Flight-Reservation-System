@@ -64,6 +64,13 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Payment
                     Dock = DockStyle.Right,
                     Text = "Passenger Type"
                 };
+                var SeatClassLabel = new Label()
+                {
+                    Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                    AutoSize = true,
+                    Dock = DockStyle.Right,
+                    Text = "Seat Class"
+                };
                 var BasePriceLabel = new Label()
                 {
                     Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
@@ -109,6 +116,13 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Payment
                     AutoSize = true,
                     Dock = DockStyle.Right,
                     Text = PassengerTypes[i]
+                };
+                var SeatClass = new Label()
+                {
+                    Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                    AutoSize = true,
+                    Dock = DockStyle.Right,
+                    Text = session.FlightDetails["Seat Class"]
                 };
                 var BasePrice = new Label()
                 {
@@ -171,6 +185,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Payment
                 pnlDetails.Controls.Add(PassengerTypeLabel, currentColumn, currentRow);
                 pnlDetails.Controls.Add(PassengerType, currentColumn + 1, currentRow++);
 
+                pnlDetails.Controls.Add(SeatClassLabel, currentColumn, currentRow);
+                pnlDetails.Controls.Add(SeatClass, currentColumn + 1, currentRow++);
 
                 pnlDetails.Controls.Add(BasePriceLabel, currentColumn, currentRow);
                 pnlDetails.Controls.Add(BasePrice, currentColumn + 1, currentRow++);
