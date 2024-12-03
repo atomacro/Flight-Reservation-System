@@ -75,6 +75,7 @@ namespace FLIGHT_RESERVATION
                 {
                     FlightsAvailable AvailableFlight = new FlightsAvailable();
 
+                    AvailableFlight.setDates(AvailableFlightsData.DepartureDate[i], AvailableFlightsData.ArrivalDate[i]);
                     AvailableFlight.setTime(AvailableFlightsData.ArrivalTime[i], AvailableFlightsData.DepartureTime[i]);
                     AvailableFlight.setLocations(AvailableFlightsData.DepartureLocation[i], AvailableFlightsData.ArrivalLocation[i]);
                     AvailableFlight.setTime(AvailableFlightsData.DepartureTime[i], AvailableFlightsData.ArrivalTime[i]);
@@ -100,6 +101,7 @@ namespace FLIGHT_RESERVATION
         }
 
         public String SelectedAirplane = "";
+        public FlightsAvailable flight = null;
 
         public void setSelected(List<FlightsAvailable> availableFlights, int index)
         {
@@ -112,12 +114,15 @@ namespace FLIGHT_RESERVATION
                         availableFlights[i].btnBook.Text = "Unselect";
                         availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Selected_Border);
                         SelectedAirplane = availableFlights[i].lblAirplaneNumber.Text;
+                        flight = availableFlights[i];
+
                     }
                     else
                     {
                         availableFlights[i].btnBook.Text = "Select";
                         availableFlights[i].setBorder(global::FLIGHT_RESERVATION.Properties.Resources.Unselected_Border);
                         SelectedAirplane = "";
+                        flight = null;
                     }
                 }
                 else
@@ -139,11 +144,14 @@ namespace FLIGHT_RESERVATION
             }
             if (this.TripType == "Departure")
             {
+                FlightBooking_Session.Instance.setDepartureAirplaneDetails(flight);
                 FlightBooking_Session.Instance.DepartureAirplaneNumber = SelectedAirplane;
                 return true;
             }
             if (this.TripType == "Return")
             {
+                FlightBooking_Session.Instance.setReturnAirplaneDetails(flight);
+
                 FlightBooking_Session.Instance.ReturnAirplaneNumber = SelectedAirplane;
                 return true;
             }
@@ -165,6 +173,8 @@ namespace FLIGHT_RESERVATION
         public List<String> ArrivalTime = new List<string>();
         public List<String> AirplaneNumber = new List<string>();
         public List<String> AvailableSeats = new List<string>();
+        public List<String> DepartureDate = new List<string>();
+        public List<String> ArrivalDate = new List<string>();
         public List<float> Price = new List<float>();
 
         public Database_Available_Flights()
@@ -256,6 +266,8 @@ namespace FLIGHT_RESERVATION
                         this.AirplaneNumber.Add(AirplaneNumber);
                         this.AvailableSeats.Add(AvailableSeats);
                         this.Price.Add(Price);
+                        this.DepartureDate.Add(Departure.ToString("MMMM dd, yyyy"));
+                        this.ArrivalDate.Add(Arrival.ToString("MMMM dd, yyyy"));
                     }
                  }
             }
