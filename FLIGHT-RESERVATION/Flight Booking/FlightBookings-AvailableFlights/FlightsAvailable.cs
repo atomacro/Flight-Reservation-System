@@ -12,6 +12,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
 {
     public partial class FlightsAvailable : UserControl
     {
+        public String DepartureDate;
+        public String ArrivalDate;
         public FlightsAvailable()
         {
             InitializeComponent();
@@ -19,6 +21,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights
             lblTime2.ForeColor = ColorTranslator.FromHtml("#9C9C9C");
         }
 
+
+        public void setDates(String Departure, String Arrival)
+        {
+            this.DepartureDate = Departure;
+            this.ArrivalDate = Arrival;
+        }
         public void setLocations(String location1, String location2)
         {
             lblLocation1.Text = location1;

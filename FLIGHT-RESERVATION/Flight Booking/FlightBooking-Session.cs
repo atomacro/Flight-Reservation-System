@@ -1,4 +1,5 @@
 ﻿using FLIGHT_RESERVATION.Flight_Booking.FlightBookings__CardDetails_;
+using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_AvailableFlights;
 using FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails;
 using Google.Protobuf.WellKnownTypes;
 using System;
@@ -34,6 +35,10 @@ namespace FLIGHT_RESERVATION
         public string DepartureAirplaneNumber { get; set; }
         public string ReturnAirplaneNumber { get; set; }
         public float BookingSubTotal { get; set; }
+        public Dictionary<string, string> DepartureAirplaneDetails { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> ReturnAirplaneDetails { get; set; } = new Dictionary<string, string>();
+
+
         public Dictionary<string, string> FlightDetails { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, Dictionary<String, String>> PassengerDetails { get; set; } = new Dictionary<string, Dictionary<String, String>>();
 
@@ -41,6 +46,48 @@ namespace FLIGHT_RESERVATION
 
         public Dictionary<String, String> PaymentDetails { get; set; } = new Dictionary<string, string>();
 
+
+        public void setDepartureAirplaneDetails(FlightsAvailable flight)
+        {
+            DepartureAirplaneDetails.Clear();
+            //flight.ArrivalDate;
+            //flight.DepartureDate;
+            //flight.lblAirplaneNumber;
+            //flight.lblTime1;
+            //flight.lblTime2;
+            DepartureAirplaneDetails["Departure Airport Code"] = flight.lblLocation1.Text;
+            DepartureAirplaneDetails["Arrival Airport Code"] = flight.lblLocation2.Text;
+            DepartureAirplaneDetails["Arrival Date"] = flight.ArrivalDate;
+            DepartureAirplaneDetails["Departure Date"] = flight.ArrivalDate;
+            DepartureAirplaneDetails["Airplane Number"] = flight.lblAirplaneNumber.Text.Substring(flight.lblAirplaneNumber.Text.IndexOf(":") + 1);
+            DepartureAirplaneDetails["Departure Time"] = flight.lblTime1.Text;
+            DepartureAirplaneDetails["Arrival Time"] = flight.lblTime2.Text;
+
+            foreach (var item in DepartureAirplaneDetails)
+            {
+                Console.WriteLine($"{item.Key} : {item.Value}");
+            }
+
+
+
+        }
+
+        public void setReturnAirplaneDetails(FlightsAvailable flight)
+        {
+            ReturnAirplaneDetails.Clear();
+            ReturnAirplaneDetails["Departure Airport Code"] = flight.lblLocation1.Text;
+            ReturnAirplaneDetails["Arrival Airport Code"] = flight.lblLocation2.Text;
+            ReturnAirplaneDetails["Arrival Date"] = flight.ArrivalDate;
+            ReturnAirplaneDetails["Departure Date"] = flight.ArrivalDate;
+            ReturnAirplaneDetails["Airplane Number"] = flight.lblAirplaneNumber.Text.Substring(flight.lblAirplaneNumber.Text.IndexOf(":") + 2);
+            ReturnAirplaneDetails["Departure Time"] = flight.lblTime1.Text;
+            ReturnAirplaneDetails["Arrival Time"] = flight.lblTime2.Text;
+
+            foreach (var item in ReturnAirplaneDetails)
+            {
+                Console.WriteLine($"{item.Key} : {item.Value}");
+            }
+        }
         public void setAddons(Dictionary<string, Boolean> addons)
         {
             Addons.Clear();
