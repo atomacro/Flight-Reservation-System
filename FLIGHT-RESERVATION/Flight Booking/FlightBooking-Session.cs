@@ -32,6 +32,7 @@ namespace FLIGHT_RESERVATION
 
         public string Type { get; private set; }
         public string Email { get; set; }
+        public string transactionID { get; set; }
         public string DepartureAirplaneNumber { get; set; }
         public string ReturnAirplaneNumber { get; set; }
         public float BookingSubTotal { get; set; }
@@ -42,6 +43,7 @@ namespace FLIGHT_RESERVATION
         public Dictionary<string, string> FlightDetails { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, Dictionary<String, String>> PassengerDetails { get; set; } = new Dictionary<string, Dictionary<String, String>>();
 
+        public List<string> PassengerNames = new List<string>();
         public Dictionary<string, Boolean> Addons { get; set; } = new Dictionary<string, Boolean>();
 
         public Dictionary<String, String> PaymentDetails { get; set; } = new Dictionary<string, string>();
@@ -98,14 +100,14 @@ namespace FLIGHT_RESERVATION
 
         public void setCardDetails(Dictionary<String, String> Card)
         {
-           foreach(var item in Card)
-           {
+            foreach (var item in Card)
+            {
                 PaymentDetails[item.Key] = item.Value;
-           }
+            }
         }
 
         public void setGuestDetails(Dictionary<String, GuestDetails> guestDetails)
-        { 
+        {
             PassengerDetails.Clear();
             foreach (var key in guestDetails.Keys)
             {
@@ -130,6 +132,19 @@ namespace FLIGHT_RESERVATION
                 };
 
                 PassengerDetails[item.Key] = guestInfo;
+            }
+
+            setPassengerNames();
+        }
+
+        public void setPassengerNames()
+        {
+            foreach (var item in PassengerDetails)
+            {
+                var innerDictionary = item.Value;
+   
+                    PassengerNames.Add($"{innerDictionary["First Name"]} {innerDictionary["Last Name"]}");
+                
             }
         }
 
