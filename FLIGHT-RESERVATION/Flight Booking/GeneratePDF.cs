@@ -1,4 +1,5 @@
 ﻿using iText.Html2pdf;
+using iText.Html2pdf.Resolver.Font;
 using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
@@ -11,87 +12,102 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 {
     internal class GeneratePDF
     {
+        public async Task PDFGenerate()
+        {
+            var ses = FlightBooking_Session.Instance;
 
-            static void Main(string[] args)
+            // Path to save the generated PDF
+            string pdfFilePath = $"../../Flight Booking/Tickets/{ses.transactionID}.pdf";
+            ses.TicketDirectory = pdfFilePath;
+
+            // Create the necessary directory if it doesn't exist
+            string directory = Path.GetDirectoryName(pdfFilePath);
+            if (!Directory.Exists(directory))
             {
-                // Path to save the generated PDF
-                string pdfFilePath = "../../test/output.pdf";
+                Directory.CreateDirectory(directory);
+            }
 
-                // Create the necessary directory if it doesn't exist
-                string directory = Path.GetDirectoryName(pdfFilePath);
-                if (!Directory.Exists(directory))
-                {
-                    Directory.CreateDirectory(directory);
-                }
-
-                string type = "Round Trip";
-                string borderSize = type == "Round Trip" ? "6in" : "3.3in";
+            string type = ses.Type;
+            string borderSize = type == "Round Trip" ? "6in" : "4.3in";
+            string Return = type == "Round Trip" ? "block" : "none";
+            List<string> PassengerNames = ses.PassengerNames;
+            string logoPath = ConvertImageToBase64("../../Flight Booking/TicketDependencies/BANNER.png");
+            string checkCirclePath = ConvertImageToBase64("../../Flight Booking/TicketDependencies/check_circle.png");
+            string borderPath = ConvertImageToBase64("../../Flight Booking/TicketDependencies/border.png");
 
 
-                //height 6in - round trip
-                //one way 3.3in
-
-                string ReturnString = @"            <br />
-            <br />
-            <p
-              style=""
-                color: #763aee;
-                font-size: 20px;
-                font-family: 'Kantumruy Pro Bold';
-              ""
-            >
-              {ReturnDeparture}-{ReturnArrival}
-            </p>
-            <p style=""font-size: 17px; font-family: 'Kantumruy Pro Regular'"">
-              {DepartureDate} - {ArrivalDate}
-            </p>
-            <br />
-            <div
-              style=""
-                display: flex;
-                font-family: 'kantumruy pro regular';
-                font-size: 15px;
-              ""
-            >
-              <div
-                style=""
-                  display: flex;
-                  flex-direction: column;
-                  color: darkgray;
-                  text-align: center;
-                ""
-              >
-                <p>{ReturnDateOnly}</p>
-                <p>{ReturnTimeOnly}</p>
-              </div>
-              <div
-                style=""
-                  position: absolute;
-                  top: 9.5in;
-                  left: 270px;
-                  height: 75px;
-                  width: 1px;
-                  background-color: darkgray;
-                ""
-              ></div>
-              <div style=""margin-left: 100px"">
-                <p style=""margin-bottom: 5px"">{ReturnAirplaneNumber}</p>
-                <p style=""font-family: 'Kantumruy Pro Medium'; color: darkgray"">
-                  DEPARTURE
-                </p>
-                <p style=""font-family: 'Kantumruy Pro SemiBold'"">
-                  {ReturnLocation}
-                </p>
-                <p
-                  style=""font-family: 'Kantumruy Pro Regular'; color: darkgray""
-                >
-                  {ReturnAirportLocation}
-                </p>
-              </div>
-            </div>";
 
 
-                string baseString = $@"<!DOCTYPE html>
+            //height 6in - round trip
+            //one way 3.3in
+            StringBuilder htmlContent = new StringBuilder();
+
+            String TempDepartureDate = $"{ses.DepartureAirplaneDetails["Departure Date"]} {ses.DepartureAirplaneDetails["Departure Time"]} ";
+            String TempArrivalDate = $"{ses.DepartureAirplaneDetails["Arrival Date"]} {ses.DepartureAirplaneDetails["Arrival Time"]}";
+
+            String TimeDifference = $"{DateTime.Parse(TempArrivalDate) - DateTime.Parse(TempDepartureDate)}";
+
+
+
+            var departureDetails = ses.DepartureAirplaneDetails;
+            var returnDetails = ses.Type == "Round Trip" ? ses.ReturnAirplaneDetails : null;
+
+            departureDetails.TryGetValue("Departure Date", out var departureDate);
+            departureDetails.TryGetValue("Departure Time", out var departureTime);
+            departureDetails.TryGetValue("Arrival Date", out var arrivalDate);
+            departureDetails.TryGetValue("Arrival Time", out var arrivalTime);
+            departureDetails.TryGetValue("Departure Airport Code", out var departureAirportCode);
+            departureDetails.TryGetValue("Departure Airport Location", out var departureAirportLocation);
+            departureDetails.TryGetValue("Arrival Airport Code", out var arrivalAirportCode);
+            departureDetails.TryGetValue("Arrival Airport Location", out var arrivalAirportLocation);
+
+            ses.FlightDetails.TryGetValue("Seat Class", out var seatClass);
+            ses.FlightDetails.TryGetValue("Departure Location", out var departureLocation);
+            ses.FlightDetails.TryGetValue("Arrival Location", out var arrivalLocation);
+
+            var ticket = new PopulateTicket
+            {
+                BookingDate = DateTime.Now.ToString("MM/dd/yyyy"),
+                ReferenceNo = ses.transactionID,
+                SeatClass = seatClass,
+                Departure = departureAirportCode,
+                Arrival = arrivalAirportCode,
+                DepartureDate = $"{departureDate} {departureTime}",
+                ArrivalDate = $"{arrivalDate} {arrivalTime}",
+                DepartureDateOnly = departureDate,
+                DepartureTimeOnly = departureTime,
+                ArrivalDateOnly = arrivalDate,
+                ArrivalTimeOnly = arrivalTime,
+                TimeDifference = TimeDifference.Substring(0,2),
+                AirplaneNumber = ses.DepartureAirplaneNumber,
+                DepartureLocation = departureLocation,
+                DepartureAirportLocation = departureAirportLocation,
+                ArrivalLocation = arrivalLocation,
+                ArrivalAirportLocation = arrivalAirportLocation,
+            };
+
+            if (ses.Type == "Round Trip" && returnDetails != null)
+            {
+                returnDetails.TryGetValue("Departure Date", out var returnDepartureDate);
+                returnDetails.TryGetValue("Departure Time", out var returnDepartureTime);
+                returnDetails.TryGetValue("Departure Airport Code", out var returnDepartureAirportCode);
+                returnDetails.TryGetValue("Departure Airport Location", out var returnDepartureAirportLocation);
+                returnDetails.TryGetValue("Arrival Airport Code", out var returnArrivalAirportCode);
+
+                ticket.ReturnDeparture = returnDepartureAirportCode;
+                ticket.ReturnArrival = returnArrivalAirportCode;
+                ticket.ReturnDateOnly = returnDepartureDate;
+                ticket.ReturnTimeOnly = returnDepartureTime;
+                ticket.ReturnAirplaneNumber = ses.ReturnAirplaneNumber;
+                ticket.ReturnLocation = departureAirportLocation;
+                ticket.ReturnAirportLocation = departureAirportLocation;
+            }
+
+
+
+            string PassengerName = "{0}";
+
+            string top = $@"<!DOCTYPE html>
 <html>
   <body>
     <style>
@@ -103,19 +119,19 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
       @font-face {{
         font-family: ""Kantumruy Pro Bold"";
-        src: url(../../html/KantumruyPro-Bold.ttf) format(""truetype"");
+        src: url(../../Flight Booking/TicketDependencies/KantumruyPro-Bold.ttf) format(""truetype"");
       }}
       @font-face {{
         font-family: ""Kantumruy Pro Regular"";
-        src: url(../../html/KantumruyPro-Regular.ttf) format(""truetype"");
+        src: url(../../Flight Booking/TicketDependencies/KantumruyPro-Regular.ttf) format(""truetype"");
       }}
       @font-face {{
         font-family: ""Kantumruy Pro SemiBold"";
-        src: url(../../html/KantumruyPro-SemiBold.ttf) format(""truetype"");
+        src: url(../../Flight Booking/TicketDependencies/KantumruyPro-SemiBold.ttf) format(""truetype"");
       }}
       @font-face {{
         font-family: ""Kantumruy Pro Medium"";
-        src: url(../../html/KantumruyPro-Medium.ttf) format(""truetype"");
+        src: url(../../Flight Booking/TicketDependencies/KantumruyPro-Medium.ttf) format(""truetype"");
       }}
       @page {{
         margin: 0;
@@ -179,11 +195,12 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         font-family: ""Kantumruy Pro SemiBold"";
         font-weight: 200;
       }}
-    </style>
+    </style>";
 
-    <div class=""logo"" style=""height: 1.3in; display: flex; justify-content: center; align-items: center"">
+
+            string template = $@"<div class=""logo"" style=""height: 1.3in; display: flex; justify-content: center; align-items: center"">
       <img
-        src=""../../html/BANNER.png""
+        src=""{logoPath}""
       />
     </div>
 
@@ -194,7 +211,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
     <div class=""main"">
       <section class=""First"" style=""width: 7.2in"">
         <div style=""display: flex; align-items: center"">
-          <img src=""../../html/check_circle.png"" />
+          <img src=""{checkCirclePath}"" />
           <span style=""font-family: 'Kantumruy Pro Bold'; color: #05cf1a""
             >Confirmed</span
           >
@@ -209,9 +226,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking
           <p>BOOKING DATE</p>
           <p>BOOKING REFERENCE NO.</p>
           <p>SEAT CLASS</p>
-          <p class=""content"">{bookingDate}</p>
-          <p class=""content"">{referenceNo}</p>
-          <p class=""content"">{seatClass}</p>
+          <p class=""content"">{ticket.BookingDate}</p>
+          <p class=""content"">{ticket.ReferenceNo}</p>
+          <p class=""content"">{ticket.SeatClass}</p>
         </div>
         <hr />
       </section>
@@ -221,7 +238,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         <section class=""BookingDetails"">
           <div class=""maindiv"" style=""width: 7.2in; padding: 15px 30px"">
             <img
-              src=""../../html/border.png""
+              src=""{borderPath}""
               style=""
                 position: absolute;
                 z-index: -1;
@@ -239,10 +256,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 font-family: 'Kantumruy Pro Bold';
               ""
             >
-              {Departure}-{Arrival}
+              {ticket.Departure} - {ticket.Arrival}
             </p>
             <p style=""font-size: 17px; font-family: 'Kantumruy Pro Regular'"">
-              {DepartureDate} - {ArrivalDate}
+              {ticket.DepartureDate} - {ticket.ArrivalDate}
             </p>
             <br />
             <div
@@ -258,122 +275,179 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                   flex-direction: column;
                   color: darkgray;
                   text-align: center;
+                  padding-right: 50px;
+                  border-right: 1px solid darkgray
                 ""
               >
-                <p>{DepartureDateOnly}</p>
-                <p>{DepartureTimeOnly}</p>
+                <p>{ticket.DepartureDateOnly}</p>
+                <p>{ticket.DepartureTimeOnly}</p>
                 <p style=""margin-top: 30px; margin-bottom: 30px"">
-                  {TimeDifference}
+                  {ticket.TimeDifference}   H   
                 </p>
-                <p>{ArrivalDateOnly}</p>
-                <p>{ArrivalTimeOnly}</p>
+                <p>{ticket.ArrivalDateOnly}</p>
+                <p>{ticket.ArrivalTimeOnly}</p>
               </div>
 
-              <div style=""margin-left: 75px"">
-                <p style=""margin-bottom: 5px"">{AirplaneNumber}</p>
+              <div style=""margin-left: 50px"">
+                <p style=""margin-bottom: 5px"">{ticket.AirplaneNumber}</p>
                 <p style=""font-family: 'Kantumruy Pro Medium'; color: darkgray"">
                   DEPARTURE
                 </p>
                 <p style=""font-family: 'Kantumruy Pro SemiBold'"">
-                  {DepartureLocation}
+                  {ticket.DepartureLocation}
                 </p>
                 <p
                   style=""font-family: 'Kantumruy Pro Regular'; color: darkgray""
                 >
-                  {DepartureAirportLocation}
+                  {ticket.DepartureAirportLocation}
                 </p>
                 <br />
                 <p style=""font-family: 'Kantumruy Pro Medium'; color: darkgray"">
-                  Arrival
+                  ARRIVAL
                 </p>
                 <p style=""font-family: 'Kantumruy Pro SemiBold'"">
-                  {ArrivalLocation}
+                  {ticket.ArrivalLocation}
                 </p>
                 <p
                   style=""font-family: 'Kantumruy Pro Regular'; color: darkgray""
                 >
-                  {ArrivalAirportLocation}
+                  {ticket.ArrivalAirportLocation}
                 </p>
               </div>
             </div>
 
             <!-- For Return -->
-
-";
-
-                string htmlEnd = @"         
+            <div style = ""display: {Return}"">
+            <p
+              style=""
+                color: #763aee;
+                font-size: 20px;
+                font-family: 'Kantumruy Pro Bold';
+              ""
+            >
+              {ticket.ReturnDeparture} - {ticket.ReturnArrival}
+            </p>
+            <p style=""font-size: 17px; font-family: 'Kantumruy Pro Regular'"">
+              {ticket.DepartureDate} - {ticket.ArrivalDate}
+            </p>
+            <br />
+            <div
+              style=""
+                display: flex;
+                font-family: 'kantumruy pro regular';
+                font-size: 15px;
+              ""
+            >
+              <div
+                style=""
+                  display: flex;
+                  flex-direction: column;
+                  color: darkgray;
+                  text-align: center;
+                  padding-right: 50px;
+                  border-right: 1px solid darkgray
+                ""
+              >
+                <p>{ticket.ReturnDateOnly}</p>
+                <p>{ticket.ReturnTimeOnly}</p>
+              </div>
+              <div style=""margin-left: 50px; border: 0px 0px 1px 0px solid black"">
+                <p style=""margin-bottom: 5px"">{ticket.ReturnAirplaneNumber}</p>
+                <p style=""font-family: 'Kantumruy Pro Medium'; color: darkgray"">
+                  RETURNING TO
+                </p>
+                <p style=""font-family: 'Kantumruy Pro SemiBold'"">
+                  {ticket.ReturnLocation}
+                </p>
+                <p
+                  style=""font-family: 'Kantumruy Pro Regular'; color: darkgray""
+                >
+                  {ticket.ReturnAirportLocation}
+                </p>
+              </div>
             </div>
+            </div>
+          </div>
         </section>
       </section>
-    </div>
+    </div>";
+
+
+            string PageBreak = $@"<div style = ""page-break-before: always""></div>";
+
+            string end = $@"
+
   </body>
-</html>";
+</html>
+";
 
 
-                string htmlContent = type == "Round Trip" ? baseString + ReturnString + htmlEnd : baseString + htmlEnd;
-
-                // Convert HTML to PDF
-                using (FileStream pdfStream = new FileStream(pdfFilePath, FileMode.Create))
-                {
-                    var properties = new ConverterProperties();
-                    HtmlConverter.ConvertToPdf(htmlContent, pdfStream, properties);
-                }
-
-                Console.WriteLine("PDF created successfully at: " + pdfFilePath);
-            }
-        }
-
-        class PopulateTicket
-        {
-            public string BookingDate { get; set; }
-            public string ReferenceNo { get; set; }
-            public string SeatClass { get; set; }
-            public string PassengerName { get; set; }
-            public string Departure { get; set; }
-            public string Arrival { get; set; }
-            public string DepartureDate { get; set; }
-            public string ArrivalDate { get; set; }
-            public string DepartureDateOnly { get; set; }
-            public string DepartureTimeOnly { get; set; }
-            public string TimeDifference { get; set; }
-            public string ArrivalDateOnly { get; set; }
-            public string ArrivalTimeOnly { get; set; }
-            public string AirplaneNumber { get; set; }
-            public string DepartureLocation { get; set; }
-            public string DepartureAirportLocation { get; set; }
-            public string ArrivalLocation { get; set; }
-            public string ArrivalAirportLocation { get; set; }
-            public string ReturnDeparture { get; set; }
-            public string ReturnArrival { get; set; }
-            public string ReturnDateOnly { get; set; }
-            public string ReturnTimeOnly { get; set; }
-            public string ReturnAirplaneNumber { get; set; }
-            public string ReturnLocation { get; set; }
-            public string ReturnAirportLocation { get; set; }
-            private FlightBooking_Session ses;
-
-            public PopulateTicket()
+            htmlContent.Append(top);
+            for (int i = 0; i < PassengerNames.Count; i++)
             {
-                ses = FlightBooking_Session.Instance;
+                string currentTemplate = template.Replace(PassengerName, PassengerNames[i]);
 
-                BookingDate = DateTime.Now.ToString("dd/mm/yyyy");
-
-                //ReferenceNo.
-                //DepartureDate
-                //ArrivalDate
-                //TimeDifference
-                //Departure
-                //Arrival
-                SeatClass = ses.FlightDetails["Seat Class"];
-                //PassengerName = iisip pa
-                ReturnDeparture = Arrival;
-                ReturnArrival = Departure;
-
-
-
-
+                htmlContent.Append(currentTemplate);
+                htmlContent.Append(PageBreak);
             }
+
+            htmlContent.Append(end);
+
+
+
+
+            // Convert HTML to PDF
+            using (FileStream pdfStream = new FileStream(pdfFilePath, FileMode.Create))
+            {
+                var fontProvider = new DefaultFontProvider(false, false, false);
+                fontProvider.AddFont(Path.GetFullPath("../../Flight Booking/TicketDependencies/KantumruyPro-Bold.ttf"));
+                fontProvider.AddFont(Path.GetFullPath("../../Flight Booking/TicketDependencies/KantumruyPro-Regular.ttf"));
+                fontProvider.AddFont(Path.GetFullPath("../../Flight Booking/TicketDependencies/KantumruyPro-SemiBold.ttf"));
+                fontProvider.AddFont(Path.GetFullPath("../../Flight Booking/TicketDependencies/KantumruyPro-Medium.ttf"));
+                var properties = new ConverterProperties();
+                properties.SetFontProvider(fontProvider);
+
+                HtmlConverter.ConvertToPdf(htmlContent.ToString(), pdfStream, properties);
+            }
+
+            Console.WriteLine("PDF created successfully at: " + pdfFilePath);
         }
-    
+
+        private static string ConvertImageToBase64(string imagePath)
+        {
+            byte[] imageBytes = File.ReadAllBytes(imagePath);
+            return $"data:image/{Path.GetExtension(imagePath).Replace(".", "")};base64,{Convert.ToBase64String(imageBytes)}";
+        }
+    }
+
+    class PopulateTicket
+    {
+        public string BookingDate { get; set; }
+        public string ReferenceNo { get; set; }
+        public string SeatClass { get; set; }
+        public string PassengerName { get; set; }
+        public string Departure { get; set; }
+        public string Arrival { get; set; }
+        public string DepartureDate { get; set; }
+        public string ArrivalDate { get; set; }
+        public string DepartureDateOnly { get; set; }
+        public string DepartureTimeOnly { get; set; }
+        public string TimeDifference { get; set; }
+        public string ArrivalDateOnly { get; set; }
+        public string ArrivalTimeOnly { get; set; }
+        public string AirplaneNumber { get; set; }
+        public string DepartureLocation { get; set; }
+        public string DepartureAirportLocation { get; set; }
+        public string ArrivalLocation { get; set; }
+        public string ArrivalAirportLocation { get; set; }
+        public string ReturnDeparture { get; set; }
+        public string ReturnArrival { get; set; }
+        public string ReturnDateOnly { get; set; }
+        public string ReturnTimeOnly { get; set; }
+        public string ReturnAirplaneNumber { get; set; }
+        public string ReturnLocation { get; set; }
+        public string ReturnAirportLocation { get; set; }
+    }
+
 }
 

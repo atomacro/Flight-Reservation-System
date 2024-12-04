@@ -50,7 +50,7 @@
             this.lblFirstName.Location = new System.Drawing.Point(24, 66);
             this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(99, 22);
+            this.lblFirstName.Size = new System.Drawing.Size(123, 28);
             this.lblFirstName.TabIndex = 11;
             this.lblFirstName.Text = "First Name";
             // 
@@ -63,7 +63,7 @@
             this.lblLastName.Location = new System.Drawing.Point(24, 137);
             this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(96, 22);
+            this.lblLastName.Size = new System.Drawing.Size(119, 28);
             this.lblLastName.TabIndex = 14;
             this.lblLastName.Text = "Last Name";
             // 
@@ -76,7 +76,7 @@
             this.lblAge.Location = new System.Drawing.Point(24, 206);
             this.lblAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(39, 22);
+            this.lblAge.Size = new System.Drawing.Size(48, 28);
             this.lblAge.TabIndex = 14;
             this.lblAge.Text = "Age";
             // 
@@ -89,7 +89,7 @@
             this.lblBirthdate.Location = new System.Drawing.Point(24, 280);
             this.lblBirthdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBirthdate.Name = "lblBirthdate";
-            this.lblBirthdate.Size = new System.Drawing.Size(85, 22);
+            this.lblBirthdate.Size = new System.Drawing.Size(105, 28);
             this.lblBirthdate.TabIndex = 14;
             this.lblBirthdate.Text = "Birthdate";
             // 
@@ -114,6 +114,7 @@
             this.txtFirstName.Size = new System.Drawing.Size(268, 34);
             this.txtFirstName.TabIndex = 26;
             this.txtFirstName.UnderlinedStyle = false;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtLastName
             // 
@@ -210,14 +211,14 @@
             this.chkDiscounted.Font = new System.Drawing.Font("Kantumruy Pro", 8F);
             this.chkDiscounted.Location = new System.Drawing.Point(22, 352);
             this.chkDiscounted.Name = "chkDiscounted";
-            this.chkDiscounted.Size = new System.Drawing.Size(266, 20);
+            this.chkDiscounted.Size = new System.Drawing.Size(330, 25);
             this.chkDiscounted.TabIndex = 31;
             this.chkDiscounted.Text = "I am a person with disability or senior citizen";
             this.chkDiscounted.UseVisualStyleBackColor = true;
             // 
             // GuestDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FLIGHT_RESERVATION.Properties.Resources.border;

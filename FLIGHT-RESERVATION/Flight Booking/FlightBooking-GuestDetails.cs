@@ -101,7 +101,7 @@ namespace FLIGHT_RESERVATION
                 {
                     if (string.IsNullOrWhiteSpace(txt.Text))
                     {
-                        MessageBox.Show($"{txt.Name.Substring(3)} cannot be empty");
+                        MessageBox.Show($"Fill up all fields");
                         btnFocus.Focus();
                         return false;
                     }
@@ -116,7 +116,21 @@ namespace FLIGHT_RESERVATION
                     btnFocus.Focus();
                     return false;
                 }
+
+                var txtAge = item.Value.Controls.OfType<CustomControls.RoundedTextBox>().FirstOrDefault(t => t.Name == "txtAge");
+
+                if (string.IsNullOrWhiteSpace(txtAge.Text)) return false;
+
+                if (!int.TryParse(txtAge.Text, out int num) || num < 0 || num > 110)
+                {
+                    txtAge.Text = "";
+                    MessageBox.Show("Age must be from range 0 - 110 only");
+                    btnFocus.Focus();
+                    return false;
+                }
             }
+
+            
 
             return true;
         }
