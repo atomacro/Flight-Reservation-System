@@ -265,15 +265,6 @@ namespace FLIGHT_RESERVATION
                 {
                     if (!PaymentDetails.ValidateContents()){ return;  }
 
-                    PaymentDetails.FillData();
-                    string transactionID =  PaymentDetails.GenerateTransactionId();
-                    InsertDatabaseData Database = new InsertDatabaseData(Session.CurrentUser, transactionID);
-                    FlightBooking_Session.Instance.transactionID = transactionID
-                    await Database.InsertDatabase();
-
-                    SendEmail Mailer = new SendEmail();
-                    Mailer.SendEmailAsync(Session.CurrentUserEmail);
-
                     var Success = new Success();
                     AddControl(Success, pnlMain);
 
@@ -298,6 +289,17 @@ namespace FLIGHT_RESERVATION
                         AddControl(viewBookings, pnlMain);
                         this.ResumeLayout();
                     };
+                    PaymentDetails.FillData();
+                    string transactionID = PaymentDetails.GenerateTransactionId();
+                    InsertDatabaseData Database = new InsertDatabaseData(Session.CurrentUser, transactionID);
+                    FlightBooking_Session.Instance.transactionID = transactionID;
+                    await Database.InsertDatabase();
+
+                    GeneratePDF pdf = new GeneratePDF();
+                    await pdf.PDFGenerate();
+
+                    SendEmail Mailer = new SendEmail();
+                    await Mailer.SendEmailAsync(Session.CurrentUserEmail, FlightBooking_Session.Instance.TicketDirectory);
                 };
             }
         }

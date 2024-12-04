@@ -15,7 +15,7 @@ INSERT INTO Airport (AirportCode, AirportFullName, AirportLocation) VALUES
 
 
 -- Insert data into Flights table
-INSERT INTO Flights (AirplaneNumber, DepartureDate, ArrivalDate, DepartureAirportID, ArrivalAirportID, SeatsRemaining, SeatingCapacity) VALUES
+INSERT INTO Flights (AirplaneNumber, DepartureDate, ArrivalDate, DepartureAirportID, ArrivalAirportID, SeatsRemaining, SeatingCapacity, FlightPrice) VALUES
 ('AA101', '2024-12-01 08:00:00', '2024-12-01 11:00:00', 1, 2, 150, 180),
 ('AA102', '2024-12-02 14:00:00', '2024-12-02 17:00:00', 2, 1, 160, 180),
 ('DL201', '2024-12-03 09:30:00', '2024-12-03 12:30:00', 3, 4, 170, 200),

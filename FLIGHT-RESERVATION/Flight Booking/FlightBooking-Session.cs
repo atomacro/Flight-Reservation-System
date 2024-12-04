@@ -36,6 +36,7 @@ namespace FLIGHT_RESERVATION
         public string DepartureAirplaneNumber { get; set; }
         public string ReturnAirplaneNumber { get; set; }
         public float BookingSubTotal { get; set; }
+        public string TicketDirectory { get; set; }
         public Dictionary<string, string> DepartureAirplaneDetails { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, string> ReturnAirplaneDetails { get; set; } = new Dictionary<string, string>();
 

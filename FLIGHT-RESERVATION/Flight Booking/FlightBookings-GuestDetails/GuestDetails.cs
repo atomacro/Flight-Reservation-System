@@ -29,35 +29,27 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
 
         private void GuestDetails_Load(object sender, EventArgs e)
         {
-            HandleText();
             foreach (TextBox txt in this.Controls.OfType<TextBox>().ToArray()) {
 
                 txt.BackColor = ColorTranslator.FromHtml("#F4F4F4");
             }
         }
 
-        public void HandleText()
-        {
-            txtFirstName.TextChanged += (s, @event) =>
-            {
-                lblDetails.Text = txtFirstName.Text + "'s Details";
-            };
-
-            txtAge.TextChanged += (s, @event) =>
-            {
-                if (string.IsNullOrWhiteSpace(txtAge.Text)) return;
-
-                if (!int.TryParse(txtAge.Text, out int num) || num < 0 || num > 110)
-                {
-                    MessageBox.Show("Age must be from range 0 - 110 only");
-                    txtAge.Text = "";
-                    btnFocus.Focus();
-                }
-            };
-        }
-
         private void txtAge_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtAge.Text)) return;
+
+            if (!int.TryParse(txtAge.Text, out int num) || num < 0 || num > 110)
+            {
+                txtAge.Text = "";
+                MessageBox.Show("Age must be from range 0 - 110 only");
+                btnFocus.Focus();
+            }
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            lblDetails.Text = txtFirstName.Text + "'s Details";
 
         }
     }
