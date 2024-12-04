@@ -266,7 +266,9 @@ namespace FLIGHT_RESERVATION
                     if (!PaymentDetails.ValidateContents()){ return;  }
 
                     PaymentDetails.FillData();
-                    InsertDatabaseData Database = new InsertDatabaseData(Session.CurrentUser, PaymentDetails.GenerateTransactionId());
+                    string transactionID =  PaymentDetails.GenerateTransactionId();
+                    InsertDatabaseData Database = new InsertDatabaseData(Session.CurrentUser, transactionID);
+                    FlightBooking_Session.Instance.transactionID = transactionID
                     await Database.InsertDatabase();
 
                     SendEmail Mailer = new SendEmail();
