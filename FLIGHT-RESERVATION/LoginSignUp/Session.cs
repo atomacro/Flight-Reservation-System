@@ -18,6 +18,7 @@ namespace FLIGHT_RESERVATION
     {
         public static bool IsLoggedIn { get; set; } = false;
         public static int CurrentUser { get; set; } = 0;
+        public static string CurrentUserName { get; set; }
         public static string CurrentUserEmail { get; set; }
         public static string Password { get; set; } = string.Empty;
 
@@ -73,7 +74,7 @@ namespace FLIGHT_RESERVATION
                         Password = password;
                         CurrentUser = currentUser;
                         CurrentUserEmail = email;
-
+                        CurrentUserName = reader.GetString("FirstName");
                     }
                     return true;
                 }
