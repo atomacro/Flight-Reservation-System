@@ -50,6 +50,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
 
             var departureDetails = ses.DepartureAirplaneDetails;
+            var flightDetails = ses.FlightDetails;
             var returnDetails = ses.Type == "Round Trip" ? ses.ReturnAirplaneDetails : null;
 
             departureDetails.TryGetValue("Departure Date", out var departureDate);
@@ -57,9 +58,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             departureDetails.TryGetValue("Arrival Date", out var arrivalDate);
             departureDetails.TryGetValue("Arrival Time", out var arrivalTime);
             departureDetails.TryGetValue("Departure Airport Code", out var departureAirportCode);
-            departureDetails.TryGetValue("Departure Airport Location", out var departureAirportLocation);
+            flightDetails.TryGetValue("Departure Airport Location", out var departureAirportLocation);
             departureDetails.TryGetValue("Arrival Airport Code", out var arrivalAirportCode);
-            departureDetails.TryGetValue("Arrival Airport Location", out var arrivalAirportLocation);
+            flightDetails.TryGetValue("Arrival Airport Location", out var arrivalAirportLocation);
 
             ses.FlightDetails.TryGetValue("Seat Class", out var seatClass);
             ses.FlightDetails.TryGetValue("Departure Location", out var departureLocation);
