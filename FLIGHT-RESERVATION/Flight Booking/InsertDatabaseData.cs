@@ -52,6 +52,7 @@ namespace FLIGHT_RESERVATION
                     await InsertPassengerDetails();
                     await InsertTicketDetails("Departure");
                     await DecrementSeatsRemaining("Departure");
+                    await InsertPayment();
 
                 }
                 else if (Type == "Round Trip")
@@ -62,7 +63,7 @@ namespace FLIGHT_RESERVATION
                     await InsertTicketDetails("Return");
                     await DecrementSeatsRemaining("Departure");
                     await DecrementSeatsRemaining("Return");
-
+                    await InsertPayment();
                 }
             }
             finally
