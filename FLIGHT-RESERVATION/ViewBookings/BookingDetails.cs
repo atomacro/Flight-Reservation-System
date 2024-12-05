@@ -64,7 +64,7 @@ namespace FLIGHT_RESERVATION.ViewBookings
             if (DB_Booking.hasTransferServices) addons.AppendLine("Transport Services");
             lblAddons.Text = addons.ToString();
 
-            lblTotalPrice.Text = DB_Booking.Price.ToString("N1") + " Php";
+            lblTotalPrice.Text = DB_Booking.Price.ToString("N2") + " Php";
         }
 
         private void SetupInitialUI(string departureLocation, string arrivalLocation, string departureTime, string arrivalTime)

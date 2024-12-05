@@ -252,7 +252,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             <p
               style=""
                 color: #763aee;
-                font-size: 20px;
+                font-size: 24px;
                 font-family: 'Kantumruy Pro Bold';
               ""
             >
@@ -289,7 +289,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
               </div>
 
               <div style=""margin-left: 50px"">
-                <p style=""margin-bottom: 5px"">{ticket.AirplaneNumber}</p>
+                <p style=""margin-bottom: 5px"">FLIGHT NO. {ticket.AirplaneNumber}</p>
                 <p style=""font-family: 'Kantumruy Pro Medium'; color: darkgray"">
                   DEPARTURE
                 </p>
@@ -321,7 +321,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             <p
               style=""
                 color: #763aee;
-                font-size: 20px;
+                font-size: 24px;
                 font-family: 'Kantumruy Pro Bold';
               ""
             >
@@ -352,7 +352,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 <p>{ticket.ReturnTimeOnly}</p>
               </div>
               <div style=""margin-left: 50px; border: 0px 0px 1px 0px solid black"">
-                <p style=""margin-bottom: 5px"">{ticket.ReturnAirplaneNumber}</p>
+                <p style=""margin-bottom: 5px"">FLIGHT NO. {ticket.ReturnAirplaneNumber}</p>
                 <p style=""font-family: 'Kantumruy Pro Medium'; color: darkgray"">
                   RETURNING TO
                 </p>
