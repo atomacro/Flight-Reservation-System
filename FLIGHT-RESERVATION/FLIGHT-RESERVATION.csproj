@@ -206,6 +206,7 @@
     <Compile Include="Dashboard\dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Flight Booking\GeneratePDF.cs" />
     <Compile Include="Flight Booking\FlightBooking-AddOns.cs">
       <SubType>UserControl</SubType>

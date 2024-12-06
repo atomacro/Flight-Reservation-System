@@ -84,13 +84,6 @@ namespace FLIGHT_RESERVATION
                     return false;
                 }
             }
-            // Uncomment if debugging
-            //catch (MySqlException ex)
-            //{
-            //    _transaction?.Rollback();
-            //    MessageBox.Show($"Database Error: {ex.Message}", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
             catch (Exception ex)
             {
                 Console.WriteLine($"An Error has Occured: {ex.Message}");
@@ -132,13 +125,6 @@ namespace FLIGHT_RESERVATION
                         return false;
                     }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                _transaction?.Rollback();
-                MessageBox.Show($"Database Error: {ex.Message}",
-                    "Password Change Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
             catch (Exception ex)
             {
@@ -183,14 +169,6 @@ namespace FLIGHT_RESERVATION
                     return RowsAffected > 0;
                 }
             }
-            // Uncomment if debugging
-            //catch (MySqlException ex)
-            //{
-            //    _transaction?.Rollback();
-            //MessageBox.Show($"Database Error: {ex.Message}",
-                    //"Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
             catch (Exception ex)
             {
                 _transaction?.Rollback();
@@ -228,12 +206,6 @@ namespace FLIGHT_RESERVATION
                     }
                 }
             }
-            //catch (MySqlException ex)
-            //{
-            //    MessageBox.Show($"MySQL Error:\nNumber: {ex.Number}\nMessage: {ex.Message}\nSQL State: {ex.SqlState}",
-            //        "MySQL Error");
-            //    return false;
-            //}
             catch (Exception ex)
             {
                 Console.WriteLine($"An Error has Occured: {ex.Message}");
