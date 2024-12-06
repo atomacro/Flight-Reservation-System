@@ -1,9 +1,13 @@
-﻿using System;
+﻿using FLIGHT_RESERVATION.ViewBookings;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +19,175 @@ namespace FLIGHT_RESERVATION
         public dashboard()
         {
             InitializeComponent();
+            InitializeSort();
+            PopulateBookings("All");
+        }
+
+        //
+        // UI Methods
+        //
+        private void InitializeSort()
+        {
+            string State = "All";
+            ActiveButton(btnSortAll);
+
+            btnSortAll.Click += (s, e) =>
+            {
+                State = "All";
+                ActiveButton(btnSortAll);
+                InactiveButton(btnSortInternational, btnSortLocal);
+                
+                pnlBookings.Controls.Clear();
+                PopulateBookings(State);
+            };
+
+            btnSortLocal.Click += (s, e) =>
+            {
+                State = "Local";
+                ActiveButton(btnSortLocal);
+                InactiveButton(btnSortAll, btnSortInternational);
+
+                pnlBookings.Controls.Clear();
+                PopulateBookings(State);
+            };
+
+            btnSortInternational.Click += (s, e) =>
+            { 
+                State = "International";
+                ActiveButton(btnSortInternational);
+                InactiveButton(btnSortAll, btnSortLocal);
+
+                pnlBookings.Controls.Clear();
+                PopulateBookings(State);
+            };
+        }
+
+        private void ActiveButton(Button btn)
+        {
+            btn.ForeColor = Color.White;
+            btn.BackColor = ColorTranslator.FromHtml("#763AEE");
+        }
+
+        private void InactiveButton(Button btn1, Button btn2)
+        {
+            btn1.ForeColor = Color.Black;
+            btn1.BackColor = ColorTranslator.FromHtml("#e6e9f0");
+            btn2.ForeColor = Color.Black;
+            btn2.BackColor = ColorTranslator.FromHtml("#e6e9f0");
+        }
+
+        //
+        // Populate user control 
+        //
+        private void PopulateBookings(String sortState)
+        {
+            AvailableFlights flight = new AvailableFlights(sortState);
+            for (int i = 0; i < flight.DepartureDate.Count; i++)
+            {
+                Bookings bookings = new Bookings();
+
+                //
+                // TBA: Add functionality to view button
+                //
+
+                bookings.Margin = new Padding(0, 0, 0, 10);
+                bookings.SetDate(flight.DepartureDate[i]);
+                bookings.setLocation(flight.DepartureLocation[i], flight.ArrivalLocation[i]);
+                bookings.setTime(flight.DepartureTime[i], flight.ArrivalTime[i]);
+                bookings.setAirplaneNumber(flight.AirplaneNumber[i]);
+                pnlBookings.Controls.Add(bookings);
+
+            }
+        }
+
+        //
+        // MySQL Database Methods 
+        //
+        public class AvailableFlights
+        {
+            private DatabaseConnection dbConnection;
+            public List<int> FlightID = new List<int>();
+            public List<String> DepartureDate = new List<String>();
+            public List<String> DepartureLocation = new List<String>();
+            public List<String> ArrivalLocation = new List<String>();
+            public List<String> DepartureTime = new List<string>();
+            public List<String> ArrivalTime = new List<string>();
+            public List<String> AirplaneNumber = new List<string>();
+
+            public AvailableFlights(string SortState)
+            {
+                DepartureDate.Clear();
+                DepartureLocation.Clear();
+                ArrivalLocation.Clear();
+                DepartureTime.Clear();
+                ArrivalTime.Clear();
+                AirplaneNumber.Clear();
+
+                dbConnection = DatabaseConnection.Instance;
+                QuerySelect(SortState);
+            }
+
+            private void QuerySelect(string SortState)
+            {
+                dbConnection.OpenConnection();
+
+                string sortQuery = SortState == "All" ? "" : $@"WHERE Type = ""{SortState}""";
+                
+                string query =
+                    $@"SELECT Flights.DepartureDate, Flights.ArrivalDate, Flights.AirplaneNumber, Flights.FlightID,
+                    ArrivalAirport.AirportCode AS ArrivalAirportCode, DepartureAirport.AirportCode AS DepartureAirportCode
+                    FROM flights
+                    JOIN Airport AS DepartureAirport ON Flights.DepartureAirportID = DepartureAirport.AirportID
+                    JOIN Airport AS ArrivalAirport ON Flights.ArrivalAirportID = ArrivalAirport.AirportID
+                    {sortQuery} AND Flights.DepartureDate >= NOW()
+                    ORDER BY Flights.DepartureDate ASC; ";
+
+                try
+                {
+                    MySqlCommand command = new MySqlCommand(query, dbConnection.GetConnection());
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //get Date input to DateTime 
+                            DateTime Departure = reader.GetDateTime("DepartureDate");
+                            DateTime Arrival = reader.GetDateTime("ArrivalDate");
+                            //convert to specific formats
+                            string DepartureTime = Departure.ToString("HH:mm");
+                            string ArrivalTime = Arrival.ToString("HH:mm");
+                            string Date = Departure.ToString("MMMM dd, yyyy");
+
+                            //get Departure and Arrival Location in db
+                            string DepartureLocation = reader.GetString("DepartureAirportCode");
+                            string ArrivalLocation = reader.GetString("ArrivalAirportCode");
+
+                            string AirplaneNumber = reader.GetString("AirplaneNumber");
+                            int FlightID = reader.GetInt32("FlightID");
+
+                            //populate list
+                            this.FlightID.Add(FlightID);
+                            this.ArrivalLocation.Add(ArrivalLocation);
+                            this.DepartureLocation.Add(DepartureLocation);
+                            this.DepartureDate.Add(Date);
+                            this.ArrivalTime.Add(ArrivalTime);
+                            this.DepartureTime.Add(DepartureTime);
+                            this.AirplaneNumber.Add(AirplaneNumber);
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Database Error: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error retrieving data. Please try again. {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    dbConnection.CloseConnection();
+                }
+            }
         }
     }
 }
