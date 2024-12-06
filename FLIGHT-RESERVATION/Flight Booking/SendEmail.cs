@@ -120,7 +120,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             catch (Exception ex)
             {
                 MessageBox.Show($"Failed to send ticket: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
             }
         }
     }
