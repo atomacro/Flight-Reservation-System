@@ -11,6 +11,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FLIGHT_RESERVATION.Dashboard;
 
 namespace FLIGHT_RESERVATION
 {
@@ -19,12 +20,12 @@ namespace FLIGHT_RESERVATION
         public dashboard()
         {
             InitializeComponent();
-            InitializeSort();
         }
 
         private async void dashboard_Load(object sender, EventArgs e)
         {
             SuspendLayout();
+            InitializeSort();
             await PopulateBookings("All");
             ResumeLayout();
         }
@@ -94,9 +95,17 @@ namespace FLIGHT_RESERVATION
             {
                 Bookings bookings = new Bookings();
 
-                //
-                // TBA: Add functionality to view button
-                //
+                int currentIndex = i;
+                bookings.btnViewBookingDetails.Click += (s, e) =>
+                {
+                    var flightDetails = new FlightDetails(
+                        flight.FlightID[currentIndex],
+                        flight.DepartureLocation[currentIndex],
+                        flight.ArrivalLocation[currentIndex],
+                        flight.DepartureTime[currentIndex],
+                        flight.ArrivalTime[currentIndex]);
+                    flightDetails.ShowDialog();
+                };
 
                 bookings.Margin = new Padding(0, 0, 0, 10);
                 bookings.SetDate(flight.DepartureDate[i]);
