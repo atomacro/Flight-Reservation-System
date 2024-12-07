@@ -26,7 +26,7 @@ namespace FLIGHT_RESERVATION.Account
 
             if (user == null)
             {
-                MessageBox.Show("Error with the account information.","Session Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error with loading the account information.","Session Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
@@ -56,7 +56,7 @@ namespace FLIGHT_RESERVATION.Account
 
             if (!hasChanges)
             {
-                MessageBox.Show("No changes to save.");
+                MessageBox.Show("No changes to save.","Account Information Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -66,11 +66,11 @@ namespace FLIGHT_RESERVATION.Account
 
                 if (updateSuccess)
                 {
-                    MessageBox.Show("Account information updated successfully!");
+                    MessageBox.Show("Account information updated successfully!", "Account Information Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to update account information. Please try again.");
+                    MessageBox.Show("Failed to update account information. Please try again.", "Account Information Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
