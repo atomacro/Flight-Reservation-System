@@ -110,7 +110,11 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
                     if (!string.IsNullOrEmpty(attachmentPath) && File.Exists(attachmentPath))
                     {
-                        mail.Attachments.Add(new Attachment(attachmentPath));
+                        var ses = FlightBooking_Session.Instance;
+                        Attachment attachment = new Attachment(attachmentPath);
+                        
+                        attachment.Name = $"Ticket-{ses.transactionID}.pdf";
+                        mail.Attachments.Add(attachment);
                     }
 
                     await _smtpClient.SendMailAsync(mail);
