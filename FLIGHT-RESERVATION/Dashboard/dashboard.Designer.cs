@@ -28,81 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboard));
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.lblBody = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picAboutUs = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAboutUs)).BeginInit();
+            this.pnlBookings = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSortAll = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
+            this.btnSortLocal = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
+            this.btnSortInternational = new FLIGHT_RESERVATION.CustomControls.RoundedButton();
             this.SuspendLayout();
             // 
-            // lblHeader
+            // pnlBookings
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Kantumruy Pro", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(106, 229);
-            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(468, 52);
-            this.lblHeader.TabIndex = 1;
-            this.lblHeader.Text = "Airplane Ticketing System";
+            this.pnlBookings.AutoScroll = true;
+            this.pnlBookings.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pnlBookings.Location = new System.Drawing.Point(40, 116);
+            this.pnlBookings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlBookings.Name = "pnlBookings";
+            this.pnlBookings.Size = new System.Drawing.Size(827, 487);
+            this.pnlBookings.TabIndex = 1;
             // 
-            // lblBody
+            // btnSortAll
             // 
-            this.lblBody.Font = new System.Drawing.Font("Kantumruy Pro", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBody.Location = new System.Drawing.Point(73, 331);
-            this.lblBody.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBody.Name = "lblBody";
-            this.lblBody.Size = new System.Drawing.Size(534, 144);
-            this.lblBody.TabIndex = 2;
-            this.lblBody.Text = resources.GetString("lblBody.Text");
-            this.lblBody.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSortAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
+            this.btnSortAll.BorderRadius = 15;
+            this.btnSortAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSortAll.FlatAppearance.BorderSize = 0;
+            this.btnSortAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortAll.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnSortAll.ForeColor = System.Drawing.Color.White;
+            this.btnSortAll.Location = new System.Drawing.Point(53, 40);
+            this.btnSortAll.Name = "btnSortAll";
+            this.btnSortAll.Size = new System.Drawing.Size(91, 54);
+            this.btnSortAll.TabIndex = 2;
+            this.btnSortAll.Text = "All";
+            this.btnSortAll.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // btnSortLocal
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(78, 310);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(524, 9);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.btnSortLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
+            this.btnSortLocal.BorderRadius = 15;
+            this.btnSortLocal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSortLocal.FlatAppearance.BorderSize = 0;
+            this.btnSortLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortLocal.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnSortLocal.ForeColor = System.Drawing.Color.Black;
+            this.btnSortLocal.Location = new System.Drawing.Point(158, 40);
+            this.btnSortLocal.Name = "btnSortLocal";
+            this.btnSortLocal.Size = new System.Drawing.Size(111, 54);
+            this.btnSortLocal.TabIndex = 3;
+            this.btnSortLocal.Text = "Local";
+            this.btnSortLocal.UseVisualStyleBackColor = false;
             // 
-            // picAboutUs
+            // btnSortInternational
             // 
-            this.picAboutUs.Image = ((System.Drawing.Image)(resources.GetObject("picAboutUs.Image")));
-            this.picAboutUs.Location = new System.Drawing.Point(-7, -10);
-            this.picAboutUs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picAboutUs.Name = "picAboutUs";
-            this.picAboutUs.Size = new System.Drawing.Size(697, 186);
-            this.picAboutUs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAboutUs.TabIndex = 0;
-            this.picAboutUs.TabStop = false;
+            this.btnSortInternational.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
+            this.btnSortInternational.BorderRadius = 15;
+            this.btnSortInternational.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSortInternational.FlatAppearance.BorderSize = 0;
+            this.btnSortInternational.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortInternational.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.btnSortInternational.ForeColor = System.Drawing.Color.Black;
+            this.btnSortInternational.Location = new System.Drawing.Point(285, 40);
+            this.btnSortInternational.Name = "btnSortInternational";
+            this.btnSortInternational.Size = new System.Drawing.Size(184, 54);
+            this.btnSortInternational.TabIndex = 4;
+            this.btnSortInternational.Text = "International";
+            this.btnSortInternational.UseVisualStyleBackColor = false;
             // 
             // dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblBody);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.picAboutUs);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnSortInternational);
+            this.Controls.Add(this.btnSortLocal);
+            this.Controls.Add(this.btnSortAll);
+            this.Controls.Add(this.pnlBookings);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "dashboard";
-            this.Size = new System.Drawing.Size(680, 550);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAboutUs)).EndInit();
+            this.Size = new System.Drawing.Size(907, 677);
+            this.Load += new System.EventHandler(this.dashboard_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picAboutUs;
-        private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label lblBody;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel pnlBookings;
+        private CustomControls.RoundedButton btnSortAll;
+        private CustomControls.RoundedButton btnSortLocal;
+        private CustomControls.RoundedButton btnSortInternational;
     }
 }

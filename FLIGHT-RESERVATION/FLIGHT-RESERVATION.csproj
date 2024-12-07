@@ -206,6 +206,13 @@
     <Compile Include="Dashboard\dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\FlightDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\FlightDetails.Designer.cs">
+      <DependentUpon>FlightDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Flight Booking\GeneratePDF.cs" />
     <Compile Include="Flight Booking\FlightBooking-AddOns.cs">
       <SubType>UserControl</SubType>
@@ -346,7 +353,6 @@
     <Compile Include="ViewBookings\Bookings.Designer.cs">
       <DependentUpon>Bookings.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewBookings\GetBookingDetails.cs" />
     <Compile Include="ViewBookings\ViewBookings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -358,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\FlightDetails.resx">
+      <DependentUpon>FlightDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Flight Booking\FlightBooking-AddOns.resx">
       <DependentUpon>FlightBooking-AddOns.cs</DependentUpon>
