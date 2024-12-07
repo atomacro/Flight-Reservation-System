@@ -104,6 +104,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "dashboard";
             this.Size = new System.Drawing.Size(907, 677);
+            this.Load += new System.EventHandler(this.dashboard_Load);
             this.ResumeLayout(false);
 
         }

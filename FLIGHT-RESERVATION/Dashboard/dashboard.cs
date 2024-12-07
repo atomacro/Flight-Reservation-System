@@ -20,7 +20,13 @@ namespace FLIGHT_RESERVATION
         {
             InitializeComponent();
             InitializeSort();
-            PopulateBookings("All");
+        }
+
+        private async void dashboard_Load(object sender, EventArgs e)
+        {
+            SuspendLayout();
+            await PopulateBookings("All");
+            ResumeLayout();
         }
 
         //
@@ -79,9 +85,11 @@ namespace FLIGHT_RESERVATION
         //
         // Populate user control 
         //
-        private void PopulateBookings(String sortState)
+        private async Task PopulateBookings(String sortState)
         {
-            AvailableFlights flight = new AvailableFlights(sortState);
+            SuspendLayout();
+            AvailableFlights flight = new AvailableFlights();
+            await flight.QuerySelect(sortState);
             for (int i = 0; i < flight.DepartureDate.Count; i++)
             {
                 Bookings bookings = new Bookings();
@@ -98,6 +106,7 @@ namespace FLIGHT_RESERVATION
                 pnlBookings.Controls.Add(bookings);
 
             }
+            ResumeLayout();
         }
 
         //
@@ -107,14 +116,14 @@ namespace FLIGHT_RESERVATION
         {
             private DatabaseConnection dbConnection;
             public List<int> FlightID = new List<int>();
-            public List<String> DepartureDate = new List<String>();
-            public List<String> DepartureLocation = new List<String>();
-            public List<String> ArrivalLocation = new List<String>();
-            public List<String> DepartureTime = new List<string>();
-            public List<String> ArrivalTime = new List<string>();
-            public List<String> AirplaneNumber = new List<string>();
+            public List<string> DepartureDate = new List<String>();
+            public List<string> DepartureLocation = new List<String>();
+            public List<string> ArrivalLocation = new List<String>();
+            public List<string> DepartureTime = new List<string>();
+            public List<string> ArrivalTime = new List<string>();
+            public List<string> AirplaneNumber = new List<string>();
 
-            public AvailableFlights(string SortState)
+            public AvailableFlights()
             {
                 DepartureDate.Clear();
                 DepartureLocation.Clear();
@@ -124,10 +133,9 @@ namespace FLIGHT_RESERVATION
                 AirplaneNumber.Clear();
 
                 dbConnection = DatabaseConnection.Instance;
-                QuerySelect(SortState);
             }
 
-            private void QuerySelect(string SortState)
+            public async Task QuerySelect(string SortState)
             {
                 dbConnection.OpenConnection();
 
@@ -145,24 +153,24 @@ namespace FLIGHT_RESERVATION
                 try
                 {
                     MySqlCommand command = new MySqlCommand(query, dbConnection.GetConnection());
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    using (var reader = await command.ExecuteReaderAsync())
                     {
-                        while (reader.Read())
+                        while (await reader.ReadAsync())
                         {
                             //get Date input to DateTime 
-                            DateTime Departure = reader.GetDateTime("DepartureDate");
-                            DateTime Arrival = reader.GetDateTime("ArrivalDate");
+                            DateTime Departure = (DateTime)reader["DepartureDate"];
+                            DateTime Arrival = (DateTime)reader["ArrivalDate"];
                             //convert to specific formats
                             string DepartureTime = Departure.ToString("HH:mm");
                             string ArrivalTime = Arrival.ToString("HH:mm");
                             string Date = Departure.ToString("MMMM dd, yyyy");
 
                             //get Departure and Arrival Location in db
-                            string DepartureLocation = reader.GetString("DepartureAirportCode");
-                            string ArrivalLocation = reader.GetString("ArrivalAirportCode");
+                            string DepartureLocation = (string)reader["DepartureAirportCode"];
+                            string ArrivalLocation = (string)reader["ArrivalAirportCode"];
 
-                            string AirplaneNumber = reader.GetString("AirplaneNumber");
-                            int FlightID = reader.GetInt32("FlightID");
+                            string AirplaneNumber = (string)reader["AirplaneNumber"];
+                            int FlightID = (int)reader["FlightID"];
 
                             //populate list
                             this.FlightID.Add(FlightID);
