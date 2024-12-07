@@ -216,24 +216,18 @@ namespace FLIGHT_RESERVATION.ViewBookings
             Label lblEmptyBookingMessage = new Label();
             btnSort.Visible = false;
 
-            Panel EmptyPanel = new Panel();
-
-            EmptyPanel.Height = pnlBookings.Height;
-            EmptyPanel.Width = pnlBookings.Width;
-
-            lblEmptyBookingMessage.Text = "Errr... That's Awkward. Have you booked a flight yet?";
+            lblEmptyBookingMessage.Text = "Errr... That's Awkward. \nHave you booked a flight yet?";
 
             // Set the label's appearance
             lblEmptyBookingMessage.Font = new Font("Kantumruy Pro", 25, FontStyle.Bold);
-            lblEmptyBookingMessage.Margin = new Padding(0, 60, 0, 0);
+            lblEmptyBookingMessage.Margin = new Padding(57, 110, 0, 0);
             lblEmptyBookingMessage.ForeColor = ColorTranslator.FromHtml("#5C5C5C");
             lblEmptyBookingMessage.TextAlign = ContentAlignment.MiddleCenter;
             lblEmptyBookingMessage.AutoSize = true;
             lblEmptyBookingMessage.Dock = DockStyle.Fill;
-            lblEmptyBookingMessage.BorderStyle = BorderStyle.FixedSingle;
 
-            EmptyPanel.Controls.Add(lblEmptyBookingMessage);
-            pnlBookings.Controls.Add(EmptyPanel);
+            pnlBookings.Controls.Clear();
+            pnlBookings.Controls.Add(lblEmptyBookingMessage);
         }
     }
 }
