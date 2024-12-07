@@ -45,8 +45,10 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Payment
             }
 
             lblFlight.Text = $"{from} to {to}";
-            lblFlightPrice.Text = $"{flightPrice}.00 Php";
-            lblSubTotal.Text = $"Total:          {SubTotal}.00 Php";
+            string formattedFlightPrice = flightPrice.ToString("N2");
+            lblFlightPrice.Text = $"{formattedFlightPrice} Php";
+            string formattedSubtotal = SubTotal.ToString("N2");
+            lblSubTotal.Text = $"Total:          {formattedSubtotal} Php"; ;
 
 
             for (int i = 0; i < PassengerNames.Count; i++)
@@ -106,7 +108,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_Payment
 
                 float multiplier = 0;
                 if (PassengerTypes[i] == "Adult") multiplier = 1.0f;
-                if (PassengerTypes[i] == "Children") multiplier = 0.75f;
+                if (PassengerTypes[i] == "Child") multiplier = 0.75f;
                 if (PassengerTypes[i] == "Infant") multiplier = 0.5f;
 
 

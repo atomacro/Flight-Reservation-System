@@ -20,10 +20,19 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
             String label = $"{type} {num} Details";
             if (num == 0) label = "Passenger Details";
             lblDetails.Text = label;
+
             Console.WriteLine(type);
             if (type == "Passenger" || type == "Adult") this.type = "Adult";
-            else if (type == "Children") this.type = "Children";
-            else if (type == "Infant") this.type = "Infant";
+            else if (type == "Child")
+            {
+                this.type = "Child";
+                chkDiscounted.Visible = false;
+            }
+            else if (type == "Infant")
+            {
+                this.type = "Infant";
+                chkDiscounted.Visible = false;
+            }
 
         }
 
@@ -49,7 +58,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
-            lblDetails.Text = txtFirstName.Text + "'s Details";
+            //lblDetails.Text = txtFirstName.Text + "'s Details";
 
         }
     }

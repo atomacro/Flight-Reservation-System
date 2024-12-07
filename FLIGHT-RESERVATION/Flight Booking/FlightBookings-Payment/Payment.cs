@@ -223,7 +223,7 @@ namespace FLIGHT_RESERVATION
                             Boolean discounted = innerentry["Discounted"] == "Yes" ? true : false;
                             AdultSubtotal += CalculatePrice(discounted, 1.0f, multiplier);
                         }
-                        else if (innerentry["Type"] == "Children")
+                        else if (innerentry["Type"] == "Child")
                         {
                             Boolean discounted = innerentry["Discounted"] == "Yes" ? true : false;
                             ChildrenSubtotal += CalculatePrice(discounted, 0.75f, multiplier);
