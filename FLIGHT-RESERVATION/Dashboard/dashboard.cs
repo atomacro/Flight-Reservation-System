@@ -37,34 +37,34 @@ namespace FLIGHT_RESERVATION
             string State = "All";
             ActiveButton(btnSortAll);
 
-            btnSortAll.Click += (s, e) =>
+            btnSortAll.Click += async (s, e) =>
             {
                 State = "All";
                 ActiveButton(btnSortAll);
                 InactiveButton(btnSortInternational, btnSortLocal);
                 
                 pnlBookings.Controls.Clear();
-                PopulateBookings(State);
+                await PopulateBookings(State);
             };
 
-            btnSortLocal.Click += (s, e) =>
+            btnSortLocal.Click += async (s, e) =>
             {
                 State = "Local";
                 ActiveButton(btnSortLocal);
                 InactiveButton(btnSortAll, btnSortInternational);
 
                 pnlBookings.Controls.Clear();
-                PopulateBookings(State);
+                await PopulateBookings(State);
             };
 
-            btnSortInternational.Click += (s, e) =>
+            btnSortInternational.Click += async (s, e) =>
             { 
                 State = "International";
                 ActiveButton(btnSortInternational);
                 InactiveButton(btnSortAll, btnSortLocal);
 
                 pnlBookings.Controls.Clear();
-                PopulateBookings(State);
+                await PopulateBookings(State);
             };
         }
 
