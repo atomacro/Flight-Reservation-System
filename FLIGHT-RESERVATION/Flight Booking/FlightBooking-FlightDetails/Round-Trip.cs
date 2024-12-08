@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
 {
     public partial class Round_Trip : UserControl, Trips
@@ -22,6 +23,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         public NumericUpDown numInfantsControl => this.numInfant;
         public Label lblDepartureAirportNameControl => this.lblDepartureLocation;
         public Label lblArrivalAirportNameControl => this.lblArrivalLocation;
+        public String Type => "";
+
 
         public Round_Trip()
         {
@@ -34,7 +37,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             {
                 cbo.DropDownStyle = ComboBoxStyle.DropDownList;
                 cbo.Font = new Font("Kantumruy Pro Medium", 12.0f);
-
             }
 
             foreach (Label label in this.Controls.OfType<Label>().ToList())
@@ -57,6 +59,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
                     lblArrivalLocation.Text = locations[cboArrivalLocation.Text];
             };
         }
+
         public void SetDepartureLocation(Dictionary<string, string> locations)
         {
             cboDepartureLocation.Items.Clear();
@@ -69,28 +72,16 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             };
         }
 
+
         public void SetDates(HashSet<string> departureDates, HashSet<string> returnDates)
         {
+
             cboDepartureDate.Items.Clear();
-            cboReturnDate.Items.Clear();
 
             cboDepartureDate.Items.AddRange(departureDates.ToArray());
             cboReturnDate.Items.AddRange(returnDates.ToArray());
-            cboDepartureDate.SelectedIndexChanged += HandleReturnDates;
 
-            void HandleReturnDates(Object sender, EventArgs e)
-            {
-                cboReturnDate.Items.Clear();
-
-                foreach (string date in returnDates)
-                {
-                    if (String.IsNullOrWhiteSpace(cboDepartureDate.Text)) return;
-                    if (DateTime.Parse(cboDepartureDate.Text) < DateTime.Parse(date))
-                    {
-                        cboReturnDate.Items.Add(date);
-                    }
-                }
-            }
         }
+
     }
 }

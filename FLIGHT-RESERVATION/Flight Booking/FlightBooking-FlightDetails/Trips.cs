@@ -23,8 +23,8 @@ namespace FLIGHT_RESERVATION
 
         Label lblDepartureAirportNameControl { get; }
         Label lblArrivalAirportNameControl { get; }
-
-
+        String Type { get; }
+        
 
         
         //methods under this interface
