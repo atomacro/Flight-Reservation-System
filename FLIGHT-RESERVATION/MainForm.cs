@@ -316,12 +316,12 @@ namespace FLIGHT_RESERVATION
             {
                 this.SuspendLayout();
 
-                //if (!Session.IsLoggedIn)
-                //{
-                //    LoginControl_OpenLoginForm(this, EventArgs.Empty);
-                //    return;
-                //}
-                
+                if (!Session.IsLoggedIn)
+                {
+                    LoginControl_OpenLoginForm(this, EventArgs.Empty);
+                    return;
+                }
+
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("FLIGHT BOOKING");
                 ClearControls(pnlMain);
