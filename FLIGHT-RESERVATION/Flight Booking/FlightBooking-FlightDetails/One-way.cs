@@ -24,6 +24,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
         public NumericUpDown numInfantsControl => this.numInfant;
         public Label lblDepartureAirportNameControl => this.lblDepartureLocation;
         public Label lblArrivalAirportNameControl => this.lblArrivalLocation;
+        public String Type => "";
 
         public One_Way()
         {
@@ -78,5 +79,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBooking_FlightDetails
             cboDepartureDate.Items.Clear();
             cboDepartureDate.Items.AddRange(departureDates.ToArray());
         }
+
     }
 }
