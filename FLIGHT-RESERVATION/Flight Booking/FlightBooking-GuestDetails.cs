@@ -57,7 +57,7 @@ namespace FLIGHT_RESERVATION
                     int currentRow = 0;
 
                     InitializeGuestDetails("Adult", numAdults);
-                    InitializeGuestDetails("Children", numChildren);
+                    InitializeGuestDetails("Child", numChildren);
                     InitializeGuestDetails("Infant", numInfants);
 
 
