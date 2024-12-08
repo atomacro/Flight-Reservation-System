@@ -85,6 +85,7 @@ namespace FLIGHT_RESERVATION
             StringBuilder Addons = new StringBuilder();
             StringBuilder Prices = new StringBuilder();
 
+            int AdultCount = session.FlightDetails.ContainsKey("Number of Infants") ? Int32.Parse(session.FlightDetails["Number of Adults"]) : 0;
 
             foreach (var item in session.Addons)
             { 
@@ -97,9 +98,9 @@ namespace FLIGHT_RESERVATION
                 Addons.AppendLine(item.Key);
                 if (item.Value) {
                     float Price = 0;
-                    if (item.Key == "Food") Price = 500.00f;
-                    if (item.Key == "Baggage") Price = 700.00f;
-                    if (item.Key == "Transport") Price = 1000.00f;
+                    if (item.Key == "Food") Price = 500.00f * AdultCount;
+                    if (item.Key == "Baggage") Price = 700.00f * AdultCount;
+                    if (item.Key == "Transport") Price = 1000.00f * AdultCount;
 
                     this.AddonSubTotal += Price;
                     Prices.AppendLine(String.Format("{0:0.00}", Price));
@@ -324,6 +325,7 @@ namespace FLIGHT_RESERVATION
             PaymentDetails.IntializeDetails(lblDepartureFrom.Text, lblDepartureTo.Text, DepartureFlightPrice, DepartureSubTotal ,multiplier);
             PaymentDetails.ShowDialog();
         }
+
     }
 
     public class Flight

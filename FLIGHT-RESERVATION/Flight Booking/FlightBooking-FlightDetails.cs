@@ -219,7 +219,7 @@ namespace FLIGHT_RESERVATION
                     }
                     if(viableReturn.Count == 0)
                     {
-                        MessageBox.Show("Sorry, no available flights for the selcted departure date");
+                        MessageBox.Show("Sorry, no available flights for the selected departure date");
                     }
                 };
 

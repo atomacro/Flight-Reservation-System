@@ -57,8 +57,6 @@ namespace FLIGHT_RESERVATION
                 DepartureLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Arrival Location") ? FlightBooking_Session.Instance.FlightDetails["Arrival Location"] : null;
                 ArrivalLocation = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Departure Location") ? FlightBooking_Session.Instance.FlightDetails["Departure Location"] : null;
                 String Departure = FlightBooking_Session.Instance.FlightDetails.ContainsKey("Return Date") ? FlightBooking_Session.Instance.FlightDetails["Return Date"] : null;
-
-
                 DateTime parsedDate = DateTime.ParseExact(Departure, "MMMM dd, yyyy", CultureInfo.InvariantCulture);
                 DepartureDate = parsedDate.ToString("yyyy-MM-dd");
 
