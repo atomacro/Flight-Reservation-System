@@ -61,5 +61,31 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
             //lblDetails.Text = txtFirstName.Text + "'s Details";
 
         }
+
+        private void txtBirthdate_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtBirthdate_Leave(object sender, EventArgs e)
+        {
+            if (DateTime.TryParse(txtBirthdate.Text, out DateTime birthdate))
+            {
+                var today = DateTime.Today;
+                var age = today.Year - birthdate.Year;
+
+                // Adjust the age if the birthdate has not yet occurred this year
+                if (birthdate.Date > today.AddYears(-age))
+                {
+                    age--;
+                }
+
+                txtAge.Text = age.ToString();
+            }
+            else
+            {
+                txtAge.Text = "Invalid date";
+            }
+        }
     }
 }

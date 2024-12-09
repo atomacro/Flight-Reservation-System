@@ -66,7 +66,9 @@ namespace FLIGHT_RESERVATION.Account
 
                 if (updateSuccess)
                 {
-                    MessageBox.Show("Account information updated successfully!", "Account Information Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Account information updated successfully!", "Account Update", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    user.Password = password;
+                    txtCurrentPassword.Text = user.Password;
                 }
                 else
                 {

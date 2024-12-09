@@ -100,7 +100,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 ticket.ReturnDateOnly = returnDepartureDate;
                 ticket.ReturnTimeOnly = returnDepartureTime;
                 ticket.ReturnAirplaneNumber = ses.ReturnAirplaneNumber;
-                ticket.ReturnLocation = departureAirportLocation;
+                ticket.ReturnLocation = departureLocation;
                 ticket.ReturnAirportLocation = departureAirportLocation;
             }
 

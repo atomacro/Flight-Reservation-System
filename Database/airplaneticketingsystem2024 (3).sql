@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2024 at 03:28 PM
+-- Generation Time: Dec 09, 2024 at 03:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `accounts` (
 INSERT INTO `accounts` (`AccountID`, `FirstName`, `LastName`, `Email`, `Password`) VALUES
 (1, 'John', 'Doe', 'john.doe@example.com', 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'),
 (2, 'Jane', 'Smith', 'jane.smith@example.com', 'c6ba91b90d922e159893f46c387e5dc1b3dc5c101a5a4522f03b987177a24a91'),
-(3, 'Charles', 'Togle', 'charles3togle@gmail.com', '28e91b84bd4ac1d95d81b4510777d2b12f3dffa848bb6e219a42f98cdfa06d7d');
+(3, 'Charles', 'Togle', 'charles3togle@gmail.com', '28e91b84bd4ac1d95d81b4510777d2b12f3dffa848bb6e219a42f98cdfa06d7d'),
+(4, 'stefanie', 'gabion', 'sgabion.k12148528@umak.edu.ph', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8');
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,7 @@ CREATE TABLE `flights` (
 --
 
 INSERT INTO `flights` (`FlightID`, `AirplaneNumber`, `DepartureDate`, `ArrivalDate`, `DepartureAirportID`, `ArrivalAirportID`, `SeatsRemaining`, `SeatingCapacity`, `FlightPrice`, `Type`) VALUES
-(1, 'AA101', '2024-12-01 08:00:00', '2024-12-01 11:00:00', 1, 2, 150, 180, 1200, 'International'),
+(1, 'AA101', '2024-12-01 08:00:00', '2024-12-01 11:00:00', 1, 2, 147, 180, 1200, 'International'),
 (2, 'AA102', '2024-12-02 14:00:00', '2024-12-02 17:00:00', 2, 1, 160, 180, 2300, 'International'),
 (3, 'DL201', '2024-12-03 09:30:00', '2024-12-03 12:30:00', 3, 4, 170, 200, 1800, 'International'),
 (4, 'DL202', '2024-12-04 13:00:00', '2024-12-04 16:00:00', 4, 3, 165, 200, 2500, 'International'),
@@ -133,13 +134,34 @@ INSERT INTO `flights` (`FlightID`, `AirplaneNumber`, `DepartureDate`, `ArrivalDa
 (28, 'QR1402', '2024-12-28 14:45:00', '2024-12-28 18:15:00', 7, 4, 165, 200, 2700, 'International'),
 (29, 'JL1501', '2024-12-29 05:45:00', '2024-12-29 09:45:00', 5, 9, 180, 220, 2800, 'International'),
 (30, 'JL1502', '2024-12-30 20:00:00', '2024-12-30 23:59:00', 9, 5, 175, 220, 3500, 'International'),
-(31, 'PR123', '2024-12-07 06:00:00', '2024-12-07 07:15:00', 3, 11, 150, 180, 3500, 'Local'),
-(32, 'PR124', '2024-12-07 08:30:00', '2024-12-07 09:45:00', 11, 3, 150, 180, 3500, 'Local'),
-(33, 'PR125', '2024-12-07 07:00:00', '2024-12-07 08:30:00', 3, 12, 160, 180, 4000, 'Local'),
-(34, 'PR126', '2024-12-07 10:00:00', '2024-12-07 11:00:00', 3, 13, 140, 160, 3000, 'Local'),
-(35, 'PR127', '2024-12-07 13:00:00', '2024-12-07 14:00:00', 3, 14, 130, 160, 2800, 'Local'),
-(41, 'PR101', '2024-12-07 06:00:00', '2024-12-07 07:15:00', 3, 11, 150, 180, 3500, 'Local'),
-(42, 'PR102', '2024-12-07 08:30:00', '2024-12-07 09:45:00', 11, 3, 150, 180, 3500, 'Local');
+(43, 'PR101', '2024-12-07 06:00:00', '2024-12-07 07:15:00', 3, 11, 150, 180, 3500, 'Local'),
+(44, 'PR102', '2024-12-07 10:30:00', '2024-12-07 11:45:00', 11, 3, 150, 180, 3500, 'Local'),
+(45, 'PR103', '2024-12-08 06:00:00', '2024-12-08 07:15:00', 3, 11, 150, 180, 3500, 'Local'),
+(46, 'PR104', '2024-12-08 10:30:00', '2024-12-08 11:45:00', 11, 3, 150, 180, 3500, 'Local'),
+(47, 'PR201', '2024-12-09 07:00:00', '2024-12-09 08:30:00', 3, 12, 160, 180, 4000, 'Local'),
+(48, 'PR202', '2024-12-09 11:00:00', '2024-12-09 12:30:00', 12, 3, 160, 180, 4000, 'Local'),
+(49, 'PR203', '2024-12-10 07:00:00', '2024-12-10 08:30:00', 3, 12, 160, 180, 4000, 'Local'),
+(50, 'PR204', '2024-12-10 11:00:00', '2024-12-10 12:30:00', 12, 3, 160, 180, 4000, 'Local'),
+(51, 'PR301', '2024-12-11 08:00:00', '2024-12-11 09:00:00', 3, 13, 130, 160, 2800, 'Local'),
+(52, 'PR302', '2024-12-11 12:00:00', '2024-12-11 13:00:00', 13, 3, 130, 160, 2800, 'Local'),
+(53, 'PR303', '2024-12-12 08:00:00', '2024-12-12 09:00:00', 3, 13, 130, 160, 2800, 'Local'),
+(54, 'PR304', '2024-12-12 12:00:00', '2024-12-12 13:00:00', 13, 3, 130, 160, 2800, 'Local'),
+(55, 'PR401', '2024-12-13 09:00:00', '2024-12-13 10:00:00', 3, 14, 140, 160, 2900, 'Local'),
+(56, 'PR402', '2024-12-13 13:00:00', '2024-12-13 14:00:00', 14, 3, 140, 160, 2900, 'Local'),
+(57, 'PR403', '2024-12-14 09:00:00', '2024-12-14 10:00:00', 3, 14, 140, 160, 2900, 'Local'),
+(58, 'PR404', '2024-12-14 13:00:00', '2024-12-14 14:00:00', 14, 3, 138, 160, 2900, 'Local'),
+(59, 'PR501', '2024-12-15 07:30:00', '2024-12-15 09:00:00', 3, 15, 150, 180, 3200, 'Local'),
+(60, 'PR502', '2024-12-15 12:30:00', '2024-12-15 14:00:00', 15, 3, 150, 180, 3200, 'Local'),
+(61, 'PR503', '2024-12-16 07:30:00', '2024-12-16 09:00:00', 3, 15, 150, 180, 3200, 'Local'),
+(62, 'PR504', '2024-12-16 12:30:00', '2024-12-16 14:00:00', 15, 3, 150, 180, 3200, 'Local'),
+(63, 'PR601', '2024-12-17 10:00:00', '2024-12-17 11:00:00', 11, 12, 120, 150, 2500, 'Local'),
+(64, 'PR602', '2024-12-17 14:00:00', '2024-12-17 15:00:00', 12, 11, 120, 150, 2500, 'Local'),
+(65, 'PR603', '2024-12-18 10:00:00', '2024-12-18 11:00:00', 11, 12, 120, 150, 2500, 'Local'),
+(66, 'PR604', '2024-12-18 14:00:00', '2024-12-18 15:00:00', 12, 11, 120, 150, 2500, 'Local'),
+(67, 'PR701', '2024-12-19 08:30:00', '2024-12-19 09:30:00', 11, 13, 110, 140, 2300, 'Local'),
+(68, 'PR702', '2024-12-19 12:30:00', '2024-12-19 13:30:00', 13, 11, 110, 140, 2300, 'Local'),
+(69, 'PR703', '2024-12-20 08:30:00', '2024-12-20 09:30:00', 11, 13, 110, 140, 2300, 'Local'),
+(70, 'PR704', '2024-12-20 12:30:00', '2024-12-20 13:30:00', 13, 11, 110, 140, 2300, 'Local');
 
 -- --------------------------------------------------------
 
@@ -225,6 +247,17 @@ CREATE TABLE `passengers` (
   `Birthdate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `passengers`
+--
+
+INSERT INTO `passengers` (`PassengerID`, `TransactionID`, `Type`, `FirstName`, `LastName`, `Age`, `Birthdate`) VALUES
+(1, 1, '', 'stefanie', 'gabion', 20, '2004-10-30 00:00:00'),
+(2, 1, '', 'charles', 'togle', 19, '2005-05-17 00:00:00'),
+(3, 2, '', 'stefanie', 'gabion', 20, '2004-10-30 00:00:00'),
+(4, 2, '', 'charles', 'togle', 19, '2005-05-17 00:00:00'),
+(5, 2, '', 'hu tao', 'togle', 2, '2023-02-28 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -257,6 +290,14 @@ CREATE TABLE `ticketdetails` (
   `TotalPrice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ticketdetails`
+--
+
+INSERT INTO `ticketdetails` (`TicketID`, `TransactionID`, `FlightID`, `NumberOfTickets`, `Children`, `Infant`, `Food`, `Baggage`, `TransferServices`, `TotalPrice`) VALUES
+(1, 1, 58, 2, 1, 0, 'Yes', 'Yes', 'No', 6188),
+(2, 2, 1, 3, 1, 1, 'No', 'Yes', 'No', 5236);
+
 -- --------------------------------------------------------
 
 --
@@ -269,6 +310,14 @@ CREATE TABLE `transactions` (
   `BookingDate` datetime NOT NULL,
   `ReferenceNo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`TransactionID`, `AccountID`, `BookingDate`, `ReferenceNo`) VALUES
+(1, 4, '2024-12-07 16:26:10', 'ATS422451223'),
+(2, 4, '2024-12-07 17:43:41', 'ATS626571975');
 
 --
 -- Indexes for dumped tables
@@ -334,7 +383,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `airport`
@@ -346,13 +395,13 @@ ALTER TABLE `airport`
 -- AUTO_INCREMENT for table `flights`
 --
 ALTER TABLE `flights`
-  MODIFY `FlightID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `FlightID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `passengers`
 --
 ALTER TABLE `passengers`
-  MODIFY `PassengerID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PassengerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -364,13 +413,13 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `ticketdetails`
 --
 ALTER TABLE `ticketdetails`
-  MODIFY `TicketID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TicketID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `TransactionID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TransactionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

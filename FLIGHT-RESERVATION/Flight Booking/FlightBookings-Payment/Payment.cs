@@ -187,17 +187,17 @@ namespace FLIGHT_RESERVATION
 
                 if(AdultCount > 0)
                 {
-                    sb.AppendLine($"x{AdultCount} Adult");
+                    sb.AppendLine($"x{AdultCount} {(AdultCount == 1 ? "Adult" : "Adults")}");
                 }
 
                 if (ChildrenCount > 0)
                 {
-                    sb.AppendLine($"x{ChildrenCount} Children");
+                    sb.AppendLine($"x{ChildrenCount} {(ChildrenCount == 1 ? "Child" : "Children")}");
                 }
 
                 if (InfantCount > 0)
                 {
-                    sb.AppendLine($"x{InfantCount} Infant");
+                    sb.AppendLine($"x{InfantCount} {(InfantCount == 1 ? "Infant" : "Infants")}");
                 }
 
                 return sb.ToString();

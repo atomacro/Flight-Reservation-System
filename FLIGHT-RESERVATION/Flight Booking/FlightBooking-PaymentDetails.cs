@@ -148,7 +148,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         public bool isCreditCardNotExpired(String expiryDate)
         {
-            DateTime.TryParseExact(expiryDate, "MMMM yyyy",
+            DateTime.TryParseExact(expiryDate, "MM/yyyy",
              System.Globalization.CultureInfo.InvariantCulture,
             System.Globalization.DateTimeStyles.None,
             out DateTime ExpiryDate);
@@ -176,15 +176,26 @@ namespace FLIGHT_RESERVATION.Flight_Booking
 
         public bool isExpiryDateValid(string ExpiryDate)
         {
-            if (DateTime.TryParseExact(ExpiryDate, "MMMM yyyy",
+            if (DateTime.TryParseExact(ExpiryDate, "MM/yyyy",
              System.Globalization.CultureInfo.InvariantCulture,
             System.Globalization.DateTimeStyles.None,
             out DateTime expiryDate))
             {
-                return true;
+                if (expiryDate >= DateTime.Today.AddMonths(-1))
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Expiry date must be today or in the future.",
+                        "Expiry Date Invalid",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return false;
+                }
             }
 
-            MessageBox.Show("Invalid Expiry Date format must be MM YYYY \n Ex. January 2030", "Expiry Date Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Invalid Expiry Date format must be MM/yyyy \n Ex. 01/2030", "Expiry Date Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
         public bool isCVVValid(string CVV)

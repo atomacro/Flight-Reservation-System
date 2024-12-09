@@ -43,7 +43,7 @@ namespace FLIGHT_RESERVATION
 
                 SetButtonBorders();
                 InitializeSidebar();
-                SetHeader("DASHBOARD");
+                SetHeader("FLIGHTS");
                 SetIndicator(btnDashboard, pnlIndicator1);
                 AddControl(dashboard, pnlMain);
 
@@ -308,7 +308,7 @@ namespace FLIGHT_RESERVATION
             btnDashboard.Click += (sender, e) =>
             {
                 SetIndicator(btnDashboard, pnlIndicator1);
-                SetHeader("DASHBOARD");
+                SetHeader("FLIGHTS");
                 ClearControls(pnlMain);
                 AddControl(dashboard, pnlMain);
             };
@@ -323,7 +323,7 @@ namespace FLIGHT_RESERVATION
                 }
 
                 SetIndicator(btnFlightBooking, pnlIndicator2);
-                SetHeader("FLIGHT BOOKING");
+                SetHeader("BOOK FLIGHT");
                 ClearControls(pnlMain);
                 AddControl(FlightDetails, pnlMain);
                 FlightDetails_ResetControls(FlightDetails.OneWay);

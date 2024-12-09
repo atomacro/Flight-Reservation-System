@@ -145,6 +145,7 @@
             this.txtAge.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(58)))), ((int)(((byte)(238)))));
             this.txtAge.BorderRadius = 10;
             this.txtAge.BorderSize = 1;
+            this.txtAge.Enabled = false;
             this.txtAge.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtAge.IsPassword = false;
@@ -155,7 +156,7 @@
             this.txtAge.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtAge.PasswordChar = false;
             this.txtAge.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtAge.PlaceholderText = "Enter Age 0 - 110";
+            this.txtAge.PlaceholderText = "Age 0 - 110";
             this.txtAge.Size = new System.Drawing.Size(268, 34);
             this.txtAge.TabIndex = 28;
             this.txtAge.UnderlinedStyle = false;
@@ -178,10 +179,12 @@
             this.txtBirthdate.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtBirthdate.PasswordChar = false;
             this.txtBirthdate.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBirthdate.PlaceholderText = "MMMM DD, YYYY";
+            this.txtBirthdate.PlaceholderText = "MM/dd/yyyy";
             this.txtBirthdate.Size = new System.Drawing.Size(268, 34);
             this.txtBirthdate.TabIndex = 29;
             this.txtBirthdate.UnderlinedStyle = false;
+            this.txtBirthdate.TextChanged += new System.EventHandler(this.txtBirthdate_TextChanged);
+            this.txtBirthdate.Leave += new System.EventHandler(this.txtBirthdate_Leave);
             // 
             // btnFocus
             // 
