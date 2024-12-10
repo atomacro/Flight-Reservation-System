@@ -59,13 +59,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             gcash.Hide();
         }
 
-
-
-        private void btnContinue_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public string GenerateTransactionId()
         {
             string prefix = "ATS";
@@ -117,7 +110,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             if (!Validate.isCVVValid(cardDetails.txtCVV.Text)){return false;}
             if (!Validate.isExpiryDateValid(cardDetails.txtExpiryDate.Text)){return false; }
             if (!Validate.isZipCodeValid(cardDetails.txtZipCode.Text)){return false; }
-            if(!Validate.isCreditCardNotExpired(cardDetails.txtExpiryDate.Text)) { return false; }
             return true;
         }
     }
