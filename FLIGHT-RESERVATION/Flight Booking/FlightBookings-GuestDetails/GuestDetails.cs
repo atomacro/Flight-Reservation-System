@@ -44,22 +44,36 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
             }
         }
 
-        private void txtAge_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtAge.Text)) return;
-
-            if (!int.TryParse(txtAge.Text, out int num) || num < 0 || num > 110)
-            {
-                txtAge.Text = "";
-                MessageBox.Show("Age must be from range 0 - 110 only");
-                btnFocus.Focus();
-            }
-        }
-
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
             //lblDetails.Text = txtFirstName.Text + "'s Details";
 
+        }
+
+        private void txtBirthdate_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtBirthdate_Leave(object sender, EventArgs e)
+        {
+            if (DateTime.TryParse(txtBirthdate.Text, out DateTime birthdate))
+            {
+                var today = DateTime.Today;
+                var age = today.Year - birthdate.Year;
+
+                // Adjust the age if the birthdate has not yet occurred this year
+                if (birthdate.Date > today.AddYears(-age))
+                {
+                    age--;
+                }
+
+                txtAge.Text = age.ToString();
+            }
+            else
+            {
+                txtAge.Text = "Invalid date";
+            }
         }
     }
 }

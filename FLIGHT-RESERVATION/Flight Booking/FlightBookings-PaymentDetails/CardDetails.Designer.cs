@@ -81,7 +81,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(412, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(21, 343);
             this.pictureBox1.TabIndex = 3;
@@ -137,7 +137,7 @@
             this.txtCVV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCVV.IsPassword = false;
             this.txtCVV.Location = new System.Drawing.Point(17, 255);
-            this.txtCVV.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCVV.Margin = new System.Windows.Forms.Padding(5);
             this.txtCVV.Multiline = false;
             this.txtCVV.Name = "txtCVV";
             this.txtCVV.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -172,13 +172,13 @@
             this.txtExpiryDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtExpiryDate.IsPassword = false;
             this.txtExpiryDate.Location = new System.Drawing.Point(17, 335);
-            this.txtExpiryDate.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtExpiryDate.Margin = new System.Windows.Forms.Padding(5);
             this.txtExpiryDate.Multiline = false;
             this.txtExpiryDate.Name = "txtExpiryDate";
             this.txtExpiryDate.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
             this.txtExpiryDate.PasswordChar = false;
             this.txtExpiryDate.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtExpiryDate.PlaceholderText = "MMMM YYYY";
+            this.txtExpiryDate.PlaceholderText = "MM/yyyy";
             this.txtExpiryDate.Size = new System.Drawing.Size(381, 43);
             this.txtExpiryDate.TabIndex = 4;
             this.txtExpiryDate.UnderlinedStyle = false;
@@ -220,7 +220,7 @@
             this.txtStreetAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtStreetAddress.IsPassword = false;
             this.txtStreetAddress.Location = new System.Drawing.Point(452, 110);
-            this.txtStreetAddress.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtStreetAddress.Margin = new System.Windows.Forms.Padding(5);
             this.txtStreetAddress.Multiline = false;
             this.txtStreetAddress.Name = "txtStreetAddress";
             this.txtStreetAddress.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -242,7 +242,7 @@
             this.txtCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCity.IsPassword = false;
             this.txtCity.Location = new System.Drawing.Point(452, 183);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(5);
             this.txtCity.Multiline = false;
             this.txtCity.Name = "txtCity";
             this.txtCity.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -264,7 +264,7 @@
             this.txtCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCountry.IsPassword = false;
             this.txtCountry.Location = new System.Drawing.Point(452, 255);
-            this.txtCountry.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCountry.Margin = new System.Windows.Forms.Padding(5);
             this.txtCountry.Multiline = false;
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -286,7 +286,7 @@
             this.txtZipCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtZipCode.IsPassword = false;
             this.txtZipCode.Location = new System.Drawing.Point(452, 335);
-            this.txtZipCode.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtZipCode.Margin = new System.Windows.Forms.Padding(5);
             this.txtZipCode.Multiline = false;
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -347,7 +347,7 @@
             this.txtCardNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCardNumber.IsPassword = false;
             this.txtCardNumber.Location = new System.Drawing.Point(17, 183);
-            this.txtCardNumber.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCardNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtCardNumber.Multiline = false;
             this.txtCardNumber.Name = "txtCardNumber";
             this.txtCardNumber.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -369,7 +369,7 @@
             this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtFirstName.IsPassword = false;
             this.txtFirstName.Location = new System.Drawing.Point(17, 110);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(5);
             this.txtFirstName.Multiline = false;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -391,7 +391,7 @@
             this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtLastName.IsPassword = false;
             this.txtLastName.Location = new System.Drawing.Point(213, 110);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(5);
             this.txtLastName.Multiline = false;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -428,7 +428,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblBillingAddress);
             this.Controls.Add(this.lblBookingTotal);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CardDetails";
             this.Size = new System.Drawing.Size(831, 454);
             this.Load += new System.EventHandler(this.CardDetails_Load);

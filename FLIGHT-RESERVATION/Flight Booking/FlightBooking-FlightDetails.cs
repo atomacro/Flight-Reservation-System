@@ -165,7 +165,10 @@ namespace FLIGHT_RESERVATION
                 trip.SetArrivalLocation(db_FlightDetails.ArrivalLocations);
                 trip.cboArrivalLocationControl.SelectedItem = null;
                 trip.lblArrivalAirportNameControl.Text = "";
-                trip.lblDepartureAirportNameControl.Text = db_FlightDetails.DepartureLocations[trip.cboDepartureLocationControl.Text];
+                if (trip.cboDepartureLocationControl.Text != null)
+                {
+                    trip.lblDepartureAirportNameControl.Text = db_FlightDetails.DepartureLocations[trip.cboDepartureLocationControl.Text];
+                }
             }
 
             if (trip.cboReturnDateControl != null)
@@ -211,7 +214,7 @@ namespace FLIGHT_RESERVATION
                     foreach (string date in returnDates)
                     {
                         DateTime returnDate = DateTime.Parse(date);
-                        if (selectedDepartureDate < returnDate)
+                        if (selectedDepartureDate <= returnDate)
                         {
                             trip.cboReturnDateControl.Items.Add(date);
                             viableReturn.Add(date);
@@ -219,7 +222,7 @@ namespace FLIGHT_RESERVATION
                     }
                     if(viableReturn.Count == 0)
                     {
-                        MessageBox.Show("Sorry, no available flights for the selected departure date");
+                        MessageBox.Show("Sorry, no available return flights later than the selected departure date");
                     }
                 };
 
@@ -320,47 +323,56 @@ namespace FLIGHT_RESERVATION
 
 
                     query = $@"
-                    SELECT *
-                    FROM (
-                        SELECT DISTINCT 
-                            DepartureLocation.AirportFullName AS DepartureLocation, 
-                            DepartureLocation.AirportLocation AS DepartureAirportLocation, 
-                            ArrivalLocation.AirportFullName AS ArrivalLocation, 
-                            ArrivalLocation.AirportLocation AS ArrivalAirportLocation, 
-                            Flights.DepartureDate AS DepartureDate,
-                            Flights.ArrivalDate AS ArrivalDate
-                        FROM airport AS DepartureLocation
-                        JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID
-                        JOIN airport AS ArrivalLocation ON flights.ArrivalAirportID = ArrivalLocation.AirportID
-                        WHERE
-                          {(SortState == "All" ? "" : $"flights.Type = '{SortState}' AND ")}
-                          {(string.IsNullOrEmpty(From) ? "" : $"DepartureLocation.AirportLocation = '{From}' AND ")}
-                          Flights.DepartureDate >= NOW()
-                        UNION
-                        SELECT DISTINCT 
-                            DepartureLocation.AirportFullName AS DepartureLocation, 
-                            DepartureLocation.AirportLocation AS DepartureAirportLocation, 
-                            ArrivalLocation.AirportFullName AS ArrivalLocation, 
-                            ArrivalLocation.AirportLocation AS ArrivalAirportLocation, 
-                            Flights.DepartureDate AS DepartureDate,
-                            Flights.ArrivalDate AS ArrivalDate
-                        FROM airport AS DepartureLocation
-                        JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID
-                        JOIN airport AS ArrivalLocation ON flights.ArrivalAirportID = ArrivalLocation.AirportID
-                        WHERE
-                          {(SortState == "All" ? "" : $"flights.Type = '{SortState}' AND ")}
-                          {(string.IsNullOrEmpty(From) ? "" : $"ArrivalLocation.AirportLocation = '{From}' AND ")}
-                          Flights.DepartureDate >= NOW()
-
-                    ) AS CombinedResults
-                    WHERE 
-                    {(string.IsNullOrWhiteSpace(returnLocation) ? "" : $"{returnLocation} AND ")}
-                    DepartureDate <= ArrivalDate
-                    ORDER BY DepartureLocation ASC, ArrivalLocation ASC;
+                            SELECT *
+                            FROM (
+                                SELECT DISTINCT 
+                                    DepartureLocation.AirportFullName AS DepartureLocation, 
+                                    DepartureLocation.AirportLocation AS DepartureAirportLocation, 
+                                    ArrivalLocation.AirportFullName AS ArrivalLocation, 
+                                    ArrivalLocation.AirportLocation AS ArrivalAirportLocation, 
+                                    Flights.DepartureDate AS DepartureDate,
+                                    Flights.ArrivalDate AS ArrivalDate,
+                                    ReturnFlights.DepartureDate AS ReturnDate
+                                FROM airport AS DepartureLocation
+                                JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID
+                                JOIN airport AS ArrivalLocation ON flights.ArrivalAirportID = ArrivalLocation.AirportID
+                                LEFT JOIN flights AS ReturnFlights ON 
+                                    ReturnFlights.DepartureAirportID = ArrivalLocation.AirportID 
+                                    AND ReturnFlights.ArrivalAirportID = DepartureLocation.AirportID 
+                                    AND ReturnFlights.DepartureDate > Flights.ArrivalDate 
+                                WHERE
+		                            {(SortState == "All" ? "" : $"flights.Type = '{SortState}' AND ")}
+		                            {(string.IsNullOrEmpty(From) ? "" : $"DepartureLocation.AirportLocation = '{From}' AND ")}
+                                    Flights.DepartureDate >= NOW()
+                                UNION
+                                SELECT DISTINCT 
+                                    DepartureLocation.AirportFullName AS DepartureLocation, 
+                                    DepartureLocation.AirportLocation AS DepartureAirportLocation, 
+                                    ArrivalLocation.AirportFullName AS ArrivalLocation, 
+                                    ArrivalLocation.AirportLocation AS ArrivalAirportLocation, 
+                                    Flights.DepartureDate AS DepartureDate,
+                                    Flights.ArrivalDate AS ArrivalDate,
+                                    ReturnFlights.DepartureDate AS ReturnDate 
+                                FROM airport AS DepartureLocation
+                                JOIN flights ON flights.DepartureAirportID = DepartureLocation.AirportID
+                                JOIN airport AS ArrivalLocation ON flights.ArrivalAirportID = ArrivalLocation.AirportID
+                                LEFT JOIN flights AS ReturnFlights ON 
+                                    ReturnFlights.DepartureAirportID = ArrivalLocation.AirportID 
+                                    AND ReturnFlights.ArrivalAirportID = DepartureLocation.AirportID 
+                                    AND ReturnFlights.DepartureDate > Flights.ArrivalDate -- Ensuring return flight departs after the original flight arrives
+                                WHERE
+    	                            {(SortState == "All" ? "" : $"flights.Type = '{SortState}' AND ")}
+ 		                            {(string.IsNullOrEmpty(From) ? "" : $"ArrivalLocation.AirportLocation = '{From}' AND ")}
+                                    Flights.DepartureDate >= NOW() AND
+                                    Flights.DepartureDate < Flights.ArrivalDate
+                            ) AS CombinedResults
+                            WHERE 
+	                            {(string.IsNullOrWhiteSpace(returnLocation) ? "" : $"{returnLocation} AND ")}
+                                DepartureDate <= ArrivalDate AND
+                                ReturnDate IS NOT NULL 
+                            ORDER BY DepartureLocation ASC, ArrivalLocation ASC;
                     ";
-
                 }
-
                 MySqlCommand command = new MySqlCommand(query, connection);
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
@@ -383,10 +395,6 @@ namespace FLIGHT_RESERVATION
                     }
                 }
             }
-            catch(MySqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
             catch (Exception e)
             {
                 MessageBox.Show($"An error has occurred while selecting locations: {e.Message}");
@@ -405,7 +413,9 @@ namespace FLIGHT_RESERVATION
             try
             {
                 await _connection.OpenAsync();
-                String query = "SELECT DISTINCT flights.DepartureDate " +
+                if(Type == "One Way")
+                {
+                    String query = "SELECT DISTINCT flights.DepartureDate " +
                     "FROM flights JOIN airport AS Departure ON " +
                     "flights.DepartureAirportID = Departure.AirportID " +
                     "JOIN airport AS Arrival ON flights.ArrivalAirportID = Arrival.AirportID " +
@@ -414,36 +424,54 @@ namespace FLIGHT_RESERVATION
                     "AND flights.DepartureDate >= NOW() " +
                     "AND flights.ArrivalDate > flights.DepartureDate; ";
 
-                MySqlCommand commandDeparture = new MySqlCommand(query, _connection);
-                commandDeparture.Parameters.AddWithValue("@DepartureLocation", Departure);
-                commandDeparture.Parameters.AddWithValue("@ArrivalLocation", Arrival);
-                
+                    MySqlCommand commandDeparture = new MySqlCommand(query, _connection);
+                    commandDeparture.Parameters.AddWithValue("@DepartureLocation", Departure);
+                    commandDeparture.Parameters.AddWithValue("@ArrivalLocation", Arrival);
 
-                using (var readerDeparture = await commandDeparture.ExecuteReaderAsync())
-                {
 
-                    if (DepartureDates != null) DepartureDates.Clear();
-
-                    if (!readerDeparture.HasRows && trip.cboDepartureLocationControl.Text != null && trip.cboArrivalLocationControl.Text != null) {
-                        MessageBox.Show("Sorry, No departure flights");
-                        this.ReturnDates.Clear();
-                        this.DepartureDates.Clear();
-                        return; 
-                    }
-
-                    while (await readerDeparture.ReadAsync())
+                    using (var readerDeparture = await commandDeparture.ExecuteReaderAsync())
                     {
-                        this.DepartureDates.Add(((DateTime)readerDeparture["DepartureDate"]).ToString("MMMM dd, yyyy"));
+
+                        if (DepartureDates != null) DepartureDates.Clear();
+
+                        if (!readerDeparture.HasRows && trip.cboDepartureLocationControl.Text != null && trip.cboArrivalLocationControl.Text != null)
+                        {
+                            MessageBox.Show("Sorry, No departure flights");
+                            this.ReturnDates.Clear();
+                            this.DepartureDates.Clear();
+                            return;
+                        }
+
+                        while (await readerDeparture.ReadAsync())
+                        {
+                            this.DepartureDates.Add(((DateTime)readerDeparture["DepartureDate"]).ToString("MMMM dd, yyyy"));
+                        }
                     }
                 }
 
-                if (Type == "Round Trip")
+                else if (Type == "Round Trip")
                 {
                     if (ReturnDates != null) ReturnDates.Clear();
+                    if (DepartureDates != null) DepartureDates.Clear();
+
+                    String query = @"
+                    SELECT DISTINCT flights.DepartureDate, ReturnFlights.DepartureDate AS ReturnDate
+                    FROM flights 
+                    JOIN airport AS Departure ON flights.DepartureAirportID = Departure.AirportID
+                    JOIN airport AS Arrival ON flights.ArrivalAirportID = Arrival.AirportID
+                    LEFT JOIN flights AS ReturnFlights ON 
+                        ReturnFlights.DepartureAirportID = Arrival.AirportID 
+                        AND ReturnFlights.ArrivalAirportID = Departure.AirportID 
+                        AND ReturnFlights.DepartureDate > flights.ArrivalDate -- Ensure return flight departs after arrival of original flight
+                    WHERE Departure.AirportLocation = @DepartureLocation 
+                      AND Arrival.AirportLocation = @ArrivalLocation
+                      AND flights.DepartureDate >= NOW() 
+                      AND flights.ArrivalDate > flights.DepartureDate
+                      AND ReturnFlights.DepartureDate IS NOT NULL; ";
 
                     MySqlCommand commandReturn = new MySqlCommand(query, _connection);
-                    commandReturn.Parameters.AddWithValue("@DepartureLocation", Arrival);
-                    commandReturn.Parameters.AddWithValue("@ArrivalLocation", Departure);
+                    commandReturn.Parameters.AddWithValue("@DepartureLocation", Departure);
+                    commandReturn.Parameters.AddWithValue("@ArrivalLocation", Arrival);
 
                     using (var readerReturn = await commandReturn.ExecuteReaderAsync())
                     {
@@ -457,7 +485,8 @@ namespace FLIGHT_RESERVATION
 
                         while (await readerReturn.ReadAsync())
                         {
-                            this.ReturnDates.Add(((DateTime)readerReturn["DepartureDate"]).ToString("MMMM dd, yyyy"));
+                            this.DepartureDates.Add(((DateTime)readerReturn["DepartureDate"]).ToString("MMMM dd, yyyy"));
+                            this.ReturnDates.Add(((DateTime)readerReturn["ReturnDate"]).ToString("MMMM dd, yyyy"));
                         }
                     }
                 }
@@ -465,7 +494,6 @@ namespace FLIGHT_RESERVATION
             catch (Exception e)
             {
                 MessageBox.Show($"An error has occured while selecting Dates {e.Message} ");
-
             }
             finally
             {

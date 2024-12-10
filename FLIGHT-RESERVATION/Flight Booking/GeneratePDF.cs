@@ -31,6 +31,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             string borderSize = type == "Round Trip" ? "6in" : "4.3in";
             string Return = type == "Round Trip" ? "block" : "none";
             List<string> PassengerNames = ses.PassengerNames;
+            List<string> PassengerTypes = ses.PassengerTypes;
             string logoPath = ConvertImageToBase64("../../Flight Booking/TicketDependencies/BANNER.png");
             string checkCirclePath = ConvertImageToBase64("../../Flight Booking/TicketDependencies/check_circle.png");
             string borderPath = ConvertImageToBase64("../../Flight Booking/TicketDependencies/border.png");
@@ -46,6 +47,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             String TempArrivalDate = $"{ses.DepartureAirplaneDetails["Arrival Date"]} {ses.DepartureAirplaneDetails["Arrival Time"]}";
 
             String TimeDifference = $"{DateTime.Parse(TempArrivalDate) - DateTime.Parse(TempDepartureDate)}";
+            TimeDifference = TimeDifference[0] == '0' ? TimeDifference[1].ToString() : TimeDifference.Substring(0,2);
 
 
 
@@ -79,7 +81,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 DepartureTimeOnly = departureTime,
                 ArrivalDateOnly = arrivalDate,
                 ArrivalTimeOnly = arrivalTime,
-                TimeDifference = TimeDifference.Substring(0,2),
+                TimeDifference = TimeDifference,
                 AirplaneNumber = ses.DepartureAirplaneNumber,
                 DepartureLocation = departureLocation,
                 DepartureAirportLocation = departureAirportLocation,
@@ -91,22 +93,27 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             {
                 returnDetails.TryGetValue("Departure Date", out var returnDepartureDate);
                 returnDetails.TryGetValue("Departure Time", out var returnDepartureTime);
+                returnDetails.TryGetValue("Arrival Date", out var returnArrivalDate);
+                returnDetails.TryGetValue("Arrival Time", out var returnArrivalTime);
                 returnDetails.TryGetValue("Departure Airport Code", out var returnDepartureAirportCode);
                 returnDetails.TryGetValue("Departure Airport Location", out var returnDepartureAirportLocation);
                 returnDetails.TryGetValue("Arrival Airport Code", out var returnArrivalAirportCode);
 
+                ticket.ReturnDepartureDateAndTime = $"{returnDepartureDate} {returnDepartureTime}";
+                ticket.ReturnArrivalDateAndTime = $"{returnArrivalDate} {returnArrivalTime}";
                 ticket.ReturnDeparture = returnDepartureAirportCode;
                 ticket.ReturnArrival = returnArrivalAirportCode;
                 ticket.ReturnDateOnly = returnDepartureDate;
                 ticket.ReturnTimeOnly = returnDepartureTime;
                 ticket.ReturnAirplaneNumber = ses.ReturnAirplaneNumber;
-                ticket.ReturnLocation = departureAirportLocation;
+                ticket.ReturnLocation = departureLocation;
                 ticket.ReturnAirportLocation = departureAirportLocation;
             }
 
 
 
             string PassengerName = "{0}";
+            string PassengerType = "{1}";
 
             string top = $@"<!DOCTYPE html>
 <html>
@@ -176,15 +183,15 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         margin: 0 auto;
         margin: 0 2px 0 0;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 30px);
       }}
       .FlightDetails p {{
         font-family: ""Kantumruy Pro SemiBold"";
-        font-size: 14px;
+        font-size: 17px;
       }}
       .FlightDetails p.content {{
-        font-size: 20px;
+        font-size: 15px;
       }}
       hr {{
         color: darkgray;
@@ -210,7 +217,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
     </div>
 
     <div class=""main"">
-      <section class=""First"" style=""width: 7.2in"">
+      <section class=""First"" style=""width: 7.5in"">
         <div style=""display: flex; align-items: center"">
           <img src=""{checkCirclePath}"" />
           <span style=""font-family: 'Kantumruy Pro Bold'; color: #05cf1a""
@@ -225,11 +232,13 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         <br />
         <div class=""FlightDetails"">
           <p>BOOKING DATE</p>
-          <p>BOOKING REFERENCE NO.</p>
+          <p>REFERENCE NO.</p>
           <p>SEAT CLASS</p>
+          <p>PASSENGER TYPE</p>
           <p class=""content"">{ticket.BookingDate}</p>
           <p class=""content"">{ticket.ReferenceNo}</p>
           <p class=""content"">{ticket.SeatClass}</p>
+          <p class=""content"">{PassengerType}</p>
         </div>
         <hr />
       </section>
@@ -329,7 +338,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
               {ticket.ReturnDeparture} - {ticket.ReturnArrival}
             </p>
             <p style=""font-size: 17px; font-family: 'Kantumruy Pro Regular'"">
-              {ticket.DepartureDate} - {ticket.ArrivalDate}
+              {ticket.ReturnDepartureDateAndTime} - {ticket.ReturnArrivalDateAndTime}
             </p>
             <br />
             <div
@@ -386,7 +395,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             htmlContent.Append(top);
             for (int i = 0; i < PassengerNames.Count; i++)
             {
-                string currentTemplate = template.Replace(PassengerName, PassengerNames[i]);
+                string currentTemplate = template.Replace(PassengerName, PassengerNames[i]).Replace(PassengerType, PassengerTypes[i]);
 
                 htmlContent.Append(currentTemplate);
                 htmlContent.Append(PageBreak);
@@ -427,6 +436,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         public string ReferenceNo { get; set; }
         public string SeatClass { get; set; }
         public string PassengerName { get; set; }
+        public string Type { get; set; }
         public string Departure { get; set; }
         public string Arrival { get; set; }
         public string DepartureDate { get; set; }
@@ -441,6 +451,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         public string DepartureAirportLocation { get; set; }
         public string ArrivalLocation { get; set; }
         public string ArrivalAirportLocation { get; set; }
+        public string ReturnDepartureDateAndTime { get; set; }
+        public string ReturnArrivalDateAndTime { get; set; }
+
         public string ReturnDeparture { get; set; }
         public string ReturnArrival { get; set; }
         public string ReturnDateOnly { get; set; }
