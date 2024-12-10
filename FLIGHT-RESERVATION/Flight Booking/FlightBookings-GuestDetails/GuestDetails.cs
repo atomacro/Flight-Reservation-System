@@ -44,18 +44,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
             }
         }
 
-        private void txtAge_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtAge.Text)) return;
-
-            if (!int.TryParse(txtAge.Text, out int num) || num < 0 || num > 110)
-            {
-                txtAge.Text = "";
-                MessageBox.Show("Age must be from range 0 - 110 only");
-                btnFocus.Focus();
-            }
-        }
-
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
             //lblDetails.Text = txtFirstName.Text + "'s Details";

@@ -47,6 +47,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             String TempArrivalDate = $"{ses.DepartureAirplaneDetails["Arrival Date"]} {ses.DepartureAirplaneDetails["Arrival Time"]}";
 
             String TimeDifference = $"{DateTime.Parse(TempArrivalDate) - DateTime.Parse(TempDepartureDate)}";
+            TimeDifference = TimeDifference[0] == '0' ? TimeDifference[1].ToString() : TimeDifference.Substring(0,2);
 
 
 
@@ -80,7 +81,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 DepartureTimeOnly = departureTime,
                 ArrivalDateOnly = arrivalDate,
                 ArrivalTimeOnly = arrivalTime,
-                TimeDifference = TimeDifference.Substring(0,2),
+                TimeDifference = TimeDifference,
                 AirplaneNumber = ses.DepartureAirplaneNumber,
                 DepartureLocation = departureLocation,
                 DepartureAirportLocation = departureAirportLocation,
@@ -92,10 +93,14 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             {
                 returnDetails.TryGetValue("Departure Date", out var returnDepartureDate);
                 returnDetails.TryGetValue("Departure Time", out var returnDepartureTime);
+                returnDetails.TryGetValue("Arrival Date", out var returnArrivalDate);
+                returnDetails.TryGetValue("Arrival Time", out var returnArrivalTime);
                 returnDetails.TryGetValue("Departure Airport Code", out var returnDepartureAirportCode);
                 returnDetails.TryGetValue("Departure Airport Location", out var returnDepartureAirportLocation);
                 returnDetails.TryGetValue("Arrival Airport Code", out var returnArrivalAirportCode);
 
+                ticket.ReturnDepartureDateAndTime = $"{returnDepartureDate} {returnDepartureTime}";
+                ticket.ReturnArrivalDateAndTime = $"{returnArrivalDate} {returnArrivalTime}";
                 ticket.ReturnDeparture = returnDepartureAirportCode;
                 ticket.ReturnArrival = returnArrivalAirportCode;
                 ticket.ReturnDateOnly = returnDepartureDate;
@@ -227,7 +232,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         <br />
         <div class=""FlightDetails"">
           <p>BOOKING DATE</p>
-          <p>EFERENCE NO.</p>
+          <p>REFERENCE NO.</p>
           <p>SEAT CLASS</p>
           <p>PASSENGER TYPE</p>
           <p class=""content"">{ticket.BookingDate}</p>
@@ -333,7 +338,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking
               {ticket.ReturnDeparture} - {ticket.ReturnArrival}
             </p>
             <p style=""font-size: 17px; font-family: 'Kantumruy Pro Regular'"">
-              {ticket.DepartureDate} - {ticket.ArrivalDate}
+              {ticket.ReturnDepartureDateAndTime} - {ticket.ReturnArrivalDateAndTime}
             </p>
             <br />
             <div
@@ -446,6 +451,9 @@ namespace FLIGHT_RESERVATION.Flight_Booking
         public string DepartureAirportLocation { get; set; }
         public string ArrivalLocation { get; set; }
         public string ArrivalAirportLocation { get; set; }
+        public string ReturnDepartureDateAndTime { get; set; }
+        public string ReturnArrivalDateAndTime { get; set; }
+
         public string ReturnDeparture { get; set; }
         public string ReturnArrival { get; set; }
         public string ReturnDateOnly { get; set; }

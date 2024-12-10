@@ -160,7 +160,6 @@
             this.txtAge.Size = new System.Drawing.Size(268, 34);
             this.txtAge.TabIndex = 28;
             this.txtAge.UnderlinedStyle = false;
-            this.txtAge.TextChanged += new System.EventHandler(this.txtAge_TextChanged);
             // 
             // txtBirthdate
             // 
