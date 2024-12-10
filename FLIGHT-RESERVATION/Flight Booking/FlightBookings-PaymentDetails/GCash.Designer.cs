@@ -42,10 +42,11 @@
             this.lblBookingTotal.AutoSize = true;
             this.lblBookingTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblBookingTotal.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingTotal.Location = new System.Drawing.Point(190, 29);
+            this.lblBookingTotal.Location = new System.Drawing.Point(253, 36);
+            this.lblBookingTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookingTotal.Name = "lblBookingTotal";
             this.lblBookingTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBookingTotal.Size = new System.Drawing.Size(124, 23);
+            this.lblBookingTotal.Size = new System.Drawing.Size(151, 29);
             this.lblBookingTotal.TabIndex = 0;
             this.lblBookingTotal.Text = "Booking Total:";
             // 
@@ -54,20 +55,24 @@
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPrice.Font = new System.Drawing.Font("Kantumruy Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(311, 29);
+            this.lblTotalPrice.Location = new System.Drawing.Point(415, 36);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotalPrice.Size = new System.Drawing.Size(121, 23);
+            this.lblTotalPrice.Size = new System.Drawing.Size(146, 29);
             this.lblTotalPrice.TabIndex = 1;
             this.lblTotalPrice.Text = "99999.99 Php";
             // 
             // picQrCode
             // 
-            this.picQrCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picQrCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picQrCode.Enabled = false;
             this.picQrCode.Image = ((System.Drawing.Image)(resources.GetObject("picQrCode.Image")));
-            this.picQrCode.Location = new System.Drawing.Point(216, 59);
+            this.picQrCode.Location = new System.Drawing.Point(288, 73);
+            this.picQrCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picQrCode.Name = "picQrCode";
-            this.picQrCode.Size = new System.Drawing.Size(191, 175);
+            this.picQrCode.Size = new System.Drawing.Size(255, 215);
+            this.picQrCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picQrCode.TabIndex = 2;
             this.picQrCode.TabStop = false;
             // 
@@ -76,9 +81,10 @@
             this.lblReferenceNumber.AutoSize = true;
             this.lblReferenceNumber.Font = new System.Drawing.Font("Kantumruy Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReferenceNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblReferenceNumber.Location = new System.Drawing.Point(188, 251);
+            this.lblReferenceNumber.Location = new System.Drawing.Point(251, 309);
+            this.lblReferenceNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReferenceNumber.Name = "lblReferenceNumber";
-            this.lblReferenceNumber.Size = new System.Drawing.Size(126, 19);
+            this.lblReferenceNumber.Size = new System.Drawing.Size(169, 25);
             this.lblReferenceNumber.TabIndex = 5;
             this.lblReferenceNumber.Text = "Reference Number";
             // 
@@ -91,21 +97,22 @@
             this.txtReferenceNumber.BorderSize = 1;
             this.txtReferenceNumber.Font = new System.Drawing.Font("Kantumruy Pro SemiBold", 11F, System.Drawing.FontStyle.Bold);
             this.txtReferenceNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtReferenceNumber.Location = new System.Drawing.Point(178, 269);
-            this.txtReferenceNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenceNumber.IsPassword = false;
+            this.txtReferenceNumber.Location = new System.Drawing.Point(237, 331);
+            this.txtReferenceNumber.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtReferenceNumber.Multiline = false;
             this.txtReferenceNumber.Name = "txtReferenceNumber";
-            this.txtReferenceNumber.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtReferenceNumber.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
             this.txtReferenceNumber.PasswordChar = false;
             this.txtReferenceNumber.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtReferenceNumber.PlaceholderText = "XXXXXXXXXXXXX";
-            this.txtReferenceNumber.Size = new System.Drawing.Size(266, 35);
+            this.txtReferenceNumber.Size = new System.Drawing.Size(355, 43);
             this.txtReferenceNumber.TabIndex = 6;
             this.txtReferenceNumber.UnderlinedStyle = false;
             // 
             // GCash
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtReferenceNumber);
@@ -113,8 +120,9 @@
             this.Controls.Add(this.picQrCode);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblBookingTotal);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GCash";
-            this.Size = new System.Drawing.Size(623, 369);
+            this.Size = new System.Drawing.Size(831, 454);
             this.Load += new System.EventHandler(this.GCash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picQrCode)).EndInit();
             this.ResumeLayout(false);
