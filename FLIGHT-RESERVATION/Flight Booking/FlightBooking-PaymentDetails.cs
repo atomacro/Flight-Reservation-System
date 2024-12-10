@@ -146,24 +146,6 @@ namespace FLIGHT_RESERVATION.Flight_Booking
             return true;
         }
 
-        public bool isCreditCardNotExpired(String expiryDate)
-        {
-            DateTime.TryParseExact(expiryDate, "MM/yyyy",
-             System.Globalization.CultureInfo.InvariantCulture,
-            System.Globalization.DateTimeStyles.None,
-            out DateTime ExpiryDate);
-                
-                DateTime CurrentDate = DateTime.Now;
-
-            if(ExpiryDate < CurrentDate)
-            {
-                MessageBox.Show("Credit card must not be expired", "Credit card expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            return true;
-
-        }
         public bool isZipCodeValid(string ZipCode)
         {
             if (!Regex.IsMatch(ZipCode, @"^\d+$"))
@@ -185,14 +167,8 @@ namespace FLIGHT_RESERVATION.Flight_Booking
                 {
                     return true;
                 }
-                else
-                {
-                    MessageBox.Show("Expiry date must be today or in the future.",
-                        "Expiry Date Invalid",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return false;
-                }
+                MessageBox.Show("Credit card must not be expired", "Credit card expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
 
             MessageBox.Show("Invalid Expiry Date format must be MM/yyyy \n Ex. 01/2030", "Expiry Date Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);

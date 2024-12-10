@@ -46,13 +46,7 @@ namespace FLIGHT_RESERVATION.Flight_Booking.FlightBookings_GuestDetails
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
-            //lblDetails.Text = txtFirstName.Text + "'s Details";
 
-        }
-
-        private void txtBirthdate_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void txtBirthdate_Leave(object sender, EventArgs e)
