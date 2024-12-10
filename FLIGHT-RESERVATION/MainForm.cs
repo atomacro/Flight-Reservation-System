@@ -24,7 +24,6 @@ namespace FLIGHT_RESERVATION
 
 
         dashboard dashboard = new dashboard();
-        FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
 
 
         public MainForm()
@@ -47,9 +46,6 @@ namespace FLIGHT_RESERVATION
                 SetIndicator(btnDashboard, pnlIndicator1);
                 AddControl(dashboard, pnlMain);
 
-                AddControl(FlightDetails, pnlMain);
-                FlightBookings(FlightDetails);
-                FlightDetails.Hide();
                 UpdateUIBasedOnLoginStatus(Session.IsLoggedIn);
             }
             finally
@@ -111,19 +107,6 @@ namespace FLIGHT_RESERVATION
                         break;
                 }
             }
-        }
-        void FlightDetails_ResetControls(Trips trip)
-        {
-            this.SuspendLayout();
-
-            trip.cboClassSeatControl.SelectedItem = null;
-            trip.cboDepartureLocationControl.SelectedItem = null;
-            trip.cboArrivalLocationControl.SelectedItem = null;
-            trip.cboDepartureDateControl.SelectedItem = null;
-            if(trip.cboReturnDateControl != null) trip.cboReturnDateControl.SelectedItem = null;
-            trip.lblArrivalAirportNameControl.Text = "";
-            trip.lblDepartureAirportNameControl.Text = "";
-            this.ResumeLayout();
         }
         private void FlightBookings(FlightBooking_FlightDetails FlightDetails)
         {
@@ -295,11 +278,15 @@ namespace FLIGHT_RESERVATION
                     FlightBooking_Session.Instance.transactionID = transactionID;
                     await Database.InsertDatabase();
 
-                    GeneratePDF pdf = new GeneratePDF();
-                    await pdf.PDFGenerate();
+                    await Task.Run(async () =>
+                    {
+                        GeneratePDF pdf = new GeneratePDF();
+                        await pdf.PDFGenerate();
 
-                    SendEmail Mailer = new SendEmail();
-                    await Mailer.SendEmailAsync(Session.CurrentUserEmail, FlightBooking_Session.Instance.TicketDirectory);
+                        SendEmail Mailer = new SendEmail();
+                        await Mailer.SendEmailAsync(Session.CurrentUserEmail, FlightBooking_Session.Instance.TicketDirectory);
+                    });
+
                 };
             }
         }
@@ -325,9 +312,11 @@ namespace FLIGHT_RESERVATION
                 SetIndicator(btnFlightBooking, pnlIndicator2);
                 SetHeader("BOOK FLIGHT");
                 ClearControls(pnlMain);
+
+
+                FlightBooking_FlightDetails FlightDetails = new FlightBooking_FlightDetails();
                 AddControl(FlightDetails, pnlMain);
-                FlightDetails_ResetControls(FlightDetails.OneWay);
-                FlightDetails_ResetControls(FlightDetails.RoundTrip);
+                FlightBookings(FlightDetails);
                 this.ResumeLayout();
             };
             btnViewBookings.Click += (sender, e) =>

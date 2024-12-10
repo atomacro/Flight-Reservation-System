@@ -48,6 +48,7 @@ namespace FLIGHT_RESERVATION
         public Dictionary<string, Boolean> Addons { get; set; } = new Dictionary<string, Boolean>();
 
         public Dictionary<String, String> PaymentDetails { get; set; } = new Dictionary<string, string>();
+        public List<String> PassengerTypes = new List<string>();
 
 
         public void setDepartureAirplaneDetails(FlightsAvailable flight)
@@ -136,6 +137,7 @@ namespace FLIGHT_RESERVATION
             }
 
             setPassengerNames();
+            setPassengerTypes();
         }
 
         public void setPassengerNames()
@@ -146,6 +148,18 @@ namespace FLIGHT_RESERVATION
    
                     PassengerNames.Add($"{innerDictionary["First Name"]} {innerDictionary["Last Name"]}");
                 
+            }
+        }
+
+        public void setPassengerTypes()
+        {
+            foreach (var item in PassengerDetails)
+            {
+                var innerDictionary = item.Value;
+                String PassengerType = innerDictionary["Discounted"] == "Yes" ? innerDictionary["Type"] == "Adult" ? "Adult (Discounted) " : "Adult" : innerDictionary["Type"]; 
+
+                PassengerTypes.Add(PassengerType);
+
             }
         }
 

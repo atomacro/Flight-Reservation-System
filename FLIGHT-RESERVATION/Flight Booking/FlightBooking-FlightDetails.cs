@@ -165,7 +165,10 @@ namespace FLIGHT_RESERVATION
                 trip.SetArrivalLocation(db_FlightDetails.ArrivalLocations);
                 trip.cboArrivalLocationControl.SelectedItem = null;
                 trip.lblArrivalAirportNameControl.Text = "";
-                trip.lblDepartureAirportNameControl.Text = db_FlightDetails.DepartureLocations[trip.cboDepartureLocationControl.Text];
+                if (trip.cboDepartureLocationControl.Text != null)
+                {
+                    trip.lblDepartureAirportNameControl.Text = db_FlightDetails.DepartureLocations[trip.cboDepartureLocationControl.Text];
+                }
             }
 
             if (trip.cboReturnDateControl != null)
