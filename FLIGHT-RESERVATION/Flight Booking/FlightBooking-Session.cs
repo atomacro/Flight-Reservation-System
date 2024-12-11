@@ -54,11 +54,6 @@ namespace FLIGHT_RESERVATION
         public void setDepartureAirplaneDetails(FlightsAvailable flight)
         {
             DepartureAirplaneDetails.Clear();
-            //flight.ArrivalDate;
-            //flight.DepartureDate;
-            //flight.lblAirplaneNumber;
-            //flight.lblTime1;
-            //flight.lblTime2;
             DepartureAirplaneDetails["Departure Airport Code"] = flight.lblLocation1.Text;
             DepartureAirplaneDetails["Arrival Airport Code"] = flight.lblLocation2.Text;
             DepartureAirplaneDetails["Arrival Date"] = flight.ArrivalDate;
@@ -102,6 +97,7 @@ namespace FLIGHT_RESERVATION
 
         public void setCardDetails(Dictionary<String, String> Card)
         {
+            PaymentDetails.Clear();
             foreach (var item in Card)
             {
                 PaymentDetails[item.Key] = item.Value;
@@ -142,6 +138,7 @@ namespace FLIGHT_RESERVATION
 
         public void setPassengerNames()
         {
+            PassengerNames.Clear();
             foreach (var item in PassengerDetails)
             {
                 var innerDictionary = item.Value;
@@ -153,6 +150,7 @@ namespace FLIGHT_RESERVATION
 
         public void setPassengerTypes()
         {
+            PassengerTypes.Clear();
             foreach (var item in PassengerDetails)
             {
                 var innerDictionary = item.Value;
@@ -165,6 +163,7 @@ namespace FLIGHT_RESERVATION
 
         public void setFlightDetails(Trips trip, String type)
         {
+            FlightDetails.Clear();
             if (FlightDetails != null)
             {
                 FlightDetails.Clear();
