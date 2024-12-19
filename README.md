@@ -7,7 +7,7 @@ A Project presented to Ms. Jomariss B. Plan and Mr. Lester Diampoc during the Ob
 
 ## Download
 
-[![](https://img.shields.io/github/v/release/atomacro/Flight-Reservation-System.svg?maxAge=3600&label=Latest&labelColor=000000&color=ff124a&style=for-the-badge)](https://github.com/atomacro/Flight-Reservation-System/releases/latest)
+[![](https://img.shields.io/github/v/release/atomacro/Flight-Reservation-System.svg?maxAge=3600&label=Latest&labelColor=000000&color=5e17eb&style=for-the-badge)](https://github.com/atomacro/Flight-Reservation-System/releases/latest)
 
 ## Features include
 
